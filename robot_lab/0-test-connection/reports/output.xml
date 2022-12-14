@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.1 (Python 3.8.10 on linux)" generated="20221214 12:20:04.939" rpa="false" schemaversion="3">
+<suite id="s1" name="Test Connection" source="/home/marcelo/estudos/devnet/robot_framework/robot_lab/0-test-connection/test_connection.robot">
+<test id="s1-t1" name="Connect to devices" line="12">
+<kw name="use genie testbed &quot;${testbed}&quot;" library="genie.libs.robot.GenieRobot" sourcename="use genie testbed &quot;${testbed}&quot;">
+<doc>*DEPRECATED* Please use the "use testbed "${testbed}" keyword instead.</doc>
+<msg timestamp="20221214 12:20:05.574" level="WARN">Keyword 'genie.libs.robot.GenieRobot.use genie testbed "${testbed}"' is deprecated. Please use the "use testbed "${testbed}" keyword instead.</msg>
+<msg timestamp="20221214 12:20:05.578" level="WARN">Using the default YAML encoding key since no key was specified in configuration.
+THIS IS A SHARED KEY AND IS NOT SECURE, PLEASE RUN `pyats secret keygen` AND ADD TO YOUR pyats.conf FILE BEFORE ENCODING ANY VALUES.</msg>
+<msg timestamp="20221214 12:20:05.615" level="INFO">+------------------------------------------------------------------------------+
+|                            Genie datafiles used:                             |
++------------------------------------------------------------------------------+</msg>
+<msg timestamp="20221214 12:20:05.615" level="INFO">Trigger datafile          | </msg>
+<msg timestamp="20221214 12:20:05.615" level="INFO">Verification  datafile    | </msg>
+<msg timestamp="20221214 12:20:05.615" level="INFO">Pts datafile              | /home/marcelo/estudos/venv_estudos/lib/python3.8/site-packages/genie/libs/sdk/genie_yamls/pts_datafile.yaml</msg>
+<msg timestamp="20221214 12:20:05.616" level="INFO">Subsection datafile       | /home/marcelo/estudos/venv_estudos/lib/python3.8/site-packages/genie/libs/sdk/genie_yamls/subsection_datafile.yaml</msg>
+<msg timestamp="20221214 12:20:05.616" level="INFO">Config datafile           | None</msg>
+<msg timestamp="20221214 12:20:05.632" level="WARN">Could not load the trigger datafile correctly, did you specify 'uut' device alias?</msg>
+<status status="PASS" starttime="20221214 12:20:05.574" endtime="20221214 12:20:05.632"/>
+</kw>
+<kw name="connect to device &quot;NXOS&quot;" library="ats.robot.pyATSRobot" sourcename="connect to device &quot;${device:[^&quot;]+}&quot;">
+<doc>Connect to device connection as defined in testbed.yaml</doc>
+<msg timestamp="20221214 12:20:05.633" level="INFO">Connecting to device 'Device NXOS, type nxos'</msg>
+<msg timestamp="20221214 12:20:05.633" level="INFO">kwargs: {}</msg>
+<msg timestamp="20221214 12:20:08.582" level="INFO">2022-12-14 12:20:05,634: %UNICON-INFO: +++ NXOS logfile /tmp/NXOS-cli-20221214T122005634.log +++
+
+2022-12-14 12:20:05,634: %UNICON-INFO: +++ Unicon plugin nxos (unicon.plugins.nxos) +++
+User Access Verification
+
+
+2022-12-14 12:20:06,502: %UNICON-INFO: +++ connection to spawn: ssh -l admin 192.168.15.212, id: 139822024471792 +++
+
+2022-12-14 12:20:06,502: %UNICON-INFO: connection to NXOS
+Password: 
+
+Cisco NX-OS Software
+Copyright (c) 2002-2018, Cisco Systems, Inc. All rights reserved.
+Nexus 9000v software ("Nexus 9000v Software") and related documentation,
+files or other reference materials ("Documentation") are
+the proprietary property and confidential information of Cisco
+Systems, Inc. ("Cisco") and are protected, without limitation,
+pursuant to United States and International copyright and trademark
+laws in the applicable jurisdiction which provide civil and criminal
+penalties for copying or distribution without Cisco's authorization.
+
+Any use or disclosure, in whole or in part, of the Nexus 9000v Software
+or Documentation to any third party for any purposes is expressly
+prohibited except as otherwise authorized by Cisco in writing.
+The copyrights to certain works contained herein are owned by other
+third parties and are used and distributed under license. Some parts
+of this software may be covered under the GNU Public License or the
+GNU Lesser General Public License. A copy of each such license is
+available at
+http://www.gnu.org/licenses/gpl.html and
+http://www.gnu.org/licenses/lgpl.html
+***************************************************************************
+*  Nexus 9000v is strictly limited to use for evaluation, demonstration   *
+*  and NX-OS education. Any use or disclosure, in whole or in part of     *
+*  the Nexus 9000v Software or Documentation to any third party for any   *
+*  purposes is expressly prohibited except as otherwise authorized by     *
+*  Cisco in writing.                                                      *
+***************************************************************************
+NXOS# 
+
+2022-12-14 12:20:07,327: %UNICON-INFO: +++ initializing handle +++
+
+2022-12-14 12:20:07,399: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'term length 0' +++
+term length 0
+NXOS# 
+
+2022-12-14 12:20:07,555: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'term width 511' +++
+term width 511
+NXOS# 
+
+2022-12-14 12:20:07,817: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'terminal session-timeout 0' +++
+terminal session-timeout 0
+NXOS# 
+
+2022-12-14 12:20:07,926: %UNICON-INFO: +++ NXOS with via 'cli': configure +++
+config term
+Enter configuration commands, one per line. End with CNTL/Z.
+NXOS(config)# no logging console
+NXOS(config)# line console
+NXOS(config-console)# exec-timeout 0
+NXOS(config-console)# line vty
+NXOS(config-line)# exec-timeout 0
+NXOS(config-line)# terminal width 511
+NXOS(config-line)# end
+NXOS#</msg>
+<status status="PASS" starttime="20221214 12:20:05.633" endtime="20221214 12:20:08.582"/>
+</kw>
+<doc>Define the hosts to connect and test connection</doc>
+<tag>Laboratorio</tag>
+<status status="PASS" starttime="20221214 12:20:05.573" endtime="20221214 12:20:08.582"/>
+</test>
+<status status="PASS" starttime="20221214 12:20:04.941" endtime="20221214 12:20:08.583"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Laboratorio</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Test Connection">Test Connection</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20221214 12:20:05.574" level="WARN">Keyword 'genie.libs.robot.GenieRobot.use genie testbed "${testbed}"' is deprecated. Please use the "use testbed "${testbed}" keyword instead.</msg>
+<msg timestamp="20221214 12:20:05.578" level="WARN">Using the default YAML encoding key since no key was specified in configuration.
+THIS IS A SHARED KEY AND IS NOT SECURE, PLEASE RUN `pyats secret keygen` AND ADD TO YOUR pyats.conf FILE BEFORE ENCODING ANY VALUES.</msg>
+<msg timestamp="20221214 12:20:05.632" level="WARN">Could not load the trigger datafile correctly, did you specify 'uut' device alias?</msg>
+</errors>
+</robot>

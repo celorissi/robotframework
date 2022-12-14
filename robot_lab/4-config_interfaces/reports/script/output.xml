@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.1 (Python 3.8.10 on linux)" generated="20221214 12:44:39.924" rpa="false" schemaversion="3">
+<suite id="s1" name="Script" source="/home/marcelo/estudos/devnet/robot_framework/robot_lab/4-config_interfaces/script.robot">
+<kw name="Setup" type="SETUP">
+<kw name="use genie testbed &quot;${testbed}&quot;" library="genie.libs.robot.GenieRobot" sourcename="use genie testbed &quot;${testbed}&quot;">
+<doc>*DEPRECATED* Please use the "use testbed "${testbed}" keyword instead.</doc>
+<msg timestamp="20221214 12:44:40.879" level="WARN">Keyword 'genie.libs.robot.GenieRobot.use genie testbed "${testbed}"' is deprecated. Please use the "use testbed "${testbed}" keyword instead.</msg>
+<msg timestamp="20221214 12:44:40.883" level="WARN">Using the default YAML encoding key since no key was specified in configuration.
+THIS IS A SHARED KEY AND IS NOT SECURE, PLEASE RUN `pyats secret keygen` AND ADD TO YOUR pyats.conf FILE BEFORE ENCODING ANY VALUES.</msg>
+<msg timestamp="20221214 12:44:40.955" level="INFO">+------------------------------------------------------------------------------+
+|                            Genie datafiles used:                             |
++------------------------------------------------------------------------------+</msg>
+<msg timestamp="20221214 12:44:40.955" level="INFO">Trigger datafile          | </msg>
+<msg timestamp="20221214 12:44:40.955" level="INFO">Verification  datafile    | </msg>
+<msg timestamp="20221214 12:44:40.955" level="INFO">Pts datafile              | /home/marcelo/estudos/venv_estudos/lib/python3.8/site-packages/genie/libs/sdk/genie_yamls/pts_datafile.yaml</msg>
+<msg timestamp="20221214 12:44:40.955" level="INFO">Subsection datafile       | /home/marcelo/estudos/venv_estudos/lib/python3.8/site-packages/genie/libs/sdk/genie_yamls/subsection_datafile.yaml</msg>
+<msg timestamp="20221214 12:44:40.956" level="INFO">Config datafile           | None</msg>
+<msg timestamp="20221214 12:44:40.976" level="WARN">Could not load the trigger datafile correctly, did you specify 'uut' device alias?</msg>
+<status status="PASS" starttime="20221214 12:44:40.879" endtime="20221214 12:44:40.976"/>
+</kw>
+<kw name="connect to devices &quot;NXOS&quot;" library="ats.robot.pyATSRobot" sourcename="connect to devices &quot;${devices}&quot;">
+<doc>Connect to devices via connection as defined in testbed.yaml.
+Specify devices with semi-colon separated list, e.g. "R1;R2"</doc>
+<msg timestamp="20221214 12:44:40.977" level="INFO">Connecting to device 'Device NXOS, type nxos'</msg>
+<msg timestamp="20221214 12:44:40.977" level="INFO">kwargs: {}</msg>
+<msg timestamp="20221214 12:44:43.606" level="INFO">2022-12-14 12:44:40,979: %UNICON-INFO: +++ NXOS logfile /tmp/NXOS-cli-20221214T124440978.log +++
+
+2022-12-14 12:44:40,979: %UNICON-INFO: +++ Unicon plugin nxos (unicon.plugins.nxos) +++
+User Access Verification
+
+
+2022-12-14 12:44:41,682: %UNICON-INFO: +++ connection to spawn: ssh -l admin 192.168.15.212, id: 140282700719536 +++
+
+2022-12-14 12:44:41,683: %UNICON-INFO: connection to NXOS
+Password: 
+
+Cisco NX-OS Software
+Copyright (c) 2002-2018, Cisco Systems, Inc. All rights reserved.
+Nexus 9000v software ("Nexus 9000v Software") and related documentation,
+files or other reference materials ("Documentation") are
+the proprietary property and confidential information of Cisco
+Systems, Inc. ("Cisco") and are protected, without limitation,
+pursuant to United States and International copyright and trademark
+laws in the applicable jurisdiction which provide civil and criminal
+penalties for copying or distribution without Cisco's authorization.
+
+Any use or disclosure, in whole or in part, of the Nexus 9000v Software
+or Documentation to any third party for any purposes is expressly
+prohibited except as otherwise authorized by Cisco in writing.
+The copyrights to certain works contained herein are owned by other
+third parties and are used and distributed under license. Some parts
+of this software may be covered under the GNU Public License or the
+GNU Lesser General Public License. A copy of each such license is
+available at
+http://www.gnu.org/licenses/gpl.html and
+http://www.gnu.org/licenses/lgpl.html
+***************************************************************************
+*  Nexus 9000v is strictly limited to use for evaluation, demonstration   *
+*  and NX-OS education. Any use or disclosure, in whole or in part of     *
+*  the Nexus 9000v Software or Documentation to any third party for any   *
+*  purposes is expressly prohibited except as otherwise authorized by     *
+*  Cisco in writing.                                                      *
+***************************************************************************
+NXOS# 
+
+2022-12-14 12:44:42,301: %UNICON-INFO: +++ initializing handle +++
+
+2022-12-14 12:44:42,368: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'term length 0' +++
+term length 0
+NXOS# 
+
+2022-12-14 12:44:42,572: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'term width 511' +++
+term width 511
+NXOS# 
+
+2022-12-14 12:44:42,782: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'terminal session-timeout 0' +++
+terminal session-timeout 0
+NXOS# 
+
+2022-12-14 12:44:42,866: %UNICON-INFO: +++ NXOS with via 'cli': configure +++
+config term
+Enter configuration commands, one per line. End with CNTL/Z.
+NXOS(config)# no logging console
+NXOS(config)# line console
+NXOS(config-console)# exec-timeout 0
+NXOS(config-console)# line vty
+NXOS(config-line)# exec-timeout 0
+NXOS(config-line)# terminal width 511
+NXOS(config-line)# end
+NXOS#</msg>
+<status status="PASS" starttime="20221214 12:44:40.976" endtime="20221214 12:44:43.606"/>
+</kw>
+<status status="PASS" starttime="20221214 12:44:40.878" endtime="20221214 12:44:43.607"/>
+</kw>
+<test id="s1-t1" name="Send show version" line="12">
+<kw name="execute &quot;show version&quot; on device &quot;NXOS&quot;" library="unicon.robot.UniconRobot" sourcename="execute &quot;${command}&quot; on device &quot;${device:[^&quot;]+}&quot;">
+<var>${output}</var>
+<doc>Execute command on a specific device. "device" name is the name
+of the device from the testbed file</doc>
+<msg timestamp="20221214 12:44:43.610" level="INFO">Executing command show version on device NXOS alias None</msg>
+<msg timestamp="20221214 12:44:44.884" level="INFO">2022-12-14 12:44:43,674: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'show version' +++
+show version
+Cisco Nexus Operating System (NX-OS) Software
+TAC support: http://www.cisco.com/tac
+Documents: http://www.cisco.com/en/US/products/ps9372/tsd_products_support_series_home.html
+Copyright (c) 2002-2018, Cisco Systems, Inc. All rights reserved.
+The copyrights to certain works contained herein are owned by
+other third parties and are used and distributed under license.
+Some parts of this software are covered under the GNU Public
+License. A copy of the license is available at
+http://www.gnu.org/licenses/gpl.html.
+
+Nexus 9000v is a demo version of the Nexus Operating System
+
+Software
+  BIOS: version 
+ NXOS: version 9.2(2)
+  BIOS compile time:  
+  NXOS image file is: bootflash:///nxos.9.2.2.bin
+  NXOS compile time:  11/4/2018 21:00:00 [11/05/2018 06:11:06]
+
+
+Hardware
+  cisco Nexus9000 9000v Chassis 
+   with 8128928 kB of memory.
+  Processor Board ID 9I2CMH1CW24
+
+  Device name: NXOS
+  bootflash:    3509454 kB
+Kernel uptime is 0 day(s), 4 hour(s), 11 minute(s), 6 second(s)
+
+Last reset 
+  Reason: Unknown
+  System version: 
+  Service: 
+
+plugin
+  Core Plugin, Ethernet Plugin
+
+Active Package(s):
+        
+NXOS#</msg>
+<msg timestamp="20221214 12:44:44.884" level="INFO">${output} = Cisco Nexus Operating System (NX-OS) Software
+TAC support: http://www.cisco.com/tac
+Documents: http://www.cisco.com/en/US/products/ps9372/tsd_products_support_series_home.html
+Copyright (c) 2002-20...</msg>
+<status status="PASS" starttime="20221214 12:44:43.608" endtime="20221214 12:44:44.884"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${output}</arg>
+<arg>version 9.2(2)</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20221214 12:44:44.884" endtime="20221214 12:44:44.885"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${output}</arg>
+<arg>version 9.2(1)</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<msg timestamp="20221214 12:44:44.885" level="FAIL">'Cisco Nexus Operating System (NX-OS) Software
+TAC support: http://www.cisco.com/tac
+Documents: http://www.cisco.com/en/US/products/ps9372/tsd_products_support_series_home.html
+Copyright (c) 2002-2018, Cisco Systems, Inc. All rights reserved.
+The copyrights to certain works contained herein are owned by
+other third parties and are used and distributed under license.
+Some parts of this software are covered under the GNU Public
+License. A copy of the license is available at
+http://www.gnu.org/licenses/gpl.html.
+
+Nexus 9000v is a demo version of the Nexus Operating System
+
+Software
+  BIOS: version 
+ NXOS: version 9.2(2)
+  BIOS compile time:  
+  NXOS image file is: bootflash:///nxos.9.2.2.bin
+  NXOS compile time:  11/4/2018 21:00:00 [11/05/2018 06:11:06]
+
+
+Hardware
+  cisco Nexus9000 9000v Chassis 
+   with 8128928 kB of memory.
+  Processor Board ID 9I2CMH1CW24
+
+  Device name: NXOS
+  bootflash:    3509454 kB
+Kernel uptime is 0 day(s), 4 hour(s), 11 minute(s), 6 second(s)
+
+Last reset 
+  Reason: Unknown
+  System version: 
+  Service: 
+
+plugin
+  Core Plugin, Ethernet Plugin
+
+Active Package(s):' does not contain 'version 9.2(1)'</msg>
+<status status="FAIL" starttime="20221214 12:44:44.885" endtime="20221214 12:44:44.886"/>
+</kw>
+<status status="FAIL" starttime="20221214 12:44:43.607" endtime="20221214 12:44:44.886">'Cisco Nexus Operating System (NX-OS) Software
+TAC support: http://www.cisco.com/tac
+Documents: http://www.cisco.com/en/US/products/ps9372/tsd_products_support_series_home.html
+Copyright (c) 2002-2018, Cisco Systems, Inc. All rights reserved.
+The copyrights to certain works contained herein are owned by
+other third parties and are used and distributed under license.
+Some parts of this software are covered under the GNU Public
+License. A copy of the license is available at
+http://www.gnu.org/licenses/gpl.html.
+
+Nexus 9000v is a demo version of the Nexus Operating System
+
+Software
+  BIOS: version 
+ NXOS: version 9.2(2)
+  BIOS compile time:  
+  NXOS image file is: bootflash:///nxos.9.2.2.bin
+  NXOS compile time:  11/4/2018 21:00:00 [11/05/2018 06:11:06]
+
+
+Hardware
+  cisco Nexus9000 9000v Chassis 
+   with 8128928 kB of memory.
+  Processor Board ID 9I2CMH1CW24
+
+  Device name: NXOS
+  bootflash:    3509454 kB
+Kernel uptime is 0 day(s), 4 hour(s), 11 minute(s), 6 second(s)
+
+Last reset 
+  Reason: Unknown
+  System version: 
+  Service: 
+
+plugin
+  Core Plugin, Ethernet Plugin
+
+Active Package(s):' does not contain 'version 9.2(1)'</status>
+</test>
+<test id="s1-t2" name="Change interface description" line="17">
+<kw name="configure &quot;interface e1/3\ndescription testeint&quot; on device &quot;NXOS&quot;" library="unicon.robot.UniconRobot" sourcename="configure &quot;${config:[^&quot;]+}&quot; on device &quot;${device:[^&quot;]+}&quot;">
+<doc>Configure a device with the configuration provided.</doc>
+<msg timestamp="20221214 12:44:44.888" level="INFO">Configuring interface e1/3
+description testeint on device NXOS alias None</msg>
+<msg timestamp="20221214 12:44:45.421" level="INFO">2022-12-14 12:44:44,888: %UNICON-INFO: +++ NXOS with via 'cli': configure +++
+config term
+Enter configuration commands, one per line. End with CNTL/Z.
+NXOS(config)# interface e1/3
+NXOS(config-if)# description testeint
+NXOS(config-if)# end
+NXOS#</msg>
+<status status="PASS" starttime="20221214 12:44:44.888" endtime="20221214 12:44:45.421"/>
+</kw>
+<status status="PASS" starttime="20221214 12:44:44.887" endtime="20221214 12:44:45.422"/>
+</test>
+<test id="s1-t3" name="Verify interface description" line="20">
+<kw name="execute &quot;show running interface e1/3&quot; on device &quot;NXOS&quot;" library="unicon.robot.UniconRobot" sourcename="execute &quot;${command}&quot; on device &quot;${device:[^&quot;]+}&quot;">
+<var>${output}</var>
+<doc>Execute command on a specific device. "device" name is the name
+of the device from the testbed file</doc>
+<msg timestamp="20221214 12:44:45.423" level="INFO">Executing command show running interface e1/3 on device NXOS alias None</msg>
+<msg timestamp="20221214 12:44:45.688" level="INFO">2022-12-14 12:44:45,490: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'show running interface e1/3' +++
+show running interface e1/3
+
+!Command: show running-config interface Ethernet1/3
+!Running configuration last done at: Wed Dec 14 15:44:45 2022
+!Time: Wed Dec 14 15:44:45 2022
+
+version 9.2(2) Bios:version  
+
+interface Ethernet1/3
+  description testeint
+
+NXOS#</msg>
+<msg timestamp="20221214 12:44:45.688" level="INFO">${output} = 
+!Command: show running-config interface Ethernet1/3
+!Running configuration last done at: Wed Dec 14 15:44:45 2022
+!Time: Wed Dec 14 15:44:45 2022
+
+version 9.2(2) Bios:version  
+
+interface Ethe...</msg>
+<status status="PASS" starttime="20221214 12:44:45.423" endtime="20221214 12:44:45.688"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${output}</arg>
+<arg>testeint</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20221214 12:44:45.689" endtime="20221214 12:44:45.689"/>
+</kw>
+<status status="PASS" starttime="20221214 12:44:45.422" endtime="20221214 12:44:45.689"/>
+</test>
+<test id="s1-t4" name="Change configuration from yaml file" line="24">
+<kw name="configure &quot;${config_interface}&quot; on device &quot;NXOS&quot;" library="unicon.robot.UniconRobot" sourcename="configure &quot;${config:[^&quot;]+}&quot; on device &quot;${device:[^&quot;]+}&quot;">
+<doc>Configure a device with the configuration provided.</doc>
+<msg timestamp="20221214 12:44:45.691" level="INFO">Configuring interface Ethernet1/3 no switchport ip address 192.168.15.215/24 no ip ospf passive-interface no shutdown on device NXOS alias None</msg>
+<msg timestamp="20221214 12:44:46.218" level="INFO">2022-12-14 12:44:45,691: %UNICON-INFO: +++ NXOS with via 'cli': configure +++
+config term
+Enter configuration commands, one per line. End with CNTL/Z.
+NXOS(config)# interface Ethernet1/3 no switchport ip address 192.168.15.215/24 no ip ospf passive-interface no shutdown
+                                                                                                         ^
+Invalid command (too many ranges) at '^' marker.
+NXOS(config)# end
+NXOS#</msg>
+<status status="PASS" starttime="20221214 12:44:45.690" endtime="20221214 12:44:46.218"/>
+</kw>
+<status status="PASS" starttime="20221214 12:44:45.690" endtime="20221214 12:44:46.219"/>
+</test>
+<test id="s1-t5" name="Count ospf neighbor" line="27">
+<kw name="execute &quot;show ip ospf neighbor&quot; on device &quot;NXOS&quot;" library="unicon.robot.UniconRobot" sourcename="execute &quot;${command}&quot; on device &quot;${device:[^&quot;]+}&quot;">
+<var>${output}</var>
+<doc>Execute command on a specific device. "device" name is the name
+of the device from the testbed file</doc>
+<msg timestamp="20221214 12:44:46.220" level="INFO">Executing command show ip ospf neighbor on device NXOS alias None</msg>
+<msg timestamp="20221214 12:44:46.397" level="INFO">2022-12-14 12:44:46,286: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'show ip ospf neighbor' +++
+show ip ospf neighbor
+ OSPF Process ID 100 VRF default
+ Total number of neighbors: 1
+ Neighbor ID     Pri State            Up Time  Address         Interface
+ 20.0.0.1          1 FULL/DR          03:48:38 192.168.15.213  Eth1/1 
+NXOS#</msg>
+<msg timestamp="20221214 12:44:46.397" level="INFO">${output} =  OSPF Process ID 100 VRF default
+ Total number of neighbors: 1
+ Neighbor ID     Pri State            Up Time  Address         Interface
+ 20.0.0.1          1 FULL/DR          03:48:38 192.168.15.213...</msg>
+<status status="PASS" starttime="20221214 12:44:46.219" endtime="20221214 12:44:46.397"/>
+</kw>
+<kw name="Should Contain X Times" library="BuiltIn">
+<arg>${output}</arg>
+<arg>FULL</arg>
+<arg>1</arg>
+<doc>Fails if ``container`` does not contain ``item`` ``count`` times.</doc>
+<msg timestamp="20221214 12:44:46.398" level="INFO">Item found from container 1 time.</msg>
+<status status="PASS" starttime="20221214 12:44:46.398" endtime="20221214 12:44:46.399"/>
+</kw>
+<status status="PASS" starttime="20221214 12:44:46.219" endtime="20221214 12:44:46.399"/>
+</test>
+<status status="FAIL" starttime="20221214 12:44:39.926" endtime="20221214 12:44:46.399"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="4" fail="1" skip="0" id="s1" name="Script">Script</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20221214 12:44:40.879" level="WARN">Keyword 'genie.libs.robot.GenieRobot.use genie testbed "${testbed}"' is deprecated. Please use the "use testbed "${testbed}" keyword instead.</msg>
+<msg timestamp="20221214 12:44:40.883" level="WARN">Using the default YAML encoding key since no key was specified in configuration.
+THIS IS A SHARED KEY AND IS NOT SECURE, PLEASE RUN `pyats secret keygen` AND ADD TO YOUR pyats.conf FILE BEFORE ENCODING ANY VALUES.</msg>
+<msg timestamp="20221214 12:44:40.976" level="WARN">Could not load the trigger datafile correctly, did you specify 'uut' device alias?</msg>
+</errors>
+</robot>

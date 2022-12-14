@@ -1,0 +1,15 @@
+devices:
+  NXOS:
+    connections:
+      cli:
+        ip: 192.168.15.212
+        protocol: ssh
+    credentials:
+      default:
+        password: '%ENC{wr3DosOUw6fDnMOOw5LCqMOPw5TDmMObwpfCkMKdwpg=}'
+        username: admin
+      enable:
+        password: '%ENC{wr3DosOUw6fDnMOOw5LCqMOPw5TDmMObwpfCkMKdwpg=}'
+    os: nxos
+    type: nxos
+ 
