@@ -6,7 +6,7 @@ Variables      Config.yaml
 Suite setup    Setup
 
 *** Variables ***
-${testbed}    /home/marcelo/estudos/devnet/robot_framework/robot_lab/inventory/testbed.yaml
+${testbed}    /home/marcelo/laboratorio/robotframework/robot_lab/inventory/testbed.yaml
 
 *** Test Cases ***
 Send show version

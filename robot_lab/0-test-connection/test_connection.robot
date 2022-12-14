@@ -6,7 +6,7 @@ Library       ats.robot.pyATSRobot
 Library       genie.libs.robot.GenieRobot
 
 *** Variables ***
-${testbed}    /home/marcelo/estudos/devnet/robot_framework/robot_lab/inventory/testbed.yaml
+${testbed}    /home/marcelo/laboratorio/robotframework/robot_lab/inventory/testbed.yaml
 
 *** Test Cases ***
 Connect to devices

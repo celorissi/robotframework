@@ -6,7 +6,7 @@ Suite setup    Setup
 Variables      OSPF.yaml
 
 *** Variables ***
-${testbed}    /home/marcelo/estudos/devnet/robot_framework/robot_lab/inventory/testbed.yaml
+${testbed}    /home/marcelo/laboratorio/robotframework/robot_lab/inventory/testbed.yaml
 
 *** Test Cases ***
 
@@ -22,5 +22,5 @@ IPv4 OSPF Neighborship
 
 *** Keywords ***
 Setup
-    use testbed "/home/marcelo/estudos/devnet/robot_framework/robot_lab/inventory/testbed.yaml"
+    use testbed "/home/marcelo/laboratorio/robotframework/robot_lab/inventory/testbed.yaml"
     connect to all devices
