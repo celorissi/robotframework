@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.8.10 on linux)" generated="20220629 16:14:13.130" rpa="false" schemaversion="2">
+<suite id="s1" name="Stable Snapshot" source="/home/marcelo/robot_framework/health_check/stable_snapshot.robot">
+<test id="s1-t1" name="Connect to devices">
+<kw name="use genie testbed &quot;${testbed}&quot;">
+<msg timestamp="20220629 16:14:13.254" level="FAIL">No keyword with name 'use genie testbed "${testbed}"' found.</msg>
+<status status="FAIL" starttime="20220629 16:14:13.254" endtime="20220629 16:14:13.254"/>
+</kw>
+<kw name="connect to device &quot;VV-SCS-N9K01&quot;">
+<status status="NOT RUN" starttime="20220629 16:14:13.255" endtime="20220629 16:14:13.256"/>
+</kw>
+<kw name="connect to device &quot;VV-SCS-N9K02&quot;">
+<status status="NOT RUN" starttime="20220629 16:14:13.257" endtime="20220629 16:14:13.257"/>
+</kw>
+<doc>Define the hosts to connect and test connection</doc>
+<tag>connection</tag>
+<tag>internet</tag>
+<tag>scs</tag>
+<status status="FAIL" starttime="20220629 16:14:13.252" endtime="20220629 16:14:13.258">No keyword with name 'use genie testbed "${testbed}"' found.</status>
+</test>
+<test id="s1-t2" name="Profile Platform and Configuration">
+<kw name="Profile the system for &quot;platform;config&quot; on devices &quot;VV-SCS-N9K01;VV-SCS-N9K02&quot; as &quot;./snapshots/stable/stable_snapshot_platform&quot;">
+<msg timestamp="20220629 16:14:13.261" level="FAIL">No keyword with name 'Profile the system for "platform;config" on devices "VV-SCS-N9K01;VV-SCS-N9K02" as "./snapshots/stable/stable_snapshot_platform"' found.</msg>
+<status status="FAIL" starttime="20220629 16:14:13.261" endtime="20220629 16:14:13.262"/>
+</kw>
+<doc>Get a snapshot of platform information e current configuration</doc>
+<tag>configuration</tag>
+<tag>internet</tag>
+<tag>platform</tag>
+<tag>scs</tag>
+<status status="SKIP" starttime="20220629 16:14:13.259" endtime="20220629 16:14:13.263">Test failed but its tags matched '--SkipOnFailure' and it was marked skipped.
+
+Original failure:
+No keyword with name 'Profile the system for "platform;config" on devices "VV-SCS-N9K01;VV-SCS-N9K02" as "./snapshots/stable/stable_snapshot_platform"' found.</status>
+</test>
+<test id="s1-t3" name="Profile VLANs">
+<kw name="Profile the system for &quot;vlan&quot; on devices &quot;VV-SCS-N9K01;VV-SCS-N9K02&quot; as &quot;./snapshots/stable/stable_snapshot_vlans&quot;">
+<msg timestamp="20220629 16:14:13.266" level="FAIL">No keyword with name 'Profile the system for "vlan" on devices "VV-SCS-N9K01;VV-SCS-N9K02" as "./snapshots/stable/stable_snapshot_vlans"' found.</msg>
+<status status="FAIL" starttime="20220629 16:14:13.266" endtime="20220629 16:14:13.266"/>
+</kw>
+<doc>Get a snapshot of vlan state</doc>
+<tag>internet</tag>
+<tag>scs</tag>
+<tag>vlan</tag>
+<status status="FAIL" starttime="20220629 16:14:13.263" endtime="20220629 16:14:13.266">No keyword with name 'Profile the system for "vlan" on devices "VV-SCS-N9K01;VV-SCS-N9K02" as "./snapshots/stable/stable_snapshot_vlans"' found.</status>
+</test>
+<test id="s1-t4" name="Profile Interfaces">
+<kw name="Profile the system for &quot;interface&quot; on devices &quot;VV-SCS-N9K01;VV-SCS-N9K02&quot; as &quot;./snapshots/stable/stable_snapshot_interfaces&quot;">
+<msg timestamp="20220629 16:14:13.268" level="FAIL">No keyword with name 'Profile the system for "interface" on devices "VV-SCS-N9K01;VV-SCS-N9K02" as "./snapshots/stable/stable_snapshot_interfaces"' found.</msg>
+<status status="FAIL" starttime="20220629 16:14:13.268" endtime="20220629 16:14:13.268"/>
+</kw>
+<doc>Get a snapshot of interfaces state</doc>
+<tag>interfaces</tag>
+<tag>internet</tag>
+<tag>scs</tag>
+<status status="FAIL" starttime="20220629 16:14:13.267" endtime="20220629 16:14:13.269">No keyword with name 'Profile the system for "interface" on devices "VV-SCS-N9K01;VV-SCS-N9K02" as "./snapshots/stable/stable_snapshot_interfaces"' found.</status>
+</test>
+<test id="s1-t5" name="Profile VRFs">
+<kw name="Profile the system for &quot;vrf&quot; on devices &quot;VV-SCS-N9K01;VV-SCS-N9K02&quot; as &quot;./snapshots/stable/stable_snapshot_vrf&quot;">
+<msg timestamp="20220629 16:14:13.271" level="FAIL">No keyword with name 'Profile the system for "vrf" on devices "VV-SCS-N9K01;VV-SCS-N9K02" as "./snapshots/stable/stable_snapshot_vrf"' found.</msg>
+<status status="FAIL" starttime="20220629 16:14:13.271" endtime="20220629 16:14:13.271"/>
+</kw>
+<doc>Get a snapshot of VRFs state</doc>
+<tag>internet</tag>
+<tag>scs</tag>
+<tag>vrf</tag>
+<status status="FAIL" starttime="20220629 16:14:13.269" endtime="20220629 16:14:13.271">No keyword with name 'Profile the system for "vrf" on devices "VV-SCS-N9K01;VV-SCS-N9K02" as "./snapshots/stable/stable_snapshot_vrf"' found.</status>
+</test>
+<test id="s1-t6" name="Profile Routing Table">
+<kw name="Profile the system for &quot;routing&quot; on devices &quot;VV-SCS-N9K01;VV-SCS-N9K02&quot; as &quot;./snapshots/stable/stable_snapshot_routing&quot;">
+<msg timestamp="20220629 16:14:13.273" level="FAIL">No keyword with name 'Profile the system for "routing" on devices "VV-SCS-N9K01;VV-SCS-N9K02" as "./snapshots/stable/stable_snapshot_routing"' found.</msg>
+<status status="FAIL" starttime="20220629 16:14:13.273" endtime="20220629 16:14:13.273"/>
+</kw>
+<doc>Get a snapshot of routing table entries</doc>
+<tag>internet</tag>
+<tag>routing</tag>
+<tag>scs</tag>
+<status status="FAIL" starttime="20220629 16:14:13.272" endtime="20220629 16:14:13.273">No keyword with name 'Profile the system for "routing" on devices "VV-SCS-N9K01;VV-SCS-N9K02" as "./snapshots/stable/stable_snapshot_routing"' found.</status>
+</test>
+<test id="s1-t7" name="Profile BGP">
+<kw name="Profile the system for &quot;bgp&quot; on devices &quot;VV-SCS-N9K01;VV-SCS-N9K02&quot; as &quot;./snapshots/stable/stable_snapshot_bgp&quot;">
+<msg timestamp="20220629 16:14:13.275" level="FAIL">No keyword with name 'Profile the system for "bgp" on devices "VV-SCS-N9K01;VV-SCS-N9K02" as "./snapshots/stable/stable_snapshot_bgp"' found.</msg>
+<status status="FAIL" starttime="20220629 16:14:13.275" endtime="20220629 16:14:13.276"/>
+</kw>
+<doc>Get a snapshot of BGF state</doc>
+<tag>bgp</tag>
+<tag>internet</tag>
+<tag>scs</tag>
+<status status="FAIL" starttime="20220629 16:14:13.274" endtime="20220629 16:14:13.276">No keyword with name 'Profile the system for "bgp" on devices "VV-SCS-N9K01;VV-SCS-N9K02" as "./snapshots/stable/stable_snapshot_bgp"' found.</status>
+</test>
+<test id="s1-t8" name="Profile OSPF">
+<kw name="Profile the system for &quot;ospf&quot; on devices &quot;VV-SCS-N9K01;VV-SCS-N9K02&quot; as &quot;./snapshots/stable/stable_snapshot_ospf&quot;">
+<msg timestamp="20220629 16:14:13.280" level="FAIL">No keyword with name 'Profile the system for "ospf" on devices "VV-SCS-N9K01;VV-SCS-N9K02" as "./snapshots/stable/stable_snapshot_ospf"' found.</msg>
+<status status="FAIL" starttime="20220629 16:14:13.280" endtime="20220629 16:14:13.280"/>
+</kw>
+<doc>Get a snapshot of OSPF state</doc>
+<tag>internet</tag>
+<tag>ospf</tag>
+<tag>scs</tag>
+<status status="FAIL" starttime="20220629 16:14:13.277" endtime="20220629 16:14:13.281">No keyword with name 'Profile the system for "ospf" on devices "VV-SCS-N9K01;VV-SCS-N9K02" as "./snapshots/stable/stable_snapshot_ospf"' found.</status>
+</test>
+<status status="FAIL" starttime="20220629 16:14:13.131" endtime="20220629 16:14:13.282"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="7" skip="1">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">bgp</stat>
+<stat pass="0" fail="0" skip="1">configuration</stat>
+<stat pass="0" fail="1" skip="0">connection</stat>
+<stat pass="0" fail="1" skip="0">interfaces</stat>
+<stat pass="0" fail="7" skip="1">internet</stat>
+<stat pass="0" fail="1" skip="0">ospf</stat>
+<stat pass="0" fail="0" skip="1">platform</stat>
+<stat pass="0" fail="1" skip="0">routing</stat>
+<stat pass="0" fail="7" skip="1">scs</stat>
+<stat pass="0" fail="1" skip="0">vlan</stat>
+<stat pass="0" fail="1" skip="0">vrf</stat>
+</tag>
+<suite>
+<stat pass="0" fail="7" skip="1" id="s1" name="Stable Snapshot">Stable Snapshot</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220629 16:14:13.125" level="WARN">Command line options --critical and --noncritical have been deprecated. Use --skiponfailure instead.</msg>
+<msg timestamp="20220629 16:14:13.152" level="ERROR">Error in file '/home/marcelo/robot_framework/health_check/stable_snapshot.robot' on line 5: Importing library 'ats.robot.pyATSRobot' failed: ModuleNotFoundError: No module named 'ats'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  /home/marcelo/robot_framework/env_robot/bin
+  /usr/lib/python38.zip
+  /usr/lib/python3.8
+  /usr/lib/python3.8/lib-dynload
+  /home/marcelo/robot_framework/env_robot/lib/python3.8/site-packages</msg>
+<msg timestamp="20220629 16:14:13.251" level="ERROR">Error in file '/home/marcelo/robot_framework/health_check/stable_snapshot.robot' on line 6: Importing library 'genie.libs.robot.GenieRobot' failed: ImportError: cannot import name configuration
+Traceback (most recent call last):
+  File "/home/marcelo/robot_framework/env_robot/lib/python3.8/site-packages/genie/libs/robot/GenieRobot.py", line 11, in &lt;module&gt;
+    from pyats.utils.objects import find, R
+  File "src/pyats/utils/objects.py", line 4, in init pyats.utils.objects
+  File "/home/marcelo/robot_framework/env_robot/lib/python3.8/site-packages/pyats/topology/__init__.py", line 52, in &lt;module&gt;
+    from .link import Link, LinkBase
+  File "src/pyats/topology/link.py", line 5, in init pyats.topology.link
+  File "src/pyats/topology/factory.py", line 5, in init pyats.topology.factory
+PYTHONPATH:
+  /home/marcelo/robot_framework/env_robot/bin
+  /usr/lib/python38.zip
+  /usr/lib/python3.8
+  /usr/lib/python3.8/lib-dynload
+  /home/marcelo/robot_framework/env_robot/lib/python3.8/site-packages</msg>
+</errors>
+</robot>

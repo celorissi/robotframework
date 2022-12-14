@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.1 (Python 3.8.10 on linux)" generated="20221214 12:30:30.411" rpa="false" schemaversion="3">
+<suite id="s1" name="Ospf" source="/home/marcelo/estudos/devnet/robot_framework/robot_lab/2-ospf/ospf.robot">
+<kw name="Setup" type="SETUP">
+<kw name="use testbed &quot;/home/marcelo/estudos/devnet/robot_framework/robot_lab/inventory/testbed.yaml&quot;" library="ats.robot.pyATSRobot" sourcename="use testbed &quot;${testbed}&quot;">
+<doc>Load testbed YAML file and instantiate testbed object</doc>
+<msg timestamp="20221214 12:30:31.361" level="WARN">Using the default YAML encoding key since no key was specified in configuration.
+THIS IS A SHARED KEY AND IS NOT SECURE, PLEASE RUN `pyats secret keygen` AND ADD TO YOUR pyats.conf FILE BEFORE ENCODING ANY VALUES.</msg>
+<status status="PASS" starttime="20221214 12:30:31.357" endtime="20221214 12:30:31.416"/>
+</kw>
+<kw name="connect to all devices" library="ats.robot.pyATSRobot">
+<doc>Connect to all devices</doc>
+<msg timestamp="20221214 12:30:31.417" level="INFO">Connecting to device 'Device NXOS, type nxos'</msg>
+<msg timestamp="20221214 12:30:31.417" level="INFO">kwargs: {}</msg>
+<msg timestamp="20221214 12:30:33.692" level="INFO">2022-12-14 12:30:31,419: %UNICON-INFO: +++ NXOS logfile /tmp/NXOS-cli-20221214T123031419.log +++
+
+2022-12-14 12:30:31,420: %UNICON-INFO: +++ Unicon plugin nxos (unicon.plugins.nxos) +++
+User Access Verification
+
+
+2022-12-14 12:30:31,996: %UNICON-INFO: +++ connection to spawn: ssh -l admin 192.168.15.212, id: 140511646421392 +++
+
+2022-12-14 12:30:31,996: %UNICON-INFO: connection to NXOS
+Password: 
+
+Cisco NX-OS Software
+Copyright (c) 2002-2018, Cisco Systems, Inc. All rights reserved.
+Nexus 9000v software ("Nexus 9000v Software") and related documentation,
+files or other reference materials ("Documentation") are
+the proprietary property and confidential information of Cisco
+Systems, Inc. ("Cisco") and are protected, without limitation,
+pursuant to United States and International copyright and trademark
+laws in the applicable jurisdiction which provide civil and criminal
+penalties for copying or distribution without Cisco's authorization.
+
+Any use or disclosure, in whole or in part, of the Nexus 9000v Software
+or Documentation to any third party for any purposes is expressly
+prohibited except as otherwise authorized by Cisco in writing.
+The copyrights to certain works contained herein are owned by other
+third parties and are used and distributed under license. Some parts
+of this software may be covered under the GNU Public License or the
+GNU Lesser General Public License. A copy of each such license is
+available at
+http://www.gnu.org/licenses/gpl.html and
+http://www.gnu.org/licenses/lgpl.html
+***************************************************************************
+*  Nexus 9000v is strictly limited to use for evaluation, demonstration   *
+*  and NX-OS education. Any use or disclosure, in whole or in part of     *
+*  the Nexus 9000v Software or Documentation to any third party for any   *
+*  purposes is expressly prohibited except as otherwise authorized by     *
+*  Cisco in writing.                                                      *
+***************************************************************************
+NXOS# 
+
+2022-12-14 12:30:32,510: %UNICON-INFO: +++ initializing handle +++
+
+2022-12-14 12:30:32,577: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'term length 0' +++
+term length 0
+NXOS# 
+
+2022-12-14 12:30:32,730: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'term width 511' +++
+term width 511
+NXOS# 
+
+2022-12-14 12:30:32,960: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'terminal session-timeout 0' +++
+terminal session-timeout 0
+NXOS# 
+
+2022-12-14 12:30:33,109: %UNICON-INFO: +++ NXOS with via 'cli': configure +++
+config term
+Enter configuration commands, one per line. End with CNTL/Z.
+NXOS(config)# no logging console
+NXOS(config)# line console
+NXOS(config-console)# exec-timeout 0
+NXOS(config-console)# line vty
+NXOS(config-line)# exec-timeout 0
+NXOS(config-line)# terminal width 511
+NXOS(config-line)# end
+NXOS#</msg>
+<status status="PASS" starttime="20221214 12:30:31.416" endtime="20221214 12:30:33.692"/>
+</kw>
+<status status="PASS" starttime="20221214 12:30:31.356" endtime="20221214 12:30:33.692"/>
+</kw>
+<test id="s1-t1" name="IPv4 OSPF Neighborship" line="13">
+<kw name="execute &quot;show ip ospf neighbor&quot; on device &quot;NXOS&quot;" library="unicon.robot.UniconRobot" sourcename="execute &quot;${command}&quot; on device &quot;${device:[^&quot;]+}&quot;">
+<var>${cmd}</var>
+<doc>Execute command on a specific device. "device" name is the name
+of the device from the testbed file</doc>
+<msg timestamp="20221214 12:30:33.694" level="INFO">Executing command show ip ospf neighbor on device NXOS alias None</msg>
+<msg timestamp="20221214 12:30:33.856" level="INFO">2022-12-14 12:30:33,757: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'show ip ospf neighbor' +++
+show ip ospf neighbor
+ OSPF Process ID 100 VRF default
+ Total number of neighbors: 1
+ Neighbor ID     Pri State            Up Time  Address         Interface
+ 20.0.0.1          1 FULL/DR          03:34:26 192.168.15.213  Eth1/1 
+NXOS#</msg>
+<msg timestamp="20221214 12:30:33.856" level="INFO">${cmd} =  OSPF Process ID 100 VRF default
+ Total number of neighbors: 1
+ Neighbor ID     Pri State            Up Time  Address         Interface
+ 20.0.0.1          1 FULL/DR          03:34:26 192.168.15.213...</msg>
+<status status="PASS" starttime="20221214 12:30:33.693" endtime="20221214 12:30:33.856"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${cmd}</arg>
+<arg>192.168.15.213</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20221214 12:30:33.856" endtime="20221214 12:30:33.856"/>
+</kw>
+<status status="PASS" starttime="20221214 12:30:33.692" endtime="20221214 12:30:33.857"/>
+</test>
+<test id="s1-t2" name="IPv4 OSPF Neighborship" line="17">
+<kw name="execute &quot;show ip ospf neighbor&quot; on device &quot;NXOS&quot;" library="unicon.robot.UniconRobot" sourcename="execute &quot;${command}&quot; on device &quot;${device:[^&quot;]+}&quot;">
+<var>${cmd}</var>
+<doc>Execute command on a specific device. "device" name is the name
+of the device from the testbed file</doc>
+<msg timestamp="20221214 12:30:33.860" level="INFO">Executing command show ip ospf neighbor on device NXOS alias None</msg>
+<msg timestamp="20221214 12:30:34.159" level="INFO">2022-12-14 12:30:33,960: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'show ip ospf neighbor' +++
+show ip ospf neighbor
+ OSPF Process ID 100 VRF default
+ Total number of neighbors: 1
+ Neighbor ID     Pri State            Up Time  Address         Interface
+ 20.0.0.1          1 FULL/DR          03:34:26 192.168.15.213  Eth1/1 
+NXOS#</msg>
+<msg timestamp="20221214 12:30:34.159" level="INFO">${cmd} =  OSPF Process ID 100 VRF default
+ Total number of neighbors: 1
+ Neighbor ID     Pri State            Up Time  Address         Interface
+ 20.0.0.1          1 FULL/DR          03:34:26 192.168.15.213...</msg>
+<status status="PASS" starttime="20221214 12:30:33.859" endtime="20221214 12:30:34.159"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${cmd}</arg>
+<arg>1.1.1.1</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<msg timestamp="20221214 12:30:34.160" level="FAIL">' OSPF Process ID 100 VRF default
+ Total number of neighbors: 1
+ Neighbor ID     Pri State            Up Time  Address         Interface
+ 20.0.0.1          1 FULL/DR          03:34:26 192.168.15.213  Eth1/1' does not contain '1.1.1.1'</msg>
+<status status="FAIL" starttime="20221214 12:30:34.159" endtime="20221214 12:30:34.160"/>
+</kw>
+<status status="FAIL" starttime="20221214 12:30:33.858" endtime="20221214 12:30:34.160">' OSPF Process ID 100 VRF default
+ Total number of neighbors: 1
+ Neighbor ID     Pri State            Up Time  Address         Interface
+ 20.0.0.1          1 FULL/DR          03:34:26 192.168.15.213  Eth1/1' does not contain '1.1.1.1'</status>
+</test>
+<status status="FAIL" starttime="20221214 12:30:30.413" endtime="20221214 12:30:34.162"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="1" skip="0" id="s1" name="Ospf">Ospf</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20221214 12:30:31.361" level="WARN">Using the default YAML encoding key since no key was specified in configuration.
+THIS IS A SHARED KEY AND IS NOT SECURE, PLEASE RUN `pyats secret keygen` AND ADD TO YOUR pyats.conf FILE BEFORE ENCODING ANY VALUES.</msg>
+<msg timestamp="20221214 12:30:33.858" level="WARN">Multiple tests with name 'IPv4 OSPF Neighborship' executed in suite 'Ospf'.</msg>
+</errors>
+</robot>

@@ -1,0 +1,66 @@
+devices:
+  HUB_VIA-A23-SW01:
+    connections:
+      cli:
+        ip: 10.211.19.10
+        protocol: ssh
+    credentials:
+      default:
+        password: '%ENC{w4TCrMKSwqfDlsKPw5HCmMK0wpHCpsKhwrQ=}'
+        username: svc_telecom
+      enable:
+        password: '%ENC{w4TCrMKSwqfDlsKPw5HCmMK0wpHCpsKhwrQ=}'
+    os: iosxe
+    type: iosxe
+  HUB_VIA-A23-SW02:
+    connections:
+      cli:
+        ip: 10.211.19.11
+        protocol: ssh
+    credentials:
+      default:
+        password: '%ENC{w4TCrMKSwqfDlsKPw5HCmMK0wpHCpsKhwrQ=}'
+        username: svc_telecom
+      enable:
+        password: '%ENC{w4TCrMKSwqfDlsKPw5HCmMK0wpHCpsKhwrQ=}'
+    os: iosxe
+    type: iosxe
+  HUB_VIA-A24-SW01:
+    connections:
+      cli:
+        ip: 10.211.19.12
+        protocol: ssh
+    credentials:
+      default:
+        password: '%ENC{w4TCrMKSwqfDlsKPw5HCmMK0wpHCpsKhwrQ=}'
+        username: svc_telecom
+      enable:
+        password: '%ENC{w4TCrMKSwqfDlsKPw5HCmMK0wpHCpsKhwrQ=}'
+    os: iosxe
+    type: iosxe
+  HUB_VIA-A25-SW01:
+    connections:
+      cli:
+        ip: 10.211.19.13
+        protocol: ssh
+    credentials:
+      default:
+        password: '%ENC{w4TCrMKSwqfDlsKPw5HCmMK0wpHCpsKhwrQ=}'
+        username: svc_telecom
+      enable:
+        password: '%ENC{w4TCrMKSwqfDlsKPw5HCmMK0wpHCpsKhwrQ=}'
+    os: iosxe
+    type: iosxe
+  HUB_VIA-A28-SW01:
+    connections:
+      cli:
+        ip: 10.211.19.14
+        protocol: ssh
+    credentials:
+      default:
+        password: '%ENC{w4TCrMKSwqfDlsKPw5HCmMK0wpHCpsKhwrQ=}'
+        username: svc_telecom
+      enable:
+        password: '%ENC{w4TCrMKSwqfDlsKPw5HCmMK0wpHCpsKhwrQ=}'
+    os: iosxe
+    type: iosxe

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.8.10 on linux)" generated="20220629 21:32:44.515" rpa="false" schemaversion="2">
+<suite id="s1" name="Stable Snapshot" source="/home/marcelo/robot_framework/robot_hub_eldorado/stable_snapshot.robot">
+<test id="s1-t1" name="Connect to devices">
+<kw name="use genie testbed &quot;${testbed}&quot;" library="genie.libs.robot.GenieRobot" sourcename="use genie testbed &quot;${testbed}&quot;">
+<doc>*DEPRECATED* Please use the "use testbed "${testbed}" keyword instead.</doc>
+<msg timestamp="20220629 21:32:45.948" level="WARN">Keyword 'genie.libs.robot.GenieRobot.use genie testbed "${testbed}"' is deprecated. Please use the "use testbed "${testbed}" keyword instead.</msg>
+<msg timestamp="20220629 21:32:46.032" level="INFO">+------------------------------------------------------------------------------+
+|                            Genie datafiles used:                             |
++------------------------------------------------------------------------------+</msg>
+<msg timestamp="20220629 21:32:46.033" level="INFO">Trigger datafile          | </msg>
+<msg timestamp="20220629 21:32:46.033" level="INFO">Verification  datafile    | </msg>
+<msg timestamp="20220629 21:32:46.033" level="INFO">Pts datafile              | /home/marcelo/robot_framework/env_robot/lib/python3.8/site-packages/genie/libs/sdk/genie_yamls/pts_datafile.yaml</msg>
+<msg timestamp="20220629 21:32:46.033" level="INFO">Subsection datafile       | /home/marcelo/robot_framework/env_robot/lib/python3.8/site-packages/genie/libs/sdk/genie_yamls/subsection_datafile.yaml</msg>
+<msg timestamp="20220629 21:32:46.033" level="INFO">Config datafile           | None</msg>
+<msg timestamp="20220629 21:32:46.066" level="WARN">Could not load the trigger datafile correctly, did you specify 'uut' device alias?</msg>
+<status status="PASS" starttime="20220629 21:32:45.948" endtime="20220629 21:32:46.067"/>
+</kw>
+<kw name="connect to device &quot;HUB_VIA-A23-SW01&quot;" library="ats.robot.pyATSRobot" sourcename="connect to device &quot;${device:[^&quot;]+}&quot;">
+<doc>Connect to device connection as defined in testbed.yaml</doc>
+<msg timestamp="20220629 21:32:46.068" level="INFO">Connecting to device 'Device HUB_VIA-A23-SW01, type iosxe'</msg>
+<msg timestamp="20220629 21:32:46.068" level="INFO">kwargs: {}</msg>
+<msg timestamp="20220629 21:32:57.441" level="INFO">2022-06-29 21:32:46,070: %UNICON-INFO: +++ HUB_VIA-A23-SW01 logfile /tmp/HUB_VIA-A23-SW01-cli-20220629T213246069.log +++
+
+2022-06-29 21:32:46,071: %UNICON-INFO: +++ Unicon plugin iosxe (unicon.plugins.iosxe) +++
+Unable to negotiate with 10.211.19.10 port 22: no matching key exchange method found. Their offer: diffie-hellman-group-exchange-sha1,diffie-hellman-group14-sha1
+
+
+2022-06-29 21:32:46,400: %UNICON-INFO: +++ connection to spawn: ssh -l svc_telecom 10.211.19.10, id: 140222825236128 +++
+
+2022-06-29 21:32:46,400: %UNICON-INFO: connection to HUB_VIA-A23-SW01</msg>
+<msg timestamp="20220629 21:32:57.460" level="FAIL">ConnectionError: failed to connect to HUB_VIA-A23-SW01
+Failed while bringing device to "any" state</msg>
+<status status="FAIL" starttime="20220629 21:32:46.067" endtime="20220629 21:32:57.462"/>
+</kw>
+<kw name="connect to device &quot;HUB_VIA-A23-SW02&quot;" library="ats.robot.pyATSRobot" sourcename="connect to device &quot;${device:[^&quot;]+}&quot;">
+<doc>Connect to device connection as defined in testbed.yaml</doc>
+<status status="NOT RUN" starttime="20220629 21:32:57.464" endtime="20220629 21:32:57.464"/>
+</kw>
+<kw name="connect to device &quot;HUB_VIA-A24-SW01&quot;" library="ats.robot.pyATSRobot" sourcename="connect to device &quot;${device:[^&quot;]+}&quot;">
+<doc>Connect to device connection as defined in testbed.yaml</doc>
+<status status="NOT RUN" starttime="20220629 21:32:57.464" endtime="20220629 21:32:57.464"/>
+</kw>
+<kw name="connect to device &quot;HUB_VIA-A25-SW01&quot;" library="ats.robot.pyATSRobot" sourcename="connect to device &quot;${device:[^&quot;]+}&quot;">
+<doc>Connect to device connection as defined in testbed.yaml</doc>
+<status status="NOT RUN" starttime="20220629 21:32:57.466" endtime="20220629 21:32:57.467"/>
+</kw>
+<kw name="connect to device &quot;HUB_VIA-A28-SW01&quot;" library="ats.robot.pyATSRobot" sourcename="connect to device &quot;${device:[^&quot;]+}&quot;">
+<doc>Connect to device connection as defined in testbed.yaml</doc>
+<status status="NOT RUN" starttime="20220629 21:32:57.468" endtime="20220629 21:32:57.469"/>
+</kw>
+<doc>Define the hosts to connect and test connection</doc>
+<tag>Hub Eldorado</tag>
+<status status="FAIL" starttime="20220629 21:32:45.947" endtime="20220629 21:32:57.469">ConnectionError: failed to connect to HUB_VIA-A23-SW01
+Failed while bringing device to "any" state</status>
+</test>
+<test id="s1-t2" name="Profile Configuration">
+<kw name="Profile the system for &quot;config&quot; on devices &quot;HUB_VIA-A23-SW01;HUB_VIA-A23-SW02;HUB_VIA-A24-SW01;HUB_VIA-A25-SW01;HUB_VIA-A28-SW01&quot; as &quot;./snapshots/stable/stable_config&quot;" library="genie.libs.robot.GenieRobot" sourcename="Profile the system for &quot;${feature:[^&quot;]+}&quot; on devices &quot;${device:[^&quot;]+}&quot; as &quot;${name:[^&quot;]+}&quot;">
+<doc>Profile system as per the provided features on the devices</doc>
+<msg timestamp="20220629 21:32:57.472" level="INFO">Start learning device configuration</msg>
+<msg timestamp="20220629 21:33:08.573" level="INFO">2022-06-29 21:32:57,472: %UNICON-WARNING: +++ Reconnecting +++
+Unable to negotiate with 10.211.19.10 port 22: no matching key exchange method found. Their offer: diffie-hellman-group-exchange-sha1,diffie-hellman-group14-sha1
+
+
+2022-06-29 21:32:57,547: %UNICON-INFO: +++ connection to spawn: ssh -l svc_telecom 10.211.19.10, id: 140222824817760 +++
+
+2022-06-29 21:32:57,548: %UNICON-INFO: connection to HUB_VIA-A23-SW01</msg>
+<msg timestamp="20220629 21:33:08.574" level="FAIL">ConnectionError: failed to connect to HUB_VIA-A23-SW01
+Failed while bringing device to "any" state</msg>
+<status status="FAIL" starttime="20220629 21:32:57.472" endtime="20220629 21:33:08.574"/>
+</kw>
+<doc>Get a snapshot of platform information e current configuration</doc>
+<tag>configuration</tag>
+<tag>Hub Eldorado</tag>
+<status status="FAIL" starttime="20220629 21:32:57.470" endtime="20220629 21:33:08.575">ConnectionError: failed to connect to HUB_VIA-A23-SW01
+Failed while bringing device to "any" state</status>
+</test>
+<status status="FAIL" starttime="20220629 21:32:44.518" endtime="20220629 21:33:08.576"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">configuration</stat>
+<stat pass="0" fail="2" skip="0">Hub Eldorado</stat>
+</tag>
+<suite>
+<stat pass="0" fail="2" skip="0" id="s1" name="Stable Snapshot">Stable Snapshot</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220629 21:32:44.509" level="WARN">Command line options --critical and --noncritical have been deprecated. Use --skiponfailure instead.</msg>
+<msg timestamp="20220629 21:32:45.948" level="WARN">Keyword 'genie.libs.robot.GenieRobot.use genie testbed "${testbed}"' is deprecated. Please use the "use testbed "${testbed}" keyword instead.</msg>
+<msg timestamp="20220629 21:32:46.066" level="WARN">Could not load the trigger datafile correctly, did you specify 'uut' device alias?</msg>
+</errors>
+</robot>

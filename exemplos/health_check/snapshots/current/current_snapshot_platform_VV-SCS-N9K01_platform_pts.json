@@ -1,0 +1,669 @@
+{
+    "platform": {
+        "VV-SCS-N9K01": {
+            "py/state": {
+                "callables": {},
+                "device": "VV-SCS-N9K01",
+                "context_manager": {},
+                "attributes": null,
+                "commands": null,
+                "connections": null,
+                "ops_schema": {
+                    "chassis": {
+                        "schema": "*",
+                        "schemaType": {
+                            "py/type": "builtins.str"
+                        },
+                        "missed": [],
+                        "path": []
+                    },
+                    "chassis_sn": {
+                        "schema": "*",
+                        "schemaType": {
+                            "py/type": "builtins.str"
+                        },
+                        "missed": [],
+                        "path": []
+                    },
+                    "rtr_type": {
+                        "schema": "*",
+                        "schemaType": {
+                            "py/type": "builtins.str"
+                        },
+                        "missed": [],
+                        "path": []
+                    },
+                    "os": {
+                        "schema": "*",
+                        "schemaType": {
+                            "py/type": "builtins.str"
+                        },
+                        "missed": [],
+                        "path": []
+                    },
+                    "version": {
+                        "schema": "*",
+                        "schemaType": {
+                            "py/type": "builtins.str"
+                        },
+                        "missed": [],
+                        "path": []
+                    },
+                    "image": {
+                        "schema": "*",
+                        "schemaType": {
+                            "py/type": "builtins.str"
+                        },
+                        "missed": [],
+                        "path": []
+                    },
+                    "config_register": {
+                        "schema": "*",
+                        "schemaType": {
+                            "py/type": "builtins.str"
+                        },
+                        "missed": [],
+                        "path": []
+                    },
+                    "main_mem": {
+                        "schema": "*",
+                        "schemaType": {
+                            "py/type": "builtins.str"
+                        },
+                        "missed": [],
+                        "path": []
+                    },
+                    "dir": {
+                        "schema": "*",
+                        "schemaType": {
+                            "py/type": "builtins.str"
+                        },
+                        "missed": [],
+                        "path": []
+                    },
+                    "redundancy_mode": {
+                        "schema": "*",
+                        "schemaType": {
+                            "py/type": "builtins.str"
+                        },
+                        "missed": [],
+                        "path": []
+                    },
+                    "switchover_reason": {
+                        "schema": "*",
+                        "schemaType": {
+                            "py/type": "builtins.str"
+                        },
+                        "missed": [],
+                        "path": []
+                    },
+                    "redundancy_communication": {
+                        "schema": "*",
+                        "schemaType": {
+                            "py/type": "builtins.str"
+                        },
+                        "missed": [],
+                        "path": []
+                    },
+                    "swstack": {
+                        "schema": "*",
+                        "schemaType": {
+                            "py/type": "builtins.str"
+                        },
+                        "missed": [],
+                        "path": []
+                    },
+                    "issu_rollback_timer_state": {
+                        "schema": "*",
+                        "schemaType": {
+                            "py/type": "builtins.str"
+                        },
+                        "missed": [],
+                        "path": []
+                    },
+                    "issu_rollback_timer_reason": {
+                        "schema": "*",
+                        "schemaType": {
+                            "py/type": "builtins.str"
+                        },
+                        "missed": [],
+                        "path": []
+                    },
+                    "virtual_device": {
+                        "Any  (str) *": {
+                            "name": {
+                                "schema": "*",
+                                "schemaType": {
+                                    "py/type": "builtins.str"
+                                },
+                                "missed": [],
+                                "path": []
+                            },
+                            "status": {
+                                "schema": "*",
+                                "schemaType": {
+                                    "py/type": "builtins.str"
+                                },
+                                "missed": [],
+                                "path": []
+                            },
+                            "membership": {
+                                "Any  (str) *": {
+                                    "type": {
+                                        "schema": "*",
+                                        "schemaType": {
+                                            "py/type": "builtins.str"
+                                        },
+                                        "missed": [],
+                                        "path": []
+                                    },
+                                    "status": {
+                                        "schema": "*",
+                                        "schemaType": {
+                                            "py/type": "builtins.str"
+                                        },
+                                        "missed": [],
+                                        "path": []
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "slot": {
+                        "rp": {
+                            "Any  (str) *": {
+                                "name": {
+                                    "schema": "*",
+                                    "schemaType": {
+                                        "py/type": "builtins.str"
+                                    },
+                                    "missed": [],
+                                    "path": []
+                                },
+                                "state": {
+                                    "schema": "*",
+                                    "schemaType": {
+                                        "py/type": "builtins.str"
+                                    },
+                                    "missed": [],
+                                    "path": []
+                                },
+                                "swstack_role": {
+                                    "schema": "*",
+                                    "schemaType": {
+                                        "py/type": "builtins.str"
+                                    },
+                                    "missed": [],
+                                    "path": []
+                                },
+                                "redundancy_state": {
+                                    "schema": "*",
+                                    "schemaType": {
+                                        "py/type": "builtins.str"
+                                    },
+                                    "missed": [],
+                                    "path": []
+                                },
+                                "uptime": {
+                                    "schema": "*",
+                                    "schemaType": {
+                                        "py/type": "builtins.str"
+                                    },
+                                    "missed": [],
+                                    "path": []
+                                },
+                                "system_image": {
+                                    "schema": "*",
+                                    "schemaType": {
+                                        "py/type": "builtins.str"
+                                    },
+                                    "missed": [],
+                                    "path": []
+                                },
+                                "boot_image": {
+                                    "schema": "*",
+                                    "schemaType": {
+                                        "py/type": "builtins.str"
+                                    },
+                                    "missed": [],
+                                    "path": []
+                                },
+                                "config_register": {
+                                    "schema": "*",
+                                    "schemaType": {
+                                        "py/type": "builtins.str"
+                                    },
+                                    "missed": [],
+                                    "path": []
+                                },
+                                "sn": {
+                                    "schema": "*",
+                                    "schemaType": {
+                                        "py/type": "builtins.str"
+                                    },
+                                    "missed": [],
+                                    "path": []
+                                },
+                                "subslot": {
+                                    "subslot": {
+                                        "name": {
+                                            "schema": "*",
+                                            "schemaType": {
+                                                "py/type": "builtins.str"
+                                            },
+                                            "missed": [],
+                                            "path": []
+                                        },
+                                        "state": {
+                                            "schema": "*",
+                                            "schemaType": {
+                                                "py/type": "builtins.str"
+                                            },
+                                            "missed": [],
+                                            "path": []
+                                        },
+                                        "sn": {
+                                            "schema": "*",
+                                            "schemaType": {
+                                                "py/type": "builtins.str"
+                                            },
+                                            "missed": [],
+                                            "path": []
+                                        }
+                                    }
+                                },
+                                "issu": {
+                                    "in_progress": {
+                                        "schema": "*",
+                                        "schemaType": {
+                                            "py/type": "builtins.str"
+                                        },
+                                        "missed": [],
+                                        "path": []
+                                    },
+                                    "last_operation": {
+                                        "schema": "*",
+                                        "schemaType": {
+                                            "py/type": "builtins.str"
+                                        },
+                                        "missed": [],
+                                        "path": []
+                                    },
+                                    "terminal_state_reached": {
+                                        "schema": "*",
+                                        "schemaType": {
+                                            "py/type": "builtins.str"
+                                        },
+                                        "missed": [],
+                                        "path": []
+                                    },
+                                    "runversion_executed": {
+                                        "schema": "*",
+                                        "schemaType": {
+                                            "py/type": "builtins.str"
+                                        },
+                                        "missed": [],
+                                        "path": []
+                                    }
+                                }
+                            }
+                        },
+                        "lc": {
+                            "Any  (str) *": {
+                                "name": {
+                                    "schema": "*",
+                                    "schemaType": {
+                                        "py/type": "builtins.str"
+                                    },
+                                    "missed": [],
+                                    "path": []
+                                },
+                                "state": {
+                                    "schema": "*",
+                                    "schemaType": {
+                                        "py/type": "builtins.str"
+                                    },
+                                    "missed": [],
+                                    "path": []
+                                },
+                                "sn": {
+                                    "schema": "*",
+                                    "schemaType": {
+                                        "py/type": "builtins.str"
+                                    },
+                                    "missed": [],
+                                    "path": []
+                                },
+                                "subslot": {
+                                    "Any  (str) *": {
+                                        "name": {
+                                            "schema": "*",
+                                            "schemaType": {
+                                                "py/type": "builtins.str"
+                                            },
+                                            "missed": [],
+                                            "path": []
+                                        },
+                                        "state": {
+                                            "schema": "*",
+                                            "schemaType": {
+                                                "py/type": "builtins.str"
+                                            },
+                                            "missed": [],
+                                            "path": []
+                                        },
+                                        "sn": {
+                                            "schema": "*",
+                                            "schemaType": {
+                                                "py/type": "builtins.str"
+                                            },
+                                            "missed": [],
+                                            "path": []
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "oc": {
+                            "Any  (str) *": {
+                                "name": {
+                                    "schema": "*",
+                                    "schemaType": {
+                                        "py/type": "builtins.str"
+                                    },
+                                    "missed": [],
+                                    "path": []
+                                },
+                                "state": {
+                                    "schema": "*",
+                                    "schemaType": {
+                                        "py/type": "builtins.str"
+                                    },
+                                    "missed": [],
+                                    "path": []
+                                },
+                                "sn": {
+                                    "schema": "*",
+                                    "schemaType": {
+                                        "py/type": "builtins.str"
+                                    },
+                                    "missed": [],
+                                    "path": []
+                                }
+                            }
+                        }
+                    }
+                },
+                "diff_ignore": {
+                    "py/reduce": [
+                        {
+                            "py/type": "collections.deque"
+                        },
+                        {
+                            "py/tuple": []
+                        },
+                        null,
+                        {
+                            "py/tuple": [
+                                "maker",
+                                "callables",
+                                "device",
+                                "diff_ignore",
+                                "ops_schema"
+                            ]
+                        }
+                    ]
+                },
+                "virtual_device": {
+                    "1": {
+                        "vd_name": "VV-SCS-N9K01",
+                        "membership": {
+                            "Eth1/54": {
+                                "status": "OK",
+                                "type": "Ethernet"
+                            },
+                            "Eth1/53": {
+                                "status": "OK",
+                                "type": "Ethernet"
+                            },
+                            "Eth1/52": {
+                                "status": "OK",
+                                "type": "Ethernet"
+                            },
+                            "Eth1/51": {
+                                "status": "OK",
+                                "type": "Ethernet"
+                            },
+                            "Eth1/50": {
+                                "status": "OK",
+                                "type": "Ethernet"
+                            },
+                            "Eth1/49": {
+                                "status": "OK",
+                                "type": "Ethernet"
+                            },
+                            "Eth1/48": {
+                                "status": "OK",
+                                "type": "Ethernet"
+                            },
+                            "Eth1/47": {
+                                "status": "OK",
+                                "type": "Ethernet"
+                            },
+                            "Eth1/46": {
+                                "status": "OK",
+                                "type": "Ethernet"
+                            },
+                            "Eth1/45": {
+                                "status": "OK",
+                                "type": "Ethernet"
+                            },
+                            "Eth1/44": {
+                                "status": "OK",
+                                "type": "Ethernet"
+                            },
+                            "Eth1/43": {
+                                "status": "OK",
+                                "type": "Ethernet"
+                            },
+                            "Eth1/42": {
+                                "status": "OK",
+                                "type": "Ethernet"
+                            },
+                            "Eth1/41": {
+                                "status": "OK",
+                                "type": "Ethernet"
+                            },
+                            "Eth1/40": {
+                                "status": "OK",
+                                "type": "Ethernet"
+                            },
+                            "Eth1/39": {
+                                "status": "OK",
+                                "type": "Ethernet"
+                            },
+                            "Eth1/38": {
+                                "status": "OK",
+                                "type": "Ethernet"
+                            },
+                            "Eth1/37": {
+                                "status": "OK",
+                                "type": "Ethernet"
+                            },
+                            "Eth1/36": {
+                                "status": "OK",
+                                "type": "Ethernet"
+                            },
+                            "Eth1/35": {
+                                "status": "OK",
+                                "type": "Ethernet"
+                            },
+                            "Eth1/34": {
+                                "status": "OK",
+                                "type": "Ethernet"
+                            },
+                            "Eth1/33": {
+                                "status": "OK",
+                                "type": "Ethernet"
+                            },
+                            "Eth1/32": {
+                                "status": "OK",
+                                "type": "Ethernet"
+                            },
+                            "Eth1/31": {
+                                "status": "OK",
+                                "type": "Ethernet"
+                            },
+                            "Eth1/30": {
+                                "status": "OK",
+                                "type": "Ethernet"
+                            },
+                            "Eth1/29": {
+                                "status": "OK",
+                                "type": "Ethernet"
+                            },
+                            "Eth1/28": {
+                                "status": "OK",
+                                "type": "Ethernet"
+                            },
+                            "Eth1/27": {
+                                "status": "OK",
+                                "type": "Ethernet"
+                            },
+                            "Eth1/26": {
+                                "status": "OK",
+                                "type": "Ethernet"
+                            },
+                            "Eth1/25": {
+                                "status": "OK",
+                                "type": "Ethernet"
+                            },
+                            "Eth1/24": {
+                                "status": "OK",
+                                "type": "Ethernet"
+                            },
+                            "Eth1/23": {
+                                "status": "OK",
+                                "type": "Ethernet"
+                            },
+                            "Eth1/22": {
+                                "status": "OK",
+                                "type": "Ethernet"
+                            },
+                            "Eth1/21": {
+                                "status": "OK",
+                                "type": "Ethernet"
+                            },
+                            "Eth1/20": {
+                                "status": "OK",
+                                "type": "Ethernet"
+                            },
+                            "Eth1/19": {
+                                "status": "OK",
+                                "type": "Ethernet"
+                            },
+                            "Eth1/18": {
+                                "status": "OK",
+                                "type": "Ethernet"
+                            },
+                            "Eth1/17": {
+                                "status": "OK",
+                                "type": "Ethernet"
+                            },
+                            "Eth1/16": {
+                                "status": "OK",
+                                "type": "Ethernet"
+                            },
+                            "Eth1/15": {
+                                "status": "OK",
+                                "type": "Ethernet"
+                            },
+                            "Eth1/14": {
+                                "status": "OK",
+                                "type": "Ethernet"
+                            },
+                            "Eth1/13": {
+                                "status": "OK",
+                                "type": "Ethernet"
+                            },
+                            "Eth1/12": {
+                                "status": "OK",
+                                "type": "Ethernet"
+                            },
+                            "Eth1/11": {
+                                "status": "OK",
+                                "type": "Ethernet"
+                            },
+                            "Eth1/10": {
+                                "status": "OK",
+                                "type": "Ethernet"
+                            },
+                            "Eth1/9": {
+                                "status": "OK",
+                                "type": "Ethernet"
+                            },
+                            "Eth1/8": {
+                                "status": "OK",
+                                "type": "Ethernet"
+                            },
+                            "Eth1/7": {
+                                "status": "OK",
+                                "type": "Ethernet"
+                            },
+                            "Eth1/6": {
+                                "status": "OK",
+                                "type": "Ethernet"
+                            },
+                            "Eth1/5": {
+                                "status": "OK",
+                                "type": "Ethernet"
+                            },
+                            "Eth1/4": {
+                                "status": "OK",
+                                "type": "Ethernet"
+                            },
+                            "Eth1/3": {
+                                "status": "OK",
+                                "type": "Ethernet"
+                            },
+                            "Eth1/2": {
+                                "status": "OK",
+                                "type": "Ethernet"
+                            },
+                            "Eth1/1": {
+                                "status": "OK",
+                                "type": "Ethernet"
+                            }
+                        },
+                        "vd_status": "active"
+                    }
+                },
+                "dir": "bootflash:",
+                "main_mem": "16399900 kB",
+                "installed_packages": "bfd-2.0.0.0-9.3.4.lib32_n9000",
+                "rp_uptime": 10141195,
+                "slot": {
+                    "rp": {
+                        "1": {
+                            "name": "N9K-C9372PX-E",
+                            "state": "active",
+                            "sn": "FDO20291M7G",
+                            "redundancy_state": "active",
+                            "rp_boot_image": "bootflash:/nxos.9.3.4.bin",
+                            "rp_uptime": 10141195
+                        }
+                    }
+                },
+                "disk_used_space": "5492297728",
+                "disk_free_space": "48094027776",
+                "disk_total_space": "53586325504",
+                "version": "9.3(4)",
+                "image": "bootflash:///nxos.9.3.4.bin",
+                "os": "NX-OS",
+                "rtr_type": "Nexus9000 C9372PX",
+                "chassis": "Nexus9000 C9372PX chassis",
+                "chassis_sn": "FDO20291M7G"
+            }
+        }
+    }
+}

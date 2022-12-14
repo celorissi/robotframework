@@ -1,0 +1,34 @@
+---
+testbed:
+  name: DC Equinix
+  credentials:
+      default:
+        username: svc_telecom
+        password: T313c0m3N015@
+      enable:
+        password: T313c0m3N015@
+
+devices:
+  DCI-EQX-01:
+    connections:
+      defaults:
+        class: unicon.Unicon
+      cli:
+        ip: 172.30.253.42
+        protocol: ssh
+    os: nxos
+    alias: DCI-EQX-01
+    type: 93180YC-EX
+
+  DCI-EQX-02:
+    connections:
+      defaults:
+        class: unicon.Unicon
+      cli:
+        ip: 172.30.253.43
+        protocol: ssh
+    os: nxos
+    alias: DCI-EQX-02
+    type: 93180YC-EX
+
+...

@@ -1,0 +1,2220 @@
+{
+    "vlan": {
+        "VV-SCS-N9K01": {
+            "py/state": {
+                "callables": {},
+                "device": "VV-SCS-N9K01",
+                "context_manager": {},
+                "attributes": null,
+                "commands": null,
+                "connections": null,
+                "ops_schema": {
+                    "info": {
+                        "vlans": {
+                            "interface_vlan_enabled": {
+                                "schema": "*",
+                                "schemaType": {
+                                    "py/type": "builtins.str"
+                                },
+                                "missed": [],
+                                "path": []
+                            },
+                            "vn_segment_vlan_based_enabled": {
+                                "schema": "*",
+                                "schemaType": {
+                                    "py/type": "builtins.str"
+                                },
+                                "missed": [],
+                                "path": []
+                            },
+                            "Any  (str) *": {
+                                "vlan_id": {
+                                    "schema": "*",
+                                    "schemaType": {
+                                        "py/type": "builtins.str"
+                                    },
+                                    "missed": [],
+                                    "path": []
+                                },
+                                "shutdown": {
+                                    "schema": "*",
+                                    "schemaType": {
+                                        "py/type": "builtins.str"
+                                    },
+                                    "missed": [],
+                                    "path": []
+                                },
+                                "name": {
+                                    "schema": "*",
+                                    "schemaType": {
+                                        "py/type": "builtins.str"
+                                    },
+                                    "missed": [],
+                                    "path": []
+                                },
+                                "state": {
+                                    "schema": "*",
+                                    "schemaType": {
+                                        "py/type": "builtins.str"
+                                    },
+                                    "missed": [],
+                                    "path": []
+                                },
+                                "interfaces": {
+                                    "schema": "*",
+                                    "schemaType": {
+                                        "py/type": "builtins.str"
+                                    },
+                                    "missed": [],
+                                    "path": []
+                                },
+                                "vn_segment_id": {
+                                    "schema": "*",
+                                    "schemaType": {
+                                        "py/type": "builtins.str"
+                                    },
+                                    "missed": [],
+                                    "path": []
+                                },
+                                "mode": {
+                                    "schema": "*",
+                                    "schemaType": {
+                                        "py/type": "builtins.str"
+                                    },
+                                    "missed": [],
+                                    "path": []
+                                }
+                            },
+                            "configuration": {
+                                "Any  (str) *": {
+                                    "ip_igmp_snooping": {
+                                        "schema": "*",
+                                        "schemaType": {
+                                            "py/type": "builtins.str"
+                                        },
+                                        "missed": [],
+                                        "path": []
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "diff_ignore": {
+                    "py/reduce": [
+                        {
+                            "py/type": "collections.deque"
+                        },
+                        {
+                            "py/tuple": []
+                        },
+                        null,
+                        {
+                            "py/tuple": [
+                                "maker",
+                                "callables",
+                                "device",
+                                "diff_ignore",
+                                "ops_schema"
+                            ]
+                        }
+                    ]
+                },
+                "info": {
+                    "vlans": {
+                        "interface_vlan_enabled": true,
+                        "3511": {
+                            "vlan_id": "3511",
+                            "name": "NUAGE-VRS-MGMT-B",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "3510": {
+                            "vlan_id": "3510",
+                            "name": "NUAGE-VRS-MGMT-A",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "3508": {
+                            "vlan_id": "3508",
+                            "name": "Transito_AVRS-G-NEXUS",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "3507": {
+                            "vlan_id": "3507",
+                            "name": "SRVS_AD-OVERLAY",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "3506": {
+                            "vlan_id": "3506",
+                            "name": "VRS-OVERLAY-MIRROR-B",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "3505": {
+                            "vlan_id": "3505",
+                            "name": "VRS-OVERLAY-MIRROR-A",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "3504": {
+                            "vlan_id": "3504",
+                            "name": "VRS-OVERLAY-BREAKOUT-B",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "3503": {
+                            "vlan_id": "3503",
+                            "name": "VRS-OVERLAY-BREAKOUT-A",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "3502": {
+                            "vlan_id": "3502",
+                            "name": "CONTROL_PLANE-OVERLAY-DATA-B",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "3501": {
+                            "vlan_id": "3501",
+                            "name": "CONTROL_PLANE-OVERLAY-DATA-A",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "3500": {
+                            "vlan_id": "3500",
+                            "name": "NUAGE-OVERLAY-MGMT",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "1025": {
+                            "vlan_id": "1025",
+                            "name": "internet-FWSM",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Ethernet1/6",
+                                "Ethernet1/20",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "1014": {
+                            "vlan_id": "1014",
+                            "name": "Outside-VV_Internet",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel17",
+                                "Port-channel18",
+                                "Port-channel20",
+                                "Port-channel21",
+                                "Port-channel22",
+                                "Port-channel23",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Port-channel40",
+                                "Port-channel41",
+                                "Ethernet1/13",
+                                "Ethernet1/14",
+                                "Ethernet1/17",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/23",
+                                "Ethernet1/24",
+                                "Ethernet1/27",
+                                "Ethernet1/28",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "999": {
+                            "vlan_id": "999",
+                            "name": "Native_Vlan",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel30",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Port-channel45",
+                                "Ethernet1/1",
+                                "Ethernet1/2",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/40",
+                                "Ethernet1/41",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "992": {
+                            "vlan_id": "992",
+                            "name": "virtual-server_dmz-fw",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel10",
+                                "Port-channel11",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel30",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Port-channel45",
+                                "Ethernet1/1",
+                                "Ethernet1/2",
+                                "Ethernet1/11",
+                                "Ethernet1/12",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/40",
+                                "Ethernet1/41",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "991": {
+                            "vlan_id": "991",
+                            "name": "virtual-server_local",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel30",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Port-channel45",
+                                "Ethernet1/1",
+                                "Ethernet1/2",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/40",
+                                "Ethernet1/41",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "990": {
+                            "vlan_id": "990",
+                            "name": "Zabbix-SCS",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel30",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Port-channel45",
+                                "Ethernet1/1",
+                                "Ethernet1/2",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/40",
+                                "Ethernet1/41",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "983": {
+                            "vlan_id": "983",
+                            "name": "BKP-SCS",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel30",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Port-channel45",
+                                "Ethernet1/1",
+                                "Ethernet1/2",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/40",
+                                "Ethernet1/41",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "982": {
+                            "vlan_id": "982",
+                            "name": "FW-Inside_Backend",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel14",
+                                "Port-channel15",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Ethernet1/15",
+                                "Ethernet1/16",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "981": {
+                            "vlan_id": "981",
+                            "name": "FW-Inside_Parceiros",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel12",
+                                "Port-channel13",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Ethernet1/5",
+                                "Ethernet1/7",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "980": {
+                            "vlan_id": "980",
+                            "name": "Inside-VV_SCS",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel10",
+                                "Port-channel11",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Ethernet1/11",
+                                "Ethernet1/12",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "973": {
+                            "vlan_id": "973",
+                            "name": "WMS-TREINAMENTO",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel30",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Port-channel45",
+                                "Ethernet1/1",
+                                "Ethernet1/2",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/40",
+                                "Ethernet1/41",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "972": {
+                            "vlan_id": "972",
+                            "name": "WMS-DEV",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel30",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Port-channel45",
+                                "Ethernet1/1",
+                                "Ethernet1/2",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/40",
+                                "Ethernet1/41",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "971": {
+                            "vlan_id": "971",
+                            "name": "WMS-QA",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel30",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Port-channel45",
+                                "Ethernet1/1",
+                                "Ethernet1/2",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/40",
+                                "Ethernet1/41",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "970": {
+                            "vlan_id": "970",
+                            "name": "WMS-PRE_PROD",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel30",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Port-channel45",
+                                "Ethernet1/1",
+                                "Ethernet1/2",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/40",
+                                "Ethernet1/41",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "963": {
+                            "vlan_id": "963",
+                            "name": "app-novo-tef",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel14",
+                                "Port-channel15",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel30",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Port-channel45",
+                                "Ethernet1/1",
+                                "Ethernet1/2",
+                                "Ethernet1/15",
+                                "Ethernet1/16",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/40",
+                                "Ethernet1/41",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "962": {
+                            "vlan_id": "962",
+                            "name": "db-novo-tef",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel14",
+                                "Port-channel15",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel30",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Port-channel45",
+                                "Ethernet1/1",
+                                "Ethernet1/2",
+                                "Ethernet1/15",
+                                "Ethernet1/16",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/40",
+                                "Ethernet1/41",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "948": {
+                            "vlan_id": "948",
+                            "name": "WMS-PROD",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel14",
+                                "Port-channel15",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Ethernet1/15",
+                                "Ethernet1/16",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "943": {
+                            "vlan_id": "943",
+                            "name": "VLAN-DB",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel30",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Port-channel45",
+                                "Ethernet1/1",
+                                "Ethernet1/2",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/40",
+                                "Ethernet1/41",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "942": {
+                            "vlan_id": "942",
+                            "name": "VLAN-ADPP",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel30",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Port-channel45",
+                                "Ethernet1/1",
+                                "Ethernet1/2",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/40",
+                                "Ethernet1/41",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "941": {
+                            "vlan_id": "941",
+                            "name": "DMZ-SFTP-VV",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel30",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Port-channel45",
+                                "Ethernet1/1",
+                                "Ethernet1/2",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/40",
+                                "Ethernet1/41",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "940": {
+                            "vlan_id": "940",
+                            "name": "VMWARE-HLG2",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel30",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Port-channel45",
+                                "Ethernet1/1",
+                                "Ethernet1/2",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/40",
+                                "Ethernet1/41",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "939": {
+                            "vlan_id": "939",
+                            "name": "VMWARE-HLG1",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel30",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Port-channel45",
+                                "Ethernet1/1",
+                                "Ethernet1/2",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/40",
+                                "Ethernet1/41",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "938": {
+                            "vlan_id": "938",
+                            "name": "SCS-Front-Infra",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel30",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Port-channel45",
+                                "Ethernet1/1",
+                                "Ethernet1/2",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/40",
+                                "Ethernet1/41",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "935": {
+                            "vlan_id": "935",
+                            "name": "VMWARE-STORAGE",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel30",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Port-channel45",
+                                "Ethernet1/1",
+                                "Ethernet1/2",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/40",
+                                "Ethernet1/41",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "934": {
+                            "vlan_id": "934",
+                            "name": "VMOTION-VMWARE",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel30",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Port-channel45",
+                                "Ethernet1/1",
+                                "Ethernet1/2",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/40",
+                                "Ethernet1/41",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "933": {
+                            "vlan_id": "933",
+                            "name": "VMWARE-GERENCIA",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel30",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Port-channel45",
+                                "Ethernet1/1",
+                                "Ethernet1/2",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/40",
+                                "Ethernet1/41",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "932": {
+                            "vlan_id": "932",
+                            "name": "GER-GLOBAL-DC",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel30",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Port-channel45",
+                                "Ethernet1/1",
+                                "Ethernet1/2",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/40",
+                                "Ethernet1/41",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "931": {
+                            "vlan_id": "931",
+                            "name": "Proxy-corp",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel30",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Port-channel45",
+                                "Ethernet1/1",
+                                "Ethernet1/2",
+                                "Ethernet1/3",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/40",
+                                "Ethernet1/41",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "930": {
+                            "vlan_id": "930",
+                            "name": "Transito_N9K-6509",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel30",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Port-channel45",
+                                "Ethernet1/1",
+                                "Ethernet1/2",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/40",
+                                "Ethernet1/41",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "917": {
+                            "vlan_id": "917",
+                            "name": "DB-Caching",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "916": {
+                            "vlan_id": "916",
+                            "name": "openshift",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel30",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Port-channel45",
+                                "Ethernet1/1",
+                                "Ethernet1/2",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/40",
+                                "Ethernet1/41",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "912": {
+                            "vlan_id": "912",
+                            "name": "poc-vdi",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel30",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Port-channel45",
+                                "Ethernet1/1",
+                                "Ethernet1/2",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/40",
+                                "Ethernet1/41",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "906": {
+                            "vlan_id": "906",
+                            "name": "3CORP",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel12",
+                                "Port-channel13",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel30",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Port-channel45",
+                                "Ethernet1/1",
+                                "Ethernet1/2",
+                                "Ethernet1/5",
+                                "Ethernet1/7",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/40",
+                                "Ethernet1/41",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "882": {
+                            "vlan_id": "882",
+                            "name": "Router-Cielo-TEF",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel12",
+                                "Port-channel13",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Port-channel45",
+                                "Ethernet1/5",
+                                "Ethernet1/7",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/40",
+                                "Ethernet1/41",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "881": {
+                            "vlan_id": "881",
+                            "name": "VVLojas-FIC",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel12",
+                                "Port-channel13",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel30",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Port-channel45",
+                                "Ethernet1/1",
+                                "Ethernet1/2",
+                                "Ethernet1/5",
+                                "Ethernet1/7",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/40",
+                                "Ethernet1/41",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "805": {
+                            "vlan_id": "805",
+                            "name": "OUTSIDE_INTERNET_SD-WAN-EQUINIX",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel30",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Port-channel45",
+                                "Ethernet1/1",
+                                "Ethernet1/2",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/40",
+                                "Ethernet1/41",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "803": {
+                            "vlan_id": "803",
+                            "name": "OUTSIDE_INTERNET_SD-WAN-VVJ-SCS",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel30",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Port-channel45",
+                                "Ethernet1/1",
+                                "Ethernet1/2",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/40",
+                                "Ethernet1/41",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "779": {
+                            "vlan_id": "779",
+                            "name": "TRANSITO_ACI-TO-N9K-INTERNET",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "643": {
+                            "vlan_id": "643",
+                            "name": "Inside_FortiG_LVS0580",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Port-channel45",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/40",
+                                "Ethernet1/41",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "641": {
+                            "vlan_id": "641",
+                            "name": "Fidelity_Private_Label",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Port-channel45",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/40",
+                                "Ethernet1/41",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "632": {
+                            "vlan_id": "632",
+                            "name": "WlanCorp_MGMT",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel30",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Port-channel45",
+                                "Ethernet1/1",
+                                "Ethernet1/2",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/40",
+                                "Ethernet1/41",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "211": {
+                            "vlan_id": "211",
+                            "name": "GERENCIA_SWITCHES",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel30",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Port-channel45",
+                                "Ethernet1/1",
+                                "Ethernet1/2",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/40",
+                                "Ethernet1/41",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "203": {
+                            "vlan_id": "203",
+                            "name": "PF_172.20.3.0/24",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel30",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Port-channel45",
+                                "Ethernet1/1",
+                                "Ethernet1/2",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/40",
+                                "Ethernet1/41",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "202": {
+                            "vlan_id": "202",
+                            "name": "PF_172.20.2.0/24",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel30",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Port-channel45",
+                                "Ethernet1/1",
+                                "Ethernet1/2",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/40",
+                                "Ethernet1/41",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "201": {
+                            "vlan_id": "201",
+                            "name": "PF_172.20.1.0/24",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel30",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Port-channel45",
+                                "Ethernet1/1",
+                                "Ethernet1/2",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/40",
+                                "Ethernet1/41",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "100": {
+                            "vlan_id": "100",
+                            "name": "Rede_Corporativa",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel30",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Port-channel45",
+                                "Ethernet1/1",
+                                "Ethernet1/2",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/40",
+                                "Ethernet1/41",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "83": {
+                            "vlan_id": "83",
+                            "name": "VMWARE_VIA_VAREJO",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel30",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Port-channel45",
+                                "Ethernet1/1",
+                                "Ethernet1/2",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/40",
+                                "Ethernet1/41",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "28": {
+                            "vlan_id": "28",
+                            "name": "CPD_Servidores",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel30",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Port-channel45",
+                                "Ethernet1/1",
+                                "Ethernet1/2",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/40",
+                                "Ethernet1/41",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "6": {
+                            "vlan_id": "6",
+                            "name": "Vlan_TEF",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel14",
+                                "Port-channel15",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Port-channel45",
+                                "Ethernet1/15",
+                                "Ethernet1/16",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/40",
+                                "Ethernet1/41",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "1": {
+                            "vlan_id": "1",
+                            "name": "default",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel25",
+                                "Port-channel26",
+                                "Port-channel31",
+                                "Port-channel32",
+                                "Port-channel33",
+                                "Port-channel34",
+                                "Port-channel35",
+                                "Port-channel36",
+                                "Ethernet1/4",
+                                "Ethernet1/8",
+                                "Ethernet1/9",
+                                "Ethernet1/18",
+                                "Ethernet1/19",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/29",
+                                "Ethernet1/30",
+                                "Ethernet1/31",
+                                "Ethernet1/32",
+                                "Ethernet1/33",
+                                "Ethernet1/34",
+                                "Ethernet1/35",
+                                "Ethernet1/36",
+                                "Ethernet1/37",
+                                "Ethernet1/38",
+                                "Ethernet1/39",
+                                "Ethernet1/42",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48",
+                                "Ethernet1/49",
+                                "Ethernet1/50",
+                                "Ethernet1/51",
+                                "Ethernet1/52",
+                                "Ethernet1/53",
+                                "Ethernet1/54"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "configuration": {
+                            "3511": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "3510": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "3508": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "3507": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "3506": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "3505": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "3504": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "3503": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "3502": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "3501": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "3500": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "1025": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "1014": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "999": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "992": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "991": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "990": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "983": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "982": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "981": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "980": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "973": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "972": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "971": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "970": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "963": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "962": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "948": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "943": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "942": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "941": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "940": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "939": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "938": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "935": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "934": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "933": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "932": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "931": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "930": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "917": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "916": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "912": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "906": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "882": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "881": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "805": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "803": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "779": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "643": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "641": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "632": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "211": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "203": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "202": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "201": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "100": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "83": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "28": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "6": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "1": {
+                                "ip_igmp_snooping": "enabled"
+                            }
+                        },
+                        "vn_segment_vlan_based_enabled": false
+                    }
+                }
+            }
+        }
+    }
+}

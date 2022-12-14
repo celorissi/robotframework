@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.8.10 on linux)" generated="20220629 20:27:46.997" rpa="false" schemaversion="2">
+<suite id="s1" name="Current Snapshot" source="/home/marcelo/robot_framework/robot_2/current_snapshot.robot">
+<test id="s1-t1" name="Connect to devices">
+<kw name="use genie testbed &quot;${testbed}&quot;">
+<msg timestamp="20220629 20:27:48.030" level="FAIL">No keyword with name 'use genie testbed "${testbed}"' found. Did you mean:
+    ats.robot.pyATSRobot.Use Testbed "${testbed}"</msg>
+<status status="FAIL" starttime="20220629 20:27:48.030" endtime="20220629 20:27:48.030"/>
+</kw>
+<kw name="connect to device &quot;VV-DC1-EDGE-01&quot;" library="ats.robot.pyATSRobot" sourcename="connect to device &quot;${device:[^&quot;]+}&quot;">
+<doc>Connect to device connection as defined in testbed.yaml</doc>
+<status status="NOT RUN" starttime="20220629 20:27:48.032" endtime="20220629 20:27:48.032"/>
+</kw>
+<doc>Define the hosts to connect and test connection</doc>
+<tag>equinix</tag>
+<status status="FAIL" starttime="20220629 20:27:48.027" endtime="20220629 20:27:48.032">No keyword with name 'use genie testbed "${testbed}"' found. Did you mean:
+    ats.robot.pyATSRobot.Use Testbed "${testbed}"</status>
+</test>
+<test id="s1-t2" name="Gather Configuration information">
+<kw name="Profile the system for &quot;config&quot; on devices &quot;VV-DC1-EDGE-01&quot; as &quot;${outputdir}/current_config&quot;">
+<msg timestamp="20220629 20:27:48.037" level="FAIL">No keyword with name 'Profile the system for "config" on devices "VV-DC1-EDGE-01" as "${outputdir}/current_config"' found.</msg>
+<status status="FAIL" starttime="20220629 20:27:48.037" endtime="20220629 20:27:48.037"/>
+</kw>
+<doc>Get a snapshot of platform information e current configuration</doc>
+<tag>configuration</tag>
+<tag>equinix</tag>
+<tag>platform</tag>
+<status status="SKIP" starttime="20220629 20:27:48.033" endtime="20220629 20:27:48.038">Test failed but its tags matched '--SkipOnFailure' and it was marked skipped.
+
+Original failure:
+No keyword with name 'Profile the system for "config" on devices "VV-DC1-EDGE-01" as "${outputdir}/current_config"' found.</status>
+</test>
+<test id="s1-t3" name="Compare Configuration">
+<kw name="Compare profile &quot;./reports/stable/stable_platform&quot; with &quot;${outputdir}/current_config&quot; on devices &quot;VV-DC1-EDGE-01&quot;">
+<msg timestamp="20220629 20:27:48.043" level="FAIL">No keyword with name 'Compare profile "./reports/stable/stable_platform" with "${outputdir}/current_config" on devices "VV-DC1-EDGE-01"' found.</msg>
+<status status="FAIL" starttime="20220629 20:27:48.043" endtime="20220629 20:27:48.043"/>
+</kw>
+<doc>Compare the current platform information and configuration with stable</doc>
+<tag>configuration</tag>
+<tag>equinix</tag>
+<tag>platform</tag>
+<status status="SKIP" starttime="20220629 20:27:48.038" endtime="20220629 20:27:48.044">Test failed but its tags matched '--SkipOnFailure' and it was marked skipped.
+
+Original failure:
+No keyword with name 'Compare profile "./reports/stable/stable_platform" with "${outputdir}/current_config" on devices "VV-DC1-EDGE-01"' found.</status>
+</test>
+<status status="FAIL" starttime="20220629 20:27:46.998" endtime="20220629 20:27:48.045"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="2">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="0" skip="2">configuration</stat>
+<stat pass="0" fail="1" skip="2">equinix</stat>
+<stat pass="0" fail="0" skip="2">platform</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="2" id="s1" name="Current Snapshot">Current Snapshot</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220629 20:27:46.992" level="WARN">Command line options --critical and --noncritical have been deprecated. Use --skiponfailure instead.</msg>
+<msg timestamp="20220629 20:27:48.026" level="ERROR">Error in file '/home/marcelo/robot_framework/robot_2/current_snapshot.robot' on line 6: Importing library 'genie.libs.robot.GenieRobotJunos' failed: Module 'genie.libs.robot' does not contain 'GenieRobotJunos'.</msg>
+</errors>
+</robot>

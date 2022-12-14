@@ -1,0 +1,18 @@
+{
+    "config": {
+        "VV-DC1-EDGE-01": {
+            "output": "                                 ^\r\nsyntax error, expecting <command>.\r\n\r\n{master:0}",
+            "exclude": [
+                "!",
+                null,
+                "\r",
+                ""
+            ],
+            "config": {
+                "^": {},
+                "syntax error, expecting <command>.": {},
+                "{master:0}": {}
+            }
+        }
+    }
+}

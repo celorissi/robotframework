@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.1 (Python 3.8.10 on linux)" generated="20221213 17:38:22.030" rpa="false" schemaversion="3">
+<suite id="s1" name="Stable Snapshot" source="/home/marcelo/estudos/devnet/robot_framework/robot_datacenter/stable_snapshot.robot">
+<test id="s1-t1" name="Connect to devices" line="12">
+<kw name="use genie testbed &quot;${testbed}&quot;" library="genie.libs.robot.GenieRobot" sourcename="use genie testbed &quot;${testbed}&quot;">
+<doc>*DEPRECATED* Please use the "use testbed "${testbed}" keyword instead.</doc>
+<msg timestamp="20221213 17:38:23.121" level="WARN">Keyword 'genie.libs.robot.GenieRobot.use genie testbed "${testbed}"' is deprecated. Please use the "use testbed "${testbed}" keyword instead.</msg>
+<msg timestamp="20221213 17:38:23.129" level="WARN">Using the default YAML encoding key since no key was specified in configuration.
+THIS IS A SHARED KEY AND IS NOT SECURE, PLEASE RUN `pyats secret keygen` AND ADD TO YOUR pyats.conf FILE BEFORE ENCODING ANY VALUES.</msg>
+<msg timestamp="20221213 17:38:23.184" level="INFO">+------------------------------------------------------------------------------+
+|                            Genie datafiles used:                             |
++------------------------------------------------------------------------------+</msg>
+<msg timestamp="20221213 17:38:23.185" level="INFO">Trigger datafile          | </msg>
+<msg timestamp="20221213 17:38:23.185" level="INFO">Verification  datafile    | </msg>
+<msg timestamp="20221213 17:38:23.185" level="INFO">Pts datafile              | /home/marcelo/estudos/venv_estudos/lib/python3.8/site-packages/genie/libs/sdk/genie_yamls/pts_datafile.yaml</msg>
+<msg timestamp="20221213 17:38:23.185" level="INFO">Subsection datafile       | /home/marcelo/estudos/venv_estudos/lib/python3.8/site-packages/genie/libs/sdk/genie_yamls/subsection_datafile.yaml</msg>
+<msg timestamp="20221213 17:38:23.185" level="INFO">Config datafile           | None</msg>
+<msg timestamp="20221213 17:38:23.212" level="WARN">Could not load the trigger datafile correctly, did you specify 'uut' device alias?</msg>
+<status status="PASS" starttime="20221213 17:38:23.121" endtime="20221213 17:38:23.213"/>
+</kw>
+<kw name="connect to device &quot;VV-HOR-N9K01&quot;" library="ats.robot.pyATSRobot" sourcename="connect to device &quot;${device:[^&quot;]+}&quot;">
+<doc>Connect to device connection as defined in testbed.yaml</doc>
+<msg timestamp="20221213 17:38:23.214" level="INFO">Connecting to device 'Device VV-HOR-N9K01, type nxos'</msg>
+<msg timestamp="20221213 17:38:23.215" level="INFO">kwargs: {}</msg>
+<msg timestamp="20221213 17:38:25.953" level="INFO">2022-12-13 17:38:23,217: %UNICON-INFO: +++ VV-HOR-N9K01 logfile /tmp/VV-HOR-N9K01-cli-20221213T173823216.log +++
+
+2022-12-13 17:38:23,217: %UNICON-INFO: +++ Unicon plugin nxos (unicon.plugins.nxos) +++
+Cc
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*                                Via Varejo.                              *
+*                   Setor de Redes / Plataforma Baixa                     *
+*   Aviso, qualquer uso nao autorizado do sistema e ilegal podendo ser    *
+* monitorado sem aviso previo e os registros resultantes podem ser usados *
+*                        como prova em tribunal.                          *
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+
+2022-12-13 17:38:23,677: %UNICON-INFO: +++ connection to spawn: ssh -l svc_telecom 10.228.128.11, id: 139727001677008 +++
+
+2022-12-13 17:38:23,678: %UNICON-INFO: connection to VV-HOR-N9K01
+Password: 
+
+Cisco Nexus Operating System (NX-OS) Software
+TAC support: http://www.cisco.com/tac
+Copyright (C) 2002-2020, Cisco and/or its affiliates.
+All rights reserved.
+The copyrights to certain works contained in this software are
+owned by other third parties and used and distributed under their own
+licenses, such as open source.  This software is provided "as is," and unless
+otherwise stated, there is no warranty, express or implied, including but not
+limited to warranties of merchantability and fitness for a particular purpose.
+Certain components of this software are licensed under
+the GNU General Public License (GPL) version 2.0 or 
+GNU General Public License (GPL) version 3.0  or the GNU
+Lesser General Public License (LGPL) Version 2.1 or 
+Lesser General Public License (LGPL) Version 2.0. 
+A copy of each such license is available at
+http://www.opensource.org/licenses/gpl-2.0.php and
+http://opensource.org/licenses/gpl-3.0.html and
+http://www.opensource.org/licenses/lgpl-2.1.php and
+http://www.gnu.org/licenses/old-licenses/library.txt.
+VV-HOR-N9K01# 
+
+2022-12-13 17:38:24,348: %UNICON-INFO: +++ initializing handle +++
+
+2022-12-13 17:38:24,417: %UNICON-INFO: +++ VV-HOR-N9K01 with via 'cli': executing command 'term length 0' +++
+term length 0
+VV-HOR-N9K01# 
+
+2022-12-13 17:38:24,631: %UNICON-INFO: +++ VV-HOR-N9K01 with via 'cli': executing command 'term width 511' +++
+term width 511
+VV-HOR-N9K01# 
+
+2022-12-13 17:38:24,830: %UNICON-INFO: +++ VV-HOR-N9K01 with via 'cli': executing command 'terminal session-timeout 0' +++
+terminal session-timeout 0
+VV-HOR-N9K01# 
+
+2022-12-13 17:38:24,964: %UNICON-INFO: +++ VV-HOR-N9K01 with via 'cli': configure +++
+config term
+Enter configuration commands, one per line. End with CNTL/Z.
+VV-HOR-N9K01(config)# no logging console
+VV-HOR-N9K01(config)# line console
+VV-HOR-N9K01(config-console)# exec-timeout 0
+VV-HOR-N9K01(config-console)# line vty
+VV-HOR-N9K01(config-line)# exec-timeout 0
+VV-HOR-N9K01(config-line)# terminal width 511
+VV-HOR-N9K01(config-line)# end
+VV-HOR-N9K01#</msg>
+<status status="PASS" starttime="20221213 17:38:23.214" endtime="20221213 17:38:25.953"/>
+</kw>
+<kw name="connect to device &quot;VV-HOR-N9K02&quot;" library="ats.robot.pyATSRobot" sourcename="connect to device &quot;${device:[^&quot;]+}&quot;">
+<doc>Connect to device connection as defined in testbed.yaml</doc>
+<msg timestamp="20221213 17:38:25.954" level="INFO">Connecting to device 'Device VV-HOR-N9K02, type nxos'</msg>
+<msg timestamp="20221213 17:38:25.954" level="INFO">kwargs: {}</msg>
+<msg timestamp="20221213 17:38:34.254" level="INFO">2022-12-13 17:38:25,958: %UNICON-INFO: +++ VV-HOR-N9K02 logfile /tmp/VV-HOR-N9K02-cli-20221213T173825956.log +++
+
+2022-12-13 17:38:25,958: %UNICON-INFO: +++ Unicon plugin nxos (unicon.plugins.nxos) +++
+Cc
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*                                Via Varejo.                              *
+*                   Setor de Redes / Plataforma Baixa                     *
+*   Aviso, qualquer uso nao autorizado do sistema e ilegal podendo ser    *
+* monitorado sem aviso previo e os registros resultantes podem ser usados *
+*                        como prova em tribunal.                          *
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+
+2022-12-13 17:38:26,336: %UNICON-INFO: +++ connection to spawn: ssh -l svc_telecom 10.228.128.12, id: 139727001285152 +++
+
+2022-12-13 17:38:26,337: %UNICON-INFO: connection to VV-HOR-N9K02
+Password: 
+
+Cisco Nexus Operating System (NX-OS) Software
+TAC support: http://www.cisco.com/tac
+Copyright (C) 2002-2020, Cisco and/or its affiliates.
+All rights reserved.
+The copyrights to certain works contained in this software are
+owned by other third parties and used and distributed under their own
+licenses, such as open source.  This software is provided "as is," and unless
+otherwise stated, there is no warranty, express or implied, including but not
+limited to warranties of merchantability and fitness for a particular purpose.
+Certain components of this software are licensed under
+the GNU General Public License (GPL) version 2.0 or 
+GNU General Public License (GPL) version 3.0  or the GNU
+Lesser General Public License (LGPL) Version 2.1 or 
+Lesser General Public License (LGPL) Version 2.0. 
+A copy of each such license is available at
+http://www.opensource.org/licenses/gpl-2.0.php and
+http://opensource.org/licenses/gpl-3.0.html and
+http://www.opensource.org/licenses/lgpl-2.1.php and
+http://www.gnu.org/licenses/old-licenses/library.txt.
+VV-HOR-N9K02# 
+
+2022-12-13 17:38:26,988: %UNICON-INFO: +++ initializing handle +++
+
+2022-12-13 17:38:27,057: %UNICON-INFO: +++ VV-HOR-N9K02 with via 'cli': executing command 'term length 0' +++
+term length 0
+VV-HOR-N9K02# 
+
+2022-12-13 17:38:27,270: %UNICON-INFO: +++ VV-HOR-N9K02 with via 'cli': executing command 'term width 511' +++
+term width 511
+VV-HOR-N9K02# 
+
+2022-12-13 17:38:27,468: %UNICON-INFO: +++ VV-HOR-N9K02 with via 'cli': executing command 'terminal session-timeout 0' +++
+terminal session-timeout 0
+VV-HOR-N9K02# 
+
+2022-12-13 17:38:27,603: %UNICON-INFO: +++ VV-HOR-N9K02 with via 'cli': configure +++
+config term
+Enter configuration commands, one per line. End with CNTL/Z.
+VV-HOR-N9K02(config)# no logging console
+VV-HOR-N9K02(config)# line console
+VV-HOR-N9K02(config-console)# exec-timeout 0
+VV-HOR-N9K02(config-console)# line vty
+VV-HOR-N9K02(config-line)# exec-timeout 0
+VV-HOR-N9K02(config-line)# terminal width 511</msg>
+<errors>
+<msg timestamp="20221213 17:38:23.121" level="WARN">Keyword 'genie.libs.robot.GenieRobot.use genie testbed "${testbed}"' is deprecated. Please use the "use testbed "${testbed}" keyword instead.</msg>
+<msg timestamp="20221213 17:38:23.129" level="WARN">Using the default YAML encoding key since no key was specified in configuration.
+THIS IS A SHARED KEY AND IS NOT SECURE, PLEASE RUN `pyats secret keygen` AND ADD TO YOUR pyats.conf FILE BEFORE ENCODING ANY VALUES.</msg>
+<msg timestamp="20221213 17:38:23.212" level="WARN">Could not load the trigger datafile correctly, did you specify 'uut' device alias?</msg>
+<msg timestamp="20221213 17:38:34.255" level="ERROR">Execution stopped by user.</msg>
+</errors>
+</robot>

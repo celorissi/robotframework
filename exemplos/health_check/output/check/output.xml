@@ -1,0 +1,3953 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.8.5 on linux)" generated="20201214 10:59:03.684" rpa="false">
+<suite id="s1" name="Check Count" source="/home/fassampaio/netdevops/health_check/check_count.robot">
+<test id="s1-t1" name="Connect to devices">
+<kw name="use genie testbed &quot;${testbed}&quot;" library="genie.libs.robot.GenieRobot">
+<doc>Create the genie testbed</doc>
+<msg timestamp="20201214 10:59:04.235" level="INFO">+------------------------------------------------------------------------------+
+|                            Genie datafiles used:                             |
++------------------------------------------------------------------------------+</msg>
+<msg timestamp="20201214 10:59:04.235" level="INFO">Trigger datafile          | </msg>
+<msg timestamp="20201214 10:59:04.236" level="INFO">Verification  datafile    | </msg>
+<msg timestamp="20201214 10:59:04.236" level="INFO">Pts datafile              | /home/fassampaio/netdevops/lib/python3.8/site-packages/genie/libs/sdk/genie_yamls/pts_datafile.yaml</msg>
+<msg timestamp="20201214 10:59:04.236" level="INFO">Subsection datafile       | /home/fassampaio/netdevops/lib/python3.8/site-packages/genie/libs/sdk/genie_yamls/subsection_datafile.yaml</msg>
+<msg timestamp="20201214 10:59:04.236" level="INFO">Config datafile           | None</msg>
+<msg timestamp="20201214 10:59:04.248" level="WARN">Could not load the Datafile correctly</msg>
+<status status="PASS" starttime="20201214 10:59:04.212" endtime="20201214 10:59:04.248"></status>
+</kw>
+<kw name="connect to device &quot;VV-SCS-N9K02&quot;" library="ats.robot.pyATSRobot">
+<doc>Connect to device connection as defined in testbed.yaml</doc>
+<msg timestamp="20201214 10:59:04.249" level="INFO">Connecting to device 'Device VV-SCS-N9K02, type C9372PX'</msg>
+<msg timestamp="20201214 10:59:04.249" level="INFO">kwargs: {}</msg>
+<msg timestamp="20201214 10:59:07.084" level="INFO">2020-12-14 10:59:04,250: %UNICON-INFO: +++ VV-SCS-N9K02 logfile /tmp/VV-SCS-N9K02-cli-20201214T105904249.log +++
+
+2020-12-14 10:59:04,250: %UNICON-INFO: +++ Unicon plugin nxos +++
+User Access Verification
+
+
+2020-12-14 10:59:04,878: %UNICON-INFO: +++ connection to spawn: ssh -l svc_telecom 10.211.10.101, id: 140665115646608 +++
+
+2020-12-14 10:59:04,878: %UNICON-INFO: connection to VV-SCS-N9K02
+Password: 
+
+Cisco Nexus Operating System (NX-OS) Software
+TAC support: http://www.cisco.com/tac
+Copyright (C) 2002-2020, Cisco and/or its affiliates.
+All rights reserved.
+The copyrights to certain works contained in this software are
+owned by other third parties and used and distributed under their own
+licenses, such as open source.  This software is provided "as is," and unless
+otherwise stated, there is no warranty, express or implied, including but not
+limited to warranties of merchantability and fitness for a particular purpose.
+Certain components of this software are licensed under
+the GNU General Public License (GPL) version 2.0 or 
+GNU General Public License (GPL) version 3.0  or the GNU
+Lesser General Public License (LGPL) Version 2.1 or 
+Lesser General Public License (LGPL) Version 2.0. 
+A copy of each such license is available at
+http://www.opensource.org/licenses/gpl-2.0.php and
+http://opensource.org/licenses/gpl-3.0.html and
+http://www.opensource.org/licenses/lgpl-2.1.php and
+http://www.gnu.org/licenses/old-licenses/library.txt.
+VV-SCS-N9K02# 
+
+2020-12-14 10:59:05,608: %UNICON-INFO: +++ initializing handle +++
+
+2020-12-14 10:59:05,609: %UNICON-INFO: +++ VV-SCS-N9K02: executing command 'term length 0' +++
+term length 0
+VV-SCS-N9K02# 
+
+2020-12-14 10:59:05,773: %UNICON-INFO: +++ VV-SCS-N9K02: executing command 'term width 511' +++
+term width 511
+VV-SCS-N9K02# 
+
+2020-12-14 10:59:05,934: %UNICON-INFO: +++ VV-SCS-N9K02: executing command 'terminal session-timeout 0' +++
+terminal session-timeout 0
+VV-SCS-N9K02# 
+
+2020-12-14 10:59:06,107: %UNICON-INFO: +++ VV-SCS-N9K02: configure +++
+config term
+Enter configuration commands, one per line. End with CNTL/Z.
+VV-SCS-N9K02(config)# no logging console
+VV-SCS-N9K02(config)# line console
+VV-SCS-N9K02(config-console)# exec-timeout 0
+VV-SCS-N9K02(config-console)# line vty
+VV-SCS-N9K02(config-line)# exec-timeout 0
+VV-SCS-N9K02(config-line)# terminal width 511
+VV-SCS-N9K02(config-line)# end
+VV-SCS-N9K02#</msg>
+<status status="PASS" starttime="20201214 10:59:04.248" endtime="20201214 10:59:07.084"></status>
+</kw>
+<status status="PASS" starttime="20201214 10:59:04.211" endtime="20201214 10:59:07.085" critical="yes"></status>
+</test>
+<test id="s1-t2" name="Verify OSPF neighbor count">
+<kw name="verify count &quot;2&quot; &quot;ospf neighbors&quot; on device &quot;VV-SCS-N9K02&quot;" library="genie.libs.robot.GenieRobot">
+<doc>Verify that a specific number of &lt;...&gt; is &lt;...&gt; on a device.</doc>
+<msg timestamp="20201214 10:59:07.682" level="INFO">Could not learn &lt;class 'genie.libs.parser.nxos.show_ospf.ShowIpOspf'&gt;
+Parser Output is empty</msg>
+<msg timestamp="20201214 10:59:09.071" level="INFO">Could not learn &lt;class 'genie.libs.parser.nxos.show_ospf.ShowIpOspfVirtualLinks'&gt;
+Parser Output is empty</msg>
+<msg timestamp="20201214 10:59:09.547" level="INFO">Could not learn &lt;class 'genie.libs.parser.nxos.show_ospf.ShowIpOspfShamLinks'&gt;
+Invalid command has been executed</msg>
+<msg timestamp="20201214 10:59:09.550" level="INFO">+====================================================================================================================================================+</msg>
+<msg timestamp="20201214 10:59:09.551" level="INFO">| Commands for learning feature 'Ospf'                                                                                                               |</msg>
+<msg timestamp="20201214 10:59:09.551" level="INFO">+====================================================================================================================================================+</msg>
+<msg timestamp="20201214 10:59:09.551" level="INFO">| - Parsed commands                                                                                                                                  |</msg>
+<msg timestamp="20201214 10:59:09.552" level="INFO">|----------------------------------------------------------------------------------------------------------------------------------------------------|</msg>
+<msg timestamp="20201214 10:59:09.552" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_feature.ShowFeature'&gt;                                                                                   |</msg>
+<msg timestamp="20201214 10:59:09.553" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_ospf.ShowIpOspfMplsLdpInterface'&gt;, arguments: {'interface':'','vrf':'all'}                              |</msg>
+<msg timestamp="20201214 10:59:09.554" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_ospf.ShowIpOspfDatabaseRouterDetail'&gt;, arguments: {'vrf':'all'}                                         |</msg>
+<msg timestamp="20201214 10:59:09.554" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_ospf.ShowIpOspfDatabaseNetworkDetail'&gt;, arguments: {'vrf':'all'}                                        |</msg>
+<msg timestamp="20201214 10:59:09.555" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_ospf.ShowIpOspfDatabaseSummaryDetail'&gt;, arguments: {'vrf':'all'}                                        |</msg>
+<msg timestamp="20201214 10:59:09.555" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_ospf.ShowIpOspfDatabaseExternalDetail'&gt;, arguments: {'vrf':'all'}                                       |</msg>
+<msg timestamp="20201214 10:59:09.555" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_ospf.ShowIpOspfDatabaseOpaqueAreaDetail'&gt;, arguments: {'vrf':'all'}                                     |</msg>
+<msg timestamp="20201214 10:59:09.555" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_ospf.ShowIpOspfInterface'&gt;, arguments: {'interface':'','vrf':'all'}                                     |</msg>
+<msg timestamp="20201214 10:59:09.556" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_ospf.ShowIpOspfNeighborDetail'&gt;, arguments: {'neighbor':'','vrf':'all'}                                 |</msg>
+<msg timestamp="20201214 10:59:09.556" level="INFO">|====================================================================================================================================================|</msg>
+<msg timestamp="20201214 10:59:09.556" level="INFO">| - Commands not accepted on the device                                                                                                              |</msg>
+<msg timestamp="20201214 10:59:09.556" level="INFO">|----------------------------------------------------------------------------------------------------------------------------------------------------|</msg>
+<msg timestamp="20201214 10:59:09.556" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_ospf.ShowIpOspfShamLinks'&gt;, arguments: {'vrf':'all'}                                                    |</msg>
+<msg timestamp="20201214 10:59:09.557" level="INFO">|====================================================================================================================================================|</msg>
+<msg timestamp="20201214 10:59:09.557" level="INFO">| - Commands with empty output                                                                                                                       |</msg>
+<msg timestamp="20201214 10:59:09.557" level="INFO">|----------------------------------------------------------------------------------------------------------------------------------------------------|</msg>
+<msg timestamp="20201214 10:59:09.557" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_ospf.ShowIpOspf'&gt;, arguments: {'vrf':'all'}                                                             |</msg>
+<msg timestamp="20201214 10:59:09.557" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_ospf.ShowIpOspfVirtualLinks'&gt;, arguments: {'vrf':'all'}                                                 |</msg>
+<msg timestamp="20201214 10:59:09.558" level="INFO">|====================================================================================================================================================|</msg>
+<msg timestamp="20201214 10:59:10.107" level="INFO">2020-12-14 10:59:07,275: %UNICON-INFO: +++ VV-SCS-N9K02: executing command 'show feature' +++
+show feature
+Feature Name          Instance  State   
+--------------------  --------  --------
+Flexlink               1          disabled
+analytics              1          disabled
+bash-shell             1          disabled
+bfd                    1          disabled
+bgp                    1          enabled 
+bulkstat               1          disabled
+cable-management       1          disabled
+catena                 1          disabled
+container-tracker      1          disabled
+macsec                 1          disabled
+dhcp                   1          enabled 
+dot1x                  1          disabled
+eigrp                  1          disabled
+eigrp                  2          disabled
+eigrp                  3          disabled
+eigrp                  4          disabled
+eigrp                  5          disabled
+eigrp                  6          disabled
+eigrp                  7          disabled
+eigrp                  8          disabled
+eigrp                  9          disabled
+eigrp                  10         disabled
+eigrp                  11         disabled
+eigrp                  12         disabled
+eigrp                  13         disabled
+eigrp                  14         disabled
+eigrp                  15         disabled
+eigrp                  16         disabled
+eth-port-sec           1          disabled
+evb                    1          disabled
+evc                    1          disabled
+evmed                  1          disabled
+fabric-access          1          disabled
+fabric_mcast           1          disabled
+fport-channel-trunk    1          disabled
+grpc                   1          disabled
+hardware-telemetry     1          disabled
+hmm                    1          disabled
+hsrp_engine            1          enabled 
+icam                   1          disabled
+imp                    1          disabled
+interface-vlan         1          enabled 
+isis                   1          disabled
+isis                   2          disabled
+isis                   3          disabled
+isis                   4          disabled
+isis                   5          disabled
+isis                   6          disabled
+isis                   7          disabled
+isis                   8          disabled
+isis                   9          disabled
+isis                   10         disabled
+isis                   11         disabled
+isis                   12         disabled
+isis                   13         disabled
+isis                   14         disabled
+isis                   15         disabled
+isis                   16         disabled
+itd                    1          disabled
+l2vpn                  1          disabled
+l3vpn                  1          disabled
+lacp                   1          enabled 
+ldap                   1          disabled
+ldp                    1          disabled
+license-smart          1          disabled
+lldp                   1          disabled
+mpls-evpn              1          disabled
+mpls_oam               1          disabled
+mpls_static            1          disabled
+msdp                   1          disabled
+mvpn                   1          disabled
+mvrp                   1          disabled
+nat                    1          disabled
+nbm                    1          disabled
+netconf                1          disabled
+ngmvpn                 1          disabled
+ngoam                  1          disabled
+npiv                   1          disabled
+nve                    1          disabled
+nxapi                  1          disabled
+nxsdk_app1             1          disabled
+nxsdk_app10            1          disabled
+nxsdk_app11            1          disabled
+nxsdk_app12            1          disabled
+nxsdk_app13            1          disabled
+nxsdk_app14            1          disabled
+nxsdk_app15            1          disabled
+nxsdk_app16            1          disabled
+nxsdk_app17            1          disabled
+nxsdk_app18            1          disabled
+nxsdk_app19            1          disabled
+nxsdk_app2             1          disabled
+nxsdk_app20            1          disabled
+nxsdk_app21            1          disabled
+nxsdk_app22            1          disabled
+nxsdk_app23            1          disabled
+nxsdk_app24            1          disabled
+nxsdk_app25            1          disabled
+nxsdk_app26            1          disabled
+nxsdk_app27            1          disabled
+nxsdk_app28            1          disabled
+nxsdk_app29            1          disabled
+nxsdk_app3             1          disabled
+nxsdk_app30            1          disabled
+nxsdk_app31            1          disabled
+nxsdk_app32            1          disabled
+nxsdk_app4             1          disabled
+nxsdk_app5             1          disabled
+nxsdk_app6             1          disabled
+nxsdk_app7             1          disabled
+nxsdk_app8             1          disabled
+nxsdk_app9             1          disabled
+nxsdk_mgr              1          disabled
+ofm                    1          disabled
+onep                   1          disabled
+openflow               1          disabled
+ospf                   1          enabled 
+ospf                   2          enabled(not-running)
+ospf                   3          enabled(not-running)
+ospf                   4          enabled(not-running)
+ospf                   5          enabled(not-running)
+ospf                   6          enabled(not-running)
+ospf                   7          enabled(not-running)
+ospf                   8          enabled(not-running)
+ospf                   9          enabled(not-running)
+ospf                   10         enabled(not-running)
+ospf                   11         enabled(not-running)
+ospf                   12         enabled(not-running)
+ospf                   13         enabled(not-running)
+ospf                   14         enabled(not-running)
+ospf                   15         enabled(not-running)
+ospf                   16         enabled(not-running)
+ospfv3                 1          disabled
+ospfv3                 2          disabled
+ospfv3                 3          disabled
+ospfv3                 4          disabled
+ospfv3                 5          disabled
+ospfv3                 6          disabled
+ospfv3                 7          disabled
+ospfv3                 8          disabled
+ospfv3                 9          disabled
+ospfv3                 10         disabled
+ospfv3                 11         disabled
+ospfv3                 12         disabled
+ospfv3                 13         disabled
+ospfv3                 14         disabled
+ospfv3                 15         disabled
+ospfv3                 16         disabled
+pbr                    1          enabled 
+pim                    1          disabled
+pim6                   1          disabled
+plb                    1          disabled
+poe                    1          disabled
+private-vlan           1          disabled
+privilege              1          disabled
+ptp                    1          disabled
+restconf               1          disabled
+rip                    1          disabled
+rip                    2          disabled
+rip                    3          disabled
+rip                    4          disabled
+rise                   1          disabled
+scheduler              1          disabled
+scpServer              1          disabled
+segment-routing        1          disabled
+sflow                  1          enabled 
+sftpServer             1          disabled
+sla_responder          1          disabled
+sla_sender             1          enabled 
+sla_twamp              1          disabled
+smart-channel          1          disabled
+srte                   1          disabled
+srv6                   1          disabled
+sshServer              1          enabled 
+tacacs                 1          enabled 
+telemetry              1          disabled
+telnetServer           1          disabled
+tun_enc_mgr            1          disabled
+tunnel                 1          disabled
+udld                   1          enabled 
+vmtracker              1          disabled
+vni                    1          disabled
+vnseg_vlan             1          disabled
+vpc                    1          enabled 
+vrrp                   1          disabled
+vrrpv3                 1          disabled
+vtp                    1          disabled
+VV-SCS-N9K02# 
+
+2020-12-14 10:59:07,492: %UNICON-INFO: +++ VV-SCS-N9K02: executing command 'show ip ospf vrf all' +++
+show ip ospf vrf all
+
+ Routing Process CORE with ID 10.211.17.254 VRF default
+ Routing Process Instance Number 1
+ Stateful High Availability enabled
+ Graceful-restart is configured
+   Grace period: 60 state: Inactive 
+   Last graceful restart exit status: None
+ Supports only single TOS(TOS0) routes
+ Supports opaque LSA
+ This router is an autonomous system boundary
+ Administrative distance 110
+ Reference Bandwidth is 40000 Mbps
+ SPF throttling delay time of 200.000 msecs,
+   SPF throttling hold time of 1000.000 msecs, 
+   SPF throttling maximum wait time of 5000.000 msecs
+ LSA throttling start time of 0.000 msecs,
+   LSA throttling hold interval of 5000.000 msecs, 
+   LSA throttling maximum wait time of 5000.000 msecs
+ Minimum LSA arrival 1000.000 msec
+ LSA group pacing timer 10 secs
+ Maximum paths to destination 8
+ Number of external LSAs 90, checksum sum 0x2fd12a
+ Number of opaque AS LSAs 0, checksum sum 0
+ Number of areas is 1, 1 normal, 0 stub, 0 nssa
+ Number of active areas is 1, 1 normal, 0 stub, 0 nssa
+ Install discard route for summarized external routes.
+ Install discard route for summarized internal routes.
+ Default Passive Interface is enabled
+   Area (0.0.0.2) 
+        Area has existed for 17w1d
+        Interfaces in this area: 2 Active interfaces: 2
+        Passive interfaces: 0  Loopback interfaces: 0
+        No authentication available
+        SPF calculation has run 23 times
+         Last SPF ran for 0.000506s
+        Area ranges are
+        Number of LSAs: 4, checksum sum 0x180c4
+VV-SCS-N9K02# 
+
+2020-12-14 10:59:07,682: %UNICON-INFO: +++ VV-SCS-N9K02: executing command 'show ip ospf mpls ldp interface vrf all' +++
+show ip ospf mpls ldp interface vrf all
+Ethernet1/43.79 - Process ID CORE VRF default, area 0.0.0.2
+    LDP Autoconfig not enabled
+    LDP Sync not enabled, not required
+    State P2P, Network type P2P
+Ethernet1/44.79 - Process ID CORE VRF default, area 0.0.0.2
+    LDP Autoconfig not enabled
+    LDP Sync not enabled, not required
+    State P2P, Network type P2P
+VV-SCS-N9K02# 
+
+2020-12-14 10:59:07,890: %UNICON-INFO: +++ VV-SCS-N9K02: executing command 'show ip ospf database router detail vrf all' +++
+show ip ospf database router detail vrf all
+        OSPF Router with ID (10.211.17.254) (Process ID CORE VRF default)
+
+                Router Link States (Area 0.0.0.2)
+
+   LS age: 380
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Router Links
+   Link State ID: 3.3.3.3 
+   Advertising Router: 3.3.3.3
+   LS Seq Number: 0x80006558
+   Checksum: 0xf2fd
+   Length: 72
+   AS border router
+    Number of links: 4
+
+     Link connected to: a Router (point-to-point)
+     (Link ID) Neighboring Router ID: 10.211.17.253
+     (Link Data) Router Interface address: 10.129.120.21
+       Number of TOS metrics: 0
+         TOS   0 Metric: 4
+
+     Link connected to: a Stub Network
+      (Link ID) Network/Subnet Number: 10.129.120.20
+      (Link Data) Network Mask: 255.255.255.252
+       Number of TOS metrics: 0
+         TOS   0 Metric: 4
+
+     Link connected to: a Router (point-to-point)
+     (Link ID) Neighboring Router ID: 10.211.17.254
+     (Link Data) Router Interface address: 10.129.120.33
+       Number of TOS metrics: 0
+         TOS   0 Metric: 4
+
+     Link connected to: a Stub Network
+      (Link ID) Network/Subnet Number: 10.129.120.32
+      (Link Data) Network Mask: 255.255.255.252
+       Number of TOS metrics: 0
+         TOS   0 Metric: 4
+
+   LS age: 343
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Router Links
+   Link State ID: 4.4.4.4 
+   Advertising Router: 4.4.4.4
+   LS Seq Number: 0x8000655c
+   Checksum: 0x05df
+   Length: 72
+   AS border router
+    Number of links: 4
+
+     Link connected to: a Router (point-to-point)
+     (Link ID) Neighboring Router ID: 10.211.17.254
+     (Link Data) Router Interface address: 10.129.120.29
+       Number of TOS metrics: 0
+         TOS   0 Metric: 4
+
+     Link connected to: a Stub Network
+      (Link ID) Network/Subnet Number: 10.129.120.28
+      (Link Data) Network Mask: 255.255.255.252
+       Number of TOS metrics: 0
+         TOS   0 Metric: 4
+
+     Link connected to: a Router (point-to-point)
+     (Link ID) Neighboring Router ID: 10.211.17.253
+     (Link Data) Router Interface address: 10.129.120.25
+       Number of TOS metrics: 0
+         TOS   0 Metric: 4
+
+     Link connected to: a Stub Network
+      (Link ID) Network/Subnet Number: 10.129.120.24
+      (Link Data) Network Mask: 255.255.255.252
+       Number of TOS metrics: 0
+         TOS   0 Metric: 4
+
+   LS age: 378
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Router Links
+   Link State ID: 10.211.17.253 
+   Advertising Router: 10.211.17.253
+   LS Seq Number: 0x8000165b
+   Checksum: 0x1830
+   Length: 72
+   AS border router
+    Number of links: 4
+
+     Link connected to: a Router (point-to-point)
+     (Link ID) Neighboring Router ID: 3.3.3.3
+     (Link Data) Router Interface address: 10.129.120.22
+       Number of TOS metrics: 0
+         TOS   0 Metric: 4
+
+     Link connected to: a Stub Network
+      (Link ID) Network/Subnet Number: 10.129.120.20
+      (Link Data) Network Mask: 255.255.255.252
+       Number of TOS metrics: 0
+         TOS   0 Metric: 4
+
+     Link connected to: a Router (point-to-point)
+     (Link ID) Neighboring Router ID: 4.4.4.4
+     (Link Data) Router Interface address: 10.129.120.26
+       Number of TOS metrics: 0
+         TOS   0 Metric: 4
+
+     Link connected to: a Stub Network
+      (Link ID) Network/Subnet Number: 10.129.120.24
+      (Link Data) Network Mask: 255.255.255.252
+       Number of TOS metrics: 0
+         TOS   0 Metric: 4
+
+   LS age: 1511
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Router Links
+   Link State ID: 10.211.17.254 
+   Advertising Router: 10.211.17.254
+   LS Seq Number: 0x80001659
+   Checksum: 0x6fb8
+   Length: 72
+   AS border router
+    Number of links: 4
+
+     Link connected to: a Router (point-to-point)
+     (Link ID) Neighboring Router ID: 4.4.4.4
+     (Link Data) Router Interface address: 10.129.120.30
+       Number of TOS metrics: 0
+         TOS   0 Metric: 4
+
+     Link connected to: a Stub Network
+      (Link ID) Network/Subnet Number: 10.129.120.28
+      (Link Data) Network Mask: 255.255.255.252
+       Number of TOS metrics: 0
+         TOS   0 Metric: 4
+
+     Link connected to: a Router (point-to-point)
+     (Link ID) Neighboring Router ID: 3.3.3.3
+     (Link Data) Router Interface address: 10.129.120.34
+       Number of TOS metrics: 0
+         TOS   0 Metric: 4
+
+     Link connected to: a Stub Network
+      (Link ID) Network/Subnet Number: 10.129.120.32
+      (Link Data) Network Mask: 255.255.255.252
+       Number of TOS metrics: 0
+         TOS   0 Metric: 4
+
+
+VV-SCS-N9K02# 
+
+2020-12-14 10:59:08,123: %UNICON-INFO: +++ VV-SCS-N9K02: executing command 'show ip ospf database network detail vrf all' +++
+show ip ospf database network detail vrf all
+        OSPF Router with ID (10.211.17.254) (Process ID CORE VRF default)
+
+VV-SCS-N9K02# 
+
+2020-12-14 10:59:08,289: %UNICON-INFO: +++ VV-SCS-N9K02: executing command 'show ip ospf database summary detail vrf all' +++
+show ip ospf database summary detail vrf all
+        OSPF Router with ID (10.211.17.254) (Process ID CORE VRF default)
+
+VV-SCS-N9K02# 
+
+2020-12-14 10:59:08,452: %UNICON-INFO: +++ VV-SCS-N9K02: executing command 'show ip ospf database external detail vrf all' +++
+show ip ospf database external detail vrf all
+        OSPF Router with ID (10.211.17.254) (Process ID CORE VRF default)
+
+                Type-5 AS External Link States 
+
+   LS age: 459
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 0.0.0.0 (Network address)
+   Advertising Router: 10.211.17.253
+   LS Seq Number: 0x80001655
+   Checksum: 0x9ddc
+   Length: 36
+   Network Mask: /0
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 1
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1582
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 0.0.0.0 (Network address)
+   Advertising Router: 10.211.17.254
+   LS Seq Number: 0x80001656
+   Checksum: 0x95e2
+   Length: 36
+   Network Mask: /0
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 1
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1821
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.1.0 (Network address)
+   Advertising Router: 3.3.3.3
+   LS Seq Number: 0x80005ef4
+   Checksum: 0xae25
+   Length: 36
+   Network Mask: /24
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1394
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.1.0 (Network address)
+   Advertising Router: 4.4.4.4
+   LS Seq Number: 0x80005ef4
+   Checksum: 0x903f
+   Length: 36
+   Network Mask: /24
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1821
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.2.0 (Network address)
+   Advertising Router: 3.3.3.3
+   LS Seq Number: 0x80006356
+   Checksum: 0xcca0
+   Length: 36
+   Network Mask: /23
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1394
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.2.0 (Network address)
+   Advertising Router: 4.4.4.4
+   LS Seq Number: 0x80006356
+   Checksum: 0xaeba
+   Length: 36
+   Network Mask: /23
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1821
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.4.0 (Network address)
+   Advertising Router: 3.3.3.3
+   LS Seq Number: 0x80006354
+   Checksum: 0xbfac
+   Length: 36
+   Network Mask: /24
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1394
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.4.0 (Network address)
+   Advertising Router: 4.4.4.4
+   LS Seq Number: 0x80006354
+   Checksum: 0xa1c6
+   Length: 36
+   Network Mask: /24
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1821
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.5.0 (Network address)
+   Advertising Router: 3.3.3.3
+   LS Seq Number: 0x80006354
+   Checksum: 0xb4b6
+   Length: 36
+   Network Mask: /24
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1394
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.5.0 (Network address)
+   Advertising Router: 4.4.4.4
+   LS Seq Number: 0x80006354
+   Checksum: 0x96d0
+   Length: 36
+   Network Mask: /24
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1821
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.6.0 (Network address)
+   Advertising Router: 3.3.3.3
+   LS Seq Number: 0x80006354
+   Checksum: 0xa9c0
+   Length: 36
+   Network Mask: /24
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1394
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.6.0 (Network address)
+   Advertising Router: 4.4.4.4
+   LS Seq Number: 0x80006354
+   Checksum: 0x8bda
+   Length: 36
+   Network Mask: /24
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1821
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.8.0 (Network address)
+   Advertising Router: 3.3.3.3
+   LS Seq Number: 0x800062f4
+   Checksum: 0x5573
+   Length: 36
+   Network Mask: /24
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1394
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.8.0 (Network address)
+   Advertising Router: 4.4.4.4
+   LS Seq Number: 0x800062f4
+   Checksum: 0x378d
+   Length: 36
+   Network Mask: /24
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1821
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.9.0 (Network address)
+   Advertising Router: 3.3.3.3
+   LS Seq Number: 0x80006355
+   Checksum: 0x895c
+   Length: 36
+   Network Mask: /25
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1394
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.9.0 (Network address)
+   Advertising Router: 4.4.4.4
+   LS Seq Number: 0x80006355
+   Checksum: 0x6b76
+   Length: 36
+   Network Mask: /25
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1821
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.10.0 (Network address)
+   Advertising Router: 3.3.3.3
+   LS Seq Number: 0x800061a9
+   Checksum: 0x5df4
+   Length: 36
+   Network Mask: /26
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1394
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.10.0 (Network address)
+   Advertising Router: 4.4.4.4
+   LS Seq Number: 0x800061a9
+   Checksum: 0x3f0f
+   Length: 36
+   Network Mask: /26
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1821
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.10.64 (Network address)
+   Advertising Router: 3.3.3.3
+   LS Seq Number: 0x800061a9
+   Checksum: 0xda37
+   Length: 36
+   Network Mask: /26
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1394
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.10.64 (Network address)
+   Advertising Router: 4.4.4.4
+   LS Seq Number: 0x800061a9
+   Checksum: 0xbc51
+   Length: 36
+   Network Mask: /26
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1821
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.10.128 (Network address)
+   Advertising Router: 3.3.3.3
+   LS Seq Number: 0x800061a9
+   Checksum: 0x5879
+   Length: 36
+   Network Mask: /26
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1394
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.10.128 (Network address)
+   Advertising Router: 4.4.4.4
+   LS Seq Number: 0x800061a9
+   Checksum: 0x3a93
+   Length: 36
+   Network Mask: /26
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1821
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.10.192 (Network address)
+   Advertising Router: 3.3.3.3
+   LS Seq Number: 0x800061a9
+   Checksum: 0xd5bb
+   Length: 36
+   Network Mask: /26
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1394
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.10.192 (Network address)
+   Advertising Router: 4.4.4.4
+   LS Seq Number: 0x800061a9
+   Checksum: 0xb7d5
+   Length: 36
+   Network Mask: /26
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1821
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.11.0 (Network address)
+   Advertising Router: 3.3.3.3
+   LS Seq Number: 0x800061a9
+   Checksum: 0x52fe
+   Length: 36
+   Network Mask: /26
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1394
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.11.0 (Network address)
+   Advertising Router: 4.4.4.4
+   LS Seq Number: 0x800061a9
+   Checksum: 0x3419
+   Length: 36
+   Network Mask: /26
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1821
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.11.64 (Network address)
+   Advertising Router: 3.3.3.3
+   LS Seq Number: 0x800061a8
+   Checksum: 0xd140
+   Length: 36
+   Network Mask: /26
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1394
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.11.64 (Network address)
+   Advertising Router: 4.4.4.4
+   LS Seq Number: 0x800061a8
+   Checksum: 0xb35a
+   Length: 36
+   Network Mask: /26
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1821
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.11.128 (Network address)
+   Advertising Router: 3.3.3.3
+   LS Seq Number: 0x800061a8
+   Checksum: 0x4f82
+   Length: 36
+   Network Mask: /26
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1394
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.11.128 (Network address)
+   Advertising Router: 4.4.4.4
+   LS Seq Number: 0x800061a8
+   Checksum: 0x319c
+   Length: 36
+   Network Mask: /26
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1821
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.11.192 (Network address)
+   Advertising Router: 3.3.3.3
+   LS Seq Number: 0x800061a8
+   Checksum: 0xed73
+   Length: 36
+   Network Mask: /28
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1394
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.11.192 (Network address)
+   Advertising Router: 4.4.4.4
+   LS Seq Number: 0x800061a8
+   Checksum: 0xcf8d
+   Length: 36
+   Network Mask: /28
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1821
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.11.208 (Network address)
+   Advertising Router: 3.3.3.3
+   LS Seq Number: 0x800061a7
+   Checksum: 0x7fca
+   Length: 36
+   Network Mask: /29
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1394
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.11.208 (Network address)
+   Advertising Router: 4.4.4.4
+   LS Seq Number: 0x800061a7
+   Checksum: 0x61e4
+   Length: 36
+   Network Mask: /29
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1821
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.12.0 (Network address)
+   Advertising Router: 3.3.3.3
+   LS Seq Number: 0x800064bc
+   Checksum: 0x9367
+   Length: 36
+   Network Mask: /24
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1394
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.12.0 (Network address)
+   Advertising Router: 4.4.4.4
+   LS Seq Number: 0x800064bd
+   Checksum: 0x7382
+   Length: 36
+   Network Mask: /24
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1821
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.13.0 (Network address)
+   Advertising Router: 3.3.3.3
+   LS Seq Number: 0x800061a7
+   Checksum: 0x4011
+   Length: 36
+   Network Mask: /26
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1394
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.13.0 (Network address)
+   Advertising Router: 4.4.4.4
+   LS Seq Number: 0x800061a7
+   Checksum: 0x222b
+   Length: 36
+   Network Mask: /26
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1821
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.13.64 (Network address)
+   Advertising Router: 3.3.3.3
+   LS Seq Number: 0x800061a7
+   Checksum: 0xbd53
+   Length: 36
+   Network Mask: /26
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1394
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.13.64 (Network address)
+   Advertising Router: 4.4.4.4
+   LS Seq Number: 0x800061a7
+   Checksum: 0x9f6d
+   Length: 36
+   Network Mask: /26
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1821
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.15.0 (Network address)
+   Advertising Router: 3.3.3.3
+   LS Seq Number: 0x80006355
+   Checksum: 0xc8d6
+   Length: 36
+   Network Mask: /26
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1394
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.15.0 (Network address)
+   Advertising Router: 4.4.4.4
+   LS Seq Number: 0x80006355
+   Checksum: 0xaaf0
+   Length: 36
+   Network Mask: /26
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1821
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.15.64 (Network address)
+   Advertising Router: 3.3.3.3
+   LS Seq Number: 0x80006355
+   Checksum: 0x4619
+   Length: 36
+   Network Mask: /26
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1394
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.15.64 (Network address)
+   Advertising Router: 4.4.4.4
+   LS Seq Number: 0x80006355
+   Checksum: 0x2833
+   Length: 36
+   Network Mask: /26
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1821
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.15.128 (Network address)
+   Advertising Router: 3.3.3.3
+   LS Seq Number: 0x80006355
+   Checksum: 0xc35b
+   Length: 36
+   Network Mask: /26
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1394
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.15.128 (Network address)
+   Advertising Router: 4.4.4.4
+   LS Seq Number: 0x80006355
+   Checksum: 0xa575
+   Length: 36
+   Network Mask: /26
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1821
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.15.192 (Network address)
+   Advertising Router: 3.3.3.3
+   LS Seq Number: 0x80006355
+   Checksum: 0x419d
+   Length: 36
+   Network Mask: /26
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1394
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.15.192 (Network address)
+   Advertising Router: 4.4.4.4
+   LS Seq Number: 0x80006355
+   Checksum: 0x23b7
+   Length: 36
+   Network Mask: /26
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1821
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.16.0 (Network address)
+   Advertising Router: 3.3.3.3
+   LS Seq Number: 0x8000615f
+   Checksum: 0x2b2c
+   Length: 36
+   Network Mask: /24
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1394
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.16.0 (Network address)
+   Advertising Router: 4.4.4.4
+   LS Seq Number: 0x8000615f
+   Checksum: 0x0d46
+   Length: 36
+   Network Mask: /24
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1821
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.17.0 (Network address)
+   Advertising Router: 3.3.3.3
+   LS Seq Number: 0x8000615e
+   Checksum: 0x2235
+   Length: 36
+   Network Mask: /24
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1394
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.17.0 (Network address)
+   Advertising Router: 4.4.4.4
+   LS Seq Number: 0x8000615e
+   Checksum: 0x044f
+   Length: 36
+   Network Mask: /24
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 810
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.22.0 (Network address)
+   Advertising Router: 3.3.3.3
+   LS Seq Number: 0x80002232
+   Checksum: 0x01bc
+   Length: 36
+   Network Mask: /24
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 774
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.22.0 (Network address)
+   Advertising Router: 4.4.4.4
+   LS Seq Number: 0x80002232
+   Checksum: 0xe2d6
+   Length: 36
+   Network Mask: /24
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1821
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.25.0 (Network address)
+   Advertising Router: 3.3.3.3
+   LS Seq Number: 0x80006353
+   Checksum: 0x5e39
+   Length: 36
+   Network Mask: /26
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1394
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.25.0 (Network address)
+   Advertising Router: 4.4.4.4
+   LS Seq Number: 0x80006354
+   Checksum: 0x3e54
+   Length: 36
+   Network Mask: /26
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1821
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.26.0 (Network address)
+   Advertising Router: 3.3.3.3
+   LS Seq Number: 0x800062f2
+   Checksum: 0x17e0
+   Length: 36
+   Network Mask: /26
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1394
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.26.0 (Network address)
+   Advertising Router: 4.4.4.4
+   LS Seq Number: 0x800062f2
+   Checksum: 0xf8fa
+   Length: 36
+   Network Mask: /26
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1821
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.27.0 (Network address)
+   Advertising Router: 3.3.3.3
+   LS Seq Number: 0x80006355
+   Checksum: 0xbf94
+   Length: 36
+   Network Mask: /24
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1394
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.27.0 (Network address)
+   Advertising Router: 4.4.4.4
+   LS Seq Number: 0x80006355
+   Checksum: 0xa1ae
+   Length: 36
+   Network Mask: /24
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1821
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.28.0 (Network address)
+   Advertising Router: 3.3.3.3
+   LS Seq Number: 0x80006355
+   Checksum: 0xb49e
+   Length: 36
+   Network Mask: /24
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1394
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.28.0 (Network address)
+   Advertising Router: 4.4.4.4
+   LS Seq Number: 0x80006355
+   Checksum: 0x96b8
+   Length: 36
+   Network Mask: /24
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1821
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.30.0 (Network address)
+   Advertising Router: 3.3.3.3
+   LS Seq Number: 0x80006355
+   Checksum: 0x9eb2
+   Length: 36
+   Network Mask: /24
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1394
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.129.30.0 (Network address)
+   Advertising Router: 4.4.4.4
+   LS Seq Number: 0x80006355
+   Checksum: 0x80cc
+   Length: 36
+   Network Mask: /24
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 100
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.208.32.0 (Network address)
+   Advertising Router: 3.3.3.3
+   LS Seq Number: 0x80003018
+   Checksum: 0xd59d
+   Length: 36
+   Network Mask: /22
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1514
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.208.32.0 (Network address)
+   Advertising Router: 4.4.4.4
+   LS Seq Number: 0x80003016
+   Checksum: 0xbbb5
+   Length: 36
+   Network Mask: /22
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 260
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.214.16.0 (Network address)
+   Advertising Router: 3.3.3.3
+   LS Seq Number: 0x80002efd
+   Checksum: 0x3c69
+   Length: 36
+   Network Mask: /20
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 224
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.214.16.0 (Network address)
+   Advertising Router: 4.4.4.4
+   LS Seq Number: 0x80002efd
+   Checksum: 0x1e83
+   Length: 36
+   Network Mask: /20
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 100
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.228.0.0 (Network address)
+   Advertising Router: 3.3.3.3
+   LS Seq Number: 0x80003018
+   Checksum: 0x0a81
+   Length: 36
+   Network Mask: /20
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1514
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.228.0.0 (Network address)
+   Advertising Router: 4.4.4.4
+   LS Seq Number: 0x80003016
+   Checksum: 0xef99
+   Length: 36
+   Network Mask: /20
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 100
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.228.16.0 (Network address)
+   Advertising Router: 3.3.3.3
+   LS Seq Number: 0x80003018
+   Checksum: 0x5922
+   Length: 36
+   Network Mask: /20
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1514
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.228.16.0 (Network address)
+   Advertising Router: 4.4.4.4
+   LS Seq Number: 0x80003016
+   Checksum: 0x3f3a
+   Length: 36
+   Network Mask: /20
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 100
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.228.32.0 (Network address)
+   Advertising Router: 3.3.3.3
+   LS Seq Number: 0x80003018
+   Checksum: 0xf368
+   Length: 36
+   Network Mask: /24
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1514
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.228.32.0 (Network address)
+   Advertising Router: 4.4.4.4
+   LS Seq Number: 0x80003016
+   Checksum: 0xd980
+   Length: 36
+   Network Mask: /24
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 100
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.229.16.0 (Network address)
+   Advertising Router: 3.3.3.3
+   LS Seq Number: 0x80003018
+   Checksum: 0x4d2d
+   Length: 36
+   Network Mask: /20
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1514
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.229.16.0 (Network address)
+   Advertising Router: 4.4.4.4
+   LS Seq Number: 0x80003016
+   Checksum: 0x3345
+   Length: 36
+   Network Mask: /20
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 100
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.230.0.0 (Network address)
+   Advertising Router: 3.3.3.3
+   LS Seq Number: 0x80003018
+   Checksum: 0xf197
+   Length: 36
+   Network Mask: /20
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1514
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.230.0.0 (Network address)
+   Advertising Router: 4.4.4.4
+   LS Seq Number: 0x80003016
+   Checksum: 0xd7af
+   Length: 36
+   Network Mask: /20
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 340
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.233.0.0 (Network address)
+   Advertising Router: 3.3.3.3
+   LS Seq Number: 0x80002d09
+   Checksum: 0xf4a3
+   Length: 36
+   Network Mask: /20
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 304
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.233.0.0 (Network address)
+   Advertising Router: 4.4.4.4
+   LS Seq Number: 0x80002d09
+   Checksum: 0xd6bd
+   Length: 36
+   Network Mask: /20
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 100
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.248.0.0 (Network address)
+   Advertising Router: 3.3.3.3
+   LS Seq Number: 0x80003018
+   Checksum: 0x195e
+   Length: 36
+   Network Mask: /20
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1514
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.248.0.0 (Network address)
+   Advertising Router: 4.4.4.4
+   LS Seq Number: 0x80003016
+   Checksum: 0xfe76
+   Length: 36
+   Network Mask: /20
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 100
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.249.16.0 (Network address)
+   Advertising Router: 3.3.3.3
+   LS Seq Number: 0x80003018
+   Checksum: 0x5c0a
+   Length: 36
+   Network Mask: /20
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1514
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 10.249.16.0 (Network address)
+   Advertising Router: 4.4.4.4
+   LS Seq Number: 0x80003016
+   Checksum: 0x4222
+   Length: 36
+   Network Mask: /20
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1391
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 172.20.0.0 (Network address)
+   Advertising Router: 3.3.3.3
+   LS Seq Number: 0x80002efe
+   Checksum: 0x15b0
+   Length: 36
+   Network Mask: /24
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1344
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 172.20.0.0 (Network address)
+   Advertising Router: 4.4.4.4
+   LS Seq Number: 0x80002efe
+   Checksum: 0xf6ca
+   Length: 36
+   Network Mask: /24
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1791
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 172.20.2.0 (Network address)
+   Advertising Router: 3.3.3.3
+   LS Seq Number: 0x80002efe
+   Checksum: 0xfec4
+   Length: 36
+   Network Mask: /24
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1754
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 172.20.2.0 (Network address)
+   Advertising Router: 4.4.4.4
+   LS Seq Number: 0x80002efe
+   Checksum: 0xe0de
+   Length: 36
+   Network Mask: /24
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1501
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 172.20.3.0 (Network address)
+   Advertising Router: 3.3.3.3
+   LS Seq Number: 0x80002efe
+   Checksum: 0xf3ce
+   Length: 36
+   Network Mask: /24
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+   LS age: 1464
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Type-5 AS-External
+   Link State ID: 172.20.3.0 (Network address)
+   Advertising Router: 4.4.4.4
+   LS Seq Number: 0x80002efe
+   Checksum: 0xd5e8
+   Length: 36
+   Network Mask: /24
+         Metric Type: 2 (Larger than any link state path)
+         TOS: 0
+         Metric: 20
+         Forward Address: 0.0.0.0
+         External Route Tag: 0
+
+
+VV-SCS-N9K02# 
+
+2020-12-14 10:59:08,737: %UNICON-INFO: +++ VV-SCS-N9K02: executing command 'show ip ospf database opaque-area detail vrf all' +++
+show ip ospf database opaque-area detail vrf all
+        OSPF Router with ID (10.211.17.254) (Process ID CORE VRF default)
+
+VV-SCS-N9K02# 
+
+2020-12-14 10:59:08,901: %UNICON-INFO: +++ VV-SCS-N9K02: executing command 'show ip ospf virtual-links vrf all' +++
+show ip ospf virtual-links vrf all
+VV-SCS-N9K02# 
+
+2020-12-14 10:59:09,071: %UNICON-INFO: +++ VV-SCS-N9K02: executing command 'show ip ospf interface vrf all' +++
+show ip ospf interface vrf all
+ Ethernet1/43.79 is up, line protocol is up
+    IP address 10.129.120.30/30
+    Process ID CORE VRF default, area 0.0.0.2
+    Enabled by interface configuration
+    State P2P, Network type P2P, cost 4
+    Index 1, Transmit delay 1 sec
+    1 Neighbors, flooding to 1, adjacent with 1
+    Timer intervals: Hello 10, Dead 40, Wait 40, Retransmit 5
+      Hello timer due in 00:00:00
+    No authentication
+    Number of opaque link LSAs: 0, checksum sum 0
+ Ethernet1/44.79 is up, line protocol is up
+    IP address 10.129.120.34/30
+    Process ID CORE VRF default, area 0.0.0.2
+    Enabled by interface configuration
+    State P2P, Network type P2P, cost 4
+    Index 2, Transmit delay 1 sec
+    1 Neighbors, flooding to 1, adjacent with 1
+    Timer intervals: Hello 10, Dead 40, Wait 40, Retransmit 5
+      Hello timer due in 00:00:02
+      ACK timer due in 00:00:01
+    No authentication
+    Number of opaque link LSAs: 0, checksum sum 0
+VV-SCS-N9K02# 
+
+2020-12-14 10:59:09,258: %UNICON-INFO: +++ VV-SCS-N9K02: executing command 'show ip ospf neighbors detail vrf all' +++
+show ip ospf neighbors detail vrf all
+ Neighbor 4.4.4.4, interface address 10.129.120.29
+    Process ID CORE VRF default, in area 0.0.0.2 via interface Ethernet1/43.79
+    State is FULL, 4 state changes, last change 17w1d
+    Hello options 0x2, dbd options 0x42
+    Last non-hello packet received 00:01:38
+      Dead timer due in 00:00:38
+      Retransmit timer due in 00:00:05
+ Neighbor 3.3.3.3, interface address 10.129.120.33
+    Process ID CORE VRF default, in area 0.0.0.2 via interface Ethernet1/44.79
+    State is FULL, 4 state changes, last change 17w1d
+    Hello options 0x2, dbd options 0x42
+    Last non-hello packet received 0.462065
+      Dead timer due in 00:00:38
+
+VV-SCS-N9K02# 
+
+2020-12-14 10:59:09,444: %UNICON-INFO: +++ VV-SCS-N9K02: executing command 'show ip ospf sham-links vrf all' +++
+show ip ospf sham-links vrf all
+                            ^
+% Invalid command at '^' marker.
+VV-SCS-N9K02#</msg>
+<status status="PASS" starttime="20201214 10:59:07.086" endtime="20201214 10:59:10.108"></status>
+</kw>
+<status status="PASS" starttime="20201214 10:59:07.085" endtime="20201214 10:59:10.108" critical="yes"></status>
+</test>
+<test id="s1-t3" name="Verify BGP neighbor count">
+<kw name="verify count &quot;2&quot; &quot;bgp neighbors&quot; on device &quot;VV-SCS-N9K02&quot;" library="genie.libs.robot.GenieRobot">
+<doc>Verify that a specific number of &lt;...&gt; is &lt;...&gt; on a device.</doc>
+<msg timestamp="20201214 10:59:10.796" level="INFO">Could not learn &lt;class 'genie.libs.parser.nxos.show_bgp.ShowBgpPeerSession'&gt;
+Parser Output is empty</msg>
+<msg timestamp="20201214 10:59:11.263" level="INFO">Could not learn &lt;class 'genie.libs.parser.nxos.show_bgp.ShowBgpPeerPolicy'&gt;
+Parser Output is empty</msg>
+<msg timestamp="20201214 10:59:11.430" level="INFO">Could not learn &lt;class 'genie.libs.parser.nxos.show_bgp.ShowBgpVrfAllAllDampeningParameters'&gt;
+Parser Output is empty</msg>
+<msg timestamp="20201214 10:59:12.695" level="INFO">Could not learn &lt;class 'genie.libs.parser.nxos.show_bgp.ShowBgpVrfAllNeighbors'&gt;
+Parser Output is empty</msg>
+<msg timestamp="20201214 10:59:13.852" level="INFO">Could not learn &lt;class 'genie.libs.parser.nxos.show_bgp.ShowBgpVrfAllNeighborsReceivedRoutes'&gt;
+Parser Output is empty</msg>
+<msg timestamp="20201214 10:59:14.031" level="INFO">Could not learn &lt;class 'genie.libs.parser.nxos.show_bgp.ShowBgpVrfAllNeighborsReceivedRoutes'&gt;
+Parser Output is empty</msg>
+<msg timestamp="20201214 10:59:14.199" level="INFO">Could not learn &lt;class 'genie.libs.parser.nxos.show_bgp.ShowBgpVrfAllNeighbors'&gt;
+Parser Output is empty</msg>
+<msg timestamp="20201214 10:59:14.200" level="INFO">+====================================================================================================================================================+</msg>
+<msg timestamp="20201214 10:59:14.200" level="INFO">| Commands for learning feature 'Bgp'                                                                                                                |</msg>
+<msg timestamp="20201214 10:59:14.200" level="INFO">+====================================================================================================================================================+</msg>
+<msg timestamp="20201214 10:59:14.200" level="INFO">| - Parsed commands                                                                                                                                  |</msg>
+<msg timestamp="20201214 10:59:14.200" level="INFO">|----------------------------------------------------------------------------------------------------------------------------------------------------|</msg>
+<msg timestamp="20201214 10:59:14.201" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_bgp.ShowBgpProcessVrfAll'&gt;, arguments: {'vrf':'all'}                                                    |</msg>
+<msg timestamp="20201214 10:59:14.201" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_bgp.ShowBgpVrfAllAllNextHopDatabase'&gt;, arguments: {'address_family':'all','vrf':'all'}                  |</msg>
+<msg timestamp="20201214 10:59:14.201" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_routing.ShowRoutingVrfAll'&gt;, arguments: {'vrf':'all'}                                                   |</msg>
+<msg timestamp="20201214 10:59:14.201" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_bgp.ShowBgpVrfAllAll'&gt;, arguments: {'address_family':'all','vrf':'all'}                                 |</msg>
+<msg timestamp="20201214 10:59:14.201" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_vrf.ShowVrf'&gt;, arguments: {'vrf':'all'}                                                                 |</msg>
+<msg timestamp="20201214 10:59:14.201" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_bgp.ShowBgpVrfAllNeighbors'&gt;, arguments: {'address_family':'all','neighbor':'','vrf':'VRF-INTERNET'}    |</msg>
+<msg timestamp="20201214 10:59:14.201" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_bgp.ShowBgpVrfAllAllSummary'&gt;, arguments: {'address_family':'all','vrf':'all'}                          |</msg>
+<msg timestamp="20201214 10:59:14.201" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_bgp.ShowBgpVrfAllNeighborsAdvertisedRoutes'&gt;, arguments:                                                |</msg>
+<msg timestamp="20201214 10:59:14.201" level="INFO">| {'address_family':'all','neighbor':'131.100.118.2','vrf':'VRF-INTERNET'}                                                                           |</msg>
+<msg timestamp="20201214 10:59:14.201" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_bgp.ShowBgpVrfAllNeighborsAdvertisedRoutes'&gt;, arguments:                                                |</msg>
+<msg timestamp="20201214 10:59:14.201" level="INFO">| {'address_family':'all','neighbor':'200.229.237.181','vrf':'VRF-INTERNET'}                                                                         |</msg>
+<msg timestamp="20201214 10:59:14.201" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_bgp.ShowBgpVrfAllNeighborsRoutes'&gt;, arguments:                                                          |</msg>
+<msg timestamp="20201214 10:59:14.201" level="INFO">| {'address_family':'all','neighbor':'131.100.118.2','vrf':'VRF-INTERNET'}                                                                           |</msg>
+<msg timestamp="20201214 10:59:14.201" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_bgp.ShowBgpVrfAllNeighborsRoutes'&gt;, arguments:                                                          |</msg>
+<msg timestamp="20201214 10:59:14.201" level="INFO">| {'address_family':'all','neighbor':'200.229.237.181','vrf':'VRF-INTERNET'}                                                                         |</msg>
+<msg timestamp="20201214 10:59:14.201" level="INFO">|====================================================================================================================================================|</msg>
+<msg timestamp="20201214 10:59:14.201" level="INFO">| - Commands with empty output                                                                                                                       |</msg>
+<msg timestamp="20201214 10:59:14.201" level="INFO">|----------------------------------------------------------------------------------------------------------------------------------------------------|</msg>
+<msg timestamp="20201214 10:59:14.201" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_bgp.ShowBgpPeerSession'&gt;                                                                                |</msg>
+<msg timestamp="20201214 10:59:14.201" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_bgp.ShowBgpPeerPolicy'&gt;                                                                                 |</msg>
+<msg timestamp="20201214 10:59:14.201" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_bgp.ShowBgpVrfAllAllDampeningParameters'&gt;, arguments: {'address_family':'all','vrf':'all'}              |</msg>
+<msg timestamp="20201214 10:59:14.201" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_bgp.ShowBgpVrfAllNeighbors'&gt;, arguments: {'address_family':'all','neighbor':'','vrf':'default'}         |</msg>
+<msg timestamp="20201214 10:59:14.202" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_bgp.ShowBgpVrfAllNeighborsReceivedRoutes'&gt;, arguments:                                                  |</msg>
+<msg timestamp="20201214 10:59:14.202" level="INFO">| {'address_family':'all','neighbor':'131.100.118.2','vrf':'VRF-INTERNET'}                                                                           |</msg>
+<msg timestamp="20201214 10:59:14.202" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_bgp.ShowBgpVrfAllNeighborsReceivedRoutes'&gt;, arguments:                                                  |</msg>
+<msg timestamp="20201214 10:59:14.202" level="INFO">| {'address_family':'all','neighbor':'200.229.237.181','vrf':'VRF-INTERNET'}                                                                         |</msg>
+<msg timestamp="20201214 10:59:14.202" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_bgp.ShowBgpVrfAllNeighbors'&gt;, arguments: {'address_family':'all','neighbor':'','vrf':'management'}      |</msg>
+<msg timestamp="20201214 10:59:14.202" level="INFO">|====================================================================================================================================================|</msg>
+<msg timestamp="20201214 10:59:14.203" level="INFO">2020-12-14 10:59:10,111: %UNICON-INFO: +++ VV-SCS-N9K02: executing command 'show bgp process vrf all' +++
+show bgp process vrf all
+
+BGP Process Information
+BGP Process ID                 : 955
+BGP Protocol Started, reason:  : configuration
+BGP Performance Mode:          : No
+BGP Protocol Tag               : 61644
+BGP Protocol State             : Running
+BGP Isolate Mode               : No
+BGP Graceful-Shutdown-Aware    : Yes
+BGP Graceful-Shutdown-Activate : No
+BGP MMODE                      : Initialized
+BGP Memory State               : OK
+BGP asformat                   : asplain
+
+BGP attributes information
+Number of attribute entries    : 4
+HWM of attribute entries       : 4
+Bytes used by entries          : 496
+Entries pending delete         : 0
+HWM of entries pending delete  : 0
+BGP paths per attribute HWM    : 3
+BGP AS path entries            : 2
+Bytes used by AS path entries  : 56
+
+Information regarding configured VRFs:
+
+BGP Information for VRF VRF-INTERNET
+VRF Id                         : 3
+VRF state                      : UP
+Router-ID                      : 131.100.118.3
+Configured Router-ID           : 131.100.118.3
+Local AS                       : 61644
+Confed-ID                      : 0
+Cluster-ID                     : 0.0.0.0
+No. of configured peers        : 2
+No. of pending config peers    : 0
+No. of established peers       : 2
+VRF RD                         : Not configured
+
+    Information for address family IPv4 Unicast in VRF VRF-INTERNET
+    Table Id                   : 0x3
+    Table state                : UP
+    Peers      Active-peers    Routes     Paths      Networks   Aggregates
+    2          2               4          8          3          0         
+
+    Redistribution                
+        None
+
+
+
+    Nexthop trigger-delay
+        critical 3000 ms
+        non-critical 10000 ms
+
+    Information for address family IPv6 Unicast in VRF VRF-INTERNET
+    Table Id                   : 0x80000003
+    Table state                : UP
+    Peers      Active-peers    Routes     Paths      Networks   Aggregates
+    0          0               0          0          0          0         
+
+    Redistribution                
+        None
+
+
+
+    Nexthop trigger-delay
+        critical 3000 ms
+        non-critical 10000 ms
+
+BGP Information for VRF default
+VRF Id                         : 1
+VRF state                      : UP
+Router-ID                      : 10.211.17.254
+Configured Router-ID           : 0.0.0.0
+Confed-ID                      : 0
+Cluster-ID                     : 0.0.0.0
+No. of configured peers        : 0
+No. of pending config peers    : 0
+No. of established peers       : 0
+VRF RD                         : Not configured
+VV-SCS-N9K02# 
+
+2020-12-14 10:59:10,303: %UNICON-INFO: +++ VV-SCS-N9K02: executing command 'show running-config | inc peer-session' +++
+show running-config | inc peer-session
+VV-SCS-N9K02# 
+
+2020-12-14 10:59:10,795: %UNICON-INFO: +++ VV-SCS-N9K02: executing command 'show running-config | inc peer-policy' +++
+show running-config | inc peer-policy
+VV-SCS-N9K02# 
+
+2020-12-14 10:59:11,263: %UNICON-INFO: +++ VV-SCS-N9K02: executing command 'show bgp vrf all all dampening parameters' +++
+show bgp vrf all all dampening parameters
+VV-SCS-N9K02# 
+
+2020-12-14 10:59:11,430: %UNICON-INFO: +++ VV-SCS-N9K02: executing command 'show bgp vrf all all nexthop-database' +++
+show bgp vrf all all nexthop-database
+
+Next Hop table for VRF VRF-INTERNET, address family IPv4 Unicast:
+Next-hop trigger-delay(miliseconds)
+  Critical: 3000 Non-critical: 10000
+IPv4 Next-hop table
+
+IPv4 Unicast Next-hops:
+
+Nexthop: 0.0.0.0, Flags: 0x2, Refcount: 3, IGP cost: 0, Multipath: No
+IGP Route type: 0, IGP preference: 0
+Nexthop is not-attached local unreachable not-labeled
+Nexthop last resolved: never, using 0.0.0.0/0
+Metric next advertise: Never
+RNH epoch: 0
+
+Nexthop: 131.100.116.0, Flags: 0, Refcount: 0, IGP cost: 4294967295, Multipath: No
+IGP Route type: 0, IGP preference: 0
+Nexthop is not-attached not-local unreachable not-labeled
+Nexthop last resolved: never, using 0.0.0.0/0
+Metric next advertise: Never
+RNH epoch: 1
+
+Nexthop: 131.100.118.0, Flags: 0, Refcount: 0, IGP cost: 4294967295, Multipath: No
+IGP Route type: 0, IGP preference: 0
+Nexthop is not-attached not-local unreachable not-labeled
+Nexthop last resolved: never, using 0.0.0.0/0
+Metric next advertise: Never
+RNH epoch: 2
+
+Nexthop: 131.100.118.2, Flags: 0x5, Refcount: 4, IGP cost: 0, Multipath: No
+IGP Route type: 0, IGP preference: 250
+Attached nexthop: 131.100.118.2, Interface: Vlan1014
+Nexthop is attached not-local reachable not-labeled
+Nexthop last resolved: 17w1d, using 131.100.118.2/32
+Metric next advertise: Never
+RNH epoch: 1
+
+Nexthop: 131.100.119.0, Flags: 0, Refcount: 0, IGP cost: 4294967295, Multipath: No
+IGP Route type: 0, IGP preference: 0
+Nexthop is not-attached not-local unreachable not-labeled
+Nexthop last resolved: never, using 0.0.0.0/0
+Metric next advertise: Never
+RNH epoch: 2
+
+Nexthop: 200.229.237.181, Flags: 0x5, Refcount: 1, IGP cost: 0, Multipath: No
+IGP Route type: 0, IGP preference: 250
+Attached nexthop: 200.229.237.181, Interface: Ethernet1/10
+Nexthop is attached not-local reachable not-labeled
+Nexthop last resolved: 2w6d, using 200.229.237.181/32
+Metric next advertise: Never
+RNH epoch: 4
+IPv6 Next-hop table
+
+Next Hop table for VRF VRF-INTERNET, address family IPv6 Unicast:
+Next-hop trigger-delay(miliseconds)
+  Critical: 3000 Non-critical: 10000
+IPv4 Next-hop table
+
+IPv4 Unicast Next-hops:
+
+Nexthop: ::ffff:0.0.0.0, Flags: 0x2, Refcount: 0, IGP cost: 0, Multipath: No
+IGP Route type: 0, IGP preference: 0
+Nexthop is not-attached local unreachable not-labeled
+Nexthop last resolved: never, using 0.0.0.0/0
+Metric next advertise: Never
+RNH epoch: 0
+
+Nexthop: ::ffff:131.100.116.0, Flags: 0, Refcount: 0, IGP cost: 4294967295, Multipath: No
+IGP Route type: 0, IGP preference: 0
+Nexthop is not-attached not-local unreachable not-labeled
+Nexthop last resolved: never, using 0.0.0.0/0
+Metric next advertise: Never
+RNH epoch: 1
+
+Nexthop: ::ffff:131.100.118.0, Flags: 0, Refcount: 0, IGP cost: 4294967295, Multipath: No
+IGP Route type: 0, IGP preference: 0
+Nexthop is not-attached not-local unreachable not-labeled
+Nexthop last resolved: never, using 0.0.0.0/0
+Metric next advertise: Never
+RNH epoch: 2
+
+Nexthop: ::ffff:131.100.118.2, Flags: 0x5, Refcount: 0, IGP cost: 0, Multipath: No
+IGP Route type: 0, IGP preference: 250
+Attached nexthop: 131.100.118.2, Interface: Vlan1014
+Nexthop is attached not-local reachable not-labeled
+Nexthop last resolved: 17w1d, using 131.100.118.2/32
+Metric next advertise: Never
+RNH epoch: 1
+
+Nexthop: ::ffff:131.100.119.0, Flags: 0, Refcount: 0, IGP cost: 4294967295, Multipath: No
+IGP Route type: 0, IGP preference: 0
+Nexthop is not-attached not-local unreachable not-labeled
+Nexthop last resolved: never, using 0.0.0.0/0
+Metric next advertise: Never
+RNH epoch: 2
+
+Nexthop: ::ffff:200.229.237.181, Flags: 0x5, Refcount: 0, IGP cost: 0, Multipath: No
+IGP Route type: 0, IGP preference: 250
+Attached nexthop: 200.229.237.181, Interface: Ethernet1/10
+Nexthop is attached not-local reachable not-labeled
+Nexthop last resolved: 2w6d, using 200.229.237.181/32
+Metric next advertise: Never
+RNH epoch: 4
+IPv6 Next-hop table
+VV-SCS-N9K02# 
+
+2020-12-14 10:59:11,619: %UNICON-INFO: +++ VV-SCS-N9K02: executing command 'show routing vrf all' +++
+show routing vrf all
+IP Route Table for VRF "default"
+'*' denotes best ucast next-hop
+'**' denotes best mcast next-hop
+'[x/y]' denotes [preference/metric]
+'%&lt;string&gt;' in via output denotes VRF &lt;string&gt;
+
+0.0.0.0/0, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+10.0.0.0/8, ubest/mbest: 1/0
+    *via 10.129.0.12, [1/0], 17w1d, static
+10.3.76.18/32, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+10.95.230.128/26, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+10.119.14.0/24, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+10.128.225.64/30, ubest/mbest: 1/0
+    *via 10.129.0.36, [1/0], 17w1d, static
+10.129.0.0/29, ubest/mbest: 1/0, attached
+    *via 10.129.0.3, Vlan980, [0/0], 17w1d, direct
+10.129.0.1/32, ubest/mbest: 1/0, attached
+    *via 10.129.0.1, Vlan980, [0/0], 17w1d, hsrp
+10.129.0.3/32, ubest/mbest: 1/0, attached
+    *via 10.129.0.3, Vlan980, [0/0], 17w1d, local
+10.129.0.8/29, ubest/mbest: 1/0, attached
+    *via 10.129.0.11, Vlan930, [0/0], 17w1d, direct
+10.129.0.9/32, ubest/mbest: 1/0, attached
+    *via 10.129.0.9, Vlan930, [0/0], 17w1d, hsrp
+10.129.0.11/32, ubest/mbest: 1/0, attached
+    *via 10.129.0.11, Vlan930, [0/0], 17w1d, local
+10.129.0.16/29, ubest/mbest: 1/0, attached
+    *via 10.129.0.19, Vlan981, [0/0], 17w1d, direct
+10.129.0.17/32, ubest/mbest: 1/0, attached
+    *via 10.129.0.17, Vlan981, [0/0], 17w1d, hsrp
+10.129.0.19/32, ubest/mbest: 1/0, attached
+    *via 10.129.0.19, Vlan981, [0/0], 17w1d, local
+10.129.0.24/29, ubest/mbest: 1/0, attached
+    *via 10.129.0.27, Vlan982, [0/0], 17w1d, direct
+10.129.0.25/32, ubest/mbest: 1/0, attached
+    *via 10.129.0.25, Vlan982, [0/0], 17w1d, hsrp
+10.129.0.27/32, ubest/mbest: 1/0, attached
+    *via 10.129.0.27, Vlan982, [0/0], 17w1d, local
+10.129.1.0/24, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.2.0/23, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.4.0/24, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.5.0/24, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.6.0/24, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.8.0/24, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.9.0/25, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.10.0/26, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.10.64/26, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.10.128/26, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.10.192/26, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.11.0/26, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.11.64/26, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.11.128/26, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.11.192/28, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.11.208/29, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.12.0/24, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.13.0/26, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.13.64/26, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.15.0/26, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.15.64/26, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.15.128/26, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.15.192/26, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.16.0/24, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.17.0/24, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.22.0/24, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.25.0/26, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.26.0/26, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.27.0/24, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.28.0/24, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.30.0/24, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.31.0/24, ubest/mbest: 1/0, attached
+    *via 10.129.31.3, Vlan931, [0/0], 17w1d, direct
+10.129.31.1/32, ubest/mbest: 1/0, attached
+    *via 10.129.31.1, Vlan931, [0/0], 17w1d, hsrp
+10.129.31.3/32, ubest/mbest: 1/0, attached
+    *via 10.129.31.3, Vlan931, [0/0], 17w1d, local
+10.129.32.0/24, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+10.129.33.0/24, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+10.129.120.20/30, ubest/mbest: 1/0
+    *via 10.129.120.33, Eth1/44.79, [110/8], 17w1d, ospf-CORE, intra
+10.129.120.24/30, ubest/mbest: 1/0
+    *via 10.129.120.29, Eth1/43.79, [110/8], 17w1d, ospf-CORE, intra
+10.129.120.28/30, ubest/mbest: 1/0, attached
+    *via 10.129.120.30, Eth1/43.79, [0/0], 17w1d, direct
+10.129.120.30/32, ubest/mbest: 1/0, attached
+    *via 10.129.120.30, Eth1/43.79, [0/0], 17w1d, local
+10.129.120.32/30, ubest/mbest: 1/0, attached
+    *via 10.129.120.34, Eth1/44.79, [0/0], 17w1d, direct
+10.129.120.34/32, ubest/mbest: 1/0, attached
+    *via 10.129.120.34, Eth1/44.79, [0/0], 17w1d, local
+10.142.0.2/32, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+10.142.11.1/32, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+10.171.164.48/29, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+10.206.0.0/20, ubest/mbest: 1/0
+    *via 10.129.0.28, [1/0], 10w6d, static
+10.208.32.0/22, ubest/mbest: 1/0
+    *via 10.129.0.12, [1/0], 17w1d, static
+10.211.17.0/24, ubest/mbest: 1/0, attached
+    *via 10.211.17.254, Vlan632, [0/0], 17w1d, direct
+10.211.17.1/32, ubest/mbest: 1/0, attached
+    *via 10.211.17.1, Vlan632, [0/0], 17w1d, hsrp
+10.211.17.254/32, ubest/mbest: 1/0, attached
+    *via 10.211.17.254, Vlan632, [0/0], 17w1d, local
+10.213.16.48/28, ubest/mbest: 1/0, attached
+    *via 10.213.16.51, Vlan803, [0/0], 17w1d, direct
+10.213.16.49/32, ubest/mbest: 1/0, attached
+    *via 10.213.16.49, Vlan803, [0/0], 17w1d, hsrp
+10.213.16.51/32, ubest/mbest: 1/0, attached
+    *via 10.213.16.51, Vlan803, [0/0], 17w1d, local
+10.213.16.64/28, ubest/mbest: 1/0, attached
+    *via 10.213.16.67, Vlan805, [0/0], 17w1d, direct
+10.213.16.65/32, ubest/mbest: 1/0, attached
+    *via 10.213.16.65, Vlan805, [0/0], 17w1d, hsrp
+10.213.16.67/32, ubest/mbest: 1/0, attached
+    *via 10.213.16.67, Vlan805, [0/0], 17w1d, local
+10.214.16.0/20, ubest/mbest: 1/0
+    *via 10.129.0.12, [1/0], 17w1d, static
+10.228.0.0/20, ubest/mbest: 1/0
+    *via 10.129.0.12, [1/0], 17w1d, static
+10.228.16.0/20, ubest/mbest: 1/0
+    *via 10.129.0.12, [1/0], 17w1d, static
+10.228.32.0/24, ubest/mbest: 1/0
+    *via 10.129.0.12, [1/0], 17w1d, static
+10.229.16.0/20, ubest/mbest: 1/0
+    *via 10.129.0.12, [1/0], 17w1d, static
+10.230.0.0/20, ubest/mbest: 1/0
+    *via 10.129.0.12, [1/0], 17w1d, static
+10.230.117.7/32, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+10.230.117.23/32, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+10.230.117.33/32, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+10.233.0.0/20, ubest/mbest: 1/0
+    *via 10.129.0.12, [1/0], 17w1d, static
+10.248.0.0/20, ubest/mbest: 1/0
+    *via 10.129.0.12, [1/0], 17w1d, static
+10.249.16.0/20, ubest/mbest: 1/0
+    *via 10.129.0.12, [1/0], 17w1d, static
+10.249.64.0/20, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+10.249.96.0/20, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+65.203.238.170/32, ubest/mbest: 1/0
+    *via 10.129.0.12, [1/0], 17w1d, static
+128.201.18.20/32, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+129.39.184.0/21, ubest/mbest: 1/0
+    *via 10.129.0.12, [1/0], 17w1d, static
+138.117.30.253/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+138.117.30.254/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+158.98.62.16/28, ubest/mbest: 1/0
+    *via 10.129.0.12, [1/0], 17w1d, static
+158.98.176.0/21, ubest/mbest: 1/0
+    *via 10.129.0.12, [1/0], 17w1d, static
+161.26.0.0/16, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+166.8.0.0/14, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+172.16.0.0/12, ubest/mbest: 1/0
+    *via 10.129.0.12, [1/0], 17w1d, static
+172.16.52.3/32, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+172.19.2.0/24, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+172.19.98.4/32, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+172.20.0.0/24, ubest/mbest: 1/0
+    *via 10.129.0.12, [1/0], 17w1d, static
+172.20.0.182/32, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+172.20.2.0/24, ubest/mbest: 1/0
+    *via 10.129.0.12, [1/0], 17w1d, static
+172.20.2.181/32, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+172.20.3.0/24, ubest/mbest: 1/0
+    *via 10.129.0.12, [1/0], 17w1d, static
+172.20.102.0/29, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+172.20.104.0/29, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+172.22.31.0/24, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+172.22.31.17/32, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+172.22.32.0/24, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+172.24.1.0/28, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+172.25.56.31/32, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+172.25.147.160/28, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+172.28.0.20/32, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+172.34.0.0/24, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+172.190.199.0/24, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+177.11.240.207/32, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+180.104.129.82/32, ubest/mbest: 1/0
+    *via 10.129.0.12, [1/0], 17w1d, static
+189.38.117.10/32, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+192.168.0.0/16, ubest/mbest: 1/0
+    *via 10.129.0.12, [1/0], 17w1d, static
+192.168.9.218/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.11.8/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.24.27/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.24.44/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.24.57/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.24.63/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.24.73/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.24.127/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.24.164/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.24.166/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.24.207/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.24.253/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.42.20/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.42.30/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.42.33/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.42.69/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.42.71/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.42.85/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.42.92/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.42.93/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.42.125/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.42.141/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.42.142/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.42.147/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.42.205/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.42.208/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.43.207/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.43.208/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.48.251/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.76.47/32, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+192.168.116.0/24, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+192.168.134.144/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.144.6/32, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+192.168.154.3/32, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+192.168.170.2/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.212.160/29, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+192.168.242.39/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.242.48/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.242.49/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+204.71.178.10/32, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+205.138.247.10/32, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+206.253.234.14/32, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+206.253.234.20/32, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+206.253.234.23/32, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+206.253.253.20/32, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+206.253.253.23/32, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+209.134.186.0/23, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+209.134.190.0/23, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+216.104.233.10/32, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+
+IP Route Table for VRF "management"
+'*' denotes best ucast next-hop
+'**' denotes best mcast next-hop
+'[x/y]' denotes [preference/metric]
+'%&lt;string&gt;' in via output denotes VRF &lt;string&gt;
+
+0.0.0.0/0, ubest/mbest: 1/0
+    *via 10.211.0.100, [1/0], 17w1d, static
+10.211.0.0/20, ubest/mbest: 1/0, attached
+    *via 10.211.10.101, mgmt0, [0/0], 17w1d, direct
+10.211.10.101/32, ubest/mbest: 1/0, attached
+    *via 10.211.10.101, mgmt0, [0/0], 17w1d, local
+
+IP Route Table for VRF "VRF-INTERNET"
+'*' denotes best ucast next-hop
+'**' denotes best mcast next-hop
+'[x/y]' denotes [preference/metric]
+'%&lt;string&gt;' in via output denotes VRF &lt;string&gt;
+
+0.0.0.0/0, ubest/mbest: 1/0
+    *via 131.100.118.2, [200/0], 2w6d, bgp-61644, internal, tag 10429
+131.100.116.0/22, ubest/mbest: 1/0
+    *via Null0, [1/0], 17w1d, static
+131.100.118.0/24, ubest/mbest: 1/0, attached
+    *via 131.100.118.3, Vlan1014, [0/0], 17w1d, direct
+131.100.118.1/32, ubest/mbest: 1/0, attached
+    *via 131.100.118.1, Vlan1014, [0/0], 17w1d, hsrp
+131.100.118.3/32, ubest/mbest: 1/0, attached
+    *via 131.100.118.3, Vlan1014, [0/0], 17w1d, local
+131.100.119.0/24, ubest/mbest: 1/0, attached
+    *via 131.100.119.3, Vlan1025, [0/0], 17w1d, direct
+131.100.119.1/32, ubest/mbest: 1/0, attached
+    *via 131.100.119.1, Vlan1025, [0/0], 17w1d, hsrp
+131.100.119.3/32, ubest/mbest: 1/0, attached
+    *via 131.100.119.3, Vlan1025, [0/0], 17w1d, local
+187.62.212.2/32, ubest/mbest: 1/0
+    *via 200.229.237.181, [1/0], 2w6d, static
+200.205.125.57/32, ubest/mbest: 1/0
+    *via Null0, [1/0], 5w1d, static
+200.229.237.180/30, ubest/mbest: 1/0, attached
+    *via 200.229.237.182, Eth1/10, [0/0], 2w6d, direct
+200.229.237.182/32, ubest/mbest: 1/0, attached
+    *via 200.229.237.182, Eth1/10, [0/0], 2w6d, local
+
+VV-SCS-N9K02# 
+
+2020-12-14 10:59:11,891: %UNICON-INFO: +++ VV-SCS-N9K02: executing command 'show bgp vrf all all' +++
+show bgp vrf all all
+BGP routing table information for VRF VRF-INTERNET, address family IPv4 Unicast
+BGP table version is 84, Local Router ID is 131.100.118.3
+Status: s-suppressed, x-deleted, S-stale, d-dampened, h-history, *-valid, &gt;-best
+Path type: i-internal, e-external, c-confed, l-local, a-aggregate, r-redist, I-injected
+Origin codes: i - IGP, e - EGP, ? - incomplete, | - multipath, &amp; - backup, 2 - best2
+
+   Network            Next Hop            Metric     LocPrf     Weight Path
+*&gt;i0.0.0.0/0          131.100.118.2                     100          0 10429 i
+* e                   200.229.237.181                                0 28165 28165 i
+* i131.100.116.0/22   131.100.118.2                     100          0 i
+*&gt;l                   0.0.0.0                           100      32768 i
+* i131.100.118.0/24   131.100.118.2                     100          0 i
+*&gt;l                   0.0.0.0                           100      32768 i
+* i131.100.119.0/24   131.100.118.2                     100          0 i
+*&gt;l                   0.0.0.0                           100      32768 i
+
+VV-SCS-N9K02# 
+
+2020-12-14 10:59:12,118: %UNICON-INFO: +++ VV-SCS-N9K02: executing command 'show vrf all' +++
+show vrf all
+VRF-Name                           VRF-ID State   Reason                        
+VRF-INTERNET                            3 Up      --                            
+default                                 1 Up      --                            
+management                              2 Up      --                            
+VV-SCS-N9K02# 
+
+2020-12-14 10:59:12,328: %UNICON-INFO: +++ VV-SCS-N9K02: executing command 'show bgp vrf VRF-INTERNET all neighbors' +++
+show bgp vrf VRF-INTERNET all neighbors
+BGP neighbor is 131.100.118.2, remote AS 61644, ibgp link, Peer index 3
+  BGP version 4, remote router ID 131.100.118.2
+  Neighbor previous state = OpenConfirm
+  BGP state = Established, up for 17w1d
+  Neighbor vrf: VRF-INTERNET
+  Peer is directly attached, interface Vlan1014
+  Enable logging neighbor events
+  TCP MD5 authentication is set (enabled)
+  Last read 00:00:51, hold time = 180, keepalive interval is 60 seconds
+  Last written 00:00:56, keepalive timer expiry due 00:00:03
+  Received 173483 messages, 0 notifications, 0 bytes in queue
+  Sent 173473 messages, 3 notifications, 0(0) bytes in queue
+  Enhanced error processing: On
+    0 discarded attributes
+  Connections established 4, dropped 3
+  Last reset by us 17w1d, due to holdtimer expired error
+  Last error length sent: 0
+  Reset error value sent: 0
+  Reset error sent major: 4 minor: 0
+  Notification data sent:
+  Last reset by peer never, due to No error
+  Last error length received: 0
+  Reset error value received 0
+  Reset error received major: 0 minor: 0
+  Notification data received:
+
+  Neighbor capabilities:
+  Dynamic capability: advertised (mp, refresh, gr) received (mp, refresh, gr)
+  Dynamic capability (old): advertised received
+  Route refresh capability (new): advertised received 
+  Route refresh capability (old): advertised received 
+  4-Byte AS capability: advertised received 
+  Address family IPv4 Unicast: advertised received 
+  Graceful Restart capability: advertised received
+
+  Graceful Restart Parameters:
+  Address families advertised to peer:
+    IPv4 Unicast  
+  Address families received from peer:
+    IPv4 Unicast  
+  Forwarding state preserved by peer for:
+  Restart time advertised to peer: 120 seconds
+  Stale time for routes advertised by peer: 300 seconds
+  Restart time advertised by peer: 120 seconds
+  Extended Next Hop Encoding Capability: advertised received
+  Receive IPv6 next hop encoding Capability for AF:
+    IPv4 Unicast  VPNv4 Unicast  
+
+  Message statistics:
+                              Sent               Rcvd
+  Opens:                         4                  4  
+  Notifications:                 3                  0  
+  Updates:                      38                 37  
+  Keepalives:               173445             173438  
+  Route Refresh:                 0                  0  
+  Capability:                    4                  4  
+  Total:                    173473             173483  
+  Total bytes:             3297359            3297043  
+  Bytes in queue:                0                  0  
+
+  For address family: IPv4 Unicast
+  BGP table version 84, neighbor version 84
+  4 accepted prefixes (4 paths), consuming 944 bytes of memory
+  0 received prefixes treated as withdrawn
+  3 sent prefixes (3 paths)
+  Nexthop set to local peering address, 131.100.118.3
+  Third-party Nexthop will not be computed.
+  Last End-of-RIB received 00:00:01 after session start
+  Last End-of-RIB sent 00:00:01 after session start
+  First convergence 00:00:01 after session start with 4 routes sent
+
+  Local host: 131.100.118.3, Local port: 15777
+  Foreign host: 131.100.118.2, Foreign port: 179
+  fd = 75
+
+BGP neighbor is 200.229.237.181, remote AS 28165, ebgp link, Peer index 4
+  BGP version 4, remote router ID 198.19.154.150
+  Neighbor previous state = OpenConfirm
+  BGP state = Established, up for 2w6d
+  Neighbor vrf: VRF-INTERNET
+  Peer is directly attached, interface Ethernet1/10
+  Enable logging neighbor events
+  TCP MD5 authentication is set (enabled)
+  Last read 00:00:03, hold time = 12, keepalive interval is 4 seconds
+  Last written 0.836360, keepalive timer expiry due 00:00:03
+  Received 995660 messages, 0 notifications, 0 bytes in queue
+  Sent 869980 messages, 4 notifications, 0(0) bytes in queue
+  Enhanced error processing: On
+    0 discarded attributes
+  Connections established 12, dropped 11
+  Last reset by us 2w6d, due to other configuration change
+  Last error length sent: 0
+  Reset error value sent: 0
+  Reset error sent major: 6 minor: 6
+  Notification data sent:
+  Last reset by peer 5w5d, due to session closed
+  Last error length received: 0
+  Reset error value received 0
+  Reset error received major: 104 minor: 0
+  Notification data received:
+
+  Neighbor capabilities:
+  Dynamic capability: advertised (mp, refresh, gr) 
+  Dynamic capability (old): advertised 
+  Route refresh capability (new): advertised received 
+  Route refresh capability (old): advertised 
+  4-Byte AS capability: advertised received 
+  Address family IPv4 Unicast: advertised received 
+  Graceful Restart capability: advertised 
+
+  Graceful Restart Parameters:
+  Address families advertised to peer:
+    IPv4 Unicast  
+  Address families received from peer:
+  Forwarding state preserved by peer for:
+  Restart time advertised to peer: 120 seconds
+  Stale time for routes advertised by peer: 300 seconds
+  Extended Next Hop Encoding Capability: advertised 
+
+  Message statistics:
+                              Sent               Rcvd
+  Opens:                        12                 12  
+  Notifications:                 4                  0  
+  Updates:                      60                 74  
+  Keepalives:               869946             995572  
+  Route Refresh:                 3                  2  
+  Capability:                    0                  0  
+  Total:                    869980             995660  
+  Total bytes:            16531899           18918942  
+  Bytes in queue:                0                  0  
+
+  For address family: IPv4 Unicast
+  BGP table version 84, neighbor version 84
+  1 accepted prefixes (1 paths), consuming 236 bytes of memory
+  0 received prefixes treated as withdrawn
+  3 sent prefixes (3 paths)
+  Inbound route-map configured is WCS-TO-VVAR, handle obtained
+  Outbound route-map configured is VVAR-TO-WCS, handle obtained
+  Last End-of-RIB sent 1w6d after session start
+  First convergence 00:00:01 after session start with 3 routes sent
+
+  Local host: 200.229.237.182, Local port: 46285
+  Foreign host: 200.229.237.181, Foreign port: 179
+  fd = 77
+
+VV-SCS-N9K02# 
+
+2020-12-14 10:59:12,531: %UNICON-INFO: +++ VV-SCS-N9K02: executing command 'show bgp vrf default all neighbors' +++
+show bgp vrf default all neighbors
+VV-SCS-N9K02# 
+
+2020-12-14 10:59:12,695: %UNICON-INFO: +++ VV-SCS-N9K02: executing command 'show bgp vrf all all summary' +++
+show bgp vrf all all summary
+BGP summary information for VRF VRF-INTERNET, address family IPv4 Unicast
+BGP router identifier 131.100.118.3, local AS number 61644
+BGP table version is 84, IPv4 Unicast config peers 2, capable peers 2
+4 network entries and 8 paths using 1440 bytes of memory
+BGP attribute entries [4/672], BGP AS path entries [2/16]
+BGP community entries [0/0], BGP clusterlist entries [0/0]
+
+Neighbor        V    AS MsgRcvd MsgSent   TblVer  InQ OutQ Up/Down  State/PfxRcd
+131.100.118.2   4 61644  173483  173473       84    0    0    17w1d 4         
+200.229.237.181 4 28165  995661  869980       84    0    0     2w6d 1         
+
+BGP summary information for VRF VRF-INTERNET, address family IPv6 Unicast
+VV-SCS-N9K02# 
+
+2020-12-14 10:59:12,901: %UNICON-INFO: +++ VV-SCS-N9K02: executing command 'show bgp vrf VRF-INTERNET all neighbors 131.100.118.2 advertised-routes' +++
+show bgp vrf VRF-INTERNET all neighbors 131.100.118.2 advertised-routes
+
+Peer 131.100.118.2 routes for address family IPv4 Unicast:
+BGP table version is 84, Local Router ID is 131.100.118.3
+Status: s-suppressed, x-deleted, S-stale, d-dampened, h-history, *-valid, &gt;-best
+Path type: i-internal, e-external, c-confed, l-local, a-aggregate, r-redist, I-injected
+Origin codes: i - IGP, e - EGP, ? - incomplete, | - multipath, &amp; - backup, 2 - best2
+
+   Network            Next Hop            Metric     LocPrf     Weight Path
+*&gt;l131.100.116.0/22   0.0.0.0                           100      32768 i
+*&gt;l131.100.118.0/24   0.0.0.0                           100      32768 i
+*&gt;l131.100.119.0/24   0.0.0.0                           100      32768 i
+
+
+Peer 131.100.118.2 routes for address family IPv6 Unicast:
+BGP table version is 2, Local Router ID is 131.100.118.3
+Status: s-suppressed, x-deleted, S-stale, d-dampened, h-history, *-valid, &gt;-best
+Path type: i-internal, e-external, c-confed, l-local, a-aggregate, r-redist, I-injected
+Origin codes: i - IGP, e - EGP, ? - incomplete, | - multipath, &amp; - backup, 2 - best2
+
+   Network            Next Hop            Metric     LocPrf     Weight Path
+VV-SCS-N9K02# 
+
+2020-12-14 10:59:13,084: %UNICON-INFO: +++ VV-SCS-N9K02: executing command 'show bgp vrf VRF-INTERNET all neighbors 200.229.237.181 advertised-routes' +++
+show bgp vrf VRF-INTERNET all neighbors 200.229.237.181 advertised-routes
+
+Peer 200.229.237.181 routes for address family IPv4 Unicast:
+BGP table version is 84, Local Router ID is 131.100.118.3
+Status: s-suppressed, x-deleted, S-stale, d-dampened, h-history, *-valid, &gt;-best
+Path type: i-internal, e-external, c-confed, l-local, a-aggregate, r-redist, I-injected
+Origin codes: i - IGP, e - EGP, ? - incomplete, | - multipath, &amp; - backup, 2 - best2
+
+   Network            Next Hop            Metric     LocPrf     Weight Path
+*&gt;l131.100.116.0/22   0.0.0.0                           100      32768 i
+*&gt;l131.100.118.0/24   0.0.0.0                           100      32768 i
+*&gt;l131.100.119.0/24   0.0.0.0                           100      32768 i
+
+
+Peer 200.229.237.181 routes for address family IPv6 Unicast:
+BGP table version is 2, Local Router ID is 131.100.118.3
+Status: s-suppressed, x-deleted, S-stale, d-dampened, h-history, *-valid, &gt;-best
+Path type: i-internal, e-external, c-confed, l-local, a-aggregate, r-redist, I-injected
+Origin codes: i - IGP, e - EGP, ? - incomplete, | - multipath, &amp; - backup, 2 - best2
+
+   Network            Next Hop            Metric     LocPrf     Weight Path
+VV-SCS-N9K02# 
+
+2020-12-14 10:59:13,253: %UNICON-INFO: +++ VV-SCS-N9K02: executing command 'show bgp vrf VRF-INTERNET all neighbors 131.100.118.2 routes' +++
+show bgp vrf VRF-INTERNET all neighbors 131.100.118.2 routes
+
+Peer 131.100.118.2 routes for address family IPv4 Unicast:
+BGP table version is 84, Local Router ID is 131.100.118.3
+Status: s-suppressed, x-deleted, S-stale, d-dampened, h-history, *-valid, &gt;-best
+Path type: i-internal, e-external, c-confed, l-local, a-aggregate, r-redist, I-injected
+Origin codes: i - IGP, e - EGP, ? - incomplete, | - multipath, &amp; - backup, 2 - best2
+
+   Network            Next Hop            Metric     LocPrf     Weight Path
+*&gt;i0.0.0.0/0          131.100.118.2                     100          0 10429 i
+* i131.100.116.0/22   131.100.118.2                     100          0 i
+* i131.100.118.0/24   131.100.118.2                     100          0 i
+* i131.100.119.0/24   131.100.118.2                     100          0 i
+
+
+Peer 131.100.118.2 routes for address family IPv6 Unicast:
+BGP table version is 2, Local Router ID is 131.100.118.3
+Status: s-suppressed, x-deleted, S-stale, d-dampened, h-history, *-valid, &gt;-best
+Path type: i-internal, e-external, c-confed, l-local, a-aggregate, r-redist, I-injected
+Origin codes: i - IGP, e - EGP, ? - incomplete, | - multipath, &amp; - backup, 2 - best2
+
+   Network            Next Hop            Metric     LocPrf     Weight Path
+VV-SCS-N9K02# 
+
+2020-12-14 10:59:13,420: %UNICON-INFO: +++ VV-SCS-N9K02: executing command 'show bgp vrf VRF-INTERNET all neighbors 200.229.237.181 routes' +++
+show bgp vrf VRF-INTERNET all neighbors 200.229.237.181 routes
+
+Peer 200.229.237.181 routes for address family IPv4 Unicast:
+BGP table version is 84, Local Router ID is 131.100.118.3
+Status: s-suppressed, x-deleted, S-stale, d-dampened, h-history, *-valid, &gt;-best
+Path type: i-internal, e-external, c-confed, l-local, a-aggregate, r-redist, I-injected
+Origin codes: i - IGP, e - EGP, ? - incomplete, | - multipath, &amp; - backup, 2 - best2
+
+   Network            Next Hop            Metric     LocPrf     Weight Path
+* e0.0.0.0/0          200.229.237.181                                0 28165 28165 i
+
+
+Peer 200.229.237.181 routes for address family IPv6 Unicast:
+BGP table version is 2, Local Router ID is 131.100.118.3
+Status: s-suppressed, x-deleted, S-stale, d-dampened, h-history, *-valid, &gt;-best
+Path type: i-internal, e-external, c-confed, l-local, a-aggregate, r-redist, I-injected
+Origin codes: i - IGP, e - EGP, ? - incomplete, | - multipath, &amp; - backup, 2 - best2
+
+   Network            Next Hop            Metric     LocPrf     Weight Path
+VV-SCS-N9K02# 
+
+2020-12-14 10:59:13,606: %UNICON-INFO: +++ VV-SCS-N9K02: executing command 'show bgp vrf VRF-INTERNET all neighbors 131.100.118.2 received-routes' +++
+show bgp vrf VRF-INTERNET all neighbors 131.100.118.2 received-routes
+
+Inbound soft reconfiguration for IPv4 Unicast not performed on 131.100.118.2
+
+Inbound soft reconfiguration for IPv6 Unicast not performed on 131.100.118.2
+VV-SCS-N9K02# 
+
+2020-12-14 10:59:13,852: %UNICON-INFO: +++ VV-SCS-N9K02: executing command 'show bgp vrf VRF-INTERNET all neighbors 200.229.237.181 received-routes' +++
+show bgp vrf VRF-INTERNET all neighbors 200.229.237.181 received-routes
+
+Inbound soft reconfiguration for IPv4 Unicast not performed on 200.229.237.181
+
+Inbound soft reconfiguration for IPv6 Unicast not performed on 200.229.237.181
+VV-SCS-N9K02# 
+
+2020-12-14 10:59:14,036: %UNICON-INFO: +++ VV-SCS-N9K02: executing command 'show bgp vrf management all neighbors' +++
+show bgp vrf management all neighbors
+VV-SCS-N9K02#</msg>
+<status status="PASS" starttime="20201214 10:59:10.109" endtime="20201214 10:59:14.203"></status>
+</kw>
+<status status="PASS" starttime="20201214 10:59:10.108" endtime="20201214 10:59:14.203" critical="yes"></status>
+</test>
+<test id="s1-t4" name="Verify BGP route count">
+<kw name="verify count &quot;5&quot; &quot;bgp routes&quot; on device &quot;VV-SCS-N9K02&quot;" library="genie.libs.robot.GenieRobot">
+<doc>Verify that a specific number of &lt;...&gt; is &lt;...&gt; on a device.</doc>
+<msg timestamp="20201214 10:59:14.938" level="INFO">Could not learn &lt;class 'genie.libs.parser.nxos.show_bgp.ShowBgpPeerSession'&gt;
+Parser Output is empty</msg>
+<msg timestamp="20201214 10:59:15.510" level="INFO">Could not learn &lt;class 'genie.libs.parser.nxos.show_bgp.ShowBgpPeerPolicy'&gt;
+Parser Output is empty</msg>
+<msg timestamp="20201214 10:59:15.683" level="INFO">Could not learn &lt;class 'genie.libs.parser.nxos.show_bgp.ShowBgpVrfAllAllDampeningParameters'&gt;
+Parser Output is empty</msg>
+<msg timestamp="20201214 10:59:16.808" level="INFO">Could not learn &lt;class 'genie.libs.parser.nxos.show_bgp.ShowBgpVrfAllNeighbors'&gt;
+Parser Output is empty</msg>
+<msg timestamp="20201214 10:59:17.944" level="INFO">Could not learn &lt;class 'genie.libs.parser.nxos.show_bgp.ShowBgpVrfAllNeighborsReceivedRoutes'&gt;
+Parser Output is empty</msg>
+<msg timestamp="20201214 10:59:18.118" level="INFO">Could not learn &lt;class 'genie.libs.parser.nxos.show_bgp.ShowBgpVrfAllNeighborsReceivedRoutes'&gt;
+Parser Output is empty</msg>
+<msg timestamp="20201214 10:59:18.288" level="INFO">Could not learn &lt;class 'genie.libs.parser.nxos.show_bgp.ShowBgpVrfAllNeighbors'&gt;
+Parser Output is empty</msg>
+<msg timestamp="20201214 10:59:18.289" level="INFO">+====================================================================================================================================================+</msg>
+<msg timestamp="20201214 10:59:18.289" level="INFO">| Commands for learning feature 'Bgp'                                                                                                                |</msg>
+<msg timestamp="20201214 10:59:18.289" level="INFO">+====================================================================================================================================================+</msg>
+<msg timestamp="20201214 10:59:18.289" level="INFO">| - Parsed commands                                                                                                                                  |</msg>
+<msg timestamp="20201214 10:59:18.289" level="INFO">|----------------------------------------------------------------------------------------------------------------------------------------------------|</msg>
+<msg timestamp="20201214 10:59:18.289" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_bgp.ShowBgpProcessVrfAll'&gt;, arguments: {'vrf':'all'}                                                    |</msg>
+<msg timestamp="20201214 10:59:18.289" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_bgp.ShowBgpVrfAllAllNextHopDatabase'&gt;, arguments: {'address_family':'all','vrf':'all'}                  |</msg>
+<msg timestamp="20201214 10:59:18.289" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_routing.ShowRoutingVrfAll'&gt;, arguments: {'vrf':'all'}                                                   |</msg>
+<msg timestamp="20201214 10:59:18.289" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_bgp.ShowBgpVrfAllAll'&gt;, arguments: {'address_family':'all','vrf':'all'}                                 |</msg>
+<msg timestamp="20201214 10:59:18.290" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_vrf.ShowVrf'&gt;, arguments: {'vrf':'all'}                                                                 |</msg>
+<msg timestamp="20201214 10:59:18.290" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_bgp.ShowBgpVrfAllNeighbors'&gt;, arguments: {'address_family':'all','neighbor':'','vrf':'VRF-INTERNET'}    |</msg>
+<msg timestamp="20201214 10:59:18.290" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_bgp.ShowBgpVrfAllAllSummary'&gt;, arguments: {'address_family':'all','vrf':'all'}                          |</msg>
+<msg timestamp="20201214 10:59:18.290" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_bgp.ShowBgpVrfAllNeighborsAdvertisedRoutes'&gt;, arguments:                                                |</msg>
+<msg timestamp="20201214 10:59:18.290" level="INFO">| {'address_family':'all','neighbor':'131.100.118.2','vrf':'VRF-INTERNET'}                                                                           |</msg>
+<msg timestamp="20201214 10:59:18.290" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_bgp.ShowBgpVrfAllNeighborsAdvertisedRoutes'&gt;, arguments:                                                |</msg>
+<msg timestamp="20201214 10:59:18.290" level="INFO">| {'address_family':'all','neighbor':'200.229.237.181','vrf':'VRF-INTERNET'}                                                                         |</msg>
+<msg timestamp="20201214 10:59:18.290" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_bgp.ShowBgpVrfAllNeighborsRoutes'&gt;, arguments:                                                          |</msg>
+<msg timestamp="20201214 10:59:18.290" level="INFO">| {'address_family':'all','neighbor':'131.100.118.2','vrf':'VRF-INTERNET'}                                                                           |</msg>
+<msg timestamp="20201214 10:59:18.290" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_bgp.ShowBgpVrfAllNeighborsRoutes'&gt;, arguments:                                                          |</msg>
+<msg timestamp="20201214 10:59:18.290" level="INFO">| {'address_family':'all','neighbor':'200.229.237.181','vrf':'VRF-INTERNET'}                                                                         |</msg>
+<msg timestamp="20201214 10:59:18.290" level="INFO">|====================================================================================================================================================|</msg>
+<msg timestamp="20201214 10:59:18.290" level="INFO">| - Commands with empty output                                                                                                                       |</msg>
+<msg timestamp="20201214 10:59:18.290" level="INFO">|----------------------------------------------------------------------------------------------------------------------------------------------------|</msg>
+<msg timestamp="20201214 10:59:18.290" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_bgp.ShowBgpPeerSession'&gt;                                                                                |</msg>
+<msg timestamp="20201214 10:59:18.290" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_bgp.ShowBgpPeerPolicy'&gt;                                                                                 |</msg>
+<msg timestamp="20201214 10:59:18.290" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_bgp.ShowBgpVrfAllAllDampeningParameters'&gt;, arguments: {'address_family':'all','vrf':'all'}              |</msg>
+<msg timestamp="20201214 10:59:18.290" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_bgp.ShowBgpVrfAllNeighbors'&gt;, arguments: {'address_family':'all','neighbor':'','vrf':'default'}         |</msg>
+<msg timestamp="20201214 10:59:18.290" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_bgp.ShowBgpVrfAllNeighborsReceivedRoutes'&gt;, arguments:                                                  |</msg>
+<msg timestamp="20201214 10:59:18.290" level="INFO">| {'address_family':'all','neighbor':'131.100.118.2','vrf':'VRF-INTERNET'}                                                                           |</msg>
+<msg timestamp="20201214 10:59:18.290" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_bgp.ShowBgpVrfAllNeighborsReceivedRoutes'&gt;, arguments:                                                  |</msg>
+<msg timestamp="20201214 10:59:18.290" level="INFO">| {'address_family':'all','neighbor':'200.229.237.181','vrf':'VRF-INTERNET'}                                                                         |</msg>
+<msg timestamp="20201214 10:59:18.291" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_bgp.ShowBgpVrfAllNeighbors'&gt;, arguments: {'address_family':'all','neighbor':'','vrf':'management'}      |</msg>
+<msg timestamp="20201214 10:59:18.291" level="INFO">|====================================================================================================================================================|</msg>
+<msg timestamp="20201214 10:59:18.292" level="INFO">2020-12-14 10:59:14,206: %UNICON-INFO: +++ VV-SCS-N9K02: executing command 'show bgp process vrf all' +++
+show bgp process vrf all
+
+BGP Process Information
+BGP Process ID                 : 955
+BGP Protocol Started, reason:  : configuration
+BGP Performance Mode:          : No
+BGP Protocol Tag               : 61644
+BGP Protocol State             : Running
+BGP Isolate Mode               : No
+BGP Graceful-Shutdown-Aware    : Yes
+BGP Graceful-Shutdown-Activate : No
+BGP MMODE                      : Initialized
+BGP Memory State               : OK
+BGP asformat                   : asplain
+
+BGP attributes information
+Number of attribute entries    : 4
+HWM of attribute entries       : 4
+Bytes used by entries          : 496
+Entries pending delete         : 0
+HWM of entries pending delete  : 0
+BGP paths per attribute HWM    : 3
+BGP AS path entries            : 2
+Bytes used by AS path entries  : 56
+
+Information regarding configured VRFs:
+
+BGP Information for VRF VRF-INTERNET
+VRF Id                         : 3
+VRF state                      : UP
+Router-ID                      : 131.100.118.3
+Configured Router-ID           : 131.100.118.3
+Local AS                       : 61644
+Confed-ID                      : 0
+Cluster-ID                     : 0.0.0.0
+No. of configured peers        : 2
+No. of pending config peers    : 0
+No. of established peers       : 2
+VRF RD                         : Not configured
+
+    Information for address family IPv4 Unicast in VRF VRF-INTERNET
+    Table Id                   : 0x3
+    Table state                : UP
+    Peers      Active-peers    Routes     Paths      Networks   Aggregates
+    2          2               4          8          3          0         
+
+    Redistribution                
+        None
+
+
+
+    Nexthop trigger-delay
+        critical 3000 ms
+        non-critical 10000 ms
+
+    Information for address family IPv6 Unicast in VRF VRF-INTERNET
+    Table Id                   : 0x80000003
+    Table state                : UP
+    Peers      Active-peers    Routes     Paths      Networks   Aggregates
+    0          0               0          0          0          0         
+
+    Redistribution                
+        None
+
+
+
+    Nexthop trigger-delay
+        critical 3000 ms
+        non-critical 10000 ms
+
+BGP Information for VRF default
+VRF Id                         : 1
+VRF state                      : UP
+Router-ID                      : 10.211.17.254
+Configured Router-ID           : 0.0.0.0
+Confed-ID                      : 0
+Cluster-ID                     : 0.0.0.0
+No. of configured peers        : 0
+No. of pending config peers    : 0
+No. of established peers       : 0
+VRF RD                         : Not configured
+VV-SCS-N9K02# 
+
+2020-12-14 10:59:14,411: %UNICON-INFO: +++ VV-SCS-N9K02: executing command 'show running-config | inc peer-session' +++
+show running-config | inc peer-session
+VV-SCS-N9K02# 
+
+2020-12-14 10:59:14,938: %UNICON-INFO: +++ VV-SCS-N9K02: executing command 'show running-config | inc peer-policy' +++
+show running-config | inc peer-policy
+VV-SCS-N9K02# 
+
+2020-12-14 10:59:15,510: %UNICON-INFO: +++ VV-SCS-N9K02: executing command 'show bgp vrf all all dampening parameters' +++
+show bgp vrf all all dampening parameters
+VV-SCS-N9K02# 
+
+2020-12-14 10:59:15,683: %UNICON-INFO: +++ VV-SCS-N9K02: executing command 'show bgp vrf all all nexthop-database' +++
+show bgp vrf all all nexthop-database
+
+Next Hop table for VRF VRF-INTERNET, address family IPv4 Unicast:
+Next-hop trigger-delay(miliseconds)
+  Critical: 3000 Non-critical: 10000
+IPv4 Next-hop table
+
+IPv4 Unicast Next-hops:
+
+Nexthop: 0.0.0.0, Flags: 0x2, Refcount: 3, IGP cost: 0, Multipath: No
+IGP Route type: 0, IGP preference: 0
+Nexthop is not-attached local unreachable not-labeled
+Nexthop last resolved: never, using 0.0.0.0/0
+Metric next advertise: Never
+RNH epoch: 0
+
+Nexthop: 131.100.116.0, Flags: 0, Refcount: 0, IGP cost: 4294967295, Multipath: No
+IGP Route type: 0, IGP preference: 0
+Nexthop is not-attached not-local unreachable not-labeled
+Nexthop last resolved: never, using 0.0.0.0/0
+Metric next advertise: Never
+RNH epoch: 1
+
+Nexthop: 131.100.118.0, Flags: 0, Refcount: 0, IGP cost: 4294967295, Multipath: No
+IGP Route type: 0, IGP preference: 0
+Nexthop is not-attached not-local unreachable not-labeled
+Nexthop last resolved: never, using 0.0.0.0/0
+Metric next advertise: Never
+RNH epoch: 2
+
+Nexthop: 131.100.118.2, Flags: 0x5, Refcount: 4, IGP cost: 0, Multipath: No
+IGP Route type: 0, IGP preference: 250
+Attached nexthop: 131.100.118.2, Interface: Vlan1014
+Nexthop is attached not-local reachable not-labeled
+Nexthop last resolved: 17w1d, using 131.100.118.2/32
+Metric next advertise: Never
+RNH epoch: 1
+
+Nexthop: 131.100.119.0, Flags: 0, Refcount: 0, IGP cost: 4294967295, Multipath: No
+IGP Route type: 0, IGP preference: 0
+Nexthop is not-attached not-local unreachable not-labeled
+Nexthop last resolved: never, using 0.0.0.0/0
+Metric next advertise: Never
+RNH epoch: 2
+
+Nexthop: 200.229.237.181, Flags: 0x5, Refcount: 1, IGP cost: 0, Multipath: No
+IGP Route type: 0, IGP preference: 250
+Attached nexthop: 200.229.237.181, Interface: Ethernet1/10
+Nexthop is attached not-local reachable not-labeled
+Nexthop last resolved: 2w6d, using 200.229.237.181/32
+Metric next advertise: Never
+RNH epoch: 4
+IPv6 Next-hop table
+
+Next Hop table for VRF VRF-INTERNET, address family IPv6 Unicast:
+Next-hop trigger-delay(miliseconds)
+  Critical: 3000 Non-critical: 10000
+IPv4 Next-hop table
+
+IPv4 Unicast Next-hops:
+
+Nexthop: ::ffff:0.0.0.0, Flags: 0x2, Refcount: 0, IGP cost: 0, Multipath: No
+IGP Route type: 0, IGP preference: 0
+Nexthop is not-attached local unreachable not-labeled
+Nexthop last resolved: never, using 0.0.0.0/0
+Metric next advertise: Never
+RNH epoch: 0
+
+Nexthop: ::ffff:131.100.116.0, Flags: 0, Refcount: 0, IGP cost: 4294967295, Multipath: No
+IGP Route type: 0, IGP preference: 0
+Nexthop is not-attached not-local unreachable not-labeled
+Nexthop last resolved: never, using 0.0.0.0/0
+Metric next advertise: Never
+RNH epoch: 1
+
+Nexthop: ::ffff:131.100.118.0, Flags: 0, Refcount: 0, IGP cost: 4294967295, Multipath: No
+IGP Route type: 0, IGP preference: 0
+Nexthop is not-attached not-local unreachable not-labeled
+Nexthop last resolved: never, using 0.0.0.0/0
+Metric next advertise: Never
+RNH epoch: 2
+
+Nexthop: ::ffff:131.100.118.2, Flags: 0x5, Refcount: 0, IGP cost: 0, Multipath: No
+IGP Route type: 0, IGP preference: 250
+Attached nexthop: 131.100.118.2, Interface: Vlan1014
+Nexthop is attached not-local reachable not-labeled
+Nexthop last resolved: 17w1d, using 131.100.118.2/32
+Metric next advertise: Never
+RNH epoch: 1
+
+Nexthop: ::ffff:131.100.119.0, Flags: 0, Refcount: 0, IGP cost: 4294967295, Multipath: No
+IGP Route type: 0, IGP preference: 0
+Nexthop is not-attached not-local unreachable not-labeled
+Nexthop last resolved: never, using 0.0.0.0/0
+Metric next advertise: Never
+RNH epoch: 2
+
+Nexthop: ::ffff:200.229.237.181, Flags: 0x5, Refcount: 0, IGP cost: 0, Multipath: No
+IGP Route type: 0, IGP preference: 250
+Attached nexthop: 200.229.237.181, Interface: Ethernet1/10
+Nexthop is attached not-local reachable not-labeled
+Nexthop last resolved: 2w6d, using 200.229.237.181/32
+Metric next advertise: Never
+RNH epoch: 4
+IPv6 Next-hop table
+VV-SCS-N9K02# 
+
+2020-12-14 10:59:15,857: %UNICON-INFO: +++ VV-SCS-N9K02: executing command 'show routing vrf all' +++
+show routing vrf all
+IP Route Table for VRF "default"
+'*' denotes best ucast next-hop
+'**' denotes best mcast next-hop
+'[x/y]' denotes [preference/metric]
+'%&lt;string&gt;' in via output denotes VRF &lt;string&gt;
+
+0.0.0.0/0, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+10.0.0.0/8, ubest/mbest: 1/0
+    *via 10.129.0.12, [1/0], 17w1d, static
+10.3.76.18/32, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+10.95.230.128/26, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+10.119.14.0/24, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+10.128.225.64/30, ubest/mbest: 1/0
+    *via 10.129.0.36, [1/0], 17w1d, static
+10.129.0.0/29, ubest/mbest: 1/0, attached
+    *via 10.129.0.3, Vlan980, [0/0], 17w1d, direct
+10.129.0.1/32, ubest/mbest: 1/0, attached
+    *via 10.129.0.1, Vlan980, [0/0], 17w1d, hsrp
+10.129.0.3/32, ubest/mbest: 1/0, attached
+    *via 10.129.0.3, Vlan980, [0/0], 17w1d, local
+10.129.0.8/29, ubest/mbest: 1/0, attached
+    *via 10.129.0.11, Vlan930, [0/0], 17w1d, direct
+10.129.0.9/32, ubest/mbest: 1/0, attached
+    *via 10.129.0.9, Vlan930, [0/0], 17w1d, hsrp
+10.129.0.11/32, ubest/mbest: 1/0, attached
+    *via 10.129.0.11, Vlan930, [0/0], 17w1d, local
+10.129.0.16/29, ubest/mbest: 1/0, attached
+    *via 10.129.0.19, Vlan981, [0/0], 17w1d, direct
+10.129.0.17/32, ubest/mbest: 1/0, attached
+    *via 10.129.0.17, Vlan981, [0/0], 17w1d, hsrp
+10.129.0.19/32, ubest/mbest: 1/0, attached
+    *via 10.129.0.19, Vlan981, [0/0], 17w1d, local
+10.129.0.24/29, ubest/mbest: 1/0, attached
+    *via 10.129.0.27, Vlan982, [0/0], 17w1d, direct
+10.129.0.25/32, ubest/mbest: 1/0, attached
+    *via 10.129.0.25, Vlan982, [0/0], 17w1d, hsrp
+10.129.0.27/32, ubest/mbest: 1/0, attached
+    *via 10.129.0.27, Vlan982, [0/0], 17w1d, local
+10.129.1.0/24, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.2.0/23, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.4.0/24, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.5.0/24, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.6.0/24, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.8.0/24, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.9.0/25, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.10.0/26, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.10.64/26, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.10.128/26, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.10.192/26, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.11.0/26, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.11.64/26, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.11.128/26, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.11.192/28, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.11.208/29, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.12.0/24, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.13.0/26, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.13.64/26, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.15.0/26, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.15.64/26, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.15.128/26, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.15.192/26, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.16.0/24, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.17.0/24, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.22.0/24, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.25.0/26, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.26.0/26, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.27.0/24, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.28.0/24, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.30.0/24, ubest/mbest: 2/0
+    *via 10.129.120.29, Eth1/43.79, [110/20], 17w1d, ospf-CORE, type-2
+    *via 10.129.120.33, Eth1/44.79, [110/20], 17w1d, ospf-CORE, type-2
+10.129.31.0/24, ubest/mbest: 1/0, attached
+    *via 10.129.31.3, Vlan931, [0/0], 17w1d, direct
+10.129.31.1/32, ubest/mbest: 1/0, attached
+    *via 10.129.31.1, Vlan931, [0/0], 17w1d, hsrp
+10.129.31.3/32, ubest/mbest: 1/0, attached
+    *via 10.129.31.3, Vlan931, [0/0], 17w1d, local
+10.129.32.0/24, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+10.129.33.0/24, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+10.129.120.20/30, ubest/mbest: 1/0
+    *via 10.129.120.33, Eth1/44.79, [110/8], 17w1d, ospf-CORE, intra
+10.129.120.24/30, ubest/mbest: 1/0
+    *via 10.129.120.29, Eth1/43.79, [110/8], 17w1d, ospf-CORE, intra
+10.129.120.28/30, ubest/mbest: 1/0, attached
+    *via 10.129.120.30, Eth1/43.79, [0/0], 17w1d, direct
+10.129.120.30/32, ubest/mbest: 1/0, attached
+    *via 10.129.120.30, Eth1/43.79, [0/0], 17w1d, local
+10.129.120.32/30, ubest/mbest: 1/0, attached
+    *via 10.129.120.34, Eth1/44.79, [0/0], 17w1d, direct
+10.129.120.34/32, ubest/mbest: 1/0, attached
+    *via 10.129.120.34, Eth1/44.79, [0/0], 17w1d, local
+10.142.0.2/32, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+10.142.11.1/32, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+10.171.164.48/29, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+10.206.0.0/20, ubest/mbest: 1/0
+    *via 10.129.0.28, [1/0], 10w6d, static
+10.208.32.0/22, ubest/mbest: 1/0
+    *via 10.129.0.12, [1/0], 17w1d, static
+10.211.17.0/24, ubest/mbest: 1/0, attached
+    *via 10.211.17.254, Vlan632, [0/0], 17w1d, direct
+10.211.17.1/32, ubest/mbest: 1/0, attached
+    *via 10.211.17.1, Vlan632, [0/0], 17w1d, hsrp
+10.211.17.254/32, ubest/mbest: 1/0, attached
+    *via 10.211.17.254, Vlan632, [0/0], 17w1d, local
+10.213.16.48/28, ubest/mbest: 1/0, attached
+    *via 10.213.16.51, Vlan803, [0/0], 17w1d, direct
+10.213.16.49/32, ubest/mbest: 1/0, attached
+    *via 10.213.16.49, Vlan803, [0/0], 17w1d, hsrp
+10.213.16.51/32, ubest/mbest: 1/0, attached
+    *via 10.213.16.51, Vlan803, [0/0], 17w1d, local
+10.213.16.64/28, ubest/mbest: 1/0, attached
+    *via 10.213.16.67, Vlan805, [0/0], 17w1d, direct
+10.213.16.65/32, ubest/mbest: 1/0, attached
+    *via 10.213.16.65, Vlan805, [0/0], 17w1d, hsrp
+10.213.16.67/32, ubest/mbest: 1/0, attached
+    *via 10.213.16.67, Vlan805, [0/0], 17w1d, local
+10.214.16.0/20, ubest/mbest: 1/0
+    *via 10.129.0.12, [1/0], 17w1d, static
+10.228.0.0/20, ubest/mbest: 1/0
+    *via 10.129.0.12, [1/0], 17w1d, static
+10.228.16.0/20, ubest/mbest: 1/0
+    *via 10.129.0.12, [1/0], 17w1d, static
+10.228.32.0/24, ubest/mbest: 1/0
+    *via 10.129.0.12, [1/0], 17w1d, static
+10.229.16.0/20, ubest/mbest: 1/0
+    *via 10.129.0.12, [1/0], 17w1d, static
+10.230.0.0/20, ubest/mbest: 1/0
+    *via 10.129.0.12, [1/0], 17w1d, static
+10.230.117.7/32, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+10.230.117.23/32, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+10.230.117.33/32, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+10.233.0.0/20, ubest/mbest: 1/0
+    *via 10.129.0.12, [1/0], 17w1d, static
+10.248.0.0/20, ubest/mbest: 1/0
+    *via 10.129.0.12, [1/0], 17w1d, static
+10.249.16.0/20, ubest/mbest: 1/0
+    *via 10.129.0.12, [1/0], 17w1d, static
+10.249.64.0/20, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+10.249.96.0/20, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+65.203.238.170/32, ubest/mbest: 1/0
+    *via 10.129.0.12, [1/0], 17w1d, static
+128.201.18.20/32, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+129.39.184.0/21, ubest/mbest: 1/0
+    *via 10.129.0.12, [1/0], 17w1d, static
+138.117.30.253/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+138.117.30.254/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+158.98.62.16/28, ubest/mbest: 1/0
+    *via 10.129.0.12, [1/0], 17w1d, static
+158.98.176.0/21, ubest/mbest: 1/0
+    *via 10.129.0.12, [1/0], 17w1d, static
+161.26.0.0/16, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+166.8.0.0/14, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+172.16.0.0/12, ubest/mbest: 1/0
+    *via 10.129.0.12, [1/0], 17w1d, static
+172.16.52.3/32, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+172.19.2.0/24, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+172.19.98.4/32, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+172.20.0.0/24, ubest/mbest: 1/0
+    *via 10.129.0.12, [1/0], 17w1d, static
+172.20.0.182/32, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+172.20.2.0/24, ubest/mbest: 1/0
+    *via 10.129.0.12, [1/0], 17w1d, static
+172.20.2.181/32, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+172.20.3.0/24, ubest/mbest: 1/0
+    *via 10.129.0.12, [1/0], 17w1d, static
+172.20.102.0/29, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+172.20.104.0/29, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+172.22.31.0/24, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+172.22.31.17/32, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+172.22.32.0/24, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+172.24.1.0/28, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+172.25.56.31/32, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+172.25.147.160/28, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+172.28.0.20/32, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+172.34.0.0/24, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+172.190.199.0/24, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+177.11.240.207/32, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+180.104.129.82/32, ubest/mbest: 1/0
+    *via 10.129.0.12, [1/0], 17w1d, static
+189.38.117.10/32, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+192.168.0.0/16, ubest/mbest: 1/0
+    *via 10.129.0.12, [1/0], 17w1d, static
+192.168.9.218/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.11.8/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.24.27/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.24.44/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.24.57/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.24.63/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.24.73/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.24.127/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.24.164/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.24.166/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.24.207/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.24.253/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.42.20/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.42.30/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.42.33/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.42.69/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.42.71/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.42.85/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.42.92/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.42.93/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.42.125/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.42.141/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.42.142/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.42.147/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.42.205/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.42.208/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.43.207/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.43.208/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.48.251/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.76.47/32, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+192.168.116.0/24, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+192.168.134.144/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.144.6/32, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+192.168.154.3/32, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+192.168.170.2/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.212.160/29, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+192.168.242.39/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.242.48/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+192.168.242.49/32, ubest/mbest: 1/0
+    *via 10.129.0.20, [1/0], 10w6d, static
+204.71.178.10/32, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+205.138.247.10/32, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+206.253.234.14/32, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+206.253.234.20/32, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+206.253.234.23/32, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+206.253.253.20/32, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+206.253.253.23/32, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+209.134.186.0/23, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+209.134.190.0/23, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+216.104.233.10/32, ubest/mbest: 1/0
+    *via 10.129.0.4, [1/0], 10w6d, static
+
+IP Route Table for VRF "management"
+'*' denotes best ucast next-hop
+'**' denotes best mcast next-hop
+'[x/y]' denotes [preference/metric]
+'%&lt;string&gt;' in via output denotes VRF &lt;string&gt;
+
+0.0.0.0/0, ubest/mbest: 1/0
+    *via 10.211.0.100, [1/0], 17w1d, static
+10.211.0.0/20, ubest/mbest: 1/0, attached
+    *via 10.211.10.101, mgmt0, [0/0], 17w1d, direct
+10.211.10.101/32, ubest/mbest: 1/0, attached
+    *via 10.211.10.101, mgmt0, [0/0], 17w1d, local
+
+IP Route Table for VRF "VRF-INTERNET"
+'*' denotes best ucast next-hop
+'**' denotes best mcast next-hop
+'[x/y]' denotes [preference/metric]
+'%&lt;string&gt;' in via output denotes VRF &lt;string&gt;
+
+0.0.0.0/0, ubest/mbest: 1/0
+    *via 131.100.118.2, [200/0], 2w6d, bgp-61644, internal, tag 10429
+131.100.116.0/22, ubest/mbest: 1/0
+    *via Null0, [1/0], 17w1d, static
+131.100.118.0/24, ubest/mbest: 1/0, attached
+    *via 131.100.118.3, Vlan1014, [0/0], 17w1d, direct
+131.100.118.1/32, ubest/mbest: 1/0, attached
+    *via 131.100.118.1, Vlan1014, [0/0], 17w1d, hsrp
+131.100.118.3/32, ubest/mbest: 1/0, attached
+    *via 131.100.118.3, Vlan1014, [0/0], 17w1d, local
+131.100.119.0/24, ubest/mbest: 1/0, attached
+    *via 131.100.119.3, Vlan1025, [0/0], 17w1d, direct
+131.100.119.1/32, ubest/mbest: 1/0, attached
+    *via 131.100.119.1, Vlan1025, [0/0], 17w1d, hsrp
+131.100.119.3/32, ubest/mbest: 1/0, attached
+    *via 131.100.119.3, Vlan1025, [0/0], 17w1d, local
+187.62.212.2/32, ubest/mbest: 1/0
+    *via 200.229.237.181, [1/0], 2w6d, static
+200.205.125.57/32, ubest/mbest: 1/0
+    *via Null0, [1/0], 5w1d, static
+200.229.237.180/30, ubest/mbest: 1/0, attached
+    *via 200.229.237.182, Eth1/10, [0/0], 2w6d, direct
+200.229.237.182/32, ubest/mbest: 1/0, attached
+    *via 200.229.237.182, Eth1/10, [0/0], 2w6d, local
+
+VV-SCS-N9K02# 
+
+2020-12-14 10:59:16,089: %UNICON-INFO: +++ VV-SCS-N9K02: executing command 'show bgp vrf all all' +++
+show bgp vrf all all
+BGP routing table information for VRF VRF-INTERNET, address family IPv4 Unicast
+BGP table version is 84, Local Router ID is 131.100.118.3
+Status: s-suppressed, x-deleted, S-stale, d-dampened, h-history, *-valid, &gt;-best
+Path type: i-internal, e-external, c-confed, l-local, a-aggregate, r-redist, I-injected
+Origin codes: i - IGP, e - EGP, ? - incomplete, | - multipath, &amp; - backup, 2 - best2
+
+   Network            Next Hop            Metric     LocPrf     Weight Path
+*&gt;i0.0.0.0/0          131.100.118.2                     100          0 10429 i
+* e                   200.229.237.181                                0 28165 28165 i
+* i131.100.116.0/22   131.100.118.2                     100          0 i
+*&gt;l                   0.0.0.0                           100      32768 i
+* i131.100.118.0/24   131.100.118.2                     100          0 i
+*&gt;l                   0.0.0.0                           100      32768 i
+* i131.100.119.0/24   131.100.118.2                     100          0 i
+*&gt;l                   0.0.0.0                           100      32768 i
+
+VV-SCS-N9K02# 
+
+2020-12-14 10:59:16,259: %UNICON-INFO: +++ VV-SCS-N9K02: executing command 'show vrf all' +++
+show vrf all
+VRF-Name                           VRF-ID State   Reason                        
+VRF-INTERNET                            3 Up      --                            
+default                                 1 Up      --                            
+management                              2 Up      --                            
+VV-SCS-N9K02# 
+
+2020-12-14 10:59:16,451: %UNICON-INFO: +++ VV-SCS-N9K02: executing command 'show bgp vrf VRF-INTERNET all neighbors' +++
+show bgp vrf VRF-INTERNET all neighbors
+BGP neighbor is 131.100.118.2, remote AS 61644, ibgp link, Peer index 3
+  BGP version 4, remote router ID 131.100.118.2
+  Neighbor previous state = OpenConfirm
+  BGP state = Established, up for 17w1d
+  Neighbor vrf: VRF-INTERNET
+  Peer is directly attached, interface Vlan1014
+  Enable logging neighbor events
+  TCP MD5 authentication is set (enabled)
+  Last read 00:00:55, hold time = 180, keepalive interval is 60 seconds
+  Last written 0.806164, keepalive timer expiry due 00:00:59
+  Received 173483 messages, 0 notifications, 0 bytes in queue
+  Sent 173474 messages, 3 notifications, 0(0) bytes in queue
+  Enhanced error processing: On
+    0 discarded attributes
+  Connections established 4, dropped 3
+  Last reset by us 17w1d, due to holdtimer expired error
+  Last error length sent: 0
+  Reset error value sent: 0
+  Reset error sent major: 4 minor: 0
+  Notification data sent:
+  Last reset by peer never, due to No error
+  Last error length received: 0
+  Reset error value received 0
+  Reset error received major: 0 minor: 0
+  Notification data received:
+
+  Neighbor capabilities:
+  Dynamic capability: advertised (mp, refresh, gr) received (mp, refresh, gr)
+  Dynamic capability (old): advertised received
+  Route refresh capability (new): advertised received 
+  Route refresh capability (old): advertised received 
+  4-Byte AS capability: advertised received 
+  Address family IPv4 Unicast: advertised received 
+  Graceful Restart capability: advertised received
+
+  Graceful Restart Parameters:
+  Address families advertised to peer:
+    IPv4 Unicast  
+  Address families received from peer:
+    IPv4 Unicast  
+  Forwarding state preserved by peer for:
+  Restart time advertised to peer: 120 seconds
+  Stale time for routes advertised by peer: 300 seconds
+  Restart time advertised by peer: 120 seconds
+  Extended Next Hop Encoding Capability: advertised received
+  Receive IPv6 next hop encoding Capability for AF:
+    IPv4 Unicast  VPNv4 Unicast  
+
+  Message statistics:
+                              Sent               Rcvd
+  Opens:                         4                  4  
+  Notifications:                 3                  0  
+  Updates:                      38                 37  
+  Keepalives:               173446             173438  
+  Route Refresh:                 0                  0  
+  Capability:                    4                  4  
+  Total:                    173474             173483  
+  Total bytes:             3297378            3297043  
+  Bytes in queue:                0                  0  
+
+  For address family: IPv4 Unicast
+  BGP table version 84, neighbor version 84
+  4 accepted prefixes (4 paths), consuming 944 bytes of memory
+  0 received prefixes treated as withdrawn
+  3 sent prefixes (3 paths)
+  Nexthop set to local peering address, 131.100.118.3
+  Third-party Nexthop will not be computed.
+  Last End-of-RIB received 00:00:01 after session start
+  Last End-of-RIB sent 00:00:01 after session start
+  First convergence 00:00:01 after session start with 4 routes sent
+
+  Local host: 131.100.118.3, Local port: 15777
+  Foreign host: 131.100.118.2, Foreign port: 179
+  fd = 75
+
+BGP neighbor is 200.229.237.181, remote AS 28165, ebgp link, Peer index 4
+  BGP version 4, remote router ID 198.19.154.150
+  Neighbor previous state = OpenConfirm
+  BGP state = Established, up for 2w6d
+  Neighbor vrf: VRF-INTERNET
+  Peer is directly attached, interface Ethernet1/10
+  Enable logging neighbor events
+  TCP MD5 authentication is set (enabled)
+  Last read 0.123556, hold time = 12, keepalive interval is 4 seconds
+  Last written 0.949490, keepalive timer expiry due 00:00:03
+  Received 995662 messages, 0 notifications, 0 bytes in queue
+  Sent 869981 messages, 4 notifications, 0(0) bytes in queue
+  Enhanced error processing: On
+    0 discarded attributes
+  Connections established 12, dropped 11
+  Last reset by us 2w6d, due to other configuration change
+  Last error length sent: 0
+  Reset error value sent: 0
+  Reset error sent major: 6 minor: 6
+  Notification data sent:
+  Last reset by peer 5w5d, due to session closed
+  Last error length received: 0
+  Reset error value received 0
+  Reset error received major: 104 minor: 0
+  Notification data received:
+
+  Neighbor capabilities:
+  Dynamic capability: advertised (mp, refresh, gr) 
+  Dynamic capability (old): advertised 
+  Route refresh capability (new): advertised received 
+  Route refresh capability (old): advertised 
+  4-Byte AS capability: advertised received 
+  Address family IPv4 Unicast: advertised received 
+  Graceful Restart capability: advertised 
+
+  Graceful Restart Parameters:
+  Address families advertised to peer:
+    IPv4 Unicast  
+  Address families received from peer:
+  Forwarding state preserved by peer for:
+  Restart time advertised to peer: 120 seconds
+  Stale time for routes advertised by peer: 300 seconds
+  Extended Next Hop Encoding Capability: advertised 
+
+  Message statistics:
+                              Sent               Rcvd
+  Opens:                        12                 12  
+  Notifications:                 4                  0  
+  Updates:                      60                 74  
+  Keepalives:               869947             995574  
+  Route Refresh:                 3                  2  
+  Capability:                    0                  0  
+  Total:                    869981             995662  
+  Total bytes:            16531918           18918980  
+  Bytes in queue:                0                  0  
+
+  For address family: IPv4 Unicast
+  BGP table version 84, neighbor version 84
+  1 accepted prefixes (1 paths), consuming 236 bytes of memory
+  0 received prefixes treated as withdrawn
+  3 sent prefixes (3 paths)
+  Inbound route-map configured is WCS-TO-VVAR, handle obtained
+  Outbound route-map configured is VVAR-TO-WCS, handle obtained
+  Last End-of-RIB sent 1w6d after session start
+  First convergence 00:00:01 after session start with 3 routes sent
+
+  Local host: 200.229.237.182, Local port: 46285
+  Foreign host: 200.229.237.181, Foreign port: 179
+  fd = 77
+
+VV-SCS-N9K02# 
+
+2020-12-14 10:59:16,645: %UNICON-INFO: +++ VV-SCS-N9K02: executing command 'show bgp vrf default all neighbors' +++
+show bgp vrf default all neighbors
+VV-SCS-N9K02# 
+
+2020-12-14 10:59:16,808: %UNICON-INFO: +++ VV-SCS-N9K02: executing command 'show bgp vrf all all summary' +++
+show bgp vrf all all summary
+BGP summary information for VRF VRF-INTERNET, address family IPv4 Unicast
+BGP router identifier 131.100.118.3, local AS number 61644
+BGP table version is 84, IPv4 Unicast config peers 2, capable peers 2
+4 network entries and 8 paths using 1440 bytes of memory
+BGP attribute entries [4/672], BGP AS path entries [2/16]
+BGP community entries [0/0], BGP clusterlist entries [0/0]
+
+Neighbor        V    AS MsgRcvd MsgSent   TblVer  InQ OutQ Up/Down  State/PfxRcd
+131.100.118.2   4 61644  173483  173474       84    0    0    17w1d 4         
+200.229.237.181 4 28165  995662  869981       84    0    0     2w6d 1         
+
+BGP summary information for VRF VRF-INTERNET, address family IPv6 Unicast
+VV-SCS-N9K02# 
+
+2020-12-14 10:59:17,006: %UNICON-INFO: +++ VV-SCS-N9K02: executing command 'show bgp vrf VRF-INTERNET all neighbors 131.100.118.2 advertised-routes' +++
+show bgp vrf VRF-INTERNET all neighbors 131.100.118.2 advertised-routes
+
+Peer 131.100.118.2 routes for address family IPv4 Unicast:
+BGP table version is 84, Local Router ID is 131.100.118.3
+Status: s-suppressed, x-deleted, S-stale, d-dampened, h-history, *-valid, &gt;-best
+Path type: i-internal, e-external, c-confed, l-local, a-aggregate, r-redist, I-injected
+Origin codes: i - IGP, e - EGP, ? - incomplete, | - multipath, &amp; - backup, 2 - best2
+
+   Network            Next Hop            Metric     LocPrf     Weight Path
+*&gt;l131.100.116.0/22   0.0.0.0                           100      32768 i
+*&gt;l131.100.118.0/24   0.0.0.0                           100      32768 i
+*&gt;l131.100.119.0/24   0.0.0.0                           100      32768 i
+
+
+Peer 131.100.118.2 routes for address family IPv6 Unicast:
+BGP table version is 2, Local Router ID is 131.100.118.3
+Status: s-suppressed, x-deleted, S-stale, d-dampened, h-history, *-valid, &gt;-best
+Path type: i-internal, e-external, c-confed, l-local, a-aggregate, r-redist, I-injected
+Origin codes: i - IGP, e - EGP, ? - incomplete, | - multipath, &amp; - backup, 2 - best2
+
+   Network            Next Hop            Metric     LocPrf     Weight Path
+VV-SCS-N9K02# 
+
+2020-12-14 10:59:17,189: %UNICON-INFO: +++ VV-SCS-N9K02: executing command 'show bgp vrf VRF-INTERNET all neighbors 200.229.237.181 advertised-routes' +++
+show bgp vrf VRF-INTERNET all neighbors 200.229.237.181 advertised-routes
+
+Peer 200.229.237.181 routes for address family IPv4 Unicast:
+BGP table version is 84, Local Router ID is 131.100.118.3
+Status: s-suppressed, x-deleted, S-stale, d-dampened, h-history, *-valid, &gt;-best
+Path type: i-internal, e-external, c-confed, l-local, a-aggregate, r-redist, I-injected
+Origin codes: i - IGP, e - EGP, ? - incomplete, | - multipath, &amp; - backup, 2 - best2
+
+   Network            Next Hop            Metric     LocPrf     Weight Path
+*&gt;l131.100.116.0/22   0.0.0.0                           100      32768 i
+*&gt;l131.100.118.0/24   0.0.0.0                           100      32768 i
+*&gt;l131.100.119.0/24   0.0.0.0                           100      32768 i
+
+
+Peer 200.229.237.181 routes for address family IPv6 Unicast:
+BGP table version is 2, Local Router ID is 131.100.118.3
+Status: s-suppressed, x-deleted, S-stale, d-dampened, h-history, *-valid, &gt;-best
+Path type: i-internal, e-external, c-confed, l-local, a-aggregate, r-redist, I-injected
+Origin codes: i - IGP, e - EGP, ? - incomplete, | - multipath, &amp; - backup, 2 - best2
+
+   Network            Next Hop            Metric     LocPrf     Weight Path
+VV-SCS-N9K02# 
+
+2020-12-14 10:59:17,392: %UNICON-INFO: +++ VV-SCS-N9K02: executing command 'show bgp vrf VRF-INTERNET all neighbors 131.100.118.2 routes' +++
+show bgp vrf VRF-INTERNET all neighbors 131.100.118.2 routes
+
+Peer 131.100.118.2 routes for address family IPv4 Unicast:
+BGP table version is 84, Local Router ID is 131.100.118.3
+Status: s-suppressed, x-deleted, S-stale, d-dampened, h-history, *-valid, &gt;-best
+Path type: i-internal, e-external, c-confed, l-local, a-aggregate, r-redist, I-injected
+Origin codes: i - IGP, e - EGP, ? - incomplete, | - multipath, &amp; - backup, 2 - best2
+
+   Network            Next Hop            Metric     LocPrf     Weight Path
+*&gt;i0.0.0.0/0          131.100.118.2                     100          0 10429 i
+* i131.100.116.0/22   131.100.118.2                     100          0 i
+* i131.100.118.0/24   131.100.118.2                     100          0 i
+* i131.100.119.0/24   131.100.118.2                     100          0 i
+
+
+Peer 131.100.118.2 routes for address family IPv6 Unicast:
+BGP table version is 2, Local Router ID is 131.100.118.3
+Status: s-suppressed, x-deleted, S-stale, d-dampened, h-history, *-valid, &gt;-best
+Path type: i-internal, e-external, c-confed, l-local, a-aggregate, r-redist, I-injected
+Origin codes: i - IGP, e - EGP, ? - incomplete, | - multipath, &amp; - backup, 2 - best2
+
+   Network            Next Hop            Metric     LocPrf     Weight Path
+VV-SCS-N9K02# 
+
+2020-12-14 10:59:17,598: %UNICON-INFO: +++ VV-SCS-N9K02: executing command 'show bgp vrf VRF-INTERNET all neighbors 200.229.237.181 routes' +++
+show bgp vrf VRF-INTERNET all neighbors 200.229.237.181 routes
+
+Peer 200.229.237.181 routes for address family IPv4 Unicast:
+BGP table version is 84, Local Router ID is 131.100.118.3
+Status: s-suppressed, x-deleted, S-stale, d-dampened, h-history, *-valid, &gt;-best
+Path type: i-internal, e-external, c-confed, l-local, a-aggregate, r-redist, I-injected
+Origin codes: i - IGP, e - EGP, ? - incomplete, | - multipath, &amp; - backup, 2 - best2
+
+   Network            Next Hop            Metric     LocPrf     Weight Path
+* e0.0.0.0/0          200.229.237.181                                0 28165 28165 i
+
+
+Peer 200.229.237.181 routes for address family IPv6 Unicast:
+BGP table version is 2, Local Router ID is 131.100.118.3
+Status: s-suppressed, x-deleted, S-stale, d-dampened, h-history, *-valid, &gt;-best
+Path type: i-internal, e-external, c-confed, l-local, a-aggregate, r-redist, I-injected
+Origin codes: i - IGP, e - EGP, ? - incomplete, | - multipath, &amp; - backup, 2 - best2
+
+   Network            Next Hop            Metric     LocPrf     Weight Path
+VV-SCS-N9K02# 
+
+2020-12-14 10:59:17,778: %UNICON-INFO: +++ VV-SCS-N9K02: executing command 'show bgp vrf VRF-INTERNET all neighbors 131.100.118.2 received-routes' +++
+show bgp vrf VRF-INTERNET all neighbors 131.100.118.2 received-routes
+
+Inbound soft reconfiguration for IPv4 Unicast not performed on 131.100.118.2
+
+Inbound soft reconfiguration for IPv6 Unicast not performed on 131.100.118.2
+VV-SCS-N9K02# 
+
+2020-12-14 10:59:17,944: %UNICON-INFO: +++ VV-SCS-N9K02: executing command 'show bgp vrf VRF-INTERNET all neighbors 200.229.237.181 received-routes' +++
+show bgp vrf VRF-INTERNET all neighbors 200.229.237.181 received-routes
+
+Inbound soft reconfiguration for IPv4 Unicast not performed on 200.229.237.181
+
+Inbound soft reconfiguration for IPv6 Unicast not performed on 200.229.237.181
+VV-SCS-N9K02# 
+
+2020-12-14 10:59:18,121: %UNICON-INFO: +++ VV-SCS-N9K02: executing command 'show bgp vrf management all neighbors' +++
+show bgp vrf management all neighbors
+VV-SCS-N9K02#</msg>
+<msg timestamp="20201214 10:59:18.294" level="FAIL">Expected '5', but found '4'</msg>
+<status status="FAIL" starttime="20201214 10:59:14.204" endtime="20201214 10:59:18.294"></status>
+</kw>
+<status status="FAIL" starttime="20201214 10:59:14.203" endtime="20201214 10:59:18.294" critical="yes">Expected '5', but found '4'</status>
+</test>
+<status status="FAIL" starttime="20201214 10:59:03.685" endtime="20201214 10:59:18.295"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="1">Critical Tests</stat>
+<stat pass="3" fail="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="1" id="s1" name="Check Count">Check Count</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20201214 10:59:04.248" level="WARN">Could not load the Datafile correctly</msg>
+</errors>
+</robot>

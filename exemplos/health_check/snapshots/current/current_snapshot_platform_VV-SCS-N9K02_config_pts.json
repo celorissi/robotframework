@@ -1,0 +1,1331 @@
+{
+    "config": {
+        "VV-SCS-N9K02": {
+            "output": "\r\n!Command: show running-config\r\n!Running configuration last done at: Fri Dec 11 12:09:15 2020\r\n!Time: Fri Dec 11 12:09:26 2020\r\n\r\nversion 9.3(4) Bios:version 07.67 \r\nhostname VV-SCS-N9K02\r\nvdc VV-SCS-N9K02 id 1\r\n  limit-resource vlan minimum 16 maximum 4094\r\n  limit-resource vrf minimum 2 maximum 4096\r\n  limit-resource port-channel minimum 0 maximum 256\r\n  limit-resource u4route-mem minimum 248 maximum 248\r\n  limit-resource u6route-mem minimum 96 maximum 96\r\n  limit-resource m4route-mem minimum 58 maximum 58\r\n  limit-resource m6route-mem minimum 8 maximum 8\r\n\r\nfeature tacacs+\r\ncfs eth distribute\r\nfeature ospf\r\nfeature bgp\r\nfeature pbr\r\nfeature udld\r\nfeature interface-vlan\r\nfeature hsrp\r\nfeature lacp\r\nfeature dhcp\r\nfeature vpc\r\nfeature sla sender\r\nfeature sflow\r\n\r\nlogging level xmlma 6\r\nno password strength-check\r\nusername admin password 5 $5$doDZnFZ2$.1uLs/CQYxwjN4BFUVk3pKJpH8dMHBqY2MgEMrnUgd0  role network-admin\r\nusername suptelecom password 5 $5$WRctDeZC$BMq3P.a8mjMpFYdbu28yEG3236P1KiY9fRrp0Mj4dQD  role network-admin\r\nusername suptelecom passphrase  lifetime 99999 warntime 7\r\nip domain-lookup\r\ntacacs-server key 7 \"Yeeasrzog@1234xujvoth\"\r\nip tacacs source-interface mgmt0\r\ntacacs-server host 10.128.140.25 \r\ntacacs-server host 10.129.31.25 \r\naaa group server tacacs+ TACACS \r\n    server 10.128.140.25 \r\n    server 10.129.31.25 \r\ncrypto key generate rsa label VV-SCS-N9K02 modulus 2048\r\nerrdisable recovery cause bpduguard\r\nip access-list ADM_VTY\r\n  10 permit ip 10.116.205.0/24 any log \r\n  11 permit ip 10.208.16.0/22 any log \r\n  12 permit ip 10.128.138.0/24 any log \r\n  13 permit ip 191.237.253.232/32 any \r\n  14 permit ip 10.116.217.0/24 any log \r\n  15 permit ip 10.191.32.0/20 any log \r\n  16 permit ip 10.128.132.101/32 any log \r\nip access-list BLOCK-NTP\r\n  1 deny udp any 131.100.118.1/32 eq ntp \r\n  2 deny udp any 131.100.118.2/32 eq ntp \r\n  3 deny udp any 131.100.118.3/32 eq ntp \r\n  4 deny udp any 131.100.119.1/32 eq ntp \r\n  5 deny udp any 131.100.119.2/32 eq ntp \r\n  6 deny udp any 131.100.119.3/32 eq ntp \r\n  20 permit ip any any \r\nip access-list BLOCK_SQUID\r\n  10 deny ip any 10.209.0.13/32 \r\n  11 deny ip any 10.209.0.11/32 \r\n  12 deny ip any 10.209.0.12/32 \r\n  13 deny ip any 10.209.0.14/32 \r\n  14 deny ip any 10.209.0.15/32 \r\n  20 permit ip any any \r\nip access-list CK-NTP_OUT\r\n  1 deny udp any 131.100.118.1/32 eq ntp \r\n  2 deny udp any 131.100.118.2/32 eq ntp \r\n  3 deny udp any 131.100.118.3/32 eq ntp \r\n  4 deny udp any 131.100.119.1/32 eq ntp \r\n  5 deny udp any 131.100.119.2/32 eq ntp \r\n  6 deny udp any 131.100.119.3/32 eq ntp \r\n  20 permit ip any any \r\nip access-list SCS\r\n  10 permit ip 10.128.131.32/32 any log \r\n  12 permit ip 10.128.164.0/24 any log \r\n  35 permit ip 10.128.131.31/32 any log \r\n  36 permit ip 10.129.30.20/32 any log \r\n  37 permit ip 10.129.31.50/32 any log \r\ntrack 1 ip sla 1 reachability\r\n delay up 180 down 5\r\n\r\ncopp profile strict\r\nsnmp-server source-interface traps mgmt0\r\nsnmp-server source-interface informs mgmt0\r\nsnmp-server user admin network-admin auth md5 0xa6682a91b7fc664e823982486a3a2884 priv 0xa6682a91b7fc664e823982486a3a2884 localizedkey\r\nsnmp-server user suptelecom network-admin auth md5 0xa6682a91b7fc664e823982486a3a2884 priv 0xa6682a91b7fc664e823982486a3a2884 localizedkey\r\nsnmp-server host 10.128.164.60 traps version 2c iixrbn656lihJ075bVm3\r\nsnmp-server host 10.128.164.61 traps version 2c iixrbn656lihJ075bVm3\r\nrmon event 1 log trap public description FATAL(1) owner PMON@FATAL\r\nrmon event 2 log trap public description CRITICAL(2) owner PMON@CRITICAL\r\nrmon event 3 log trap public description ERROR(3) owner PMON@ERROR\r\nrmon event 4 log trap public description WARNING(4) owner PMON@WARNING\r\nrmon event 5 log trap public description INFORMATION(5) owner PMON@INFO\r\nsnmp-server enable traps bgp state-changes all\r\nsnmp-server community iixrbn656lihJ075bVm3 group network-admin\r\nsnmp-server community iixrbn656lihJ075bVm3 use-acl SCS\r\nno feature ntp\r\naaa authentication login default group TACACS \r\naaa authorization config-commands default group TACACS \r\naaa authorization commands default group TACACS \r\naaa accounting default group TACACS \r\n\r\nip route 0.0.0.0/0 10.129.0.4 name INTERNET-FG\r\nip route 10.0.0.0/8 10.129.0.12 name Inside-SCS\r\nip route 10.3.76.18/32 10.129.0.4 name VPN_Light\r\nip route 10.95.230.128/26 10.129.0.4 name VPN-IBM_Bluemix\r\nip route 10.119.14.0/24 10.129.0.4 name URA_CLOUD\r\nip route 10.128.225.64/30 10.129.0.36 name rota_link\r\nip route 10.129.32.0/24 10.129.0.4 name VS-F5-DMZ\r\nip route 10.129.33.0/24 10.129.0.20 name DMZ-Parceiros\r\nip route 10.142.0.2/32 10.129.0.4 name VPN_EGSS\r\nip route 10.142.11.1/32 10.129.0.4 name VPN_OMNILINK\r\nip route 10.171.164.48/29 10.129.0.4 name VPN-IBM_Bluemix\r\nip route 10.206.0.0/20 10.129.0.28 name Vlan_TEF\r\nip route 10.208.32.0/22 10.129.0.12 name VLAN_VMWARE_VVJ\r\nip route 10.214.16.0/20 10.129.0.12 name VLAN_SERVIDORES\r\nip route 10.228.0.0/20 10.129.0.12 name VLAN_SERVIDORES\r\nip route 10.228.16.0/20 10.129.0.12 name VLAN_CONTENT_MANAGER\r\nip route 10.228.32.0/24 10.129.0.12 name VLAN_SERVIDORES\r\nip route 10.229.16.0/20 10.129.0.12\r\nip route 10.230.0.0/20 10.129.0.12\r\nip route 10.230.117.7/32 10.129.0.4 name VPN-GPA-AZ\r\nip route 10.230.117.23/32 10.129.0.4 name VPN-GPA-AZ\r\nip route 10.230.117.33/32 10.129.0.4 name VPN-GPA-AZ\r\nip route 10.233.0.0/20 10.129.0.12 name VLAN_SERVIDORES\r\nip route 10.248.0.0/20 10.129.0.12\r\nip route 10.249.16.0/20 10.129.0.12 name VLAN_CORREIO\r\nip route 10.249.64.0/20 10.129.0.4 name VPN_APN-RJO-VIVO\r\nip route 10.249.96.0/20 10.129.0.4 name APN-CLARO\r\nip route 65.203.238.170/32 10.129.0.12 name FWSM\r\nip route 128.201.18.20/32 10.129.0.4 name VPN_CEMIG\r\nip route 129.39.184.0/21 10.129.0.12\r\nip route 138.117.30.253/32 10.129.0.20 name CIELO-TEF-SP\r\nip route 138.117.30.254/32 10.129.0.20 name CIELO-TEF-RJ\r\nip route 158.98.62.16/28 10.129.0.12 name SNI_Monitoramento_ITM\r\nip route 158.98.176.0/21 10.129.0.12\r\nip route 161.26.0.0/16 10.129.0.4 name VPN-IBM_Bluemix\r\nip route 166.8.0.0/14 10.129.0.4 name VPN-IBM_Bluemix\r\nip route 172.16.0.0/12 10.129.0.12 name Inside-SCS\r\nip route 172.16.52.3/32 10.129.0.4 name VPN_TENDENCIA\r\nip route 172.19.2.0/24 10.129.0.4 name VPN_CLCONSULT\r\nip route 172.19.98.4/32 10.129.0.4 name Green-Yellow\r\nip route 172.20.0.0/24 10.129.0.12 name VLAN_SERVIDORES\r\nip route 172.20.0.182/32 10.129.0.4 name VPN_BVS_SCPC\r\nip route 172.20.2.0/24 10.129.0.12 name VLAN_SERVIDORES\r\nip route 172.20.2.181/32 10.129.0.4 name VPN_BVS_SCPC\r\nip route 172.20.3.0/24 10.129.0.12 name VLAN_SERVIDORES\r\nip route 172.20.102.0/29 10.129.0.4 name VPN_DACASA_2\r\nip route 172.20.104.0/29 10.129.0.4 name VPN_DACASA_1\r\nip route 172.22.31.0/24 10.129.0.4 name VPN_PARCEIROS_PRINCIPAL\r\nip route 172.22.31.17/32 10.129.0.4 name VPN-4MAP\r\nip route 172.22.32.0/24 10.129.0.4 name VPN_BRQSIX\r\nip route 172.24.1.0/28 10.129.0.20\r\nip route 172.25.56.31/32 10.129.0.4 name VPN_GWCel_SP1\r\nip route 172.25.147.160/28 10.129.0.4 name VPN_GreenYellow\r\nip route 172.28.0.20/32 10.129.0.4 name VPN_GPA_SCS\r\nip route 172.34.0.0/24 10.129.0.4 name VPN_PARCEIROS\r\nip route 172.190.199.0/24 10.129.0.4 name VPN_MMDA\r\nip route 177.11.240.207/32 10.129.0.4 name vpn_mapfre\r\nip route 180.104.129.82/32 10.129.0.12 name Portal_Getnet\r\nip route 189.38.117.10/32 10.129.0.4 name VPN_Banco_Safra\r\nip route 192.168.0.0/16 10.129.0.12 name Inside-SCS\r\nip route 192.168.9.218/32 10.129.0.20 name FIC\r\nip route 192.168.11.8/32 10.129.0.20 name FIC\r\nip route 192.168.24.27/32 10.129.0.20 name FIC\r\nip route 192.168.24.44/32 10.129.0.20 name FIC\r\nip route 192.168.24.57/32 10.129.0.20 name FIC\r\nip route 192.168.24.63/32 10.129.0.20 name FIC\r\nip route 192.168.24.73/32 10.129.0.20 name FIC\r\nip route 192.168.24.127/32 10.129.0.20 name FIC\r\nip route 192.168.24.164/32 10.129.0.20 name FIC\r\nip route 192.168.24.166/32 10.129.0.20 name FIC\r\nip route 192.168.24.207/32 10.129.0.20 name FIC\r\nip route 192.168.24.253/32 10.129.0.20 name FIC\r\nip route 192.168.42.20/32 10.129.0.20 name FIC\r\nip route 192.168.42.30/32 10.129.0.20 name FIC\r\nip route 192.168.42.33/32 10.129.0.20 name FIC\r\nip route 192.168.42.69/32 10.129.0.20 name FIC\r\nip route 192.168.42.71/32 10.129.0.20 name FIC\r\nip route 192.168.42.85/32 10.129.0.20 name FIC\r\nip route 192.168.42.92/32 10.129.0.20 name FIC\r\nip route 192.168.42.93/32 10.129.0.20 name FIC\r\nip route 192.168.42.125/32 10.129.0.20 name FIC\r\nip route 192.168.42.141/32 10.129.0.20 name FIC\r\nip route 192.168.42.142/32 10.129.0.20 name FIC\r\nip route 192.168.42.147/32 10.129.0.20 name FIC\r\nip route 192.168.42.205/32 10.129.0.20 name FIC\r\nip route 192.168.42.208/32 10.129.0.20 name FIC\r\nip route 192.168.43.207/32 10.129.0.20 name FIC\r\nip route 192.168.43.208/32 10.129.0.20 name FIC\r\nip route 192.168.48.251/32 10.129.0.20 name FIC\r\nip route 192.168.76.47/32 10.129.0.4 name VPN_GWCel_SP2\r\nip route 192.168.116.0/24 10.129.0.4 name VPN_CTI\r\nip route 192.168.134.144/32 10.129.0.20 name FIC\r\nip route 192.168.144.6/32 10.129.0.4 name VPN_SOROCRED\r\nip route 192.168.154.3/32 10.129.0.4 name VPN_SOROCRED_2\r\nip route 192.168.170.2/32 10.129.0.20 name FIC\r\nip route 192.168.212.160/29 10.129.0.4 name VPN_BANESE\r\nip route 192.168.242.39/32 10.129.0.20 name FIC\r\nip route 192.168.242.48/32 10.129.0.20 name FIC\r\nip route 192.168.242.49/32 10.129.0.20 name FIC\r\nip route 204.71.178.10/32 10.129.0.4 name VPN_Blackhawk_Santa_clara_HLG\r\nip route 205.138.247.10/32 10.129.0.4 name VPN_Blackhawk_DALLAS_PRD\r\nip route 206.253.234.14/32 10.129.0.4 name VPN_IBM_MSS\r\nip route 206.253.234.20/32 10.129.0.4 name VPN_IBM_MSS\r\nip route 206.253.234.23/32 10.129.0.4 name VPN_IBM_MSS\r\nip route 206.253.253.20/32 10.129.0.4 name VPN_IBM_MSS\r\nip route 206.253.253.23/32 10.129.0.4 name VPN_IBM_MSS\r\nip route 209.134.186.0/23 10.129.0.4 name VPN_IBM_MSS\r\nip route 209.134.190.0/23 10.129.0.4 name VPN_IBM_MSS\r\nip route 216.104.233.10/32 10.129.0.4 name VPN_Blackhawk_Santa_clara_PRD\r\nvlan 1,6,28,83,100,201-203,211,632,641,643,779,803,805,881-882,906,912,916-917,930-935,938-943,948,962-963,970-973,980-983,990-992,999,1014,1025,3500-3508,3510-3511\r\nvlan 6\r\n  name Vlan_TEF\r\nvlan 28\r\n  name CPD_Servidores\r\nvlan 83\r\n  name VMWARE_VIA_VAREJO\r\nvlan 100\r\n  name Rede_Corporativa\r\nvlan 201\r\n  name PF_172.20.1.0/24\r\nvlan 202\r\n  name PF_172.20.2.0/24\r\nvlan 203\r\n  name PF_172.20.3.0/24\r\nvlan 211\r\n  name GERENCIA_SWITCHES\r\nvlan 632\r\n  name WlanCorp_MGMT\r\nvlan 641\r\n  name Fidelity_Private_Label\r\nvlan 643\r\n  name Inside_FortiG_LVS0580\r\nvlan 779\r\n  name TRANSITO_ACI-TO-N9K-INTERNET\r\nvlan 803\r\n  name OUTSIDE_INTERNET_SD-WAN-VVJ-SCS\r\nvlan 805\r\n  name OUTSIDE_INTERNET_SD-WAN-EQUINIX\r\nvlan 881\r\n  name VVLojas-FIC\r\nvlan 882\r\n  name Router-Cielo-TEF\r\nvlan 906\r\n  name 3CORP\r\nvlan 912\r\n  name poc-vdi\r\nvlan 916\r\n  name openshift\r\nvlan 917\r\n  name DB-Caching\r\nvlan 930\r\n  name Transito_N9K-6509\r\nvlan 931\r\n  name Proxy-corp\r\nvlan 932\r\n  name GER-GLOBAL-DC\r\nvlan 933\r\n  name VMWARE-GERENCIA\r\nvlan 934\r\n  name VMOTION-VMWARE\r\nvlan 935\r\n  name VMWARE-STORAGE\r\nvlan 938\r\n  name SCS-Front-Infra\r\nvlan 939\r\n  name VMWARE-HLG1\r\nvlan 940\r\n  name VMWARE-HLG2\r\nvlan 941\r\n  name DMZ-SFTP-VV\r\nvlan 942\r\n  name VLAN-ADPP\r\nvlan 943\r\n  name VLAN-DB\r\nvlan 948\r\n  name WMS-PROD\r\nvlan 962\r\n  name db-novo-tef\r\nvlan 963\r\n  name app-novo-tef\r\nvlan 970\r\n  name WMS-PRE_PROD\r\nvlan 971\r\n  name WMS-QA\r\nvlan 972\r\n  name WMS-DEV\r\nvlan 973\r\n  name WMS-TREINAMENTO\r\nvlan 980\r\n  name Inside-VV_SCS\r\nvlan 981\r\n  name FW-Inside_Parceiros\r\nvlan 982\r\n  name FW-Inside_Backend\r\nvlan 983\r\n  name BKP-SCS\r\nvlan 990\r\n  name Zabbix-SCS\r\nvlan 991\r\n  name virtual-server_local\r\nvlan 992\r\n  name virtual-server_dmz-fw\r\nvlan 999\r\n  name Native_Vlan\r\nvlan 1014\r\n  name Outside-VV_Internet\r\nvlan 1025\r\n  name internet-FWSM\r\nvlan 3500\r\n  name NUAGE-OVERLAY-MGMT\r\nvlan 3501\r\n  name CONTROL_PLANE-OVERLAY-DATA-A\r\nvlan 3502\r\n  name CONTROL_PLANE-OVERLAY-DATA-B\r\nvlan 3503\r\n  name VRS-OVERLAY-BREAKOUT-A\r\nvlan 3504\r\n  name VRS-OVERLAY-BREAKOUT-B\r\nvlan 3505\r\n  name VRS-OVERLAY-MIRROR-A\r\nvlan 3506\r\n  name VRS-OVERLAY-MIRROR-B\r\nvlan 3507\r\n  name SRVS_AD-OVERLAY\r\nvlan 3508\r\n  name Transito_AVRS-G-NEXUS\r\nvlan 3510\r\n  name NUAGE-VRS-MGMT-A\r\nvlan 3511\r\n  name NUAGE-VRS-MGMT-B\r\n\r\nspanning-tree vlan 1025 priority 4096\r\nip prefix-list OSPF-Default seq 5 permit 10.129.120.20/30 \r\nip prefix-list OSPF-Default seq 10 permit 10.129.120.24/30 \r\nip prefix-list OSPF-Default seq 15 permit 10.129.120.28/30 \r\nip prefix-list OSPF-Default seq 20 permit 10.129.120.32/30 \r\nip prefix-list VVAR-TO-WCS seq 5 permit 131.100.116.0/22 \r\nip prefix-list VVAR-TO-WCS seq 10 permit 131.100.118.0/24 \r\nip prefix-list VVAR-TO-WCS seq 15 permit 131.100.119.0/24 \r\nip prefix-list WCS-TO-VVAR seq 5 permit 0.0.0.0/0 \r\nroute-map OSPF-Default permit 10\r\n  match ip address prefix-list OSPF-Default \r\nroute-map VVAR-TO-WCS permit 10\r\n  match ip address prefix-list VVAR-TO-WCS \r\n  set as-path prepend 61644 61644 61644 \r\nroute-map WCS-TO-VVAR permit 10\r\n  match ip address prefix-list WCS-TO-VVAR \r\n  set as-path prepend last-as 1\r\nservice dhcp\r\nip dhcp relay\r\nipv6 dhcp relay\r\nvrf context VRF-INTERNET\r\n  ip route 131.100.116.0/22 Null0\r\n  ip route 187.62.212.2/32 200.229.237.181 name WCS-DNS_IPSLA-TEST\r\n  ip route 200.205.125.57/32 Null0 name VIVO-DNS-IPSLA-TEST-BLOCK\r\nvrf context management\r\n  ip route 0.0.0.0/0 10.211.0.100\r\nvpc domain 10\r\n  peer-switch\r\n  role priority 110\r\n  peer-keepalive destination 10.211.10.100\r\n  peer-gateway\r\n  auto-recovery\r\nsflow sampling-rate 5000\r\nsflow max-sampled-size 200\r\nsflow counter-poll-interval 100\r\nsflow  max-datagram-size 2000\r\nsflow collector-ip 10.128.164.32 vrf management\r\nsflow collector-port 2055\r\nsflow agent-ip 10.211.10.101\r\n\r\n\r\ninterface Vlan1\r\n\r\ninterface Vlan632\r\n  no shutdown\r\n  no ip redirects\r\n  ip address 10.211.17.254/24\r\n  no ipv6 redirects\r\n  hsrp version 2\r\n  hsrp 632 \r\n    priority 105\r\n    ip 10.211.17.1\r\n  ip dhcp relay address 10.228.0.130 \r\n  ip dhcp relay address 10.129.8.75 \r\n  ip dhcp relay address 10.129.8.76 \r\n\r\ninterface Vlan803\r\n  no shutdown\r\n  no ip redirects\r\n  ip address 10.213.16.51/28\r\n  no ipv6 redirects\r\n  hsrp version 2\r\n  hsrp 803 \r\n    ip 10.213.16.49\r\n\r\ninterface Vlan805\r\n  no shutdown\r\n  no ip redirects\r\n  ip address 10.213.16.67/28\r\n  no ipv6 redirects\r\n  hsrp version 2\r\n  hsrp 805 \r\n    ip 10.213.16.65\r\n\r\ninterface Vlan912\r\n  no ip redirects\r\n  ip address 10.129.12.3/24\r\n  no ipv6 redirects\r\n  hsrp version 2\r\n  hsrp 912 \r\n    priority 105\r\n    ip 10.129.12.1\r\n  ip dhcp relay address 10.228.0.130 \r\n\r\ninterface Vlan916\r\n  no ip redirects\r\n  ip address 10.129.16.3/24\r\n  no ipv6 redirects\r\n  hsrp version 2\r\n  hsrp 916 \r\n    priority 105\r\n    ip 10.129.16.1\r\n\r\ninterface Vlan917\r\n  no ip redirects\r\n  ip address 10.129.17.3/24\r\n  no ipv6 redirects\r\n  hsrp version 2\r\n  hsrp 917 \r\n    priority 105\r\n    ip 10.129.17.1\r\n\r\ninterface Vlan930\r\n  no shutdown\r\n  no ip redirects\r\n  ip address 10.129.0.11/29\r\n  no ipv6 redirects\r\n  hsrp version 2\r\n  hsrp 1000 \r\n    priority 105\r\n    ip 10.129.0.9\r\n\r\ninterface Vlan931\r\n  no shutdown\r\n  no ip redirects\r\n  ip address 10.129.31.3/24\r\n  no ipv6 redirects\r\n  hsrp version 2\r\n  hsrp 931 \r\n    priority 105\r\n    ip 10.129.31.1\r\n\r\ninterface Vlan932\r\n  no ip redirects\r\n  ip address 10.129.2.3/23\r\n  no ipv6 redirects\r\n  hsrp version 2\r\n  hsrp 932 \r\n    ip 10.129.2.1\r\n\r\ninterface Vlan933\r\n  no ip redirects\r\n  ip address 10.129.4.3/24\r\n  no ipv6 redirects\r\n  hsrp version 2\r\n  hsrp 933 \r\n    ip 10.129.4.1\r\n\r\ninterface Vlan934\r\n  no ip redirects\r\n  ip address 10.129.5.3/24\r\n  no ipv6 redirects\r\n  hsrp version 2\r\n  hsrp 935 \r\n    ip 10.129.5.1\r\n\r\ninterface Vlan935\r\n  no ip redirects\r\n  ip address 10.129.6.3/24\r\n  no ipv6 redirects\r\n  hsrp version 2\r\n  hsrp 936 \r\n    ip 10.129.6.1\r\n\r\ninterface Vlan938\r\n  no ip redirects\r\n  ip address 10.129.8.3/24\r\n  no ipv6 redirects\r\n  hsrp version 2\r\n  hsrp 938 \r\n    priority 105\r\n    ip 10.129.8.1\r\n\r\ninterface Vlan939\r\n  no ip redirects\r\n  ip address 10.129.25.3/26\r\n  no ipv6 redirects\r\n  hsrp version 2\r\n  hsrp 939 \r\n    ip 10.129.25.1\r\n\r\ninterface Vlan940\r\n  no ip redirects\r\n  ip address 10.129.26.3/26\r\n  no ipv6 redirects\r\n  hsrp version 2\r\n  hsrp 940 \r\n    ip 10.129.26.1\r\n\r\ninterface Vlan941\r\n  no ip redirects\r\n  ip address 10.129.9.3/25\r\n  no ipv6 redirects\r\n  hsrp version 2\r\n  hsrp 941 \r\n    ip 10.129.9.1\r\n\r\ninterface Vlan942\r\n  no ip redirects\r\n  ip address 10.129.27.3/24\r\n  no ipv6 redirects\r\n  hsrp version 2\r\n  hsrp 942 \r\n    ip 10.129.27.1\r\n\r\ninterface Vlan943\r\n  no ip redirects\r\n  ip address 10.129.28.3/24\r\n  no ipv6 redirects\r\n  hsrp version 2\r\n  hsrp 942 \r\n    ip 10.129.28.1\r\n\r\ninterface Vlan970\r\n  no ip redirects\r\n  ip address 10.129.15.3/26\r\n  no ipv6 redirects\r\n  hsrp version 2\r\n  hsrp 970 \r\n    priority 105\r\n    ip 10.129.15.1\r\n\r\ninterface Vlan971\r\n  no ip redirects\r\n  ip address 10.129.15.67/26\r\n  no ipv6 redirects\r\n  hsrp version 2\r\n  hsrp 971 \r\n    priority 105\r\n    ip 10.129.15.65\r\n\r\ninterface Vlan972\r\n  no ip redirects\r\n  ip address 10.129.15.131/26\r\n  no ipv6 redirects\r\n  hsrp version 2\r\n  hsrp 972 \r\n    priority 105\r\n    ip 10.129.15.129\r\n\r\ninterface Vlan973\r\n  no ip redirects\r\n  ip address 10.129.15.195/26\r\n  no ipv6 redirects\r\n  hsrp version 2\r\n  hsrp 973 \r\n    priority 105\r\n    ip 10.129.15.193\r\n\r\ninterface Vlan980\r\n  no shutdown\r\n  no ip redirects\r\n  ip address 10.129.0.3/29\r\n  no ipv6 redirects\r\n  hsrp version 2\r\n  hsrp 980 \r\n    priority 105\r\n    ip 10.129.0.1\r\n\r\ninterface Vlan981\r\n  no shutdown\r\n  no ip redirects\r\n  ip address 10.129.0.19/29\r\n  no ipv6 redirects\r\n  hsrp version 2\r\n  hsrp 981 \r\n    priority 105\r\n    ip 10.129.0.17\r\n\r\ninterface Vlan982\r\n  no shutdown\r\n  no ip redirects\r\n  ip address 10.129.0.27/29\r\n  no ipv6 redirects\r\n  hsrp version 2\r\n  hsrp 982 \r\n    priority 105\r\n    ip 10.129.0.25\r\n\r\ninterface Vlan983\r\n  no ip redirects\r\n  ip address 10.129.1.3/24\r\n  no ipv6 redirects\r\n  hsrp version 2\r\n  hsrp 983 \r\n    priority 105\r\n    ip 10.129.1.1\r\n\r\ninterface Vlan990\r\n  no ip redirects\r\n  ip address 10.129.30.3/24\r\n  no ipv6 redirects\r\n  hsrp version 2\r\n  hsrp 990 \r\n    priority 105\r\n    ip 10.129.30.1\r\n\r\ninterface Vlan991\r\n  no ip redirects\r\n  ip address 10.129.22.3/24\r\n  no ipv6 redirects\r\n  hsrp version 2\r\n  hsrp 991 \r\n    priority 105\r\n    ip 10.129.22.1\r\n\r\ninterface Vlan1014\r\n  no shutdown\r\n  ip access-group BLOCK-NTP in\r\n  vrf member VRF-INTERNET\r\n  no ip redirects\r\n  ip address 131.100.118.3/24\r\n  no ipv6 redirects\r\n  hsrp version 2\r\n  hsrp 1014 \r\n    priority 105\r\n    ip 131.100.118.1\r\n\r\ninterface Vlan1025\r\n  no shutdown\r\n  ip access-group BLOCK-NTP in\r\n  vrf member VRF-INTERNET\r\n  no ip redirects\r\n  ip address 131.100.119.3/24\r\n  no ipv6 redirects\r\n  hsrp version 2\r\n  hsrp 1025 \r\n    priority 105\r\n    ip 131.100.119.1\r\n\r\ninterface Vlan3500\r\n  no ip redirects\r\n  ip address 10.129.10.3/26\r\n  no ipv6 redirects\r\n  hsrp version 2\r\n  hsrp 3500 \r\n    ip 10.129.10.1\r\n\r\ninterface Vlan3501\r\n  no ip redirects\r\n  ip address 10.129.10.67/26\r\n  no ipv6 redirects\r\n  hsrp version 2\r\n  hsrp 3501 \r\n    ip 10.129.10.65\r\n\r\ninterface Vlan3502\r\n  no ip redirects\r\n  ip address 10.129.10.131/26\r\n  no ipv6 redirects\r\n  hsrp version 2\r\n  hsrp 3502 \r\n    ip 10.129.10.129\r\n\r\ninterface Vlan3503\r\n  no ip redirects\r\n  ip address 10.129.10.195/26\r\n  no ipv6 redirects\r\n  hsrp version 2\r\n  hsrp 3503 \r\n    ip 10.129.10.193\r\n\r\ninterface Vlan3504\r\n  no ip redirects\r\n  ip address 10.129.11.3/26\r\n  no ipv6 redirects\r\n  hsrp version 2\r\n  hsrp 3504 \r\n    ip 10.129.11.1\r\n\r\ninterface Vlan3505\r\n  no ip redirects\r\n  ip address 10.129.11.67/26\r\n  no ipv6 redirects\r\n  hsrp version 2\r\n  hsrp 3505 \r\n    ip 10.129.11.65\r\n\r\ninterface Vlan3506\r\n  no ip redirects\r\n  ip address 10.129.11.131/26\r\n  no ipv6 redirects\r\n  hsrp version 2\r\n  hsrp 3506 \r\n    ip 10.129.11.129\r\n\r\ninterface Vlan3507\r\n  no ip redirects\r\n  ip address 10.129.11.195/28\r\n  no ipv6 redirects\r\n  hsrp version 2\r\n  hsrp 3507 \r\n    ip 10.129.11.193\r\n\r\ninterface Vlan3508\r\n  no ip redirects\r\n  ip address 10.129.11.211/29\r\n  no ipv6 redirects\r\n  hsrp version 2\r\n  hsrp 3508 \r\n    ip 10.129.11.209\r\n\r\ninterface Vlan3510\r\n  no ip redirects\r\n  ip address 10.129.13.3/26\r\n  no ipv6 redirects\r\n  hsrp version 2\r\n  hsrp 3510 \r\n    ip 10.129.13.1\r\n\r\ninterface Vlan3511\r\n  no ip redirects\r\n  ip address 10.129.13.67/26\r\n  no ipv6 redirects\r\n  hsrp version 2\r\n  hsrp 3511 \r\n    ip 10.129.13.65\r\n\r\ninterface port-channel1\r\n  description LAG vPC Peer-Link to VV-SCS-N9K - Po1\r\n  switchport mode trunk\r\n  spanning-tree port type network\r\n  vpc peer-link\r\n\r\ninterface port-channel10\r\n  description FW-VV_SCS-01_INSIDE - LAG\r\n  switchport mode trunk\r\n  switchport trunk allowed vlan 980,992\r\n  vpc 10\r\n\r\ninterface port-channel11\r\n  description FW-VV_SCS-02_INSIDE- LAG\r\n  switchport mode trunk\r\n  switchport trunk allowed vlan 980,992\r\n  vpc 11\r\n\r\ninterface port-channel12\r\n  description FW-PARCEIROS_FG01 - LAG\r\n  switchport mode trunk\r\n  switchport trunk allowed vlan 881-882,906,981\r\n  vpc 12\r\n\r\ninterface port-channel13\r\n  description FW-PARCEIROS_FG02 - LAG\r\n  switchport mode trunk\r\n  switchport trunk allowed vlan 881-882,906,981\r\n  vpc 13\r\n\r\ninterface port-channel14\r\n  description FW-BACKEND-01 - LAG\r\n  switchport mode trunk\r\n  switchport trunk allowed vlan 6,948-950,962-963,982\r\n  vpc 14\r\n\r\ninterface port-channel15\r\n  description FW-BACKEND-02 - LAG\r\n  switchport mode trunk\r\n  switchport trunk allowed vlan 6,948-950,962-963,982\r\n  vpc 15\r\n\r\ninterface port-channel17\r\n  description FW-SCS-SDW-1000D- LAG\r\n  switchport mode trunk\r\n  switchport trunk allowed vlan 1014\r\n  vpc 17\r\n\r\ninterface port-channel18\r\n  description FW-SCS-SDW-1000D- LAG\r\n  switchport mode trunk\r\n  switchport trunk allowed vlan 1014\r\n  vpc 18\r\n\r\ninterface port-channel20\r\n  description FW-VV_SCS-01_OUTSIDE - LAG\r\n  switchport mode trunk\r\n  switchport trunk allowed vlan 1014\r\n  vpc 20\r\n\r\ninterface port-channel21\r\n  description FW-VV_SCS-02_OUTSIDE- LAG\r\n  switchport mode trunk\r\n  switchport trunk allowed vlan 1014\r\n  vpc 21\r\n\r\ninterface port-channel22\r\n  description FW-SCS-SDW-01- LAG\r\n  switchport mode trunk\r\n  switchport trunk allowed vlan 1014\r\n  vpc 22\r\n\r\ninterface port-channel23\r\n  description FW-SCS-SDW-02 - LAG\r\n  switchport mode trunk\r\n  switchport trunk allowed vlan 1014\r\n  vpc 23\r\n\r\ninterface port-channel24\r\n  description L3-CORE-DCI - LAG\r\n  switchport mode trunk\r\n  switchport trunk allowed vlan 998\r\n  flowcontrol send on\r\n  vpc 24\r\n\r\ninterface port-channel25\r\n  description P0-LEAF-03\r\n  switchport mode trunk\r\n  flowcontrol send on\r\n  vpc 25\r\n\r\ninterface port-channel26\r\n  description P0-LEAF-04\r\n  switchport mode trunk\r\n  flowcontrol send on\r\n  vpc 26\r\n\r\ninterface port-channel30\r\n  description Channel N9K01 Eth1/1-2 N9K02 Eth1/1-2 X 6509 Te1/3/6 Te1/3/11 Te2/3/6 Te2/3/11\r\n  switchport mode trunk\r\n  switchport trunk native vlan 999\r\n  switchport trunk allowed vlan 28,83,100,201-203,211,632,803,805,881,906,912,916,930-935,938-943,962-963,970-973,983,990-992,999\r\n  vpc 30\r\n\r\ninterface port-channel31\r\n  description *** Channel VV-SCS-FI-A - VV-SCS-FI-B ***\r\n  switchport mode trunk\r\n  switchport trunk native vlan 999\r\n  vpc 31\r\n\r\ninterface port-channel32\r\n  description *** Channel VV-SCS-FI-A - VV-SCS-FI-B ***\r\n  switchport mode trunk\r\n  switchport trunk native vlan 999\r\n  vpc 32\r\n\r\ninterface port-channel33\r\n  description VV-SCS-NTAP01\r\n  switchport mode trunk\r\n  mtu 9216\r\n  vpc 33\r\n\r\ninterface port-channel34\r\n  description VV-SCS-NTAP02\r\n  switchport mode trunk\r\n  mtu 9216\r\n  vpc 34\r\n\r\ninterface port-channel35\r\n  description FI-VDI-A\r\n  switchport mode trunk\r\n  mtu 9216\r\n  vpc 35\r\n\r\ninterface port-channel36\r\n  description FI-VDI-B\r\n  switchport mode trunk\r\n  flowcontrol send on\r\n  mtu 9216\r\n  vpc 36\r\n\r\ninterface port-channel40\r\n  description FW-SCS-PROXY-01_OUTSIDE - LAG\r\n  switchport mode trunk\r\n  switchport trunk allowed vlan 1014\r\n  vpc 40\r\n\r\ninterface port-channel41\r\n  description FW-SCS-PROXY-02_OUTSIDE - LAG\r\n  switchport mode trunk\r\n  switchport trunk allowed vlan 1014\r\n  vpc 41\r\n\r\ninterface port-channel45\r\n  description *** vPC CORE-CAMPUS to N9K-INTERNET ***\r\n  switchport mode trunk\r\n  switchport trunk native vlan 999\r\n  switchport trunk allowed vlan 6,28,83,100,201-203,211,632,641,643,803,805,881-882,906,912,916,930-935,938-943,962-963,970-973,983,990-992,999\r\n  vpc 45\r\nsflow data-source interface Ethernet1/10\r\n\r\n\r\ninterface Ethernet1/1\r\n  description *** Trunk com switch 6509-2 Te2/3/6 ***\r\n  switchport mode trunk\r\n  switchport trunk native vlan 999\r\n  switchport trunk allowed vlan 28,83,100,201-203,211,632,803,805,881,906,912,916,930-935,938-943,962-963,970-973,983,990-992,999\r\n  channel-group 30 mode active\r\n\r\ninterface Ethernet1/2\r\n  description *** Trunk com switch 6509-1 Te1/3/11 ***\r\n  switchport mode trunk\r\n  switchport trunk native vlan 999\r\n  switchport trunk allowed vlan 28,83,100,201-203,211,632,803,805,881,906,912,916,930-935,938-943,962-963,970-973,983,990-992,999\r\n  channel-group 30 mode active\r\n\r\ninterface Ethernet1/3\r\n  description FG-MGMT2_PORTAL-FORTINET\r\n  switchport access vlan 931\r\n\r\ninterface Ethernet1/4\r\n\r\ninterface Ethernet1/5\r\n  description FW01_PARCEIROS-ETH20\r\n  switchport mode trunk\r\n  switchport trunk allowed vlan 881-882,906,981\r\n  channel-group 12 mode active\r\n\r\ninterface Ethernet1/6\r\n  description ASA-5525-OUTSIDE\r\n  shutdown\r\n  switchport mode trunk\r\n  switchport trunk allowed vlan 1025\r\n\r\ninterface Ethernet1/7\r\n  description FW02_PARCEIROS-ETH20\r\n  switchport mode trunk\r\n  switchport trunk allowed vlan 881-882,906,981\r\n  channel-group 13 mode active\r\n\r\ninterface Ethernet1/8\r\n\r\ninterface Ethernet1/9\r\n\r\ninterface Ethernet1/10\r\n  description LINK_INTERNET_WCS\r\n  no cdp enable\r\n  no switchport\r\n  vrf member VRF-INTERNET\r\n  no ip redirects\r\n  ip address 200.229.237.182/30\r\n  no shutdown\r\n\r\ninterface Ethernet1/11\r\n  description GIGAMOM-SCS01-PORTA 1/2/X8 -> FW01-ETH34-INSIDE\r\n  switchport mode trunk\r\n  switchport trunk allowed vlan 980,992\r\n  link debounce time 250\r\n  channel-group 10 mode active\r\n\r\ninterface Ethernet1/12\r\n  description GIGAMOM-SCS01-PORTA 1/3/X8 -> FW02-ETH34-INSIDE\r\n  switchport mode trunk\r\n  switchport trunk allowed vlan 980,992\r\n  link debounce time 250\r\n  channel-group 11 mode active\r\n\r\ninterface Ethernet1/13\r\n  description FW01-ETH36-OUTSIDE\r\n  switchport mode trunk\r\n  switchport trunk allowed vlan 1014\r\n  channel-group 20 mode active\r\n\r\ninterface Ethernet1/14\r\n  description FW02-ETH36-OUTSIDE\r\n  switchport mode trunk\r\n  switchport trunk allowed vlan 1014\r\n  channel-group 21 mode active\r\n\r\ninterface Ethernet1/15\r\n  description FW01-BACKEND_ETH38\r\n  switchport mode trunk\r\n  switchport trunk allowed vlan 6,948-950,962-963,982\r\n  channel-group 14 mode active\r\n\r\ninterface Ethernet1/16\r\n  description FW02-BACKEND_ETH38\r\n  switchport mode trunk\r\n  switchport trunk allowed vlan 6,948-950,962-963,982\r\n  channel-group 15 mode active\r\n\r\ninterface Ethernet1/17\r\n\r\ninterface Ethernet1/18\r\n  description FW-SCS-SDW1000D\r\n  switchport mode trunk\r\n  switchport trunk allowed vlan 1014\r\n\r\ninterface Ethernet1/19\r\n\r\ninterface Ethernet1/20\r\n  description FWSM-ETH13/20-OUTSIDE \r\n  switchport mode trunk\r\n  switchport trunk allowed vlan 1025\r\n\r\ninterface Ethernet1/21\r\n  description VV-SCS-NTAP01\r\n  lacp rate fast\r\n  switchport mode trunk\r\n  mtu 9216\r\n  channel-group 33 mode active\r\n\r\ninterface Ethernet1/22\r\n  description VV-SCS-NTAP02\r\n  switchport mode trunk\r\n  mtu 9216\r\n  channel-group 34 mode active\r\n\r\ninterface Ethernet1/23\r\n  description FW-SCS-SDW-01\r\n  switchport mode trunk\r\n  switchport trunk allowed vlan 1014\r\n  channel-group 22 mode active\r\n\r\ninterface Ethernet1/24\r\n  description FW-SCS-SDW-02\r\n  switchport mode trunk\r\n  switchport trunk allowed vlan 1014\r\n  channel-group 23 mode active\r\n\r\ninterface Ethernet1/25\r\n  description DCI-SCS-01_26\r\n  shutdown\r\n  switchport mode trunk\r\n  switchport trunk allowed vlan 998\r\n  flowcontrol send on\r\n  channel-group 24 mode active\r\n\r\ninterface Ethernet1/26\r\n  description DCI-SCS-02_26\r\n  shutdown\r\n  switchport mode trunk\r\n  switchport trunk allowed vlan 998\r\n  flowcontrol send on\r\n  channel-group 24 mode active\r\n\r\ninterface Ethernet1/27\r\n  description FW-SCS-PROXY-01_OUTSIDE - LAG\r\n  switchport mode trunk\r\n  switchport trunk allowed vlan 1014\r\n  channel-group 40 mode active\r\n\r\ninterface Ethernet1/28\r\n  description FW-SCS-PROXY-02_OUTSIDE - LAG\r\n  switchport mode trunk\r\n  switchport trunk allowed vlan 1014\r\n  channel-group 41 mode active\r\n\r\ninterface Ethernet1/29\r\n  description *** CITRIX HLG OUTSIDE 10G SCS ***\r\n  switchport access vlan 803\r\n\r\ninterface Ethernet1/30\r\n  description FI-VDI-A\r\n  switchport mode trunk\r\n  mtu 9216\r\n  channel-group 35 mode active\r\n\r\ninterface Ethernet1/31\r\n  description FI-VDI-B\r\n  switchport mode trunk\r\n  flowcontrol send on\r\n  mtu 9216\r\n  channel-group 36 mode active\r\n\r\ninterface Ethernet1/32\r\n\r\ninterface Ethernet1/33\r\n\r\ninterface Ethernet1/34\r\n\r\ninterface Ethernet1/35\r\n\r\ninterface Ethernet1/36\r\n\r\ninterface Ethernet1/37\r\n\r\ninterface Ethernet1/38\r\n\r\ninterface Ethernet1/39\r\n\r\ninterface Ethernet1/40\r\n  description *** vPC CORE-CAMPUS to N9K-INTERNET ***\r\n  switchport mode trunk\r\n  switchport trunk native vlan 999\r\n  switchport trunk allowed vlan 6,28,83,100,201-203,211,632,641,643,803,805,881-882,906,912,916,930-935,938-943,962-963,970-973,983,990-992,999\r\n  channel-group 45 mode active\r\n\r\ninterface Ethernet1/41\r\n  description *** vPC CORE-CAMPUS to N9K-INTERNET ***\r\n  switchport mode trunk\r\n  switchport trunk native vlan 999\r\n  switchport trunk allowed vlan 6,28,83,100,201-203,211,632,641,643,803,805,881-882,906,912,916,930-935,938-943,962-963,970-973,983,990-992,999\r\n  channel-group 45 mode active\r\n\r\ninterface Ethernet1/42\r\n\r\ninterface Ethernet1/43\r\n  description UPLINK-TO-ACI-LEAF04-L3\r\n  no switchport\r\n  flowcontrol send on\r\n  no shutdown\r\n\r\ninterface Ethernet1/43.79\r\n  description OSPF-TO-ACI-LEAF04\r\n  encapsulation dot1q 779\r\n  ip address 10.129.120.30/30\r\n  ip ospf network point-to-point\r\n  no ip ospf passive-interface\r\n  ip router ospf CORE area 0.0.0.2\r\n  no shutdown\r\n\r\ninterface Ethernet1/44\r\n  description UPLINK-TO-ACI-LEAF03-L3\r\n  no switchport\r\n  flowcontrol send on\r\n  no shutdown\r\n\r\ninterface Ethernet1/44.79\r\n  description OSPF-TO-ACI-LEAF03\r\n  encapsulation dot1q 779\r\n  ip address 10.129.120.34/30\r\n  ip ospf network point-to-point\r\n  no ip ospf passive-interface\r\n  ip router ospf CORE area 0.0.0.2\r\n  no shutdown\r\n\r\ninterface Ethernet1/45\r\n  description *** VV-SCS-FI-A Eth1/1 ***\r\n  switchport mode trunk\r\n  switchport trunk native vlan 999\r\n  channel-group 31 mode active\r\n\r\ninterface Ethernet1/46\r\n  description *** VV-SCS-FI-B Eth1/2 ***\r\n  switchport mode trunk\r\n  switchport trunk native vlan 999\r\n  channel-group 32 mode active\r\n\r\ninterface Ethernet1/47\r\n  description Connected to VV-SCS-N9K01- Eth1/47\r\n  switchport mode trunk\r\n  channel-group 1 mode active\r\n\r\ninterface Ethernet1/48\r\n  description Connected to VV-SCS-N9K01- Eth1/48\r\n  switchport mode trunk\r\n  channel-group 1 mode active\r\n\r\ninterface Ethernet1/49\r\n\r\ninterface Ethernet1/50\r\n\r\ninterface Ethernet1/51\r\n\r\ninterface Ethernet1/52\r\n\r\ninterface Ethernet1/53\r\n\r\ninterface Ethernet1/54\r\n\r\ninterface mgmt0\r\n  vrf member management\r\n  ip address 10.211.10.101/20\r\ncli alias name wr copy run start\r\nline console\r\n  exec-timeout 0\r\nline vty\r\n  exec-timeout 0\r\n  access-class ADM_VTY in\r\nboot nxos bootflash:/nxos.9.3.4.bin \r\nrouter ospf CORE\r\n  default-information originate always route-map OSPF-Default\r\n  passive-interface default\r\nrouter bgp 61644\r\n  vrf VRF-INTERNET\r\n    local-as 61644\r\n    router-id 131.100.118.3\r\n    log-neighbor-changes\r\n    address-family ipv4 unicast\r\n      network 131.100.116.0/22\r\n      network 131.100.118.0/24\r\n      network 131.100.119.0/24\r\n    neighbor 131.100.118.2\r\n      remote-as 61644\r\n      password 3 34a4f6c430e08533\r\n      address-family ipv4 unicast\r\n        next-hop-self\r\n    neighbor 200.229.237.181\r\n      remote-as 28165\r\n      password 3 acb63f36e1a2055618be4d32b593dd9f43d56f6f87bd9c26\r\n      timers 4 12\r\n      address-family ipv4 unicast\r\n        route-map WCS-TO-VVAR in\r\n        route-map VVAR-TO-WCS out\r\n\r\nip sla 1\r\n  icmp-echo 187.62.212.2 source-interface Ethernet1/10\r\n    verify-data\r\n    vrf VRF-INTERNET\r\n    tag ip_sla_vvar_to_wcs\r\n    threshold 150\r\n    timeout 300\r\n    frequency 10\r\n    history enhanced interval 60 buckets 60\r\nip sla schedule 1 life forever start-time now\r\nlogging server 10.128.131.36 6 use-vrf management facility local6\r\nno logging console",
+            "exclude": [
+                "!",
+                null,
+                "\r",
+                ""
+            ],
+            "config": {
+                "version 9.3(4) Bios:version 07.67": {},
+                "hostname VV-SCS-N9K02": {},
+                "vdc VV-SCS-N9K02 id 1": {
+                    "limit-resource vlan minimum 16 maximum 4094": {},
+                    "limit-resource vrf minimum 2 maximum 4096": {},
+                    "limit-resource port-channel minimum 0 maximum 256": {},
+                    "limit-resource u4route-mem minimum 248 maximum 248": {},
+                    "limit-resource u6route-mem minimum 96 maximum 96": {},
+                    "limit-resource m4route-mem minimum 58 maximum 58": {},
+                    "limit-resource m6route-mem minimum 8 maximum 8": {}
+                },
+                "feature tacacs+": {},
+                "cfs eth distribute": {},
+                "feature ospf": {},
+                "feature bgp": {},
+                "feature pbr": {},
+                "feature udld": {},
+                "feature interface-vlan": {},
+                "feature hsrp": {},
+                "feature lacp": {},
+                "feature dhcp": {},
+                "feature vpc": {},
+                "feature sla sender": {},
+                "feature sflow": {},
+                "logging level xmlma 6": {},
+                "no password strength-check": {},
+                "username admin password 5 $5$doDZnFZ2$.1uLs/CQYxwjN4BFUVk3pKJpH8dMHBqY2MgEMrnUgd0  role network-admin": {},
+                "username suptelecom password 5 $5$WRctDeZC$BMq3P.a8mjMpFYdbu28yEG3236P1KiY9fRrp0Mj4dQD  role network-admin": {},
+                "username suptelecom passphrase  lifetime 99999 warntime 7": {},
+                "ip domain-lookup": {},
+                "tacacs-server key 7 \"Yeeasrzog@1234xujvoth\"": {},
+                "ip tacacs source-interface mgmt0": {},
+                "tacacs-server host 10.128.140.25": {},
+                "tacacs-server host 10.129.31.25": {},
+                "aaa group server tacacs+ TACACS": {
+                    "server 10.128.140.25": {},
+                    "server 10.129.31.25": {}
+                },
+                "crypto key generate rsa label VV-SCS-N9K02 modulus 2048": {},
+                "errdisable recovery cause bpduguard": {},
+                "ip access-list ADM_VTY": {
+                    "10 permit ip 10.116.205.0/24 any log": {},
+                    "11 permit ip 10.208.16.0/22 any log": {},
+                    "12 permit ip 10.128.138.0/24 any log": {},
+                    "13 permit ip 191.237.253.232/32 any": {},
+                    "14 permit ip 10.116.217.0/24 any log": {},
+                    "15 permit ip 10.191.32.0/20 any log": {},
+                    "16 permit ip 10.128.132.101/32 any log": {}
+                },
+                "ip access-list BLOCK-NTP": {
+                    "1 deny udp any 131.100.118.1/32 eq ntp": {},
+                    "2 deny udp any 131.100.118.2/32 eq ntp": {},
+                    "3 deny udp any 131.100.118.3/32 eq ntp": {},
+                    "4 deny udp any 131.100.119.1/32 eq ntp": {},
+                    "5 deny udp any 131.100.119.2/32 eq ntp": {},
+                    "6 deny udp any 131.100.119.3/32 eq ntp": {},
+                    "20 permit ip any any": {}
+                },
+                "ip access-list BLOCK_SQUID": {
+                    "10 deny ip any 10.209.0.13/32": {},
+                    "11 deny ip any 10.209.0.11/32": {},
+                    "12 deny ip any 10.209.0.12/32": {},
+                    "13 deny ip any 10.209.0.14/32": {},
+                    "14 deny ip any 10.209.0.15/32": {},
+                    "20 permit ip any any": {}
+                },
+                "ip access-list CK-NTP_OUT": {
+                    "1 deny udp any 131.100.118.1/32 eq ntp": {},
+                    "2 deny udp any 131.100.118.2/32 eq ntp": {},
+                    "3 deny udp any 131.100.118.3/32 eq ntp": {},
+                    "4 deny udp any 131.100.119.1/32 eq ntp": {},
+                    "5 deny udp any 131.100.119.2/32 eq ntp": {},
+                    "6 deny udp any 131.100.119.3/32 eq ntp": {},
+                    "20 permit ip any any": {}
+                },
+                "ip access-list SCS": {
+                    "10 permit ip 10.128.131.32/32 any log": {},
+                    "12 permit ip 10.128.164.0/24 any log": {},
+                    "35 permit ip 10.128.131.31/32 any log": {},
+                    "36 permit ip 10.129.30.20/32 any log": {},
+                    "37 permit ip 10.129.31.50/32 any log": {}
+                },
+                "track 1 ip sla 1 reachability": {
+                    "delay up 180 down 5": {}
+                },
+                "copp profile strict": {},
+                "snmp-server source-interface traps mgmt0": {},
+                "snmp-server source-interface informs mgmt0": {},
+                "snmp-server user admin network-admin auth md5 0xa6682a91b7fc664e823982486a3a2884 priv 0xa6682a91b7fc664e823982486a3a2884 localizedkey": {},
+                "snmp-server user suptelecom network-admin auth md5 0xa6682a91b7fc664e823982486a3a2884 priv 0xa6682a91b7fc664e823982486a3a2884 localizedkey": {},
+                "snmp-server host 10.128.164.60 traps version 2c iixrbn656lihJ075bVm3": {},
+                "snmp-server host 10.128.164.61 traps version 2c iixrbn656lihJ075bVm3": {},
+                "rmon event 1 log trap public description FATAL(1) owner PMON@FATAL": {},
+                "rmon event 2 log trap public description CRITICAL(2) owner PMON@CRITICAL": {},
+                "rmon event 3 log trap public description ERROR(3) owner PMON@ERROR": {},
+                "rmon event 4 log trap public description WARNING(4) owner PMON@WARNING": {},
+                "rmon event 5 log trap public description INFORMATION(5) owner PMON@INFO": {},
+                "snmp-server enable traps bgp state-changes all": {},
+                "snmp-server community iixrbn656lihJ075bVm3 group network-admin": {},
+                "snmp-server community iixrbn656lihJ075bVm3 use-acl SCS": {},
+                "no feature ntp": {},
+                "aaa authentication login default group TACACS": {},
+                "aaa authorization config-commands default group TACACS": {},
+                "aaa authorization commands default group TACACS": {},
+                "aaa accounting default group TACACS": {},
+                "ip route 0.0.0.0/0 10.129.0.4 name INTERNET-FG": {},
+                "ip route 10.0.0.0/8 10.129.0.12 name Inside-SCS": {},
+                "ip route 10.3.76.18/32 10.129.0.4 name VPN_Light": {},
+                "ip route 10.95.230.128/26 10.129.0.4 name VPN-IBM_Bluemix": {},
+                "ip route 10.119.14.0/24 10.129.0.4 name URA_CLOUD": {},
+                "ip route 10.128.225.64/30 10.129.0.36 name rota_link": {},
+                "ip route 10.129.32.0/24 10.129.0.4 name VS-F5-DMZ": {},
+                "ip route 10.129.33.0/24 10.129.0.20 name DMZ-Parceiros": {},
+                "ip route 10.142.0.2/32 10.129.0.4 name VPN_EGSS": {},
+                "ip route 10.142.11.1/32 10.129.0.4 name VPN_OMNILINK": {},
+                "ip route 10.171.164.48/29 10.129.0.4 name VPN-IBM_Bluemix": {},
+                "ip route 10.206.0.0/20 10.129.0.28 name Vlan_TEF": {},
+                "ip route 10.208.32.0/22 10.129.0.12 name VLAN_VMWARE_VVJ": {},
+                "ip route 10.214.16.0/20 10.129.0.12 name VLAN_SERVIDORES": {},
+                "ip route 10.228.0.0/20 10.129.0.12 name VLAN_SERVIDORES": {},
+                "ip route 10.228.16.0/20 10.129.0.12 name VLAN_CONTENT_MANAGER": {},
+                "ip route 10.228.32.0/24 10.129.0.12 name VLAN_SERVIDORES": {},
+                "ip route 10.229.16.0/20 10.129.0.12": {},
+                "ip route 10.230.0.0/20 10.129.0.12": {},
+                "ip route 10.230.117.7/32 10.129.0.4 name VPN-GPA-AZ": {},
+                "ip route 10.230.117.23/32 10.129.0.4 name VPN-GPA-AZ": {},
+                "ip route 10.230.117.33/32 10.129.0.4 name VPN-GPA-AZ": {},
+                "ip route 10.233.0.0/20 10.129.0.12 name VLAN_SERVIDORES": {},
+                "ip route 10.248.0.0/20 10.129.0.12": {},
+                "ip route 10.249.16.0/20 10.129.0.12 name VLAN_CORREIO": {},
+                "ip route 10.249.64.0/20 10.129.0.4 name VPN_APN-RJO-VIVO": {},
+                "ip route 10.249.96.0/20 10.129.0.4 name APN-CLARO": {},
+                "ip route 65.203.238.170/32 10.129.0.12 name FWSM": {},
+                "ip route 128.201.18.20/32 10.129.0.4 name VPN_CEMIG": {},
+                "ip route 129.39.184.0/21 10.129.0.12": {},
+                "ip route 138.117.30.253/32 10.129.0.20 name CIELO-TEF-SP": {},
+                "ip route 138.117.30.254/32 10.129.0.20 name CIELO-TEF-RJ": {},
+                "ip route 158.98.62.16/28 10.129.0.12 name SNI_Monitoramento_ITM": {},
+                "ip route 158.98.176.0/21 10.129.0.12": {},
+                "ip route 161.26.0.0/16 10.129.0.4 name VPN-IBM_Bluemix": {},
+                "ip route 166.8.0.0/14 10.129.0.4 name VPN-IBM_Bluemix": {},
+                "ip route 172.16.0.0/12 10.129.0.12 name Inside-SCS": {},
+                "ip route 172.16.52.3/32 10.129.0.4 name VPN_TENDENCIA": {},
+                "ip route 172.19.2.0/24 10.129.0.4 name VPN_CLCONSULT": {},
+                "ip route 172.19.98.4/32 10.129.0.4 name Green-Yellow": {},
+                "ip route 172.20.0.0/24 10.129.0.12 name VLAN_SERVIDORES": {},
+                "ip route 172.20.0.182/32 10.129.0.4 name VPN_BVS_SCPC": {},
+                "ip route 172.20.2.0/24 10.129.0.12 name VLAN_SERVIDORES": {},
+                "ip route 172.20.2.181/32 10.129.0.4 name VPN_BVS_SCPC": {},
+                "ip route 172.20.3.0/24 10.129.0.12 name VLAN_SERVIDORES": {},
+                "ip route 172.20.102.0/29 10.129.0.4 name VPN_DACASA_2": {},
+                "ip route 172.20.104.0/29 10.129.0.4 name VPN_DACASA_1": {},
+                "ip route 172.22.31.0/24 10.129.0.4 name VPN_PARCEIROS_PRINCIPAL": {},
+                "ip route 172.22.31.17/32 10.129.0.4 name VPN-4MAP": {},
+                "ip route 172.22.32.0/24 10.129.0.4 name VPN_BRQSIX": {},
+                "ip route 172.24.1.0/28 10.129.0.20": {},
+                "ip route 172.25.56.31/32 10.129.0.4 name VPN_GWCel_SP1": {},
+                "ip route 172.25.147.160/28 10.129.0.4 name VPN_GreenYellow": {},
+                "ip route 172.28.0.20/32 10.129.0.4 name VPN_GPA_SCS": {},
+                "ip route 172.34.0.0/24 10.129.0.4 name VPN_PARCEIROS": {},
+                "ip route 172.190.199.0/24 10.129.0.4 name VPN_MMDA": {},
+                "ip route 177.11.240.207/32 10.129.0.4 name vpn_mapfre": {},
+                "ip route 180.104.129.82/32 10.129.0.12 name Portal_Getnet": {},
+                "ip route 189.38.117.10/32 10.129.0.4 name VPN_Banco_Safra": {},
+                "ip route 192.168.0.0/16 10.129.0.12 name Inside-SCS": {},
+                "ip route 192.168.9.218/32 10.129.0.20 name FIC": {},
+                "ip route 192.168.11.8/32 10.129.0.20 name FIC": {},
+                "ip route 192.168.24.27/32 10.129.0.20 name FIC": {},
+                "ip route 192.168.24.44/32 10.129.0.20 name FIC": {},
+                "ip route 192.168.24.57/32 10.129.0.20 name FIC": {},
+                "ip route 192.168.24.63/32 10.129.0.20 name FIC": {},
+                "ip route 192.168.24.73/32 10.129.0.20 name FIC": {},
+                "ip route 192.168.24.127/32 10.129.0.20 name FIC": {},
+                "ip route 192.168.24.164/32 10.129.0.20 name FIC": {},
+                "ip route 192.168.24.166/32 10.129.0.20 name FIC": {},
+                "ip route 192.168.24.207/32 10.129.0.20 name FIC": {},
+                "ip route 192.168.24.253/32 10.129.0.20 name FIC": {},
+                "ip route 192.168.42.20/32 10.129.0.20 name FIC": {},
+                "ip route 192.168.42.30/32 10.129.0.20 name FIC": {},
+                "ip route 192.168.42.33/32 10.129.0.20 name FIC": {},
+                "ip route 192.168.42.69/32 10.129.0.20 name FIC": {},
+                "ip route 192.168.42.71/32 10.129.0.20 name FIC": {},
+                "ip route 192.168.42.85/32 10.129.0.20 name FIC": {},
+                "ip route 192.168.42.92/32 10.129.0.20 name FIC": {},
+                "ip route 192.168.42.93/32 10.129.0.20 name FIC": {},
+                "ip route 192.168.42.125/32 10.129.0.20 name FIC": {},
+                "ip route 192.168.42.141/32 10.129.0.20 name FIC": {},
+                "ip route 192.168.42.142/32 10.129.0.20 name FIC": {},
+                "ip route 192.168.42.147/32 10.129.0.20 name FIC": {},
+                "ip route 192.168.42.205/32 10.129.0.20 name FIC": {},
+                "ip route 192.168.42.208/32 10.129.0.20 name FIC": {},
+                "ip route 192.168.43.207/32 10.129.0.20 name FIC": {},
+                "ip route 192.168.43.208/32 10.129.0.20 name FIC": {},
+                "ip route 192.168.48.251/32 10.129.0.20 name FIC": {},
+                "ip route 192.168.76.47/32 10.129.0.4 name VPN_GWCel_SP2": {},
+                "ip route 192.168.116.0/24 10.129.0.4 name VPN_CTI": {},
+                "ip route 192.168.134.144/32 10.129.0.20 name FIC": {},
+                "ip route 192.168.144.6/32 10.129.0.4 name VPN_SOROCRED": {},
+                "ip route 192.168.154.3/32 10.129.0.4 name VPN_SOROCRED_2": {},
+                "ip route 192.168.170.2/32 10.129.0.20 name FIC": {},
+                "ip route 192.168.212.160/29 10.129.0.4 name VPN_BANESE": {},
+                "ip route 192.168.242.39/32 10.129.0.20 name FIC": {},
+                "ip route 192.168.242.48/32 10.129.0.20 name FIC": {},
+                "ip route 192.168.242.49/32 10.129.0.20 name FIC": {},
+                "ip route 204.71.178.10/32 10.129.0.4 name VPN_Blackhawk_Santa_clara_HLG": {},
+                "ip route 205.138.247.10/32 10.129.0.4 name VPN_Blackhawk_DALLAS_PRD": {},
+                "ip route 206.253.234.14/32 10.129.0.4 name VPN_IBM_MSS": {},
+                "ip route 206.253.234.20/32 10.129.0.4 name VPN_IBM_MSS": {},
+                "ip route 206.253.234.23/32 10.129.0.4 name VPN_IBM_MSS": {},
+                "ip route 206.253.253.20/32 10.129.0.4 name VPN_IBM_MSS": {},
+                "ip route 206.253.253.23/32 10.129.0.4 name VPN_IBM_MSS": {},
+                "ip route 209.134.186.0/23 10.129.0.4 name VPN_IBM_MSS": {},
+                "ip route 209.134.190.0/23 10.129.0.4 name VPN_IBM_MSS": {},
+                "ip route 216.104.233.10/32 10.129.0.4 name VPN_Blackhawk_Santa_clara_PRD": {},
+                "vlan 1,6,28,83,100,201-203,211,632,641,643,779,803,805,881-882,906,912,916-917,930-935,938-943,948,962-963,970-973,980-983,990-992,999,1014,1025,3500-3508,3510-3511": {},
+                "vlan 6": {
+                    "name Vlan_TEF": {}
+                },
+                "vlan 28": {
+                    "name CPD_Servidores": {}
+                },
+                "vlan 83": {
+                    "name VMWARE_VIA_VAREJO": {}
+                },
+                "vlan 100": {
+                    "name Rede_Corporativa": {}
+                },
+                "vlan 201": {
+                    "name PF_172.20.1.0/24": {}
+                },
+                "vlan 202": {
+                    "name PF_172.20.2.0/24": {}
+                },
+                "vlan 203": {
+                    "name PF_172.20.3.0/24": {}
+                },
+                "vlan 211": {
+                    "name GERENCIA_SWITCHES": {}
+                },
+                "vlan 632": {
+                    "name WlanCorp_MGMT": {}
+                },
+                "vlan 641": {
+                    "name Fidelity_Private_Label": {}
+                },
+                "vlan 643": {
+                    "name Inside_FortiG_LVS0580": {}
+                },
+                "vlan 779": {
+                    "name TRANSITO_ACI-TO-N9K-INTERNET": {}
+                },
+                "vlan 803": {
+                    "name OUTSIDE_INTERNET_SD-WAN-VVJ-SCS": {}
+                },
+                "vlan 805": {
+                    "name OUTSIDE_INTERNET_SD-WAN-EQUINIX": {}
+                },
+                "vlan 881": {
+                    "name VVLojas-FIC": {}
+                },
+                "vlan 882": {
+                    "name Router-Cielo-TEF": {}
+                },
+                "vlan 906": {
+                    "name 3CORP": {}
+                },
+                "vlan 912": {
+                    "name poc-vdi": {}
+                },
+                "vlan 916": {
+                    "name openshift": {}
+                },
+                "vlan 917": {
+                    "name DB-Caching": {}
+                },
+                "vlan 930": {
+                    "name Transito_N9K-6509": {}
+                },
+                "vlan 931": {
+                    "name Proxy-corp": {}
+                },
+                "vlan 932": {
+                    "name GER-GLOBAL-DC": {}
+                },
+                "vlan 933": {
+                    "name VMWARE-GERENCIA": {}
+                },
+                "vlan 934": {
+                    "name VMOTION-VMWARE": {}
+                },
+                "vlan 935": {
+                    "name VMWARE-STORAGE": {}
+                },
+                "vlan 938": {
+                    "name SCS-Front-Infra": {}
+                },
+                "vlan 939": {
+                    "name VMWARE-HLG1": {}
+                },
+                "vlan 940": {
+                    "name VMWARE-HLG2": {}
+                },
+                "vlan 941": {
+                    "name DMZ-SFTP-VV": {}
+                },
+                "vlan 942": {
+                    "name VLAN-ADPP": {}
+                },
+                "vlan 943": {
+                    "name VLAN-DB": {}
+                },
+                "vlan 948": {
+                    "name WMS-PROD": {}
+                },
+                "vlan 962": {
+                    "name db-novo-tef": {}
+                },
+                "vlan 963": {
+                    "name app-novo-tef": {}
+                },
+                "vlan 970": {
+                    "name WMS-PRE_PROD": {}
+                },
+                "vlan 971": {
+                    "name WMS-QA": {}
+                },
+                "vlan 972": {
+                    "name WMS-DEV": {}
+                },
+                "vlan 973": {
+                    "name WMS-TREINAMENTO": {}
+                },
+                "vlan 980": {
+                    "name Inside-VV_SCS": {}
+                },
+                "vlan 981": {
+                    "name FW-Inside_Parceiros": {}
+                },
+                "vlan 982": {
+                    "name FW-Inside_Backend": {}
+                },
+                "vlan 983": {
+                    "name BKP-SCS": {}
+                },
+                "vlan 990": {
+                    "name Zabbix-SCS": {}
+                },
+                "vlan 991": {
+                    "name virtual-server_local": {}
+                },
+                "vlan 992": {
+                    "name virtual-server_dmz-fw": {}
+                },
+                "vlan 999": {
+                    "name Native_Vlan": {}
+                },
+                "vlan 1014": {
+                    "name Outside-VV_Internet": {}
+                },
+                "vlan 1025": {
+                    "name internet-FWSM": {}
+                },
+                "vlan 3500": {
+                    "name NUAGE-OVERLAY-MGMT": {}
+                },
+                "vlan 3501": {
+                    "name CONTROL_PLANE-OVERLAY-DATA-A": {}
+                },
+                "vlan 3502": {
+                    "name CONTROL_PLANE-OVERLAY-DATA-B": {}
+                },
+                "vlan 3503": {
+                    "name VRS-OVERLAY-BREAKOUT-A": {}
+                },
+                "vlan 3504": {
+                    "name VRS-OVERLAY-BREAKOUT-B": {}
+                },
+                "vlan 3505": {
+                    "name VRS-OVERLAY-MIRROR-A": {}
+                },
+                "vlan 3506": {
+                    "name VRS-OVERLAY-MIRROR-B": {}
+                },
+                "vlan 3507": {
+                    "name SRVS_AD-OVERLAY": {}
+                },
+                "vlan 3508": {
+                    "name Transito_AVRS-G-NEXUS": {}
+                },
+                "vlan 3510": {
+                    "name NUAGE-VRS-MGMT-A": {}
+                },
+                "vlan 3511": {
+                    "name NUAGE-VRS-MGMT-B": {}
+                },
+                "spanning-tree vlan 1025 priority 4096": {},
+                "ip prefix-list OSPF-Default seq 5 permit 10.129.120.20/30": {},
+                "ip prefix-list OSPF-Default seq 10 permit 10.129.120.24/30": {},
+                "ip prefix-list OSPF-Default seq 15 permit 10.129.120.28/30": {},
+                "ip prefix-list OSPF-Default seq 20 permit 10.129.120.32/30": {},
+                "ip prefix-list VVAR-TO-WCS seq 5 permit 131.100.116.0/22": {},
+                "ip prefix-list VVAR-TO-WCS seq 10 permit 131.100.118.0/24": {},
+                "ip prefix-list VVAR-TO-WCS seq 15 permit 131.100.119.0/24": {},
+                "ip prefix-list WCS-TO-VVAR seq 5 permit 0.0.0.0/0": {},
+                "route-map OSPF-Default permit 10": {
+                    "match ip address prefix-list OSPF-Default": {}
+                },
+                "route-map VVAR-TO-WCS permit 10": {
+                    "match ip address prefix-list VVAR-TO-WCS": {},
+                    "set as-path prepend 61644 61644 61644": {}
+                },
+                "route-map WCS-TO-VVAR permit 10": {
+                    "match ip address prefix-list WCS-TO-VVAR": {},
+                    "set as-path prepend last-as 1": {}
+                },
+                "service dhcp": {},
+                "ip dhcp relay": {},
+                "ipv6 dhcp relay": {},
+                "vrf context VRF-INTERNET": {
+                    "ip route 131.100.116.0/22 Null0": {},
+                    "ip route 187.62.212.2/32 200.229.237.181 name WCS-DNS_IPSLA-TEST": {},
+                    "ip route 200.205.125.57/32 Null0 name VIVO-DNS-IPSLA-TEST-BLOCK": {}
+                },
+                "vrf context management": {
+                    "ip route 0.0.0.0/0 10.211.0.100": {}
+                },
+                "vpc domain 10": {
+                    "peer-switch": {},
+                    "role priority 110": {},
+                    "peer-keepalive destination 10.211.10.100": {},
+                    "peer-gateway": {},
+                    "auto-recovery": {}
+                },
+                "sflow sampling-rate 5000": {},
+                "sflow max-sampled-size 200": {},
+                "sflow counter-poll-interval 100": {},
+                "sflow  max-datagram-size 2000": {},
+                "sflow collector-ip 10.128.164.32 vrf management": {},
+                "sflow collector-port 2055": {},
+                "sflow agent-ip 10.211.10.101": {},
+                "interface Vlan1": {},
+                "interface Vlan632": {
+                    "no shutdown": {},
+                    "no ip redirects": {},
+                    "ip address 10.211.17.254/24": {},
+                    "no ipv6 redirects": {},
+                    "hsrp version 2": {},
+                    "hsrp 632": {
+                        "priority 105": {},
+                        "ip 10.211.17.1": {}
+                    },
+                    "ip dhcp relay address 10.228.0.130": {},
+                    "ip dhcp relay address 10.129.8.75": {},
+                    "ip dhcp relay address 10.129.8.76": {}
+                },
+                "interface Vlan803": {
+                    "no shutdown": {},
+                    "no ip redirects": {},
+                    "ip address 10.213.16.51/28": {},
+                    "no ipv6 redirects": {},
+                    "hsrp version 2": {},
+                    "hsrp 803": {
+                        "ip 10.213.16.49": {}
+                    }
+                },
+                "interface Vlan805": {
+                    "no shutdown": {},
+                    "no ip redirects": {},
+                    "ip address 10.213.16.67/28": {},
+                    "no ipv6 redirects": {},
+                    "hsrp version 2": {},
+                    "hsrp 805": {
+                        "ip 10.213.16.65": {}
+                    }
+                },
+                "interface Vlan912": {
+                    "no ip redirects": {},
+                    "ip address 10.129.12.3/24": {},
+                    "no ipv6 redirects": {},
+                    "hsrp version 2": {},
+                    "hsrp 912": {
+                        "priority 105": {},
+                        "ip 10.129.12.1": {}
+                    },
+                    "ip dhcp relay address 10.228.0.130": {}
+                },
+                "interface Vlan916": {
+                    "no ip redirects": {},
+                    "ip address 10.129.16.3/24": {},
+                    "no ipv6 redirects": {},
+                    "hsrp version 2": {},
+                    "hsrp 916": {
+                        "priority 105": {},
+                        "ip 10.129.16.1": {}
+                    }
+                },
+                "interface Vlan917": {
+                    "no ip redirects": {},
+                    "ip address 10.129.17.3/24": {},
+                    "no ipv6 redirects": {},
+                    "hsrp version 2": {},
+                    "hsrp 917": {
+                        "priority 105": {},
+                        "ip 10.129.17.1": {}
+                    }
+                },
+                "interface Vlan930": {
+                    "no shutdown": {},
+                    "no ip redirects": {},
+                    "ip address 10.129.0.11/29": {},
+                    "no ipv6 redirects": {},
+                    "hsrp version 2": {},
+                    "hsrp 1000": {
+                        "priority 105": {},
+                        "ip 10.129.0.9": {}
+                    }
+                },
+                "interface Vlan931": {
+                    "no shutdown": {},
+                    "no ip redirects": {},
+                    "ip address 10.129.31.3/24": {},
+                    "no ipv6 redirects": {},
+                    "hsrp version 2": {},
+                    "hsrp 931": {
+                        "priority 105": {},
+                        "ip 10.129.31.1": {}
+                    }
+                },
+                "interface Vlan932": {
+                    "no ip redirects": {},
+                    "ip address 10.129.2.3/23": {},
+                    "no ipv6 redirects": {},
+                    "hsrp version 2": {},
+                    "hsrp 932": {
+                        "ip 10.129.2.1": {}
+                    }
+                },
+                "interface Vlan933": {
+                    "no ip redirects": {},
+                    "ip address 10.129.4.3/24": {},
+                    "no ipv6 redirects": {},
+                    "hsrp version 2": {},
+                    "hsrp 933": {
+                        "ip 10.129.4.1": {}
+                    }
+                },
+                "interface Vlan934": {
+                    "no ip redirects": {},
+                    "ip address 10.129.5.3/24": {},
+                    "no ipv6 redirects": {},
+                    "hsrp version 2": {},
+                    "hsrp 935": {
+                        "ip 10.129.5.1": {}
+                    }
+                },
+                "interface Vlan935": {
+                    "no ip redirects": {},
+                    "ip address 10.129.6.3/24": {},
+                    "no ipv6 redirects": {},
+                    "hsrp version 2": {},
+                    "hsrp 936": {
+                        "ip 10.129.6.1": {}
+                    }
+                },
+                "interface Vlan938": {
+                    "no ip redirects": {},
+                    "ip address 10.129.8.3/24": {},
+                    "no ipv6 redirects": {},
+                    "hsrp version 2": {},
+                    "hsrp 938": {
+                        "priority 105": {},
+                        "ip 10.129.8.1": {}
+                    }
+                },
+                "interface Vlan939": {
+                    "no ip redirects": {},
+                    "ip address 10.129.25.3/26": {},
+                    "no ipv6 redirects": {},
+                    "hsrp version 2": {},
+                    "hsrp 939": {
+                        "ip 10.129.25.1": {}
+                    }
+                },
+                "interface Vlan940": {
+                    "no ip redirects": {},
+                    "ip address 10.129.26.3/26": {},
+                    "no ipv6 redirects": {},
+                    "hsrp version 2": {},
+                    "hsrp 940": {
+                        "ip 10.129.26.1": {}
+                    }
+                },
+                "interface Vlan941": {
+                    "no ip redirects": {},
+                    "ip address 10.129.9.3/25": {},
+                    "no ipv6 redirects": {},
+                    "hsrp version 2": {},
+                    "hsrp 941": {
+                        "ip 10.129.9.1": {}
+                    }
+                },
+                "interface Vlan942": {
+                    "no ip redirects": {},
+                    "ip address 10.129.27.3/24": {},
+                    "no ipv6 redirects": {},
+                    "hsrp version 2": {},
+                    "hsrp 942": {
+                        "ip 10.129.27.1": {}
+                    }
+                },
+                "interface Vlan943": {
+                    "no ip redirects": {},
+                    "ip address 10.129.28.3/24": {},
+                    "no ipv6 redirects": {},
+                    "hsrp version 2": {},
+                    "hsrp 942": {
+                        "ip 10.129.28.1": {}
+                    }
+                },
+                "interface Vlan970": {
+                    "no ip redirects": {},
+                    "ip address 10.129.15.3/26": {},
+                    "no ipv6 redirects": {},
+                    "hsrp version 2": {},
+                    "hsrp 970": {
+                        "priority 105": {},
+                        "ip 10.129.15.1": {}
+                    }
+                },
+                "interface Vlan971": {
+                    "no ip redirects": {},
+                    "ip address 10.129.15.67/26": {},
+                    "no ipv6 redirects": {},
+                    "hsrp version 2": {},
+                    "hsrp 971": {
+                        "priority 105": {},
+                        "ip 10.129.15.65": {}
+                    }
+                },
+                "interface Vlan972": {
+                    "no ip redirects": {},
+                    "ip address 10.129.15.131/26": {},
+                    "no ipv6 redirects": {},
+                    "hsrp version 2": {},
+                    "hsrp 972": {
+                        "priority 105": {},
+                        "ip 10.129.15.129": {}
+                    }
+                },
+                "interface Vlan973": {
+                    "no ip redirects": {},
+                    "ip address 10.129.15.195/26": {},
+                    "no ipv6 redirects": {},
+                    "hsrp version 2": {},
+                    "hsrp 973": {
+                        "priority 105": {},
+                        "ip 10.129.15.193": {}
+                    }
+                },
+                "interface Vlan980": {
+                    "no shutdown": {},
+                    "no ip redirects": {},
+                    "ip address 10.129.0.3/29": {},
+                    "no ipv6 redirects": {},
+                    "hsrp version 2": {},
+                    "hsrp 980": {
+                        "priority 105": {},
+                        "ip 10.129.0.1": {}
+                    }
+                },
+                "interface Vlan981": {
+                    "no shutdown": {},
+                    "no ip redirects": {},
+                    "ip address 10.129.0.19/29": {},
+                    "no ipv6 redirects": {},
+                    "hsrp version 2": {},
+                    "hsrp 981": {
+                        "priority 105": {},
+                        "ip 10.129.0.17": {}
+                    }
+                },
+                "interface Vlan982": {
+                    "no shutdown": {},
+                    "no ip redirects": {},
+                    "ip address 10.129.0.27/29": {},
+                    "no ipv6 redirects": {},
+                    "hsrp version 2": {},
+                    "hsrp 982": {
+                        "priority 105": {},
+                        "ip 10.129.0.25": {}
+                    }
+                },
+                "interface Vlan983": {
+                    "no ip redirects": {},
+                    "ip address 10.129.1.3/24": {},
+                    "no ipv6 redirects": {},
+                    "hsrp version 2": {},
+                    "hsrp 983": {
+                        "priority 105": {},
+                        "ip 10.129.1.1": {}
+                    }
+                },
+                "interface Vlan990": {
+                    "no ip redirects": {},
+                    "ip address 10.129.30.3/24": {},
+                    "no ipv6 redirects": {},
+                    "hsrp version 2": {},
+                    "hsrp 990": {
+                        "priority 105": {},
+                        "ip 10.129.30.1": {}
+                    }
+                },
+                "interface Vlan991": {
+                    "no ip redirects": {},
+                    "ip address 10.129.22.3/24": {},
+                    "no ipv6 redirects": {},
+                    "hsrp version 2": {},
+                    "hsrp 991": {
+                        "priority 105": {},
+                        "ip 10.129.22.1": {}
+                    }
+                },
+                "interface Vlan1014": {
+                    "no shutdown": {},
+                    "ip access-group BLOCK-NTP in": {},
+                    "vrf member VRF-INTERNET": {},
+                    "no ip redirects": {},
+                    "ip address 131.100.118.3/24": {},
+                    "no ipv6 redirects": {},
+                    "hsrp version 2": {},
+                    "hsrp 1014": {
+                        "priority 105": {},
+                        "ip 131.100.118.1": {}
+                    }
+                },
+                "interface Vlan1025": {
+                    "no shutdown": {},
+                    "ip access-group BLOCK-NTP in": {},
+                    "vrf member VRF-INTERNET": {},
+                    "no ip redirects": {},
+                    "ip address 131.100.119.3/24": {},
+                    "no ipv6 redirects": {},
+                    "hsrp version 2": {},
+                    "hsrp 1025": {
+                        "priority 105": {},
+                        "ip 131.100.119.1": {}
+                    }
+                },
+                "interface Vlan3500": {
+                    "no ip redirects": {},
+                    "ip address 10.129.10.3/26": {},
+                    "no ipv6 redirects": {},
+                    "hsrp version 2": {},
+                    "hsrp 3500": {
+                        "ip 10.129.10.1": {}
+                    }
+                },
+                "interface Vlan3501": {
+                    "no ip redirects": {},
+                    "ip address 10.129.10.67/26": {},
+                    "no ipv6 redirects": {},
+                    "hsrp version 2": {},
+                    "hsrp 3501": {
+                        "ip 10.129.10.65": {}
+                    }
+                },
+                "interface Vlan3502": {
+                    "no ip redirects": {},
+                    "ip address 10.129.10.131/26": {},
+                    "no ipv6 redirects": {},
+                    "hsrp version 2": {},
+                    "hsrp 3502": {
+                        "ip 10.129.10.129": {}
+                    }
+                },
+                "interface Vlan3503": {
+                    "no ip redirects": {},
+                    "ip address 10.129.10.195/26": {},
+                    "no ipv6 redirects": {},
+                    "hsrp version 2": {},
+                    "hsrp 3503": {
+                        "ip 10.129.10.193": {}
+                    }
+                },
+                "interface Vlan3504": {
+                    "no ip redirects": {},
+                    "ip address 10.129.11.3/26": {},
+                    "no ipv6 redirects": {},
+                    "hsrp version 2": {},
+                    "hsrp 3504": {
+                        "ip 10.129.11.1": {}
+                    }
+                },
+                "interface Vlan3505": {
+                    "no ip redirects": {},
+                    "ip address 10.129.11.67/26": {},
+                    "no ipv6 redirects": {},
+                    "hsrp version 2": {},
+                    "hsrp 3505": {
+                        "ip 10.129.11.65": {}
+                    }
+                },
+                "interface Vlan3506": {
+                    "no ip redirects": {},
+                    "ip address 10.129.11.131/26": {},
+                    "no ipv6 redirects": {},
+                    "hsrp version 2": {},
+                    "hsrp 3506": {
+                        "ip 10.129.11.129": {}
+                    }
+                },
+                "interface Vlan3507": {
+                    "no ip redirects": {},
+                    "ip address 10.129.11.195/28": {},
+                    "no ipv6 redirects": {},
+                    "hsrp version 2": {},
+                    "hsrp 3507": {
+                        "ip 10.129.11.193": {}
+                    }
+                },
+                "interface Vlan3508": {
+                    "no ip redirects": {},
+                    "ip address 10.129.11.211/29": {},
+                    "no ipv6 redirects": {},
+                    "hsrp version 2": {},
+                    "hsrp 3508": {
+                        "ip 10.129.11.209": {}
+                    }
+                },
+                "interface Vlan3510": {
+                    "no ip redirects": {},
+                    "ip address 10.129.13.3/26": {},
+                    "no ipv6 redirects": {},
+                    "hsrp version 2": {},
+                    "hsrp 3510": {
+                        "ip 10.129.13.1": {}
+                    }
+                },
+                "interface Vlan3511": {
+                    "no ip redirects": {},
+                    "ip address 10.129.13.67/26": {},
+                    "no ipv6 redirects": {},
+                    "hsrp version 2": {},
+                    "hsrp 3511": {
+                        "ip 10.129.13.65": {}
+                    }
+                },
+                "interface port-channel1": {
+                    "description LAG vPC Peer-Link to VV-SCS-N9K - Po1": {},
+                    "switchport mode trunk": {},
+                    "spanning-tree port type network": {},
+                    "vpc peer-link": {}
+                },
+                "interface port-channel10": {
+                    "description FW-VV_SCS-01_INSIDE - LAG": {},
+                    "switchport mode trunk": {},
+                    "switchport trunk allowed vlan 980,992": {},
+                    "vpc 10": {}
+                },
+                "interface port-channel11": {
+                    "description FW-VV_SCS-02_INSIDE- LAG": {},
+                    "switchport mode trunk": {},
+                    "switchport trunk allowed vlan 980,992": {},
+                    "vpc 11": {}
+                },
+                "interface port-channel12": {
+                    "description FW-PARCEIROS_FG01 - LAG": {},
+                    "switchport mode trunk": {},
+                    "switchport trunk allowed vlan 881-882,906,981": {},
+                    "vpc 12": {}
+                },
+                "interface port-channel13": {
+                    "description FW-PARCEIROS_FG02 - LAG": {},
+                    "switchport mode trunk": {},
+                    "switchport trunk allowed vlan 881-882,906,981": {},
+                    "vpc 13": {}
+                },
+                "interface port-channel14": {
+                    "description FW-BACKEND-01 - LAG": {},
+                    "switchport mode trunk": {},
+                    "switchport trunk allowed vlan 6,948-950,962-963,982": {},
+                    "vpc 14": {}
+                },
+                "interface port-channel15": {
+                    "description FW-BACKEND-02 - LAG": {},
+                    "switchport mode trunk": {},
+                    "switchport trunk allowed vlan 6,948-950,962-963,982": {},
+                    "vpc 15": {}
+                },
+                "interface port-channel17": {
+                    "description FW-SCS-SDW-1000D- LAG": {},
+                    "switchport mode trunk": {},
+                    "switchport trunk allowed vlan 1014": {},
+                    "vpc 17": {}
+                },
+                "interface port-channel18": {
+                    "description FW-SCS-SDW-1000D- LAG": {},
+                    "switchport mode trunk": {},
+                    "switchport trunk allowed vlan 1014": {},
+                    "vpc 18": {}
+                },
+                "interface port-channel20": {
+                    "description FW-VV_SCS-01_OUTSIDE - LAG": {},
+                    "switchport mode trunk": {},
+                    "switchport trunk allowed vlan 1014": {},
+                    "vpc 20": {}
+                },
+                "interface port-channel21": {
+                    "description FW-VV_SCS-02_OUTSIDE- LAG": {},
+                    "switchport mode trunk": {},
+                    "switchport trunk allowed vlan 1014": {},
+                    "vpc 21": {}
+                },
+                "interface port-channel22": {
+                    "description FW-SCS-SDW-01- LAG": {},
+                    "switchport mode trunk": {},
+                    "switchport trunk allowed vlan 1014": {},
+                    "vpc 22": {}
+                },
+                "interface port-channel23": {
+                    "description FW-SCS-SDW-02 - LAG": {},
+                    "switchport mode trunk": {},
+                    "switchport trunk allowed vlan 1014": {},
+                    "vpc 23": {}
+                },
+                "interface port-channel24": {
+                    "description L3-CORE-DCI - LAG": {},
+                    "switchport mode trunk": {},
+                    "switchport trunk allowed vlan 998": {},
+                    "flowcontrol send on": {},
+                    "vpc 24": {}
+                },
+                "interface port-channel25": {
+                    "description P0-LEAF-03": {},
+                    "switchport mode trunk": {},
+                    "flowcontrol send on": {},
+                    "vpc 25": {}
+                },
+                "interface port-channel26": {
+                    "description P0-LEAF-04": {},
+                    "switchport mode trunk": {},
+                    "flowcontrol send on": {},
+                    "vpc 26": {}
+                },
+                "interface port-channel30": {
+                    "description Channel N9K01 Eth1/1-2 N9K02 Eth1/1-2 X 6509 Te1/3/6 Te1/3/11 Te2/3/6 Te2/3/11": {},
+                    "switchport mode trunk": {},
+                    "switchport trunk native vlan 999": {},
+                    "switchport trunk allowed vlan 28,83,100,201-203,211,632,803,805,881,906,912,916,930-935,938-943,962-963,970-973,983,990-992,999": {},
+                    "vpc 30": {}
+                },
+                "interface port-channel31": {
+                    "description *** Channel VV-SCS-FI-A - VV-SCS-FI-B ***": {},
+                    "switchport mode trunk": {},
+                    "switchport trunk native vlan 999": {},
+                    "vpc 31": {}
+                },
+                "interface port-channel32": {
+                    "description *** Channel VV-SCS-FI-A - VV-SCS-FI-B ***": {},
+                    "switchport mode trunk": {},
+                    "switchport trunk native vlan 999": {},
+                    "vpc 32": {}
+                },
+                "interface port-channel33": {
+                    "description VV-SCS-NTAP01": {},
+                    "switchport mode trunk": {},
+                    "mtu 9216": {},
+                    "vpc 33": {}
+                },
+                "interface port-channel34": {
+                    "description VV-SCS-NTAP02": {},
+                    "switchport mode trunk": {},
+                    "mtu 9216": {},
+                    "vpc 34": {}
+                },
+                "interface port-channel35": {
+                    "description FI-VDI-A": {},
+                    "switchport mode trunk": {},
+                    "mtu 9216": {},
+                    "vpc 35": {}
+                },
+                "interface port-channel36": {
+                    "description FI-VDI-B": {},
+                    "switchport mode trunk": {},
+                    "flowcontrol send on": {},
+                    "mtu 9216": {},
+                    "vpc 36": {}
+                },
+                "interface port-channel40": {
+                    "description FW-SCS-PROXY-01_OUTSIDE - LAG": {},
+                    "switchport mode trunk": {},
+                    "switchport trunk allowed vlan 1014": {},
+                    "vpc 40": {}
+                },
+                "interface port-channel41": {
+                    "description FW-SCS-PROXY-02_OUTSIDE - LAG": {},
+                    "switchport mode trunk": {},
+                    "switchport trunk allowed vlan 1014": {},
+                    "vpc 41": {}
+                },
+                "interface port-channel45": {
+                    "description *** vPC CORE-CAMPUS to N9K-INTERNET ***": {},
+                    "switchport mode trunk": {},
+                    "switchport trunk native vlan 999": {},
+                    "switchport trunk allowed vlan 6,28,83,100,201-203,211,632,641,643,803,805,881-882,906,912,916,930-935,938-943,962-963,970-973,983,990-992,999": {},
+                    "vpc 45": {}
+                },
+                "sflow data-source interface Ethernet1/10": {},
+                "interface Ethernet1/1": {
+                    "description *** Trunk com switch 6509-2 Te2/3/6 ***": {},
+                    "switchport mode trunk": {},
+                    "switchport trunk native vlan 999": {},
+                    "switchport trunk allowed vlan 28,83,100,201-203,211,632,803,805,881,906,912,916,930-935,938-943,962-963,970-973,983,990-992,999": {},
+                    "channel-group 30 mode active": {}
+                },
+                "interface Ethernet1/2": {
+                    "description *** Trunk com switch 6509-1 Te1/3/11 ***": {},
+                    "switchport mode trunk": {},
+                    "switchport trunk native vlan 999": {},
+                    "switchport trunk allowed vlan 28,83,100,201-203,211,632,803,805,881,906,912,916,930-935,938-943,962-963,970-973,983,990-992,999": {},
+                    "channel-group 30 mode active": {}
+                },
+                "interface Ethernet1/3": {
+                    "description FG-MGMT2_PORTAL-FORTINET": {},
+                    "switchport access vlan 931": {}
+                },
+                "interface Ethernet1/4": {},
+                "interface Ethernet1/5": {
+                    "description FW01_PARCEIROS-ETH20": {},
+                    "switchport mode trunk": {},
+                    "switchport trunk allowed vlan 881-882,906,981": {},
+                    "channel-group 12 mode active": {}
+                },
+                "interface Ethernet1/6": {
+                    "description ASA-5525-OUTSIDE": {},
+                    "shutdown": {},
+                    "switchport mode trunk": {},
+                    "switchport trunk allowed vlan 1025": {}
+                },
+                "interface Ethernet1/7": {
+                    "description FW02_PARCEIROS-ETH20": {},
+                    "switchport mode trunk": {},
+                    "switchport trunk allowed vlan 881-882,906,981": {},
+                    "channel-group 13 mode active": {}
+                },
+                "interface Ethernet1/8": {},
+                "interface Ethernet1/9": {},
+                "interface Ethernet1/10": {
+                    "description LINK_INTERNET_WCS": {},
+                    "no cdp enable": {},
+                    "no switchport": {},
+                    "vrf member VRF-INTERNET": {},
+                    "no ip redirects": {},
+                    "ip address 200.229.237.182/30": {},
+                    "no shutdown": {}
+                },
+                "interface Ethernet1/11": {
+                    "description GIGAMOM-SCS01-PORTA 1/2/X8 -> FW01-ETH34-INSIDE": {},
+                    "switchport mode trunk": {},
+                    "switchport trunk allowed vlan 980,992": {},
+                    "link debounce time 250": {},
+                    "channel-group 10 mode active": {}
+                },
+                "interface Ethernet1/12": {
+                    "description GIGAMOM-SCS01-PORTA 1/3/X8 -> FW02-ETH34-INSIDE": {},
+                    "switchport mode trunk": {},
+                    "switchport trunk allowed vlan 980,992": {},
+                    "link debounce time 250": {},
+                    "channel-group 11 mode active": {}
+                },
+                "interface Ethernet1/13": {
+                    "description FW01-ETH36-OUTSIDE": {},
+                    "switchport mode trunk": {},
+                    "switchport trunk allowed vlan 1014": {},
+                    "channel-group 20 mode active": {}
+                },
+                "interface Ethernet1/14": {
+                    "description FW02-ETH36-OUTSIDE": {},
+                    "switchport mode trunk": {},
+                    "switchport trunk allowed vlan 1014": {},
+                    "channel-group 21 mode active": {}
+                },
+                "interface Ethernet1/15": {
+                    "description FW01-BACKEND_ETH38": {},
+                    "switchport mode trunk": {},
+                    "switchport trunk allowed vlan 6,948-950,962-963,982": {},
+                    "channel-group 14 mode active": {}
+                },
+                "interface Ethernet1/16": {
+                    "description FW02-BACKEND_ETH38": {},
+                    "switchport mode trunk": {},
+                    "switchport trunk allowed vlan 6,948-950,962-963,982": {},
+                    "channel-group 15 mode active": {}
+                },
+                "interface Ethernet1/17": {},
+                "interface Ethernet1/18": {
+                    "description FW-SCS-SDW1000D": {},
+                    "switchport mode trunk": {},
+                    "switchport trunk allowed vlan 1014": {}
+                },
+                "interface Ethernet1/19": {},
+                "interface Ethernet1/20": {
+                    "description FWSM-ETH13/20-OUTSIDE": {},
+                    "switchport mode trunk": {},
+                    "switchport trunk allowed vlan 1025": {}
+                },
+                "interface Ethernet1/21": {
+                    "description VV-SCS-NTAP01": {},
+                    "lacp rate fast": {},
+                    "switchport mode trunk": {},
+                    "mtu 9216": {},
+                    "channel-group 33 mode active": {}
+                },
+                "interface Ethernet1/22": {
+                    "description VV-SCS-NTAP02": {},
+                    "switchport mode trunk": {},
+                    "mtu 9216": {},
+                    "channel-group 34 mode active": {}
+                },
+                "interface Ethernet1/23": {
+                    "description FW-SCS-SDW-01": {},
+                    "switchport mode trunk": {},
+                    "switchport trunk allowed vlan 1014": {},
+                    "channel-group 22 mode active": {}
+                },
+                "interface Ethernet1/24": {
+                    "description FW-SCS-SDW-02": {},
+                    "switchport mode trunk": {},
+                    "switchport trunk allowed vlan 1014": {},
+                    "channel-group 23 mode active": {}
+                },
+                "interface Ethernet1/25": {
+                    "description DCI-SCS-01_26": {},
+                    "shutdown": {},
+                    "switchport mode trunk": {},
+                    "switchport trunk allowed vlan 998": {},
+                    "flowcontrol send on": {},
+                    "channel-group 24 mode active": {}
+                },
+                "interface Ethernet1/26": {
+                    "description DCI-SCS-02_26": {},
+                    "shutdown": {},
+                    "switchport mode trunk": {},
+                    "switchport trunk allowed vlan 998": {},
+                    "flowcontrol send on": {},
+                    "channel-group 24 mode active": {}
+                },
+                "interface Ethernet1/27": {
+                    "description FW-SCS-PROXY-01_OUTSIDE - LAG": {},
+                    "switchport mode trunk": {},
+                    "switchport trunk allowed vlan 1014": {},
+                    "channel-group 40 mode active": {}
+                },
+                "interface Ethernet1/28": {
+                    "description FW-SCS-PROXY-02_OUTSIDE - LAG": {},
+                    "switchport mode trunk": {},
+                    "switchport trunk allowed vlan 1014": {},
+                    "channel-group 41 mode active": {}
+                },
+                "interface Ethernet1/29": {
+                    "description *** CITRIX HLG OUTSIDE 10G SCS ***": {},
+                    "switchport access vlan 803": {}
+                },
+                "interface Ethernet1/30": {
+                    "description FI-VDI-A": {},
+                    "switchport mode trunk": {},
+                    "mtu 9216": {},
+                    "channel-group 35 mode active": {}
+                },
+                "interface Ethernet1/31": {
+                    "description FI-VDI-B": {},
+                    "switchport mode trunk": {},
+                    "flowcontrol send on": {},
+                    "mtu 9216": {},
+                    "channel-group 36 mode active": {}
+                },
+                "interface Ethernet1/32": {},
+                "interface Ethernet1/33": {},
+                "interface Ethernet1/34": {},
+                "interface Ethernet1/35": {},
+                "interface Ethernet1/36": {},
+                "interface Ethernet1/37": {},
+                "interface Ethernet1/38": {},
+                "interface Ethernet1/39": {},
+                "interface Ethernet1/40": {
+                    "description *** vPC CORE-CAMPUS to N9K-INTERNET ***": {},
+                    "switchport mode trunk": {},
+                    "switchport trunk native vlan 999": {},
+                    "switchport trunk allowed vlan 6,28,83,100,201-203,211,632,641,643,803,805,881-882,906,912,916,930-935,938-943,962-963,970-973,983,990-992,999": {},
+                    "channel-group 45 mode active": {}
+                },
+                "interface Ethernet1/41": {
+                    "description *** vPC CORE-CAMPUS to N9K-INTERNET ***": {},
+                    "switchport mode trunk": {},
+                    "switchport trunk native vlan 999": {},
+                    "switchport trunk allowed vlan 6,28,83,100,201-203,211,632,641,643,803,805,881-882,906,912,916,930-935,938-943,962-963,970-973,983,990-992,999": {},
+                    "channel-group 45 mode active": {}
+                },
+                "interface Ethernet1/42": {},
+                "interface Ethernet1/43": {
+                    "description UPLINK-TO-ACI-LEAF04-L3": {},
+                    "no switchport": {},
+                    "flowcontrol send on": {},
+                    "no shutdown": {}
+                },
+                "interface Ethernet1/43.79": {
+                    "description OSPF-TO-ACI-LEAF04": {},
+                    "encapsulation dot1q 779": {},
+                    "ip address 10.129.120.30/30": {},
+                    "ip ospf network point-to-point": {},
+                    "no ip ospf passive-interface": {},
+                    "ip router ospf CORE area 0.0.0.2": {},
+                    "no shutdown": {}
+                },
+                "interface Ethernet1/44": {
+                    "description UPLINK-TO-ACI-LEAF03-L3": {},
+                    "no switchport": {},
+                    "flowcontrol send on": {},
+                    "no shutdown": {}
+                },
+                "interface Ethernet1/44.79": {
+                    "description OSPF-TO-ACI-LEAF03": {},
+                    "encapsulation dot1q 779": {},
+                    "ip address 10.129.120.34/30": {},
+                    "ip ospf network point-to-point": {},
+                    "no ip ospf passive-interface": {},
+                    "ip router ospf CORE area 0.0.0.2": {},
+                    "no shutdown": {}
+                },
+                "interface Ethernet1/45": {
+                    "description *** VV-SCS-FI-A Eth1/1 ***": {},
+                    "switchport mode trunk": {},
+                    "switchport trunk native vlan 999": {},
+                    "channel-group 31 mode active": {}
+                },
+                "interface Ethernet1/46": {
+                    "description *** VV-SCS-FI-B Eth1/2 ***": {},
+                    "switchport mode trunk": {},
+                    "switchport trunk native vlan 999": {},
+                    "channel-group 32 mode active": {}
+                },
+                "interface Ethernet1/47": {
+                    "description Connected to VV-SCS-N9K01- Eth1/47": {},
+                    "switchport mode trunk": {},
+                    "channel-group 1 mode active": {}
+                },
+                "interface Ethernet1/48": {
+                    "description Connected to VV-SCS-N9K01- Eth1/48": {},
+                    "switchport mode trunk": {},
+                    "channel-group 1 mode active": {}
+                },
+                "interface Ethernet1/49": {},
+                "interface Ethernet1/50": {},
+                "interface Ethernet1/51": {},
+                "interface Ethernet1/52": {},
+                "interface Ethernet1/53": {},
+                "interface Ethernet1/54": {},
+                "interface mgmt0": {
+                    "vrf member management": {},
+                    "ip address 10.211.10.101/20": {}
+                },
+                "cli alias name wr copy run start": {},
+                "line console": {
+                    "exec-timeout 0": {}
+                },
+                "line vty": {
+                    "exec-timeout 0": {},
+                    "access-class ADM_VTY in": {}
+                },
+                "boot nxos bootflash:/nxos.9.3.4.bin": {},
+                "router ospf CORE": {
+                    "default-information originate always route-map OSPF-Default": {},
+                    "passive-interface default": {}
+                },
+                "router bgp 61644": {
+                    "vrf VRF-INTERNET": {
+                        "local-as 61644": {},
+                        "router-id 131.100.118.3": {},
+                        "log-neighbor-changes": {},
+                        "address-family ipv4 unicast": {
+                            "network 131.100.116.0/22": {},
+                            "network 131.100.118.0/24": {},
+                            "network 131.100.119.0/24": {}
+                        },
+                        "neighbor 131.100.118.2": {
+                            "remote-as 61644": {},
+                            "password 3 34a4f6c430e08533": {},
+                            "address-family ipv4 unicast": {
+                                "next-hop-self": {}
+                            }
+                        },
+                        "neighbor 200.229.237.181": {
+                            "remote-as 28165": {},
+                            "password 3 acb63f36e1a2055618be4d32b593dd9f43d56f6f87bd9c26": {},
+                            "timers 4 12": {},
+                            "address-family ipv4 unicast": {
+                                "route-map WCS-TO-VVAR in": {},
+                                "route-map VVAR-TO-WCS out": {}
+                            }
+                        }
+                    }
+                },
+                "ip sla 1": {
+                    "icmp-echo 187.62.212.2 source-interface Ethernet1/10": {
+                        "verify-data": {},
+                        "vrf VRF-INTERNET": {},
+                        "tag ip_sla_vvar_to_wcs": {},
+                        "threshold 150": {},
+                        "timeout 300": {},
+                        "frequency 10": {},
+                        "history enhanced interval 60 buckets 60": {}
+                    }
+                },
+                "ip sla schedule 1 life forever start-time now": {},
+                "logging server 10.128.131.36 6 use-vrf management facility local6": {},
+                "no logging console": {}
+            }
+        }
+    }
+}

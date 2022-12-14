@@ -1,0 +1,7 @@
+config_interface:
+  interface Ethernet1/3
+    no switchport
+    ip address 192.168.15.215/24
+    no ip ospf passive-interface
+    no shutdown
+

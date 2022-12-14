@@ -1,0 +1,897 @@
+{
+    "config": {
+        "VV-HOR-N9K01": {
+            "output": "\r\n!Command: show running-config\r\n!Running configuration last done at: Wed Jun 29 18:04:20 2022\r\n!Time: Wed Jun 29 18:04:29 2022\r\n\r\nversion 9.3(4) Bios:version 07.67 \r\nhostname VV-HOR-N9K01\r\nvdc VV-HOR-N9K01 id 1\r\n  limit-resource vlan minimum 16 maximum 4094\r\n  limit-resource vrf minimum 2 maximum 4096\r\n  limit-resource port-channel minimum 0 maximum 256\r\n  limit-resource u4route-mem minimum 248 maximum 248\r\n  limit-resource u6route-mem minimum 96 maximum 96\r\n  limit-resource m4route-mem minimum 58 maximum 58\r\n  limit-resource m6route-mem minimum 8 maximum 8\r\n\r\nfeature tacacs+\r\ncfs eth distribute\r\nfeature ospf\r\nfeature bgp\r\nfeature pbr\r\nfeature udld\r\nfeature interface-vlan\r\nfeature hsrp\r\nfeature lacp\r\nfeature dhcp\r\nfeature vpc\r\nclock timezone GMT -3 0\r\nfeature sflow\r\n\r\nlogging level xmlma 6\r\nno password strength-check\r\nusername admin password 5 $5$hzA5ENJW$QYN1HmZsZ0c.vmj7S6FTuvZto8EEQ.YskAFzi2BCfH7  role network-admin\r\nusername suptelecom password 5 $5$1BxBxL2P$T53TpOYo9bVHw5ZZ/Kw9FKC7P7ZB6dJcyRdPlV.FiM.  role network-admin\r\nusername suptelecom role vdc-admin\r\nusername suptelecom passphrase  lifetime 99999 warntime 7\r\n\r\nbanner motd ^Cc\r\n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\r\n*                                Via Varejo.                              *\r\n*                   Setor de Redes / Plataforma Baixa                     *\r\n*   Aviso, qualquer uso nao autorizado do sistema e ilegal podendo ser    *\r\n* monitorado sem aviso previo e os registros resultantes podem ser usados *\r\n*                        como prova em tribunal.                          *\r\n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\r\n^\r\n\r\nip domain-lookup\r\nip domain-name viavarejo.corp\r\ntacacs-server key 7 \"Yeeasrzog@1234xujvoth\"\r\ntacacs-server test idle-time 3 \r\ntacacs-server host 10.128.140.25 \r\ntacacs-server host 10.129.31.25 \r\naaa group server tacacs+ TACACS \r\n    server 10.128.140.25 \r\n    server 10.129.31.25 \r\n    deadtime 5\r\n    source-interface mgmt0\r\ncrypto key generate rsa label VV-HOR-N9K01 modulus 2048\r\nerrdisable recovery cause bpduguard\r\nip access-list SCS\r\n  10 permit ip 10.128.131.32/32 any log \r\n  12 permit ip 10.128.164.0/24 any log \r\n  35 permit ip 10.128.131.31/32 any log \r\n  36 permit ip 10.129.30.0/24 any log \r\ncopp profile strict\r\nip tftp source-interface mgmt0\r\nsnmp-server source-interface traps mgmt0\r\nsnmp-server source-interface informs mgmt0\r\nsnmp-server user admin network-admin auth md5 0x2bf57856b9736ee7197b8cff7587b4e6 priv 0x2bf57856b9736ee7197b8cff7587b4e6 localizedkey\r\nsnmp-server user suptelecom network-admin auth md5 0x2bf57856b9736ee7197b8cff7587b4e6 priv 0x2bf57856b9736ee7197b8cff7587b4e6 localizedkey\r\nsnmp-server user suptelecom vdc-admin\r\nrmon event 1 log trap public description FATAL(1) owner PMON@FATAL\r\nrmon event 2 log trap public description CRITICAL(2) owner PMON@CRITICAL\r\nrmon event 3 log trap public description ERROR(3) owner PMON@ERROR\r\nrmon event 4 log trap public description WARNING(4) owner PMON@WARNING\r\nrmon event 5 log trap public description INFORMATION(5) owner PMON@INFO\r\nsnmp-server enable traps ospf 20\r\nsnmp-server community iixrbn656lihJ075bVm3 group network-admin\r\nsnmp-server community iixrbn656lihJ075bVm3 use-acl SCS\r\nntp server 10.0.0.100\r\nntp server 10.128.8.75 prefer use-vrf default\r\nntp server 10.129.8.75 prefer use-vrf default\r\naaa authentication login default group TACACS \r\naaa authorization config-commands default group TACACS local \r\naaa authorization commands default group TACACS local \r\naaa accounting default group TACACS \r\naaa authentication login error-enable \r\n\r\nip route 10.0.0.0/8 10.228.129.10 name ViaVarejo-Hortolandia tag 10\r\nip route 10.6.31.32/32 10.228.129.10 name LOJAS-VV tag 10\r\nip route 10.28.22.0/24 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 10.32.0.0/27 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 10.52.10.0/25 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 10.55.55.0/24 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 10.63.134.42/32 10.228.129.10 name REDE tag 10\r\nip route 10.63.134.46/32 10.228.129.10 name REDE tag 10\r\nip route 10.64.0.0/22 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 10.70.68.0/22 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 10.95.230.128/26 10.228.129.10 name VPN-IBM_Bluemix tag 10\r\nip route 10.100.0.0/16 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 10.108.104.0/22 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 10.111.1.0/29 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 10.111.1.24/29 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 10.111.1.104/29 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 10.111.1.112/29 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 10.112.1.0/26 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 10.112.11.0/24 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 10.112.21.0/26 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 10.113.1.0/24 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 10.116.192.0/18 10.228.129.10 name Corp_Cnova tag 10\r\nip route 10.117.40.0/22 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 10.117.64.0/20 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 10.117.240.0/22 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 10.119.92.0/22 10.228.129.10 name LOJAS-VV tag 10\r\nip route 10.120.48.6/32 10.228.129.10 name MPLS_CD_0022 tag 10\r\nip route 10.120.48.18/32 10.228.129.10 name MPLS_CD_1088 10\r\nip route 10.120.48.38/32 10.228.129.10 name MPLS_CD_1400 tag 10\r\nip route 10.120.48.42/32 10.228.129.10 name MPLS_CD_1401 tag 10\r\nip route 10.120.48.46/32 10.228.129.10 name MPLS_CD_1475 tag 10\r\nip route 10.120.48.50/32 10.228.129.10 name MPLS_CD_1500 10\r\nip route 10.120.48.62/32 10.228.129.10 name MPLS_CD_1760 tag 10\r\nip route 10.120.48.66/32 10.228.129.10 name MPLS_CD_1640 tag 10\r\nip route 10.120.48.70/32 10.228.129.10 name MPLS_CD_1600 tag 10\r\nip route 10.120.48.82/32 10.228.129.10 name MPLS_CD_1488 10\r\nip route 10.120.48.178/32 10.228.129.10 name MPLS_CD_1445 tag 10\r\nip route 10.120.48.214/32 10.228.129.10 name MPLS_CD_1941 tag 10\r\nip route 10.120.49.58/32 10.228.129.10 name MPLS_CD_1200_HSRP_STANDBY tag 10\r\nip route 10.120.50.46/32 10.228.129.10 name MPLS_CD_1454 tag 10\r\nip route 10.120.50.50/32 10.228.129.10 name MPLS_CD_1895 tag 10\r\nip route 10.120.52.34/32 10.228.129.10 name MPLS_CD_1875 tag 10\r\nip route 10.120.52.118/32 10.228.129.10 name MPLS_CD_1877 tag 10\r\nip route 10.120.52.210/32 10.228.129.10 name MPLS_CD_1887 tag 10\r\nip route 10.120.54.82/32 10.228.129.10 name MPLS_CD_1736 tag 10\r\nip route 10.120.54.86/32 10.228.129.10 name MPLS_CD_1673 tag 10\r\nip route 10.120.54.90/32 10.228.129.10 name MPLS_CD_1792 tag 10\r\nip route 10.120.54.150/32 10.228.129.10 name MPLS_CD_1999 tag 10\r\nip route 10.120.54.166/32 10.228.129.10 name MPLS_CD_1721 tag 10\r\nip route 10.120.54.230/32 10.228.129.10 name MPLS_CD_1449 tag 10\r\nip route 10.120.55.250/32 10.228.129.10 name MPLS_CD_1895 tag 10\r\nip route 10.120.60.18/32 10.228.129.10 name MPLS_CD_1624 tag 10\r\nip route 10.120.60.30/32 10.228.129.10 name MPLS_CD_0701 tag 10\r\nip route 10.120.60.34/32 10.228.129.10 name MPLS_CD_1778 tag 10\r\nip route 10.120.60.38/32 10.228.129.10 name MPLS_CD_1576 tag 10\r\nip route 10.120.60.42/32 10.228.129.10 name MPLS_CD_1635 tag 10\r\nip route 10.120.60.46/32 10.228.129.10 name MPLS_CD_1063 10\r\nip route 10.120.60.54/32 10.228.129.10 name MPLS_CD_1774 10\r\nip route 10.120.60.58/32 10.228.129.10 name MPLS_CD_1762 tag 10\r\nip route 10.120.60.62/32 10.228.129.10 name MPLS_CD_1017 10\r\nip route 10.120.60.66/32 10.228.129.10 name MPLS_CD_1070 10\r\nip route 10.120.60.70/32 10.228.129.10 name MPLS_CD_1433 10\r\nip route 10.120.60.90/32 10.228.129.10 name MPLS_CD_1200 tag 10\r\nip route 10.128.226.70/32 10.228.129.10 name MPLS_CD_NPC-SPOJU-SW-CORE1 tag 10\r\nip route 10.128.227.22/32 10.228.129.10 name MPLS_CD_NPC-SPOJU-SW-CORE2 tag 10\r\nip route 10.128.227.82/32 10.228.129.10 name MPLS_CD_NPC-SPOJU-SW-CORE1 tag 10\r\nip route 10.129.0.0/18 10.228.129.10 name DC-SCS tag 10\r\nip route 10.129.20.52/32 10.228.129.10 name vTEP-SCS tag 10\r\nip route 10.129.120.52/32 10.228.129.10 tag 10\r\nip route 10.130.0.0/16 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 10.140.59.0/24 10.228.129.10 name ViaVarejo-Hortolandia tag 10\r\nip route 10.141.0.0/16 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 10.141.58.0/23 10.228.129.10 name Rede_Global_Homologacao tag 10\r\nip route 10.141.60.0/23 10.228.129.10 name Rede_Global_Desenvolvimento tag 10\r\nip route 10.141.62.0/23 10.228.129.10 name Rede_Global_Banco_de_Dados tag 10\r\nip route 10.141.64.0/23 10.228.129.10 name Rede_Global_Producao tag 10\r\nip route 10.151.10.0/24 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 10.151.20.0/24 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 10.151.50.0/24 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 10.151.130.0/23 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 10.151.140.0/23 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 10.152.0.0/16 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 10.153.0.0/16 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 10.154.0.0/16 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 10.155.0.0/16 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 10.159.0.0/24 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 10.162.128.0/17 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 10.165.50.0/24 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 10.165.140.0/23 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 10.171.164.48/29 10.228.129.10 name VPN-IBM_Bluemix tag 10\r\nip route 10.172.0.0/16 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 10.175.1.32/29 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 10.176.0.0/24 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 10.180.0.0/18 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 10.180.128.0/19 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 10.180.160.0/19 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 10.180.192.0/19 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 10.180.224.0/21 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 10.180.254.0/24 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 10.189.0.0/27 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 10.191.0.0/22 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 10.203.244.0/22 10.228.129.10 name ASSAI_Bluesoft tag 10\r\nip route 10.203.248.0/23 10.228.129.10 name ASSAI_Bluesoft tag 10\r\nip route 10.206.12.10/32 10.228.129.10 name GWCEL_BANESTES_BANRISUL_CIELO tag 10\r\nip route 10.206.12.20/32 10.228.129.10 name GWCEL_BANRISUL tag 10\r\nip route 10.206.12.30/32 10.228.129.10 name GWCEL_BANESTES_BANRISUL_CIELO tag 10\r\nip route 10.206.12.40/32 10.228.129.10 name GWCEL_BANESTES_BANRISUL_CIELO tag 10\r\nip route 10.207.40.0/24 10.228.129.10 name CMS_CLOUD tag 10\r\nip route 10.210.0.0/16 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 10.217.127.32/29 10.228.129.10 name CD1200-Fabrica_lojas 10\r\nip route 10.228.128.0/18 10.228.129.10 name Collocation-VV tag 10\r\nip route 10.230.4.1/32 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 10.230.16.0/21 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 10.230.40.0/22 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 10.230.246.0/24 10.228.129.10 name NAT_MV tag 10\r\nip route 10.230.248.10/31 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 10.231.0.0/24 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 10.231.0.64/28 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 10.234.191.12/32 10.228.129.10 name REDE tag 10\r\nip route 10.234.191.16/32 10.228.129.10 name REDE tag 10\r\nip route 10.249.60.0/23 10.228.129.10 name Vlan-Admin tag 10\r\nip route 10.255.223.0/24 10.228.129.10 name LOOPBACK_SDWAN tag 10\r\nip route 10.255.223.253/32 10.228.129.10 name FW_CD1200 tag 10\r\nip route 10.255.251.200/30 10.228.129.10 name CD1200 tag 10\r\nip route 21.10.42.77/32 10.228.129.10 name CIELO-LINK1 tag 10\r\nip route 21.10.42.79/32 10.228.129.10 name CIELO-LINK2 tag 10\r\nip route 52.5.243.68/32 10.228.129.10 name VINDI tag 10\r\nip route 52.201.35.70/32 10.228.129.10 name VINDI tag 10\r\nip route 63.167.13.200/32 10.228.129.10 name LOJAS-VV tag 10\r\nip route 100.124.51.82/32 10.228.129.10 name MPLS_CD_1445 tag 10\r\nip route 100.124.160.166/32 10.228.129.10 name MPLS_CD_1449 tag 10\r\nip route 100.125.73.194/32 10.228.129.10 name MPLS_CD_1736 tag 10\r\nip route 100.125.131.26/32 10.228.129.10 name MPLS_CD_1721 tag 10\r\nip route 100.126.6.58/32 10.228.129.10 name MPLS_CD_1762 tag 10\r\nip route 100.126.35.44/30 10.228.129.10 name MPLS_Oi_400Mb_ASR_1006 tag 10\r\nip route 100.126.35.76/30 10.228.129.10 name MPLS_Oi_400Mb_ASR_F0000 tag 10\r\nip route 100.126.91.194/32 10.228.129.10 name MPLS_CD_1760 tag 10\r\nip route 100.126.137.234/32 10.228.129.10 name MPLS_CD_1792 tag 10\r\nip route 100.126.174.2/32 10.228.129.10 name MPLS_CD_1673 tag 10\r\nip route 100.126.175.244/30 10.228.129.10 name MPLS_CD_1875 tag 10\r\nip route 100.126.176.34/32 10.228.129.10 name MPLS_CD_1877 tag 10\r\nip route 100.126.187.246/32 10.228.129.10 name MPLS_CD_1640 tag 10\r\nip route 100.126.196.250/32 10.228.129.10 name MPLS_CD_1401 tag 10\r\nip route 100.126.212.226/32 10.228.129.10 name MPLS_CD_1887 tag 10\r\nip route 100.127.158.162/32 10.228.129.10 name MPLS_CD_1576 tag 10\r\nip route 100.127.162.122/32 10.228.129.10 name MPLS_CD_1454 tag 10\r\nip route 100.127.168.238/32 10.228.129.10 name MPLS_CD_1999 tag 10\r\nip route 100.127.177.222/32 10.228.129.10 name MPLS_CD_1941 tag 10\r\nip route 129.39.184.0/21 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 138.117.30.253/32 10.228.129.10 name CIELO_SP tag 10\r\nip route 138.117.30.254/32 10.228.129.10 name CIELO_RJ tag 10\r\nip route 158.87.120.229/32 10.228.129.10 name MAXIMO tag 10\r\nip route 158.87.123.128/25 10.228.129.10 name MAXIMO tag 10\r\nip route 158.98.62.16/28 10.228.129.10 name MAXIMO tag 10\r\nip route 158.98.62.22/32 10.228.129.10 name MAXIMO tag 10\r\nip route 158.98.62.23/32 10.228.129.10 name MAXIMO tag 10\r\nip route 158.98.62.28/32 10.228.129.10 name MAXIMO tag 10\r\nip route 158.98.63.0/24 10.228.129.10 name MAXIMO tag 10\r\nip route 158.98.176.0/21 10.228.129.10 name MAXIMO tag 10\r\nip route 158.98.181.20/32 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 158.98.181.21/32 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 158.98.181.22/32 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 158.98.181.23/32 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 158.98.181.24/32 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 158.98.181.25/32 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 161.26.0.0/16 10.228.129.10 name VPN-IBM_Bluemix tag 10\r\nip route 166.8.0.0/14 10.228.129.10 name VPN-IBM_Bluemix tag 10\r\nip route 172.14.3.130/32 10.228.129.10 name MPLS_CD_1624 tag 10\r\nip route 172.14.5.66/32 10.228.129.10 name MPLS_CD_1635 tag 10\r\nip route 172.14.6.102/32 10.228.129.10 name MPLS_CD_0022 tag 10\r\nip route 172.14.6.114/32 10.228.129.10 name MPLS_CD_1600 tag 10\r\nip route 172.14.10.46/32 10.228.129.10 name MPLS_CD_1475 tag 10\r\nip route 172.16.0.0/12 10.228.129.10 name ViaVarejo-Hortolandia tag 10\r\nip route 172.16.31.0/24 10.228.129.10 name ADMIN-IBM tag 10\r\nip route 172.16.52.3/32 10.228.129.10 name TENDENCIA tag 10\r\nip route 172.17.0.0/24 10.228.129.10 name VPN_STRONG_MV tag 10\r\nip route 172.19.4.0/24 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 172.19.4.146/32 10.228.129.10 name SMARTNET tag 10\r\nip route 172.19.5.0/24 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 172.19.10.0/24 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 172.20.3.0/24 10.228.129.10 name SISTEMAS_GLOBEX-SCS tag 10\r\nip route 172.22.31.14/32 10.228.129.10 name BANESTES tag 10\r\nip route 172.25.56.31/32 10.228.129.10 name GWCEL tag 10\r\nip route 172.30.222.0/23 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 172.30.224.0/24 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 174.14.6.10/32 10.228.129.10 name MPLS_CD_1778 tag 10\r\nip route 177.69.107.225/32 10.228.129.10 name Bradesco_Central_Image tag 10\r\nip route 177.135.149.8/31 10.228.129.10 name Bradesco_Central_Image tag 10\r\nip route 186.159.117.11/32 10.228.129.10 name Bradesco_Central_Image tag 10\r\nip route 186.159.117.12/32 10.228.129.10 name Bradesco_Central_Image tag 10\r\nip route 186.238.110.128/30 10.228.129.10 name MPLS_VIVO_1G_ASR_F0000 tag 10\r\nip route 186.239.31.54/32 10.228.129.10 name MPLS_CD_1200 tag 10\r\nip route 187.8.96.240/30 10.228.129.10 name MPLS_VIVO_1G_ASR_1006 tag 10\r\nip route 187.92.126.178/32 10.228.129.10 name MPLS_CD_1200_fabrica_Lojas 10\r\nip route 187.93.175.98/32 10.228.129.10 name MPLS_CD_1017 10\r\nip route 187.93.223.234/32 10.228.129.10 name MPLS_BARTIRA_VIVO tag 10\r\nip route 189.45.218.72/32 10.228.129.10 name Private_label_fidelity tag 10\r\nip route 189.45.219.14/32 10.228.129.10 name Private_label_fidelity tag 10\r\nip route 189.108.165.110/32 10.228.129.10 name MPLS_CD_1774 10\r\nip route 189.109.4.42/32 10.228.129.10 name MPLS_CD_1063 10\r\nip route 189.109.21.178/32 10.228.129.10 name MPLS_CD_1433 10\r\nip route 189.109.75.34/32 10.228.129.10 name MPLS_CD_1488 10\r\nip route 189.112.91.53/32 10.228.129.10 name Bradesco_Central_Image tag 10\r\nip route 189.125.116.50/32 10.228.129.10 name Bradesco_Central_Image tag 10\r\nip route 192.168.0.0/16 10.228.129.10 name ViaVarejo-Hortolandia tag 10\r\nip route 192.168.76.47/32 10.228.129.10 name GWCEL tag 10\r\nip route 192.168.104.0/24 10.228.129.10 name DATA_POWER_EXT_MV_NAT tag 10\r\nip route 192.168.154.3/32 10.228.129.10 name SOROCRED tag 10\r\nip route 192.168.212.161/32 10.228.129.10 name BANESE tag 10\r\nip route 192.168.240.0/24 10.228.129.10 name VPN_MV_MAXIMOVVJ tag 10\r\nip route 192.168.249.0/24 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 192.168.250.0/24 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 192.168.254.0/26 10.228.129.10 name MULTIVAREJO tag 10\r\nip route 200.153.12.66/32 10.228.129.10 name MPLS_CD_1400 tag 10\r\nip route 200.174.54.18/32 10.228.129.10 name Bradesco_Central_Image tag 10\r\nip route 200.189.178.244/32 10.228.129.10 name Bradesco_Central_Image tag 10\r\nip route 200.198.75.242/32 10.228.129.10 name Bradesco_Central_Image tag 10\r\nip route 200.232.38.70/32 10.228.129.10 name MPLS_CD_1500 10\r\nip route 201.28.154.54/32 10.228.129.10 name MPLS_CD_1070 10\r\nip route 201.44.112.112/28 10.228.129.10 name VPN_Siemens_UnifY_GPA_VVJ tag 10\r\nip route 201.48.215.194/32 10.228.129.10 name Bradesco_Central_Image tag 10\r\nip route 201.63.202.202/32 10.228.129.10 name MPLS_CD_1088 10\r\nvlan 1,28-29,70,638,643,659-660,700-708,716-719,722-725,728-739,757,880,888,998\r\nvlan 28\r\n  name CPD_Servidores\r\nvlan 29\r\n  name Portal\r\nvlan 70\r\n  name NFeC\r\nvlan 638\r\n  name OSA-DMZ-192.168.38\r\nvlan 643\r\n  name Inside_FortiG_LVS0580\r\nvlan 659\r\n  name OSA-DMZ-192.168.59\r\nvlan 660\r\n  name OSA-DMZ-192.168.60\r\nvlan 700\r\n  name MGMT-NETWORK\r\nvlan 701\r\n  name MGMT-SERVERS\r\nvlan 702\r\n  name MGMT-STORAGE\r\nvlan 703\r\n  name BKP01\r\nvlan 704\r\n  name BKP02\r\nvlan 705\r\n  name VM-DATA\r\nvlan 706\r\n  name VM-SDN\r\nvlan 707\r\n  name Network_VS_F5_DMZN9K\r\nvlan 708\r\n  name VV-MF_HLG\r\nvlan 716\r\n  name VV-GLOBAL-HLG\r\nvlan 717\r\n  name VV-GLOBAL-DESENV\r\nvlan 718\r\n  name VV-GLOBAL-DB\r\nvlan 719\r\n  name VV-GLOBAL-PROD\r\nvlan 722\r\n  name VV-SOA-HLG\r\nvlan 723\r\n  name VV-SOA-DEV\r\nvlan 724\r\n  name VV-SOA-DB\r\nvlan 725\r\n  name VV-SOA-PRD\r\nvlan 728\r\n  name Network_VS_F5_DMZFW\r\nvlan 729\r\n  name VV-MF-OSA_Net\r\nvlan 730\r\n  name Transit_N9k_C6509\r\nvlan 731\r\n  name VM-STORAGE\r\nvlan 732\r\n  name VM-FAULT-TOLERANCE\r\nvlan 733\r\n  name VM-VMOTION\r\nvlan 734\r\n  name VV-MF_DB2\r\nvlan 735\r\n  name VV-MF_Microfocus\r\nvlan 736\r\n  name VV-MF_APP-Server\r\nvlan 737\r\n  name OSA-DMZ-192.168.137\r\nvlan 738\r\n  name OSA-DMZ-738\r\nvlan 739\r\n  name OSA-DMZ-192.168.139\r\nvlan 757\r\n  name OSA-DMZ-192.168.157\r\nvlan 880\r\n  name Inside_Firewall\r\nvlan 888\r\n  name OSPF-TRANSITO\r\nvlan 998\r\n  name Non-used_Ports\r\n\r\nip prefix-list direct_ospf seq 5 permit 10.228.160.0/24 \r\nip prefix-list direct_ospf seq 10 permit 10.228.161.0/24 \r\nip prefix-list direct_ospf seq 15 permit 10.228.162.0/24 \r\nip prefix-list direct_ospf seq 20 permit 10.228.163.0/24 \r\nip prefix-list direct_ospf seq 25 permit 10.228.178.0/24 \r\nip prefix-list direct_ospf seq 30 permit 10.228.180.0/24 \r\nip prefix-list direct_ospf seq 35 permit 10.228.181.0/24 \r\nip community-list standard BGP_TO_OSPF_1000 seq 5 permit 65003:1000 \r\nip community-list standard BGP_TO_OSPF_300 seq 5 permit 65432:300 \r\nip community-list standard EQUINIX_TO_IBM seq 10 permit 65002:100 \r\nip community-list standard EQUINIX_TO_IBM seq 20 permit 65002:500 \r\nip community-list standard IBM_TO_EQUINIX seq 10 permit 65432:300 \r\nip community-list standard IBM_TO_EQUINIX seq 15 permit 65003:1000 \r\nroute-map BGP_TO_OSPF permit 30\r\n  match community BGP_TO_OSPF_300 \r\n  set tag 300 \r\n  set metric-type type-1\r\nroute-map BGP_TO_OSPF permit 100\r\n  match community BGP_TO_OSPF_1000 \r\n  set tag 1000 \r\n  set metric-type type-1\r\nroute-map CONNECTED_OSPF permit 10\r\n  match ip address prefix-list direct_ospf \r\nroute-map EQUINIX_TO_IBM permit 10\r\n  match community EQUINIX_TO_IBM \r\nroute-map IBM_TO_EQUINIX permit 10\r\n  match community IBM_TO_EQUINIX \r\nroute-map OSPF_TO_BGP permit 10\r\n  match tag 100 \r\n  set community 65002:100 \r\nroute-map OSPF_TO_BGP permit 50\r\n  match tag 500 \r\n  set community 65002:500 \r\nroute-map RED-STATIC-OSPF permit 20\r\n  match tag 10 \r\nroute-map STATIC_TO_BGP permit 10\r\n  match tag 100 \r\n  set community 65003:100 \r\nservice dhcp\r\nip dhcp relay\r\nipv6 dhcp relay\r\nvrf context management\r\n  ip route 0.0.0.0/0 10.228.128.1\r\nvpc domain 10\r\n  peer-switch\r\n  role priority 90\r\n  peer-keepalive destination 10.228.128.12\r\n  peer-gateway\r\n  layer3 peer-router\r\n  auto-recovery\r\nsflow sampling-rate 5000\r\nsflow max-sampled-size 200\r\nsflow counter-poll-interval 100\r\nsflow  max-datagram-size 2000\r\nsflow collector-ip 10.128.164.31 vrf management\r\nsflow collector-port 2055\r\nsflow agent-ip 10.228.128.11\r\n\r\n\r\ninterface Vlan1\r\n\r\ninterface Vlan708\r\n  no shutdown\r\n  no ip redirects\r\n  ip address 10.228.144.2/24\r\n  no ipv6 redirects\r\n  hsrp version 2\r\n  hsrp 708 \r\n    preempt \r\n    priority 110\r\n    ip 10.228.144.1\r\n\r\ninterface Vlan716\r\n  no shutdown\r\n  no ip redirects\r\n  ip address 10.228.160.2/24\r\n  no ipv6 redirects\r\n  hsrp version 2\r\n  hsrp 716 \r\n    preempt \r\n    priority 110\r\n    ip 10.228.160.1\r\n\r\ninterface Vlan717\r\n  no shutdown\r\n  no ip redirects\r\n  ip address 10.228.161.2/24\r\n  no ipv6 redirects\r\n  hsrp version 2\r\n  hsrp 717 \r\n    preempt \r\n    priority 110\r\n    ip 10.228.161.1\r\n\r\ninterface Vlan718\r\n  no shutdown\r\n  no ip redirects\r\n  ip address 10.228.162.2/24\r\n  no ipv6 redirects\r\n  hsrp version 2\r\n  hsrp 718 \r\n    preempt \r\n    priority 110\r\n    ip 10.228.162.1\r\n\r\ninterface Vlan719\r\n  no shutdown\r\n  no ip redirects\r\n  ip address 10.228.163.2/24\r\n  no ipv6 redirects\r\n  hsrp version 2\r\n  hsrp 719 \r\n    preempt \r\n    priority 110\r\n    ip 10.228.163.1\r\n\r\ninterface Vlan729\r\n  no shutdown\r\n  no ip redirects\r\n  ip address 10.228.178.2/24\r\n  no ipv6 redirects\r\n  hsrp version 2\r\n  hsrp 729 \r\n    preempt \r\n    priority 110\r\n    ip 10.228.178.1\r\n\r\ninterface Vlan730\r\n  no shutdown\r\n  no ip redirects\r\n  ip address 10.228.129.2/28\r\n  no ipv6 redirects\r\n  hsrp version 2\r\n  hsrp 730 \r\n    preempt \r\n    priority 110\r\n    ip 10.228.129.1\r\n\r\ninterface Vlan734\r\n  no shutdown\r\n  no ip redirects\r\n  ip address 10.228.180.2/24\r\n  no ipv6 redirects\r\n  hsrp version 2\r\n  hsrp 734 \r\n    preempt \r\n    priority 110\r\n    ip 10.228.180.1\r\n\r\ninterface Vlan735\r\n  no shutdown\r\n  no ip redirects\r\n  ip address 10.228.181.2/24\r\n  no ipv6 redirects\r\n  hsrp version 2\r\n  hsrp 735 \r\n    preempt \r\n    priority 110\r\n    ip 10.228.181.1\r\n\r\ninterface Vlan736\r\n  no shutdown\r\n  no ip redirects\r\n  ip address 10.228.182.2/24\r\n  no ipv6 redirects\r\n  hsrp version 2\r\n  hsrp 736 \r\n    preempt \r\n    priority 110\r\n    ip 10.228.182.1\r\n\r\ninterface Vlan880\r\n  no shutdown\r\n  no ip redirects\r\n  ip address 10.228.129.18/28\r\n  no ipv6 redirects\r\n  ip router ospf 20 area 0.0.0.0\r\n  hsrp version 2\r\n  hsrp 880 \r\n    preempt \r\n    priority 110\r\n    ip 10.228.129.17\r\n\r\ninterface Vlan888\r\n  no shutdown\r\n  no ip redirects\r\n  ip address 10.228.129.33/30\r\n  no ip ospf passive-interface\r\n  ip router ospf 20 area 0.0.0.0\r\n\r\ninterface port-channel1\r\n  description LAG vPC Peer-Link to VV-HOR-N9K02 - Po1\r\n  switchport mode trunk\r\n  spanning-tree port type network\r\n  vpc peer-link\r\n\r\ninterface port-channel10\r\n  description FW-VV_HORT-01 - LAG\r\n  shutdown\r\n  switchport mode trunk\r\n  switchport trunk allowed vlan 716-729,734-736,880\r\n  vpc 10\r\n\r\ninterface port-channel11\r\n  description FW-VV_HORT-02 - LAG\r\n  shutdown\r\n  switchport mode trunk\r\n  switchport trunk allowed vlan 716-729,734-736,880\r\n  vpc 11\r\n\r\ninterface port-channel12\r\n  description DELL_HVVC-NBUMEDIA01 - LAG\r\n  switchport mode trunk\r\n  mtu 9216\r\n  vpc 12\r\n\r\ninterface port-channel13\r\n  description DELL_HVVC-NBUMEDIA02 - LAG\r\n  switchport mode trunk\r\n  mtu 9216\r\n  vpc 13\r\n\r\ninterface port-channel14\r\n  description DELL_HVVC-NBUMEDIA03 - LAG\r\n  switchport mode trunk\r\n  mtu 9216\r\n  vpc 14\r\n\r\ninterface port-channel15\r\n  description DELL_HVVC-NBUMEDIA04 - LAG\r\n  switchport mode trunk\r\n  mtu 9216\r\n  vpc 15\r\n\r\ninterface port-channel20\r\n  description FI-A - LAG\r\n  switchport mode trunk\r\n  switchport trunk allowed vlan 28-29,70,638,643,659-660,700-739,757\r\n  vpc 20\r\n\r\ninterface port-channel21\r\n  description FI-B - LAG\r\n  switchport mode trunk\r\n  switchport trunk allowed vlan 28-29,70,638,643,659-660,700-739,757\r\n  vpc 21\r\n\r\ninterface port-channel22\r\n  description NEXUS6K-T9\r\n  switchport mode trunk\r\n  switchport access vlan 998\r\n  switchport trunk allowed vlan 28-29,70,638,643,659-660,700-739,757\r\n  vpc 22\r\n\r\ninterface port-channel23\r\n  description NEXUS6K-T1\r\n  switchport mode trunk\r\n  switchport access vlan 998\r\n  switchport trunk allowed vlan 28-29,70,638,643,659-660,700-739,757\r\n  vpc 23\r\nsflow data-source interface Ethernet1/10\r\n\r\n\r\ninterface Ethernet1/1\r\n  description FI-B\r\n  switchport mode trunk\r\n  switchport trunk allowed vlan 28-29,70,638,643,659-660,700-739,757\r\n  channel-group 21 mode active\r\n\r\ninterface Ethernet1/2\r\n  description OSA-MF01-PRD\r\n\r\ninterface Ethernet1/3\r\n  description MDS\r\n\r\ninterface Ethernet1/4\r\n  description DELL_HVVC-NBUMEDIA01-Eth_0\r\n  switchport mode trunk\r\n  mtu 9216\r\n  channel-group 12 mode active\r\n\r\ninterface Ethernet1/5\r\n  description DELL_HVVC-NBUMEDIA02-Eth_0\r\n  switchport mode trunk\r\n  mtu 9216\r\n  channel-group 13 mode active\r\n\r\ninterface Ethernet1/6\r\n\r\ninterface Ethernet1/7\r\n\r\ninterface Ethernet1/8\r\n\r\ninterface Ethernet1/9\r\n\r\ninterface Ethernet1/10\r\n  description LINK 10GB - LUMEN - DESIG:500022757\r\n  no switchport\r\n  ip address 10.128.225.50/29\r\n  ip ospf cost 100\r\n  no ip ospf passive-interface\r\n  ip router ospf 20 area 0.0.0.0\r\n  no shutdown\r\n\r\ninterface Ethernet1/11\r\n  description DELL_HVVC-NBUMEDIA03-Eth_0\r\n  switchport mode trunk\r\n  mtu 9216\r\n  channel-group 14 mode active\r\n\r\ninterface Ethernet1/12\r\n  description DELL_HVVC-NBUMEDIA03-Eth_0\r\n  switchport mode trunk\r\n  mtu 9216\r\n  channel-group 15 mode active\r\n\r\ninterface Ethernet1/13\r\n\r\ninterface Ethernet1/14\r\n\r\ninterface Ethernet1/15\r\n\r\ninterface Ethernet1/16\r\n\r\ninterface Ethernet1/17\r\n\r\ninterface Ethernet1/18\r\n\r\ninterface Ethernet1/19\r\n\r\ninterface Ethernet1/20\r\n\r\ninterface Ethernet1/21\r\n  description FW-VV_HORT-02 ETH 33\r\n  shutdown\r\n  switchport mode trunk\r\n  switchport trunk allowed vlan 716-729,734-736,880\r\n  channel-group 11 mode active\r\n\r\ninterface Ethernet1/22\r\n  description FW-VV_HORT-01 ETH 33\r\n  shutdown\r\n  switchport mode trunk\r\n  switchport trunk allowed vlan 716-729,734-736,880\r\n  channel-group 10 mode active\r\n\r\ninterface Ethernet1/23\r\n\r\ninterface Ethernet1/24\r\n\r\ninterface Ethernet1/25\r\n  description CONN-N6k-900-eth_25\r\n  switchport mode trunk\r\n  switchport access vlan 998\r\n  switchport trunk allowed vlan 28-29,70,638,643,659-660,700-739,757\r\n  channel-group 22 mode active\r\n\r\ninterface Ethernet1/26\r\n  description CONN-N6k-100-eth_25\r\n  switchport mode trunk\r\n  switchport access vlan 998\r\n  switchport trunk allowed vlan 28-29,70,638,643,659-660,700-739,757\r\n  channel-group 23 mode active\r\n\r\ninterface Ethernet1/27\r\n\r\ninterface Ethernet1/28\r\n\r\ninterface Ethernet1/29\r\n\r\ninterface Ethernet1/30\r\n  description FI-A\r\n  switchport mode trunk\r\n  switchport trunk allowed vlan 28-29,70,638,643,659-660,700-739,757\r\n  channel-group 20 mode active\r\n\r\ninterface Ethernet1/31\r\n  description OSA-MF02-PRD\r\n\r\ninterface Ethernet1/32\r\n\r\ninterface Ethernet1/33\r\n\r\ninterface Ethernet1/34\r\n\r\ninterface Ethernet1/35\r\n\r\ninterface Ethernet1/36\r\n\r\ninterface Ethernet1/37\r\n\r\ninterface Ethernet1/38\r\n\r\ninterface Ethernet1/39\r\n\r\ninterface Ethernet1/40\r\n  description OSA-MF02-HLG\r\n\r\ninterface Ethernet1/41\r\n\r\ninterface Ethernet1/42\r\n\r\ninterface Ethernet1/43\r\n\r\ninterface Ethernet1/44\r\n\r\ninterface Ethernet1/45\r\n\r\ninterface Ethernet1/46\r\n\r\ninterface Ethernet1/47\r\n  description Connected to VV-HOR-N9K02- Eth1/47\r\n  switchport mode trunk\r\n  channel-group 1 mode active\r\n\r\ninterface Ethernet1/48\r\n  description Connected to VV-HOR-N9K02- Eth1/48\r\n  switchport mode trunk\r\n  channel-group 1 mode active\r\n\r\ninterface Ethernet1/49\r\n\r\ninterface Ethernet1/50\r\n\r\ninterface Ethernet1/51\r\n\r\ninterface Ethernet1/52\r\n\r\ninterface Ethernet1/53\r\n\r\ninterface Ethernet1/54\r\n\r\ninterface mgmt0\r\n  vrf member management\r\n  ip address 10.228.128.11/24\r\ncli alias name wr copy run start\r\nline console\r\n  exec-timeout 0\r\nline vty\r\n  exec-timeout 0\r\nboot nxos bootflash:/nxos.9.3.4.bin \r\nrouter ospf 20\r\n  router-id 10.228.129.36\r\n  redistribute direct route-map CONNECTED_OSPF\r\n  redistribute static route-map RED-STATIC-OSPF\r\n  redistribute bgp 65002 route-map BGP_TO_OSPF\r\n  log-adjacency-changes\r\n  passive-interface default\r\nrouter bgp 65002\r\n  address-family ipv4 unicast\r\n    redistribute ospf 20 route-map OSPF_TO_BGP\r\n  neighbor 10.228.129.3\r\n    remote-as 65002\r\n    address-family ipv4 unicast\r\n      send-community extended\r\n      next-hop-self\r\n      soft-reconfiguration inbound\r\n  neighbor 10.228.129.10\r\n    remote-as 65432\r\n    address-family ipv4 unicast\r\n      send-community\r\n      send-community extended\r\n      route-map IBM_TO_EQUINIX in\r\n      route-map EQUINIX_TO_IBM out\r\n      soft-reconfiguration inbound always\r\n\r\nlogging server 10.128.164.32 6 use-vrf management facility local6\r\nlogging server 10.128.164.31 6 use-vrf management facility local6\r\nno logging console",
+            "exclude": [
+                "!",
+                null,
+                "\r",
+                ""
+            ],
+            "config": {
+                "version 9.3(4) Bios:version 07.67": {},
+                "hostname VV-HOR-N9K01": {},
+                "vdc VV-HOR-N9K01 id 1": {
+                    "limit-resource vlan minimum 16 maximum 4094": {},
+                    "limit-resource vrf minimum 2 maximum 4096": {},
+                    "limit-resource port-channel minimum 0 maximum 256": {},
+                    "limit-resource u4route-mem minimum 248 maximum 248": {},
+                    "limit-resource u6route-mem minimum 96 maximum 96": {},
+                    "limit-resource m4route-mem minimum 58 maximum 58": {},
+                    "limit-resource m6route-mem minimum 8 maximum 8": {}
+                },
+                "feature tacacs+": {},
+                "cfs eth distribute": {},
+                "feature ospf": {},
+                "feature bgp": {},
+                "feature pbr": {},
+                "feature udld": {},
+                "feature interface-vlan": {},
+                "feature hsrp": {},
+                "feature lacp": {},
+                "feature dhcp": {},
+                "feature vpc": {},
+                "clock timezone GMT -3 0": {},
+                "feature sflow": {},
+                "logging level xmlma 6": {},
+                "no password strength-check": {},
+                "username admin password 5 $5$hzA5ENJW$QYN1HmZsZ0c.vmj7S6FTuvZto8EEQ.YskAFzi2BCfH7  role network-admin": {},
+                "username suptelecom password 5 $5$1BxBxL2P$T53TpOYo9bVHw5ZZ/Kw9FKC7P7ZB6dJcyRdPlV.FiM.  role network-admin": {},
+                "username suptelecom role vdc-admin": {},
+                "username suptelecom passphrase  lifetime 99999 warntime 7": {},
+                "banner motd ^Cc": {},
+                "* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *": {},
+                "*                                Via Varejo.                              *": {},
+                "*                   Setor de Redes / Plataforma Baixa                     *": {},
+                "*   Aviso, qualquer uso nao autorizado do sistema e ilegal podendo ser    *": {},
+                "* monitorado sem aviso previo e os registros resultantes podem ser usados *": {},
+                "*                        como prova em tribunal.                          *": {},
+                "^": {},
+                "ip domain-lookup": {},
+                "ip domain-name viavarejo.corp": {},
+                "tacacs-server key 7 \"Yeeasrzog@1234xujvoth\"": {},
+                "tacacs-server test idle-time 3": {},
+                "tacacs-server host 10.128.140.25": {},
+                "tacacs-server host 10.129.31.25": {},
+                "aaa group server tacacs+ TACACS": {
+                    "server 10.128.140.25": {},
+                    "server 10.129.31.25": {},
+                    "deadtime 5": {},
+                    "source-interface mgmt0": {}
+                },
+                "crypto key generate rsa label VV-HOR-N9K01 modulus 2048": {},
+                "errdisable recovery cause bpduguard": {},
+                "ip access-list SCS": {
+                    "10 permit ip 10.128.131.32/32 any log": {},
+                    "12 permit ip 10.128.164.0/24 any log": {},
+                    "35 permit ip 10.128.131.31/32 any log": {},
+                    "36 permit ip 10.129.30.0/24 any log": {}
+                },
+                "copp profile strict": {},
+                "ip tftp source-interface mgmt0": {},
+                "snmp-server source-interface traps mgmt0": {},
+                "snmp-server source-interface informs mgmt0": {},
+                "snmp-server user admin network-admin auth md5 0x2bf57856b9736ee7197b8cff7587b4e6 priv 0x2bf57856b9736ee7197b8cff7587b4e6 localizedkey": {},
+                "snmp-server user suptelecom network-admin auth md5 0x2bf57856b9736ee7197b8cff7587b4e6 priv 0x2bf57856b9736ee7197b8cff7587b4e6 localizedkey": {},
+                "snmp-server user suptelecom vdc-admin": {},
+                "rmon event 1 log trap public description FATAL(1) owner PMON@FATAL": {},
+                "rmon event 2 log trap public description CRITICAL(2) owner PMON@CRITICAL": {},
+                "rmon event 3 log trap public description ERROR(3) owner PMON@ERROR": {},
+                "rmon event 4 log trap public description WARNING(4) owner PMON@WARNING": {},
+                "rmon event 5 log trap public description INFORMATION(5) owner PMON@INFO": {},
+                "snmp-server enable traps ospf 20": {},
+                "snmp-server community iixrbn656lihJ075bVm3 group network-admin": {},
+                "snmp-server community iixrbn656lihJ075bVm3 use-acl SCS": {},
+                "ntp server 10.0.0.100": {},
+                "ntp server 10.128.8.75 prefer use-vrf default": {},
+                "ntp server 10.129.8.75 prefer use-vrf default": {},
+                "aaa authentication login default group TACACS": {},
+                "aaa authorization config-commands default group TACACS local": {},
+                "aaa authorization commands default group TACACS local": {},
+                "aaa accounting default group TACACS": {},
+                "aaa authentication login error-enable": {},
+                "ip route 10.0.0.0/8 10.228.129.10 name ViaVarejo-Hortolandia tag 10": {},
+                "ip route 10.6.31.32/32 10.228.129.10 name LOJAS-VV tag 10": {},
+                "ip route 10.28.22.0/24 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 10.32.0.0/27 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 10.52.10.0/25 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 10.55.55.0/24 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 10.63.134.42/32 10.228.129.10 name REDE tag 10": {},
+                "ip route 10.63.134.46/32 10.228.129.10 name REDE tag 10": {},
+                "ip route 10.64.0.0/22 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 10.70.68.0/22 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 10.95.230.128/26 10.228.129.10 name VPN-IBM_Bluemix tag 10": {},
+                "ip route 10.100.0.0/16 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 10.108.104.0/22 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 10.111.1.0/29 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 10.111.1.24/29 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 10.111.1.104/29 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 10.111.1.112/29 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 10.112.1.0/26 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 10.112.11.0/24 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 10.112.21.0/26 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 10.113.1.0/24 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 10.116.192.0/18 10.228.129.10 name Corp_Cnova tag 10": {},
+                "ip route 10.117.40.0/22 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 10.117.64.0/20 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 10.117.240.0/22 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 10.119.92.0/22 10.228.129.10 name LOJAS-VV tag 10": {},
+                "ip route 10.120.48.6/32 10.228.129.10 name MPLS_CD_0022 tag 10": {},
+                "ip route 10.120.48.18/32 10.228.129.10 name MPLS_CD_1088 10": {},
+                "ip route 10.120.48.38/32 10.228.129.10 name MPLS_CD_1400 tag 10": {},
+                "ip route 10.120.48.42/32 10.228.129.10 name MPLS_CD_1401 tag 10": {},
+                "ip route 10.120.48.46/32 10.228.129.10 name MPLS_CD_1475 tag 10": {},
+                "ip route 10.120.48.50/32 10.228.129.10 name MPLS_CD_1500 10": {},
+                "ip route 10.120.48.62/32 10.228.129.10 name MPLS_CD_1760 tag 10": {},
+                "ip route 10.120.48.66/32 10.228.129.10 name MPLS_CD_1640 tag 10": {},
+                "ip route 10.120.48.70/32 10.228.129.10 name MPLS_CD_1600 tag 10": {},
+                "ip route 10.120.48.82/32 10.228.129.10 name MPLS_CD_1488 10": {},
+                "ip route 10.120.48.178/32 10.228.129.10 name MPLS_CD_1445 tag 10": {},
+                "ip route 10.120.48.214/32 10.228.129.10 name MPLS_CD_1941 tag 10": {},
+                "ip route 10.120.49.58/32 10.228.129.10 name MPLS_CD_1200_HSRP_STANDBY tag 10": {},
+                "ip route 10.120.50.46/32 10.228.129.10 name MPLS_CD_1454 tag 10": {},
+                "ip route 10.120.50.50/32 10.228.129.10 name MPLS_CD_1895 tag 10": {},
+                "ip route 10.120.52.34/32 10.228.129.10 name MPLS_CD_1875 tag 10": {},
+                "ip route 10.120.52.118/32 10.228.129.10 name MPLS_CD_1877 tag 10": {},
+                "ip route 10.120.52.210/32 10.228.129.10 name MPLS_CD_1887 tag 10": {},
+                "ip route 10.120.54.82/32 10.228.129.10 name MPLS_CD_1736 tag 10": {},
+                "ip route 10.120.54.86/32 10.228.129.10 name MPLS_CD_1673 tag 10": {},
+                "ip route 10.120.54.90/32 10.228.129.10 name MPLS_CD_1792 tag 10": {},
+                "ip route 10.120.54.150/32 10.228.129.10 name MPLS_CD_1999 tag 10": {},
+                "ip route 10.120.54.166/32 10.228.129.10 name MPLS_CD_1721 tag 10": {},
+                "ip route 10.120.54.230/32 10.228.129.10 name MPLS_CD_1449 tag 10": {},
+                "ip route 10.120.55.250/32 10.228.129.10 name MPLS_CD_1895 tag 10": {},
+                "ip route 10.120.60.18/32 10.228.129.10 name MPLS_CD_1624 tag 10": {},
+                "ip route 10.120.60.30/32 10.228.129.10 name MPLS_CD_0701 tag 10": {},
+                "ip route 10.120.60.34/32 10.228.129.10 name MPLS_CD_1778 tag 10": {},
+                "ip route 10.120.60.38/32 10.228.129.10 name MPLS_CD_1576 tag 10": {},
+                "ip route 10.120.60.42/32 10.228.129.10 name MPLS_CD_1635 tag 10": {},
+                "ip route 10.120.60.46/32 10.228.129.10 name MPLS_CD_1063 10": {},
+                "ip route 10.120.60.54/32 10.228.129.10 name MPLS_CD_1774 10": {},
+                "ip route 10.120.60.58/32 10.228.129.10 name MPLS_CD_1762 tag 10": {},
+                "ip route 10.120.60.62/32 10.228.129.10 name MPLS_CD_1017 10": {},
+                "ip route 10.120.60.66/32 10.228.129.10 name MPLS_CD_1070 10": {},
+                "ip route 10.120.60.70/32 10.228.129.10 name MPLS_CD_1433 10": {},
+                "ip route 10.120.60.90/32 10.228.129.10 name MPLS_CD_1200 tag 10": {},
+                "ip route 10.128.226.70/32 10.228.129.10 name MPLS_CD_NPC-SPOJU-SW-CORE1 tag 10": {},
+                "ip route 10.128.227.22/32 10.228.129.10 name MPLS_CD_NPC-SPOJU-SW-CORE2 tag 10": {},
+                "ip route 10.128.227.82/32 10.228.129.10 name MPLS_CD_NPC-SPOJU-SW-CORE1 tag 10": {},
+                "ip route 10.129.0.0/18 10.228.129.10 name DC-SCS tag 10": {},
+                "ip route 10.129.20.52/32 10.228.129.10 name vTEP-SCS tag 10": {},
+                "ip route 10.129.120.52/32 10.228.129.10 tag 10": {},
+                "ip route 10.130.0.0/16 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 10.140.59.0/24 10.228.129.10 name ViaVarejo-Hortolandia tag 10": {},
+                "ip route 10.141.0.0/16 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 10.141.58.0/23 10.228.129.10 name Rede_Global_Homologacao tag 10": {},
+                "ip route 10.141.60.0/23 10.228.129.10 name Rede_Global_Desenvolvimento tag 10": {},
+                "ip route 10.141.62.0/23 10.228.129.10 name Rede_Global_Banco_de_Dados tag 10": {},
+                "ip route 10.141.64.0/23 10.228.129.10 name Rede_Global_Producao tag 10": {},
+                "ip route 10.151.10.0/24 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 10.151.20.0/24 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 10.151.50.0/24 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 10.151.130.0/23 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 10.151.140.0/23 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 10.152.0.0/16 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 10.153.0.0/16 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 10.154.0.0/16 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 10.155.0.0/16 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 10.159.0.0/24 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 10.162.128.0/17 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 10.165.50.0/24 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 10.165.140.0/23 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 10.171.164.48/29 10.228.129.10 name VPN-IBM_Bluemix tag 10": {},
+                "ip route 10.172.0.0/16 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 10.175.1.32/29 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 10.176.0.0/24 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 10.180.0.0/18 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 10.180.128.0/19 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 10.180.160.0/19 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 10.180.192.0/19 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 10.180.224.0/21 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 10.180.254.0/24 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 10.189.0.0/27 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 10.191.0.0/22 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 10.203.244.0/22 10.228.129.10 name ASSAI_Bluesoft tag 10": {},
+                "ip route 10.203.248.0/23 10.228.129.10 name ASSAI_Bluesoft tag 10": {},
+                "ip route 10.206.12.10/32 10.228.129.10 name GWCEL_BANESTES_BANRISUL_CIELO tag 10": {},
+                "ip route 10.206.12.20/32 10.228.129.10 name GWCEL_BANRISUL tag 10": {},
+                "ip route 10.206.12.30/32 10.228.129.10 name GWCEL_BANESTES_BANRISUL_CIELO tag 10": {},
+                "ip route 10.206.12.40/32 10.228.129.10 name GWCEL_BANESTES_BANRISUL_CIELO tag 10": {},
+                "ip route 10.207.40.0/24 10.228.129.10 name CMS_CLOUD tag 10": {},
+                "ip route 10.210.0.0/16 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 10.217.127.32/29 10.228.129.10 name CD1200-Fabrica_lojas 10": {},
+                "ip route 10.228.128.0/18 10.228.129.10 name Collocation-VV tag 10": {},
+                "ip route 10.230.4.1/32 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 10.230.16.0/21 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 10.230.40.0/22 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 10.230.246.0/24 10.228.129.10 name NAT_MV tag 10": {},
+                "ip route 10.230.248.10/31 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 10.231.0.0/24 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 10.231.0.64/28 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 10.234.191.12/32 10.228.129.10 name REDE tag 10": {},
+                "ip route 10.234.191.16/32 10.228.129.10 name REDE tag 10": {},
+                "ip route 10.249.60.0/23 10.228.129.10 name Vlan-Admin tag 10": {},
+                "ip route 10.255.223.0/24 10.228.129.10 name LOOPBACK_SDWAN tag 10": {},
+                "ip route 10.255.223.253/32 10.228.129.10 name FW_CD1200 tag 10": {},
+                "ip route 10.255.251.200/30 10.228.129.10 name CD1200 tag 10": {},
+                "ip route 21.10.42.77/32 10.228.129.10 name CIELO-LINK1 tag 10": {},
+                "ip route 21.10.42.79/32 10.228.129.10 name CIELO-LINK2 tag 10": {},
+                "ip route 52.5.243.68/32 10.228.129.10 name VINDI tag 10": {},
+                "ip route 52.201.35.70/32 10.228.129.10 name VINDI tag 10": {},
+                "ip route 63.167.13.200/32 10.228.129.10 name LOJAS-VV tag 10": {},
+                "ip route 100.124.51.82/32 10.228.129.10 name MPLS_CD_1445 tag 10": {},
+                "ip route 100.124.160.166/32 10.228.129.10 name MPLS_CD_1449 tag 10": {},
+                "ip route 100.125.73.194/32 10.228.129.10 name MPLS_CD_1736 tag 10": {},
+                "ip route 100.125.131.26/32 10.228.129.10 name MPLS_CD_1721 tag 10": {},
+                "ip route 100.126.6.58/32 10.228.129.10 name MPLS_CD_1762 tag 10": {},
+                "ip route 100.126.35.44/30 10.228.129.10 name MPLS_Oi_400Mb_ASR_1006 tag 10": {},
+                "ip route 100.126.35.76/30 10.228.129.10 name MPLS_Oi_400Mb_ASR_F0000 tag 10": {},
+                "ip route 100.126.91.194/32 10.228.129.10 name MPLS_CD_1760 tag 10": {},
+                "ip route 100.126.137.234/32 10.228.129.10 name MPLS_CD_1792 tag 10": {},
+                "ip route 100.126.174.2/32 10.228.129.10 name MPLS_CD_1673 tag 10": {},
+                "ip route 100.126.175.244/30 10.228.129.10 name MPLS_CD_1875 tag 10": {},
+                "ip route 100.126.176.34/32 10.228.129.10 name MPLS_CD_1877 tag 10": {},
+                "ip route 100.126.187.246/32 10.228.129.10 name MPLS_CD_1640 tag 10": {},
+                "ip route 100.126.196.250/32 10.228.129.10 name MPLS_CD_1401 tag 10": {},
+                "ip route 100.126.212.226/32 10.228.129.10 name MPLS_CD_1887 tag 10": {},
+                "ip route 100.127.158.162/32 10.228.129.10 name MPLS_CD_1576 tag 10": {},
+                "ip route 100.127.162.122/32 10.228.129.10 name MPLS_CD_1454 tag 10": {},
+                "ip route 100.127.168.238/32 10.228.129.10 name MPLS_CD_1999 tag 10": {},
+                "ip route 100.127.177.222/32 10.228.129.10 name MPLS_CD_1941 tag 10": {},
+                "ip route 129.39.184.0/21 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 138.117.30.253/32 10.228.129.10 name CIELO_SP tag 10": {},
+                "ip route 138.117.30.254/32 10.228.129.10 name CIELO_RJ tag 10": {},
+                "ip route 158.87.120.229/32 10.228.129.10 name MAXIMO tag 10": {},
+                "ip route 158.87.123.128/25 10.228.129.10 name MAXIMO tag 10": {},
+                "ip route 158.98.62.16/28 10.228.129.10 name MAXIMO tag 10": {},
+                "ip route 158.98.62.22/32 10.228.129.10 name MAXIMO tag 10": {},
+                "ip route 158.98.62.23/32 10.228.129.10 name MAXIMO tag 10": {},
+                "ip route 158.98.62.28/32 10.228.129.10 name MAXIMO tag 10": {},
+                "ip route 158.98.63.0/24 10.228.129.10 name MAXIMO tag 10": {},
+                "ip route 158.98.176.0/21 10.228.129.10 name MAXIMO tag 10": {},
+                "ip route 158.98.181.20/32 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 158.98.181.21/32 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 158.98.181.22/32 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 158.98.181.23/32 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 158.98.181.24/32 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 158.98.181.25/32 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 161.26.0.0/16 10.228.129.10 name VPN-IBM_Bluemix tag 10": {},
+                "ip route 166.8.0.0/14 10.228.129.10 name VPN-IBM_Bluemix tag 10": {},
+                "ip route 172.14.3.130/32 10.228.129.10 name MPLS_CD_1624 tag 10": {},
+                "ip route 172.14.5.66/32 10.228.129.10 name MPLS_CD_1635 tag 10": {},
+                "ip route 172.14.6.102/32 10.228.129.10 name MPLS_CD_0022 tag 10": {},
+                "ip route 172.14.6.114/32 10.228.129.10 name MPLS_CD_1600 tag 10": {},
+                "ip route 172.14.10.46/32 10.228.129.10 name MPLS_CD_1475 tag 10": {},
+                "ip route 172.16.0.0/12 10.228.129.10 name ViaVarejo-Hortolandia tag 10": {},
+                "ip route 172.16.31.0/24 10.228.129.10 name ADMIN-IBM tag 10": {},
+                "ip route 172.16.52.3/32 10.228.129.10 name TENDENCIA tag 10": {},
+                "ip route 172.17.0.0/24 10.228.129.10 name VPN_STRONG_MV tag 10": {},
+                "ip route 172.19.4.0/24 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 172.19.4.146/32 10.228.129.10 name SMARTNET tag 10": {},
+                "ip route 172.19.5.0/24 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 172.19.10.0/24 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 172.20.3.0/24 10.228.129.10 name SISTEMAS_GLOBEX-SCS tag 10": {},
+                "ip route 172.22.31.14/32 10.228.129.10 name BANESTES tag 10": {},
+                "ip route 172.25.56.31/32 10.228.129.10 name GWCEL tag 10": {},
+                "ip route 172.30.222.0/23 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 172.30.224.0/24 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 174.14.6.10/32 10.228.129.10 name MPLS_CD_1778 tag 10": {},
+                "ip route 177.69.107.225/32 10.228.129.10 name Bradesco_Central_Image tag 10": {},
+                "ip route 177.135.149.8/31 10.228.129.10 name Bradesco_Central_Image tag 10": {},
+                "ip route 186.159.117.11/32 10.228.129.10 name Bradesco_Central_Image tag 10": {},
+                "ip route 186.159.117.12/32 10.228.129.10 name Bradesco_Central_Image tag 10": {},
+                "ip route 186.238.110.128/30 10.228.129.10 name MPLS_VIVO_1G_ASR_F0000 tag 10": {},
+                "ip route 186.239.31.54/32 10.228.129.10 name MPLS_CD_1200 tag 10": {},
+                "ip route 187.8.96.240/30 10.228.129.10 name MPLS_VIVO_1G_ASR_1006 tag 10": {},
+                "ip route 187.92.126.178/32 10.228.129.10 name MPLS_CD_1200_fabrica_Lojas 10": {},
+                "ip route 187.93.175.98/32 10.228.129.10 name MPLS_CD_1017 10": {},
+                "ip route 187.93.223.234/32 10.228.129.10 name MPLS_BARTIRA_VIVO tag 10": {},
+                "ip route 189.45.218.72/32 10.228.129.10 name Private_label_fidelity tag 10": {},
+                "ip route 189.45.219.14/32 10.228.129.10 name Private_label_fidelity tag 10": {},
+                "ip route 189.108.165.110/32 10.228.129.10 name MPLS_CD_1774 10": {},
+                "ip route 189.109.4.42/32 10.228.129.10 name MPLS_CD_1063 10": {},
+                "ip route 189.109.21.178/32 10.228.129.10 name MPLS_CD_1433 10": {},
+                "ip route 189.109.75.34/32 10.228.129.10 name MPLS_CD_1488 10": {},
+                "ip route 189.112.91.53/32 10.228.129.10 name Bradesco_Central_Image tag 10": {},
+                "ip route 189.125.116.50/32 10.228.129.10 name Bradesco_Central_Image tag 10": {},
+                "ip route 192.168.0.0/16 10.228.129.10 name ViaVarejo-Hortolandia tag 10": {},
+                "ip route 192.168.76.47/32 10.228.129.10 name GWCEL tag 10": {},
+                "ip route 192.168.104.0/24 10.228.129.10 name DATA_POWER_EXT_MV_NAT tag 10": {},
+                "ip route 192.168.154.3/32 10.228.129.10 name SOROCRED tag 10": {},
+                "ip route 192.168.212.161/32 10.228.129.10 name BANESE tag 10": {},
+                "ip route 192.168.240.0/24 10.228.129.10 name VPN_MV_MAXIMOVVJ tag 10": {},
+                "ip route 192.168.249.0/24 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 192.168.250.0/24 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 192.168.254.0/26 10.228.129.10 name MULTIVAREJO tag 10": {},
+                "ip route 200.153.12.66/32 10.228.129.10 name MPLS_CD_1400 tag 10": {},
+                "ip route 200.174.54.18/32 10.228.129.10 name Bradesco_Central_Image tag 10": {},
+                "ip route 200.189.178.244/32 10.228.129.10 name Bradesco_Central_Image tag 10": {},
+                "ip route 200.198.75.242/32 10.228.129.10 name Bradesco_Central_Image tag 10": {},
+                "ip route 200.232.38.70/32 10.228.129.10 name MPLS_CD_1500 10": {},
+                "ip route 201.28.154.54/32 10.228.129.10 name MPLS_CD_1070 10": {},
+                "ip route 201.44.112.112/28 10.228.129.10 name VPN_Siemens_UnifY_GPA_VVJ tag 10": {},
+                "ip route 201.48.215.194/32 10.228.129.10 name Bradesco_Central_Image tag 10": {},
+                "ip route 201.63.202.202/32 10.228.129.10 name MPLS_CD_1088 10": {},
+                "vlan 1,28-29,70,638,643,659-660,700-708,716-719,722-725,728-739,757,880,888,998": {},
+                "vlan 28": {
+                    "name CPD_Servidores": {}
+                },
+                "vlan 29": {
+                    "name Portal": {}
+                },
+                "vlan 70": {
+                    "name NFeC": {}
+                },
+                "vlan 638": {
+                    "name OSA-DMZ-192.168.38": {}
+                },
+                "vlan 643": {
+                    "name Inside_FortiG_LVS0580": {}
+                },
+                "vlan 659": {
+                    "name OSA-DMZ-192.168.59": {}
+                },
+                "vlan 660": {
+                    "name OSA-DMZ-192.168.60": {}
+                },
+                "vlan 700": {
+                    "name MGMT-NETWORK": {}
+                },
+                "vlan 701": {
+                    "name MGMT-SERVERS": {}
+                },
+                "vlan 702": {
+                    "name MGMT-STORAGE": {}
+                },
+                "vlan 703": {
+                    "name BKP01": {}
+                },
+                "vlan 704": {
+                    "name BKP02": {}
+                },
+                "vlan 705": {
+                    "name VM-DATA": {}
+                },
+                "vlan 706": {
+                    "name VM-SDN": {}
+                },
+                "vlan 707": {
+                    "name Network_VS_F5_DMZN9K": {}
+                },
+                "vlan 708": {
+                    "name VV-MF_HLG": {}
+                },
+                "vlan 716": {
+                    "name VV-GLOBAL-HLG": {}
+                },
+                "vlan 717": {
+                    "name VV-GLOBAL-DESENV": {}
+                },
+                "vlan 718": {
+                    "name VV-GLOBAL-DB": {}
+                },
+                "vlan 719": {
+                    "name VV-GLOBAL-PROD": {}
+                },
+                "vlan 722": {
+                    "name VV-SOA-HLG": {}
+                },
+                "vlan 723": {
+                    "name VV-SOA-DEV": {}
+                },
+                "vlan 724": {
+                    "name VV-SOA-DB": {}
+                },
+                "vlan 725": {
+                    "name VV-SOA-PRD": {}
+                },
+                "vlan 728": {
+                    "name Network_VS_F5_DMZFW": {}
+                },
+                "vlan 729": {
+                    "name VV-MF-OSA_Net": {}
+                },
+                "vlan 730": {
+                    "name Transit_N9k_C6509": {}
+                },
+                "vlan 731": {
+                    "name VM-STORAGE": {}
+                },
+                "vlan 732": {
+                    "name VM-FAULT-TOLERANCE": {}
+                },
+                "vlan 733": {
+                    "name VM-VMOTION": {}
+                },
+                "vlan 734": {
+                    "name VV-MF_DB2": {}
+                },
+                "vlan 735": {
+                    "name VV-MF_Microfocus": {}
+                },
+                "vlan 736": {
+                    "name VV-MF_APP-Server": {}
+                },
+                "vlan 737": {
+                    "name OSA-DMZ-192.168.137": {}
+                },
+                "vlan 738": {
+                    "name OSA-DMZ-738": {}
+                },
+                "vlan 739": {
+                    "name OSA-DMZ-192.168.139": {}
+                },
+                "vlan 757": {
+                    "name OSA-DMZ-192.168.157": {}
+                },
+                "vlan 880": {
+                    "name Inside_Firewall": {}
+                },
+                "vlan 888": {
+                    "name OSPF-TRANSITO": {}
+                },
+                "vlan 998": {
+                    "name Non-used_Ports": {}
+                },
+                "ip prefix-list direct_ospf seq 5 permit 10.228.160.0/24": {},
+                "ip prefix-list direct_ospf seq 10 permit 10.228.161.0/24": {},
+                "ip prefix-list direct_ospf seq 15 permit 10.228.162.0/24": {},
+                "ip prefix-list direct_ospf seq 20 permit 10.228.163.0/24": {},
+                "ip prefix-list direct_ospf seq 25 permit 10.228.178.0/24": {},
+                "ip prefix-list direct_ospf seq 30 permit 10.228.180.0/24": {},
+                "ip prefix-list direct_ospf seq 35 permit 10.228.181.0/24": {},
+                "ip community-list standard BGP_TO_OSPF_1000 seq 5 permit 65003:1000": {},
+                "ip community-list standard BGP_TO_OSPF_300 seq 5 permit 65432:300": {},
+                "ip community-list standard EQUINIX_TO_IBM seq 10 permit 65002:100": {},
+                "ip community-list standard EQUINIX_TO_IBM seq 20 permit 65002:500": {},
+                "ip community-list standard IBM_TO_EQUINIX seq 10 permit 65432:300": {},
+                "ip community-list standard IBM_TO_EQUINIX seq 15 permit 65003:1000": {},
+                "route-map BGP_TO_OSPF permit 30": {
+                    "match community BGP_TO_OSPF_300": {},
+                    "set tag 300": {},
+                    "set metric-type type-1": {}
+                },
+                "route-map BGP_TO_OSPF permit 100": {
+                    "match community BGP_TO_OSPF_1000": {},
+                    "set tag 1000": {},
+                    "set metric-type type-1": {}
+                },
+                "route-map CONNECTED_OSPF permit 10": {
+                    "match ip address prefix-list direct_ospf": {}
+                },
+                "route-map EQUINIX_TO_IBM permit 10": {
+                    "match community EQUINIX_TO_IBM": {}
+                },
+                "route-map IBM_TO_EQUINIX permit 10": {
+                    "match community IBM_TO_EQUINIX": {}
+                },
+                "route-map OSPF_TO_BGP permit 10": {
+                    "match tag 100": {},
+                    "set community 65002:100": {}
+                },
+                "route-map OSPF_TO_BGP permit 50": {
+                    "match tag 500": {},
+                    "set community 65002:500": {}
+                },
+                "route-map RED-STATIC-OSPF permit 20": {
+                    "match tag 10": {}
+                },
+                "route-map STATIC_TO_BGP permit 10": {
+                    "match tag 100": {},
+                    "set community 65003:100": {}
+                },
+                "service dhcp": {},
+                "ip dhcp relay": {},
+                "ipv6 dhcp relay": {},
+                "vrf context management": {
+                    "ip route 0.0.0.0/0 10.228.128.1": {}
+                },
+                "vpc domain 10": {
+                    "peer-switch": {},
+                    "role priority 90": {},
+                    "peer-keepalive destination 10.228.128.12": {},
+                    "peer-gateway": {},
+                    "layer3 peer-router": {},
+                    "auto-recovery": {}
+                },
+                "sflow sampling-rate 5000": {},
+                "sflow max-sampled-size 200": {},
+                "sflow counter-poll-interval 100": {},
+                "sflow  max-datagram-size 2000": {},
+                "sflow collector-ip 10.128.164.31 vrf management": {},
+                "sflow collector-port 2055": {},
+                "sflow agent-ip 10.228.128.11": {},
+                "interface Vlan1": {},
+                "interface Vlan708": {
+                    "no shutdown": {},
+                    "no ip redirects": {},
+                    "ip address 10.228.144.2/24": {},
+                    "no ipv6 redirects": {},
+                    "hsrp version 2": {},
+                    "hsrp 708": {
+                        "preempt": {},
+                        "priority 110": {},
+                        "ip 10.228.144.1": {}
+                    }
+                },
+                "interface Vlan716": {
+                    "no shutdown": {},
+                    "no ip redirects": {},
+                    "ip address 10.228.160.2/24": {},
+                    "no ipv6 redirects": {},
+                    "hsrp version 2": {},
+                    "hsrp 716": {
+                        "preempt": {},
+                        "priority 110": {},
+                        "ip 10.228.160.1": {}
+                    }
+                },
+                "interface Vlan717": {
+                    "no shutdown": {},
+                    "no ip redirects": {},
+                    "ip address 10.228.161.2/24": {},
+                    "no ipv6 redirects": {},
+                    "hsrp version 2": {},
+                    "hsrp 717": {
+                        "preempt": {},
+                        "priority 110": {},
+                        "ip 10.228.161.1": {}
+                    }
+                },
+                "interface Vlan718": {
+                    "no shutdown": {},
+                    "no ip redirects": {},
+                    "ip address 10.228.162.2/24": {},
+                    "no ipv6 redirects": {},
+                    "hsrp version 2": {},
+                    "hsrp 718": {
+                        "preempt": {},
+                        "priority 110": {},
+                        "ip 10.228.162.1": {}
+                    }
+                },
+                "interface Vlan719": {
+                    "no shutdown": {},
+                    "no ip redirects": {},
+                    "ip address 10.228.163.2/24": {},
+                    "no ipv6 redirects": {},
+                    "hsrp version 2": {},
+                    "hsrp 719": {
+                        "preempt": {},
+                        "priority 110": {},
+                        "ip 10.228.163.1": {}
+                    }
+                },
+                "interface Vlan729": {
+                    "no shutdown": {},
+                    "no ip redirects": {},
+                    "ip address 10.228.178.2/24": {},
+                    "no ipv6 redirects": {},
+                    "hsrp version 2": {},
+                    "hsrp 729": {
+                        "preempt": {},
+                        "priority 110": {},
+                        "ip 10.228.178.1": {}
+                    }
+                },
+                "interface Vlan730": {
+                    "no shutdown": {},
+                    "no ip redirects": {},
+                    "ip address 10.228.129.2/28": {},
+                    "no ipv6 redirects": {},
+                    "hsrp version 2": {},
+                    "hsrp 730": {
+                        "preempt": {},
+                        "priority 110": {},
+                        "ip 10.228.129.1": {}
+                    }
+                },
+                "interface Vlan734": {
+                    "no shutdown": {},
+                    "no ip redirects": {},
+                    "ip address 10.228.180.2/24": {},
+                    "no ipv6 redirects": {},
+                    "hsrp version 2": {},
+                    "hsrp 734": {
+                        "preempt": {},
+                        "priority 110": {},
+                        "ip 10.228.180.1": {}
+                    }
+                },
+                "interface Vlan735": {
+                    "no shutdown": {},
+                    "no ip redirects": {},
+                    "ip address 10.228.181.2/24": {},
+                    "no ipv6 redirects": {},
+                    "hsrp version 2": {},
+                    "hsrp 735": {
+                        "preempt": {},
+                        "priority 110": {},
+                        "ip 10.228.181.1": {}
+                    }
+                },
+                "interface Vlan736": {
+                    "no shutdown": {},
+                    "no ip redirects": {},
+                    "ip address 10.228.182.2/24": {},
+                    "no ipv6 redirects": {},
+                    "hsrp version 2": {},
+                    "hsrp 736": {
+                        "preempt": {},
+                        "priority 110": {},
+                        "ip 10.228.182.1": {}
+                    }
+                },
+                "interface Vlan880": {
+                    "no shutdown": {},
+                    "no ip redirects": {},
+                    "ip address 10.228.129.18/28": {},
+                    "no ipv6 redirects": {},
+                    "ip router ospf 20 area 0.0.0.0": {},
+                    "hsrp version 2": {},
+                    "hsrp 880": {
+                        "preempt": {},
+                        "priority 110": {},
+                        "ip 10.228.129.17": {}
+                    }
+                },
+                "interface Vlan888": {
+                    "no shutdown": {},
+                    "no ip redirects": {},
+                    "ip address 10.228.129.33/30": {},
+                    "no ip ospf passive-interface": {},
+                    "ip router ospf 20 area 0.0.0.0": {}
+                },
+                "interface port-channel1": {
+                    "description LAG vPC Peer-Link to VV-HOR-N9K02 - Po1": {},
+                    "switchport mode trunk": {},
+                    "spanning-tree port type network": {},
+                    "vpc peer-link": {}
+                },
+                "interface port-channel10": {
+                    "description FW-VV_HORT-01 - LAG": {},
+                    "shutdown": {},
+                    "switchport mode trunk": {},
+                    "switchport trunk allowed vlan 716-729,734-736,880": {},
+                    "vpc 10": {}
+                },
+                "interface port-channel11": {
+                    "description FW-VV_HORT-02 - LAG": {},
+                    "shutdown": {},
+                    "switchport mode trunk": {},
+                    "switchport trunk allowed vlan 716-729,734-736,880": {},
+                    "vpc 11": {}
+                },
+                "interface port-channel12": {
+                    "description DELL_HVVC-NBUMEDIA01 - LAG": {},
+                    "switchport mode trunk": {},
+                    "mtu 9216": {},
+                    "vpc 12": {}
+                },
+                "interface port-channel13": {
+                    "description DELL_HVVC-NBUMEDIA02 - LAG": {},
+                    "switchport mode trunk": {},
+                    "mtu 9216": {},
+                    "vpc 13": {}
+                },
+                "interface port-channel14": {
+                    "description DELL_HVVC-NBUMEDIA03 - LAG": {},
+                    "switchport mode trunk": {},
+                    "mtu 9216": {},
+                    "vpc 14": {}
+                },
+                "interface port-channel15": {
+                    "description DELL_HVVC-NBUMEDIA04 - LAG": {},
+                    "switchport mode trunk": {},
+                    "mtu 9216": {},
+                    "vpc 15": {}
+                },
+                "interface port-channel20": {
+                    "description FI-A - LAG": {},
+                    "switchport mode trunk": {},
+                    "switchport trunk allowed vlan 28-29,70,638,643,659-660,700-739,757": {},
+                    "vpc 20": {}
+                },
+                "interface port-channel21": {
+                    "description FI-B - LAG": {},
+                    "switchport mode trunk": {},
+                    "switchport trunk allowed vlan 28-29,70,638,643,659-660,700-739,757": {},
+                    "vpc 21": {}
+                },
+                "interface port-channel22": {
+                    "description NEXUS6K-T9": {},
+                    "switchport mode trunk": {},
+                    "switchport access vlan 998": {},
+                    "switchport trunk allowed vlan 28-29,70,638,643,659-660,700-739,757": {},
+                    "vpc 22": {}
+                },
+                "interface port-channel23": {
+                    "description NEXUS6K-T1": {},
+                    "switchport mode trunk": {},
+                    "switchport access vlan 998": {},
+                    "switchport trunk allowed vlan 28-29,70,638,643,659-660,700-739,757": {},
+                    "vpc 23": {}
+                },
+                "sflow data-source interface Ethernet1/10": {},
+                "interface Ethernet1/1": {
+                    "description FI-B": {},
+                    "switchport mode trunk": {},
+                    "switchport trunk allowed vlan 28-29,70,638,643,659-660,700-739,757": {},
+                    "channel-group 21 mode active": {}
+                },
+                "interface Ethernet1/2": {
+                    "description OSA-MF01-PRD": {}
+                },
+                "interface Ethernet1/3": {
+                    "description MDS": {}
+                },
+                "interface Ethernet1/4": {
+                    "description DELL_HVVC-NBUMEDIA01-Eth_0": {},
+                    "switchport mode trunk": {},
+                    "mtu 9216": {},
+                    "channel-group 12 mode active": {}
+                },
+                "interface Ethernet1/5": {
+                    "description DELL_HVVC-NBUMEDIA02-Eth_0": {},
+                    "switchport mode trunk": {},
+                    "mtu 9216": {},
+                    "channel-group 13 mode active": {}
+                },
+                "interface Ethernet1/6": {},
+                "interface Ethernet1/7": {},
+                "interface Ethernet1/8": {},
+                "interface Ethernet1/9": {},
+                "interface Ethernet1/10": {
+                    "description LINK 10GB - LUMEN - DESIG:500022757": {},
+                    "no switchport": {},
+                    "ip address 10.128.225.50/29": {},
+                    "ip ospf cost 100": {},
+                    "no ip ospf passive-interface": {},
+                    "ip router ospf 20 area 0.0.0.0": {},
+                    "no shutdown": {}
+                },
+                "interface Ethernet1/11": {
+                    "description DELL_HVVC-NBUMEDIA03-Eth_0": {},
+                    "switchport mode trunk": {},
+                    "mtu 9216": {},
+                    "channel-group 14 mode active": {}
+                },
+                "interface Ethernet1/12": {
+                    "description DELL_HVVC-NBUMEDIA03-Eth_0": {},
+                    "switchport mode trunk": {},
+                    "mtu 9216": {},
+                    "channel-group 15 mode active": {}
+                },
+                "interface Ethernet1/13": {},
+                "interface Ethernet1/14": {},
+                "interface Ethernet1/15": {},
+                "interface Ethernet1/16": {},
+                "interface Ethernet1/17": {},
+                "interface Ethernet1/18": {},
+                "interface Ethernet1/19": {},
+                "interface Ethernet1/20": {},
+                "interface Ethernet1/21": {
+                    "description FW-VV_HORT-02 ETH 33": {},
+                    "shutdown": {},
+                    "switchport mode trunk": {},
+                    "switchport trunk allowed vlan 716-729,734-736,880": {},
+                    "channel-group 11 mode active": {}
+                },
+                "interface Ethernet1/22": {
+                    "description FW-VV_HORT-01 ETH 33": {},
+                    "shutdown": {},
+                    "switchport mode trunk": {},
+                    "switchport trunk allowed vlan 716-729,734-736,880": {},
+                    "channel-group 10 mode active": {}
+                },
+                "interface Ethernet1/23": {},
+                "interface Ethernet1/24": {},
+                "interface Ethernet1/25": {
+                    "description CONN-N6k-900-eth_25": {},
+                    "switchport mode trunk": {},
+                    "switchport access vlan 998": {},
+                    "switchport trunk allowed vlan 28-29,70,638,643,659-660,700-739,757": {},
+                    "channel-group 22 mode active": {}
+                },
+                "interface Ethernet1/26": {
+                    "description CONN-N6k-100-eth_25": {},
+                    "switchport mode trunk": {},
+                    "switchport access vlan 998": {},
+                    "switchport trunk allowed vlan 28-29,70,638,643,659-660,700-739,757": {},
+                    "channel-group 23 mode active": {}
+                },
+                "interface Ethernet1/27": {},
+                "interface Ethernet1/28": {},
+                "interface Ethernet1/29": {},
+                "interface Ethernet1/30": {
+                    "description FI-A": {},
+                    "switchport mode trunk": {},
+                    "switchport trunk allowed vlan 28-29,70,638,643,659-660,700-739,757": {},
+                    "channel-group 20 mode active": {}
+                },
+                "interface Ethernet1/31": {
+                    "description OSA-MF02-PRD": {}
+                },
+                "interface Ethernet1/32": {},
+                "interface Ethernet1/33": {},
+                "interface Ethernet1/34": {},
+                "interface Ethernet1/35": {},
+                "interface Ethernet1/36": {},
+                "interface Ethernet1/37": {},
+                "interface Ethernet1/38": {},
+                "interface Ethernet1/39": {},
+                "interface Ethernet1/40": {
+                    "description OSA-MF02-HLG": {}
+                },
+                "interface Ethernet1/41": {},
+                "interface Ethernet1/42": {},
+                "interface Ethernet1/43": {},
+                "interface Ethernet1/44": {},
+                "interface Ethernet1/45": {},
+                "interface Ethernet1/46": {},
+                "interface Ethernet1/47": {
+                    "description Connected to VV-HOR-N9K02- Eth1/47": {},
+                    "switchport mode trunk": {},
+                    "channel-group 1 mode active": {}
+                },
+                "interface Ethernet1/48": {
+                    "description Connected to VV-HOR-N9K02- Eth1/48": {},
+                    "switchport mode trunk": {},
+                    "channel-group 1 mode active": {}
+                },
+                "interface Ethernet1/49": {},
+                "interface Ethernet1/50": {},
+                "interface Ethernet1/51": {},
+                "interface Ethernet1/52": {},
+                "interface Ethernet1/53": {},
+                "interface Ethernet1/54": {},
+                "interface mgmt0": {
+                    "vrf member management": {},
+                    "ip address 10.228.128.11/24": {}
+                },
+                "cli alias name wr copy run start": {},
+                "line console": {
+                    "exec-timeout 0": {}
+                },
+                "line vty": {
+                    "exec-timeout 0": {}
+                },
+                "boot nxos bootflash:/nxos.9.3.4.bin": {},
+                "router ospf 20": {
+                    "router-id 10.228.129.36": {},
+                    "redistribute direct route-map CONNECTED_OSPF": {},
+                    "redistribute static route-map RED-STATIC-OSPF": {},
+                    "redistribute bgp 65002 route-map BGP_TO_OSPF": {},
+                    "log-adjacency-changes": {},
+                    "passive-interface default": {}
+                },
+                "router bgp 65002": {
+                    "address-family ipv4 unicast": {
+                        "redistribute ospf 20 route-map OSPF_TO_BGP": {}
+                    },
+                    "neighbor 10.228.129.3": {
+                        "remote-as 65002": {},
+                        "address-family ipv4 unicast": {
+                            "send-community extended": {},
+                            "next-hop-self": {},
+                            "soft-reconfiguration inbound": {}
+                        }
+                    },
+                    "neighbor 10.228.129.10": {
+                        "remote-as 65432": {},
+                        "address-family ipv4 unicast": {
+                            "send-community": {},
+                            "send-community extended": {},
+                            "route-map IBM_TO_EQUINIX in": {},
+                            "route-map EQUINIX_TO_IBM out": {},
+                            "soft-reconfiguration inbound always": {}
+                        }
+                    }
+                },
+                "logging server 10.128.164.32 6 use-vrf management facility local6": {},
+                "logging server 10.128.164.31 6 use-vrf management facility local6": {},
+                "no logging console": {}
+            }
+        }
+    }
+}

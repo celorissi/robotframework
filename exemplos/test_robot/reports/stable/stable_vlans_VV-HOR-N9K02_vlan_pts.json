@@ -1,0 +1,1471 @@
+{
+    "vlan": {
+        "VV-HOR-N9K02": {
+            "py/state": {
+                "callables": {},
+                "device": "VV-HOR-N9K02",
+                "context_manager": {},
+                "attributes": null,
+                "commands": null,
+                "connections": null,
+                "ops_schema": {
+                    "info": {
+                        "vlans": {
+                            "interface_vlan_enabled": {
+                                "schema": "*",
+                                "schemaType": {
+                                    "py/type": "builtins.str"
+                                },
+                                "missed": [],
+                                "path": []
+                            },
+                            "vn_segment_vlan_based_enabled": {
+                                "schema": "*",
+                                "schemaType": {
+                                    "py/type": "builtins.str"
+                                },
+                                "missed": [],
+                                "path": []
+                            },
+                            "Any  (str) *": {
+                                "vlan_id": {
+                                    "schema": "*",
+                                    "schemaType": {
+                                        "py/type": "builtins.str"
+                                    },
+                                    "missed": [],
+                                    "path": []
+                                },
+                                "shutdown": {
+                                    "schema": "*",
+                                    "schemaType": {
+                                        "py/type": "builtins.str"
+                                    },
+                                    "missed": [],
+                                    "path": []
+                                },
+                                "name": {
+                                    "schema": "*",
+                                    "schemaType": {
+                                        "py/type": "builtins.str"
+                                    },
+                                    "missed": [],
+                                    "path": []
+                                },
+                                "state": {
+                                    "schema": "*",
+                                    "schemaType": {
+                                        "py/type": "builtins.str"
+                                    },
+                                    "missed": [],
+                                    "path": []
+                                },
+                                "interfaces": {
+                                    "schema": "*",
+                                    "schemaType": {
+                                        "py/type": "builtins.str"
+                                    },
+                                    "missed": [],
+                                    "path": []
+                                },
+                                "vn_segment_id": {
+                                    "schema": "*",
+                                    "schemaType": {
+                                        "py/type": "builtins.str"
+                                    },
+                                    "missed": [],
+                                    "path": []
+                                },
+                                "mode": {
+                                    "schema": "*",
+                                    "schemaType": {
+                                        "py/type": "builtins.str"
+                                    },
+                                    "missed": [],
+                                    "path": []
+                                }
+                            },
+                            "configuration": {
+                                "Any  (str) *": {
+                                    "ip_igmp_snooping": {
+                                        "schema": "*",
+                                        "schemaType": {
+                                            "py/type": "builtins.str"
+                                        },
+                                        "missed": [],
+                                        "path": []
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "diff_ignore": {
+                    "py/reduce": [
+                        {
+                            "py/type": "collections.deque"
+                        },
+                        {
+                            "py/tuple": []
+                        },
+                        null,
+                        {
+                            "py/tuple": [
+                                "maker",
+                                "callables",
+                                "device",
+                                "diff_ignore",
+                                "ops_schema"
+                            ]
+                        }
+                    ]
+                },
+                "raw_data": false,
+                "info": {
+                    "vlans": {
+                        "interface_vlan_enabled": true,
+                        "998": {
+                            "vlan_id": "998",
+                            "name": "Non-used_Ports",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel12",
+                                "Port-channel13",
+                                "Port-channel14",
+                                "Port-channel15",
+                                "Ethernet1/4",
+                                "Ethernet1/5",
+                                "Ethernet1/11",
+                                "Ethernet1/12",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "888": {
+                            "vlan_id": "888",
+                            "name": "OSPF-TRANSITO",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel12",
+                                "Port-channel13",
+                                "Port-channel14",
+                                "Port-channel15",
+                                "Ethernet1/4",
+                                "Ethernet1/5",
+                                "Ethernet1/11",
+                                "Ethernet1/12",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "880": {
+                            "vlan_id": "880",
+                            "name": "Inside_Firewall",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel10",
+                                "Port-channel11",
+                                "Port-channel12",
+                                "Port-channel13",
+                                "Port-channel14",
+                                "Port-channel15",
+                                "Ethernet1/4",
+                                "Ethernet1/5",
+                                "Ethernet1/11",
+                                "Ethernet1/12",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "757": {
+                            "vlan_id": "757",
+                            "name": "OSA-DMZ-192.168.157",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel12",
+                                "Port-channel13",
+                                "Port-channel14",
+                                "Port-channel15",
+                                "Port-channel20",
+                                "Port-channel21",
+                                "Port-channel22",
+                                "Port-channel23",
+                                "Ethernet1/1",
+                                "Ethernet1/4",
+                                "Ethernet1/5",
+                                "Ethernet1/11",
+                                "Ethernet1/12",
+                                "Ethernet1/25",
+                                "Ethernet1/26",
+                                "Ethernet1/30",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "739": {
+                            "vlan_id": "739",
+                            "name": "OSA-DMZ-192.168.139",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel12",
+                                "Port-channel13",
+                                "Port-channel14",
+                                "Port-channel15",
+                                "Port-channel20",
+                                "Port-channel21",
+                                "Port-channel22",
+                                "Port-channel23",
+                                "Ethernet1/1",
+                                "Ethernet1/4",
+                                "Ethernet1/5",
+                                "Ethernet1/11",
+                                "Ethernet1/12",
+                                "Ethernet1/25",
+                                "Ethernet1/26",
+                                "Ethernet1/30",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "738": {
+                            "vlan_id": "738",
+                            "name": "OSA-DMZ-738",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel12",
+                                "Port-channel13",
+                                "Port-channel14",
+                                "Port-channel15",
+                                "Port-channel20",
+                                "Port-channel21",
+                                "Port-channel22",
+                                "Port-channel23",
+                                "Ethernet1/1",
+                                "Ethernet1/4",
+                                "Ethernet1/5",
+                                "Ethernet1/11",
+                                "Ethernet1/12",
+                                "Ethernet1/25",
+                                "Ethernet1/26",
+                                "Ethernet1/30",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "737": {
+                            "vlan_id": "737",
+                            "name": "OSA-DMZ-192.168.137",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel12",
+                                "Port-channel13",
+                                "Port-channel14",
+                                "Port-channel15",
+                                "Port-channel20",
+                                "Port-channel21",
+                                "Port-channel22",
+                                "Port-channel23",
+                                "Ethernet1/1",
+                                "Ethernet1/4",
+                                "Ethernet1/5",
+                                "Ethernet1/11",
+                                "Ethernet1/12",
+                                "Ethernet1/25",
+                                "Ethernet1/26",
+                                "Ethernet1/30",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "736": {
+                            "vlan_id": "736",
+                            "name": "VV-MF_APP-Server",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel10",
+                                "Port-channel11",
+                                "Port-channel12",
+                                "Port-channel13",
+                                "Port-channel14",
+                                "Port-channel15",
+                                "Port-channel20",
+                                "Port-channel21",
+                                "Port-channel22",
+                                "Port-channel23",
+                                "Ethernet1/1",
+                                "Ethernet1/4",
+                                "Ethernet1/5",
+                                "Ethernet1/11",
+                                "Ethernet1/12",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/25",
+                                "Ethernet1/26",
+                                "Ethernet1/30",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "735": {
+                            "vlan_id": "735",
+                            "name": "VV-MF_Microfocus",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel10",
+                                "Port-channel11",
+                                "Port-channel12",
+                                "Port-channel13",
+                                "Port-channel14",
+                                "Port-channel15",
+                                "Port-channel20",
+                                "Port-channel21",
+                                "Port-channel22",
+                                "Port-channel23",
+                                "Ethernet1/1",
+                                "Ethernet1/4",
+                                "Ethernet1/5",
+                                "Ethernet1/11",
+                                "Ethernet1/12",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/25",
+                                "Ethernet1/26",
+                                "Ethernet1/30",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "734": {
+                            "vlan_id": "734",
+                            "name": "VV-MF_DB2",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel10",
+                                "Port-channel11",
+                                "Port-channel12",
+                                "Port-channel13",
+                                "Port-channel14",
+                                "Port-channel15",
+                                "Port-channel20",
+                                "Port-channel21",
+                                "Port-channel22",
+                                "Port-channel23",
+                                "Ethernet1/1",
+                                "Ethernet1/4",
+                                "Ethernet1/5",
+                                "Ethernet1/11",
+                                "Ethernet1/12",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/25",
+                                "Ethernet1/26",
+                                "Ethernet1/30",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "733": {
+                            "vlan_id": "733",
+                            "name": "VM-VMOTION",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel12",
+                                "Port-channel13",
+                                "Port-channel14",
+                                "Port-channel15",
+                                "Port-channel20",
+                                "Port-channel21",
+                                "Port-channel22",
+                                "Port-channel23",
+                                "Ethernet1/1",
+                                "Ethernet1/4",
+                                "Ethernet1/5",
+                                "Ethernet1/11",
+                                "Ethernet1/12",
+                                "Ethernet1/25",
+                                "Ethernet1/26",
+                                "Ethernet1/30",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "732": {
+                            "vlan_id": "732",
+                            "name": "VM-FAULT-TOLERANCE",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel12",
+                                "Port-channel13",
+                                "Port-channel14",
+                                "Port-channel15",
+                                "Port-channel20",
+                                "Port-channel21",
+                                "Port-channel22",
+                                "Port-channel23",
+                                "Ethernet1/1",
+                                "Ethernet1/4",
+                                "Ethernet1/5",
+                                "Ethernet1/11",
+                                "Ethernet1/12",
+                                "Ethernet1/25",
+                                "Ethernet1/26",
+                                "Ethernet1/30",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "731": {
+                            "vlan_id": "731",
+                            "name": "VM-STORAGE",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel12",
+                                "Port-channel13",
+                                "Port-channel14",
+                                "Port-channel15",
+                                "Port-channel20",
+                                "Port-channel21",
+                                "Port-channel22",
+                                "Port-channel23",
+                                "Ethernet1/1",
+                                "Ethernet1/4",
+                                "Ethernet1/5",
+                                "Ethernet1/11",
+                                "Ethernet1/12",
+                                "Ethernet1/25",
+                                "Ethernet1/26",
+                                "Ethernet1/30",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "730": {
+                            "vlan_id": "730",
+                            "name": "Transit_N9k_C6509",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel12",
+                                "Port-channel13",
+                                "Port-channel14",
+                                "Port-channel15",
+                                "Port-channel20",
+                                "Port-channel21",
+                                "Port-channel22",
+                                "Port-channel23",
+                                "Ethernet1/1",
+                                "Ethernet1/4",
+                                "Ethernet1/5",
+                                "Ethernet1/11",
+                                "Ethernet1/12",
+                                "Ethernet1/25",
+                                "Ethernet1/26",
+                                "Ethernet1/30",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "729": {
+                            "vlan_id": "729",
+                            "name": "VV-MF-OSA_Net",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel10",
+                                "Port-channel11",
+                                "Port-channel12",
+                                "Port-channel13",
+                                "Port-channel14",
+                                "Port-channel15",
+                                "Port-channel20",
+                                "Port-channel21",
+                                "Port-channel22",
+                                "Port-channel23",
+                                "Ethernet1/1",
+                                "Ethernet1/4",
+                                "Ethernet1/5",
+                                "Ethernet1/11",
+                                "Ethernet1/12",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/25",
+                                "Ethernet1/26",
+                                "Ethernet1/30",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "728": {
+                            "vlan_id": "728",
+                            "name": "Network_VS_F5_DMZFW",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel10",
+                                "Port-channel11",
+                                "Port-channel12",
+                                "Port-channel13",
+                                "Port-channel14",
+                                "Port-channel15",
+                                "Port-channel20",
+                                "Port-channel21",
+                                "Port-channel22",
+                                "Port-channel23",
+                                "Ethernet1/1",
+                                "Ethernet1/4",
+                                "Ethernet1/5",
+                                "Ethernet1/11",
+                                "Ethernet1/12",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/25",
+                                "Ethernet1/26",
+                                "Ethernet1/30",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "725": {
+                            "vlan_id": "725",
+                            "name": "VV-SOA-PRD",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel10",
+                                "Port-channel11",
+                                "Port-channel12",
+                                "Port-channel13",
+                                "Port-channel14",
+                                "Port-channel15",
+                                "Port-channel20",
+                                "Port-channel21",
+                                "Port-channel22",
+                                "Port-channel23",
+                                "Ethernet1/1",
+                                "Ethernet1/4",
+                                "Ethernet1/5",
+                                "Ethernet1/11",
+                                "Ethernet1/12",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/25",
+                                "Ethernet1/26",
+                                "Ethernet1/30",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "724": {
+                            "vlan_id": "724",
+                            "name": "VV-SOA-DB",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel10",
+                                "Port-channel11",
+                                "Port-channel12",
+                                "Port-channel13",
+                                "Port-channel14",
+                                "Port-channel15",
+                                "Port-channel20",
+                                "Port-channel21",
+                                "Port-channel22",
+                                "Port-channel23",
+                                "Ethernet1/1",
+                                "Ethernet1/4",
+                                "Ethernet1/5",
+                                "Ethernet1/11",
+                                "Ethernet1/12",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/25",
+                                "Ethernet1/26",
+                                "Ethernet1/30",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "723": {
+                            "vlan_id": "723",
+                            "name": "VV-SOA-DEV",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel10",
+                                "Port-channel11",
+                                "Port-channel12",
+                                "Port-channel13",
+                                "Port-channel14",
+                                "Port-channel15",
+                                "Port-channel20",
+                                "Port-channel21",
+                                "Port-channel22",
+                                "Port-channel23",
+                                "Ethernet1/1",
+                                "Ethernet1/4",
+                                "Ethernet1/5",
+                                "Ethernet1/11",
+                                "Ethernet1/12",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/25",
+                                "Ethernet1/26",
+                                "Ethernet1/30",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "722": {
+                            "vlan_id": "722",
+                            "name": "VV-SOA-HLG",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel10",
+                                "Port-channel11",
+                                "Port-channel12",
+                                "Port-channel13",
+                                "Port-channel14",
+                                "Port-channel15",
+                                "Port-channel20",
+                                "Port-channel21",
+                                "Port-channel22",
+                                "Port-channel23",
+                                "Ethernet1/1",
+                                "Ethernet1/4",
+                                "Ethernet1/5",
+                                "Ethernet1/11",
+                                "Ethernet1/12",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/25",
+                                "Ethernet1/26",
+                                "Ethernet1/30",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "719": {
+                            "vlan_id": "719",
+                            "name": "VV-GLOBAL-PROD",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel10",
+                                "Port-channel11",
+                                "Port-channel12",
+                                "Port-channel13",
+                                "Port-channel14",
+                                "Port-channel15",
+                                "Port-channel20",
+                                "Port-channel21",
+                                "Port-channel22",
+                                "Port-channel23",
+                                "Ethernet1/1",
+                                "Ethernet1/4",
+                                "Ethernet1/5",
+                                "Ethernet1/11",
+                                "Ethernet1/12",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/25",
+                                "Ethernet1/26",
+                                "Ethernet1/30",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "718": {
+                            "vlan_id": "718",
+                            "name": "VV-GLOBAL-DB",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel10",
+                                "Port-channel11",
+                                "Port-channel12",
+                                "Port-channel13",
+                                "Port-channel14",
+                                "Port-channel15",
+                                "Port-channel20",
+                                "Port-channel21",
+                                "Port-channel22",
+                                "Port-channel23",
+                                "Ethernet1/1",
+                                "Ethernet1/4",
+                                "Ethernet1/5",
+                                "Ethernet1/11",
+                                "Ethernet1/12",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/25",
+                                "Ethernet1/26",
+                                "Ethernet1/30",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "717": {
+                            "vlan_id": "717",
+                            "name": "VV-GLOBAL-DESENV",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel10",
+                                "Port-channel11",
+                                "Port-channel12",
+                                "Port-channel13",
+                                "Port-channel14",
+                                "Port-channel15",
+                                "Port-channel20",
+                                "Port-channel21",
+                                "Port-channel22",
+                                "Port-channel23",
+                                "Ethernet1/1",
+                                "Ethernet1/4",
+                                "Ethernet1/5",
+                                "Ethernet1/11",
+                                "Ethernet1/12",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/25",
+                                "Ethernet1/26",
+                                "Ethernet1/30",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "716": {
+                            "vlan_id": "716",
+                            "name": "VV-GLOBAL-HLG",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel10",
+                                "Port-channel11",
+                                "Port-channel12",
+                                "Port-channel13",
+                                "Port-channel14",
+                                "Port-channel15",
+                                "Port-channel20",
+                                "Port-channel21",
+                                "Port-channel22",
+                                "Port-channel23",
+                                "Ethernet1/1",
+                                "Ethernet1/4",
+                                "Ethernet1/5",
+                                "Ethernet1/11",
+                                "Ethernet1/12",
+                                "Ethernet1/21",
+                                "Ethernet1/22",
+                                "Ethernet1/25",
+                                "Ethernet1/26",
+                                "Ethernet1/30",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "708": {
+                            "vlan_id": "708",
+                            "name": "VV-MF_HLG",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel12",
+                                "Port-channel13",
+                                "Port-channel14",
+                                "Port-channel15",
+                                "Port-channel20",
+                                "Port-channel21",
+                                "Port-channel22",
+                                "Port-channel23",
+                                "Ethernet1/1",
+                                "Ethernet1/4",
+                                "Ethernet1/5",
+                                "Ethernet1/11",
+                                "Ethernet1/12",
+                                "Ethernet1/25",
+                                "Ethernet1/26",
+                                "Ethernet1/30",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "707": {
+                            "vlan_id": "707",
+                            "name": "Network_VS_F5_DMZN9K",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel12",
+                                "Port-channel13",
+                                "Port-channel14",
+                                "Port-channel15",
+                                "Port-channel20",
+                                "Port-channel21",
+                                "Port-channel22",
+                                "Port-channel23",
+                                "Ethernet1/1",
+                                "Ethernet1/4",
+                                "Ethernet1/5",
+                                "Ethernet1/11",
+                                "Ethernet1/12",
+                                "Ethernet1/25",
+                                "Ethernet1/26",
+                                "Ethernet1/30",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "706": {
+                            "vlan_id": "706",
+                            "name": "VM-SDN",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel12",
+                                "Port-channel13",
+                                "Port-channel14",
+                                "Port-channel15",
+                                "Port-channel20",
+                                "Port-channel21",
+                                "Port-channel22",
+                                "Port-channel23",
+                                "Ethernet1/1",
+                                "Ethernet1/4",
+                                "Ethernet1/5",
+                                "Ethernet1/11",
+                                "Ethernet1/12",
+                                "Ethernet1/25",
+                                "Ethernet1/26",
+                                "Ethernet1/30",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "705": {
+                            "vlan_id": "705",
+                            "name": "VM-DATA",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel12",
+                                "Port-channel13",
+                                "Port-channel14",
+                                "Port-channel15",
+                                "Port-channel20",
+                                "Port-channel21",
+                                "Port-channel22",
+                                "Port-channel23",
+                                "Ethernet1/1",
+                                "Ethernet1/4",
+                                "Ethernet1/5",
+                                "Ethernet1/11",
+                                "Ethernet1/12",
+                                "Ethernet1/25",
+                                "Ethernet1/26",
+                                "Ethernet1/30",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "704": {
+                            "vlan_id": "704",
+                            "name": "BKP02",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel12",
+                                "Port-channel13",
+                                "Port-channel14",
+                                "Port-channel15",
+                                "Port-channel20",
+                                "Port-channel21",
+                                "Port-channel22",
+                                "Port-channel23",
+                                "Ethernet1/1",
+                                "Ethernet1/4",
+                                "Ethernet1/5",
+                                "Ethernet1/11",
+                                "Ethernet1/12",
+                                "Ethernet1/25",
+                                "Ethernet1/26",
+                                "Ethernet1/30",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "703": {
+                            "vlan_id": "703",
+                            "name": "BKP01",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel12",
+                                "Port-channel13",
+                                "Port-channel14",
+                                "Port-channel15",
+                                "Port-channel20",
+                                "Port-channel21",
+                                "Port-channel22",
+                                "Port-channel23",
+                                "Ethernet1/1",
+                                "Ethernet1/4",
+                                "Ethernet1/5",
+                                "Ethernet1/11",
+                                "Ethernet1/12",
+                                "Ethernet1/25",
+                                "Ethernet1/26",
+                                "Ethernet1/30",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "702": {
+                            "vlan_id": "702",
+                            "name": "MGMT-STORAGE",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel12",
+                                "Port-channel13",
+                                "Port-channel14",
+                                "Port-channel15",
+                                "Port-channel20",
+                                "Port-channel21",
+                                "Port-channel22",
+                                "Port-channel23",
+                                "Ethernet1/1",
+                                "Ethernet1/4",
+                                "Ethernet1/5",
+                                "Ethernet1/11",
+                                "Ethernet1/12",
+                                "Ethernet1/25",
+                                "Ethernet1/26",
+                                "Ethernet1/30",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "701": {
+                            "vlan_id": "701",
+                            "name": "MGMT-SERVERS",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel12",
+                                "Port-channel13",
+                                "Port-channel14",
+                                "Port-channel15",
+                                "Port-channel20",
+                                "Port-channel21",
+                                "Port-channel22",
+                                "Port-channel23",
+                                "Ethernet1/1",
+                                "Ethernet1/4",
+                                "Ethernet1/5",
+                                "Ethernet1/11",
+                                "Ethernet1/12",
+                                "Ethernet1/25",
+                                "Ethernet1/26",
+                                "Ethernet1/30",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "700": {
+                            "vlan_id": "700",
+                            "name": "MGMT-NETWORK",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel12",
+                                "Port-channel13",
+                                "Port-channel14",
+                                "Port-channel15",
+                                "Port-channel20",
+                                "Port-channel21",
+                                "Port-channel22",
+                                "Port-channel23",
+                                "Ethernet1/1",
+                                "Ethernet1/4",
+                                "Ethernet1/5",
+                                "Ethernet1/11",
+                                "Ethernet1/12",
+                                "Ethernet1/25",
+                                "Ethernet1/26",
+                                "Ethernet1/30",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "660": {
+                            "vlan_id": "660",
+                            "name": "OSA-DMZ-192.168.60",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel12",
+                                "Port-channel13",
+                                "Port-channel14",
+                                "Port-channel15",
+                                "Port-channel20",
+                                "Port-channel21",
+                                "Port-channel22",
+                                "Port-channel23",
+                                "Ethernet1/1",
+                                "Ethernet1/4",
+                                "Ethernet1/5",
+                                "Ethernet1/11",
+                                "Ethernet1/12",
+                                "Ethernet1/25",
+                                "Ethernet1/26",
+                                "Ethernet1/30",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "659": {
+                            "vlan_id": "659",
+                            "name": "OSA-DMZ-192.168.59",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel12",
+                                "Port-channel13",
+                                "Port-channel14",
+                                "Port-channel15",
+                                "Port-channel20",
+                                "Port-channel21",
+                                "Port-channel22",
+                                "Port-channel23",
+                                "Ethernet1/1",
+                                "Ethernet1/4",
+                                "Ethernet1/5",
+                                "Ethernet1/11",
+                                "Ethernet1/12",
+                                "Ethernet1/25",
+                                "Ethernet1/26",
+                                "Ethernet1/30",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "643": {
+                            "vlan_id": "643",
+                            "name": "Inside_FortiG_LVS0580",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel12",
+                                "Port-channel13",
+                                "Port-channel14",
+                                "Port-channel15",
+                                "Port-channel20",
+                                "Port-channel21",
+                                "Port-channel22",
+                                "Port-channel23",
+                                "Ethernet1/1",
+                                "Ethernet1/4",
+                                "Ethernet1/5",
+                                "Ethernet1/11",
+                                "Ethernet1/12",
+                                "Ethernet1/25",
+                                "Ethernet1/26",
+                                "Ethernet1/30",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "638": {
+                            "vlan_id": "638",
+                            "name": "OSA-DMZ-192.168.38",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel12",
+                                "Port-channel13",
+                                "Port-channel14",
+                                "Port-channel15",
+                                "Port-channel20",
+                                "Port-channel21",
+                                "Port-channel22",
+                                "Port-channel23",
+                                "Ethernet1/1",
+                                "Ethernet1/4",
+                                "Ethernet1/5",
+                                "Ethernet1/11",
+                                "Ethernet1/12",
+                                "Ethernet1/25",
+                                "Ethernet1/26",
+                                "Ethernet1/30",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "70": {
+                            "vlan_id": "70",
+                            "name": "NFeC",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel12",
+                                "Port-channel13",
+                                "Port-channel14",
+                                "Port-channel15",
+                                "Port-channel20",
+                                "Port-channel21",
+                                "Port-channel22",
+                                "Port-channel23",
+                                "Ethernet1/1",
+                                "Ethernet1/4",
+                                "Ethernet1/5",
+                                "Ethernet1/11",
+                                "Ethernet1/12",
+                                "Ethernet1/25",
+                                "Ethernet1/26",
+                                "Ethernet1/30",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "29": {
+                            "vlan_id": "29",
+                            "name": "Portal",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel12",
+                                "Port-channel13",
+                                "Port-channel14",
+                                "Port-channel15",
+                                "Port-channel20",
+                                "Port-channel21",
+                                "Port-channel22",
+                                "Port-channel23",
+                                "Ethernet1/1",
+                                "Ethernet1/4",
+                                "Ethernet1/5",
+                                "Ethernet1/11",
+                                "Ethernet1/12",
+                                "Ethernet1/25",
+                                "Ethernet1/26",
+                                "Ethernet1/30",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "28": {
+                            "vlan_id": "28",
+                            "name": "CPD_Servidores",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel12",
+                                "Port-channel13",
+                                "Port-channel14",
+                                "Port-channel15",
+                                "Port-channel20",
+                                "Port-channel21",
+                                "Port-channel22",
+                                "Port-channel23",
+                                "Ethernet1/1",
+                                "Ethernet1/4",
+                                "Ethernet1/5",
+                                "Ethernet1/11",
+                                "Ethernet1/12",
+                                "Ethernet1/25",
+                                "Ethernet1/26",
+                                "Ethernet1/30",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "1": {
+                            "vlan_id": "1",
+                            "name": "default",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel12",
+                                "Port-channel13",
+                                "Port-channel14",
+                                "Port-channel15",
+                                "Ethernet1/2",
+                                "Ethernet1/3",
+                                "Ethernet1/4",
+                                "Ethernet1/5",
+                                "Ethernet1/6",
+                                "Ethernet1/7",
+                                "Ethernet1/8",
+                                "Ethernet1/9",
+                                "Ethernet1/11",
+                                "Ethernet1/12",
+                                "Ethernet1/13",
+                                "Ethernet1/14",
+                                "Ethernet1/15",
+                                "Ethernet1/16",
+                                "Ethernet1/17",
+                                "Ethernet1/18",
+                                "Ethernet1/19",
+                                "Ethernet1/20",
+                                "Ethernet1/23",
+                                "Ethernet1/24",
+                                "Ethernet1/27",
+                                "Ethernet1/28",
+                                "Ethernet1/29",
+                                "Ethernet1/31",
+                                "Ethernet1/32",
+                                "Ethernet1/33",
+                                "Ethernet1/34",
+                                "Ethernet1/35",
+                                "Ethernet1/36",
+                                "Ethernet1/37",
+                                "Ethernet1/38",
+                                "Ethernet1/39",
+                                "Ethernet1/40",
+                                "Ethernet1/41",
+                                "Ethernet1/42",
+                                "Ethernet1/43",
+                                "Ethernet1/44",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48",
+                                "Ethernet1/49",
+                                "Ethernet1/50",
+                                "Ethernet1/51",
+                                "Ethernet1/52",
+                                "Ethernet1/53",
+                                "Ethernet1/54"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "configuration": {
+                            "998": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "888": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "880": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "757": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "739": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "738": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "737": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "736": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "735": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "734": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "733": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "732": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "731": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "730": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "729": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "728": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "725": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "724": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "723": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "722": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "719": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "718": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "717": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "716": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "708": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "707": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "706": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "705": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "704": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "703": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "702": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "701": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "700": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "660": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "659": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "643": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "638": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "70": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "29": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "28": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "1": {
+                                "ip_igmp_snooping": "enabled"
+                            }
+                        },
+                        "vn_segment_vlan_based_enabled": false
+                    }
+                }
+            }
+        }
+    }
+}

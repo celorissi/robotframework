@@ -1,0 +1,14 @@
+devices:
+  10.211.34.5:
+    connections:
+      cli:
+        ip: 10.211.34.5
+        protocol: ssh
+    credentials:
+      default:
+        password: T313c0m3N015
+        username: svc_telecom
+      enable:
+        password: T313c0m3N015
+    os: iosxe
+    type: iosxe

@@ -1,0 +1,257 @@
+{
+    "vlan": {
+        "DCI-EQX-01": {
+            "py/state": {
+                "callables": {},
+                "device": "DCI-EQX-01",
+                "context_manager": {},
+                "attributes": null,
+                "commands": null,
+                "connections": null,
+                "ops_schema": {
+                    "info": {
+                        "vlans": {
+                            "interface_vlan_enabled": {
+                                "schema": "*",
+                                "schemaType": {
+                                    "py/type": "builtins.str"
+                                },
+                                "missed": [],
+                                "path": []
+                            },
+                            "vn_segment_vlan_based_enabled": {
+                                "schema": "*",
+                                "schemaType": {
+                                    "py/type": "builtins.str"
+                                },
+                                "missed": [],
+                                "path": []
+                            },
+                            "Any  (str) *": {
+                                "vlan_id": {
+                                    "schema": "*",
+                                    "schemaType": {
+                                        "py/type": "builtins.str"
+                                    },
+                                    "missed": [],
+                                    "path": []
+                                },
+                                "shutdown": {
+                                    "schema": "*",
+                                    "schemaType": {
+                                        "py/type": "builtins.str"
+                                    },
+                                    "missed": [],
+                                    "path": []
+                                },
+                                "name": {
+                                    "schema": "*",
+                                    "schemaType": {
+                                        "py/type": "builtins.str"
+                                    },
+                                    "missed": [],
+                                    "path": []
+                                },
+                                "state": {
+                                    "schema": "*",
+                                    "schemaType": {
+                                        "py/type": "builtins.str"
+                                    },
+                                    "missed": [],
+                                    "path": []
+                                },
+                                "interfaces": {
+                                    "schema": "*",
+                                    "schemaType": {
+                                        "py/type": "builtins.str"
+                                    },
+                                    "missed": [],
+                                    "path": []
+                                },
+                                "vn_segment_id": {
+                                    "schema": "*",
+                                    "schemaType": {
+                                        "py/type": "builtins.str"
+                                    },
+                                    "missed": [],
+                                    "path": []
+                                },
+                                "mode": {
+                                    "schema": "*",
+                                    "schemaType": {
+                                        "py/type": "builtins.str"
+                                    },
+                                    "missed": [],
+                                    "path": []
+                                }
+                            },
+                            "configuration": {
+                                "Any  (str) *": {
+                                    "ip_igmp_snooping": {
+                                        "schema": "*",
+                                        "schemaType": {
+                                            "py/type": "builtins.str"
+                                        },
+                                        "missed": [],
+                                        "path": []
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "diff_ignore": {
+                    "py/reduce": [
+                        {
+                            "py/type": "collections.deque"
+                        },
+                        {
+                            "py/tuple": []
+                        },
+                        null,
+                        {
+                            "py/tuple": [
+                                "maker",
+                                "callables",
+                                "device",
+                                "diff_ignore",
+                                "ops_schema"
+                            ]
+                        }
+                    ]
+                },
+                "info": {
+                    "vlans": {
+                        "interface_vlan_enabled": true,
+                        "2008": {
+                            "vlan_id": "2008",
+                            "name": "Transito_DCI_ACI",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel300",
+                                "Ethernet1/45",
+                                "Ethernet1/46",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "2005": {
+                            "vlan_id": "2005",
+                            "name": "N7K-VDCCorp",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel100",
+                                "Ethernet1/1",
+                                "Ethernet1/2",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "1034": {
+                            "vlan_id": "1034",
+                            "name": "FW_Back",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel304",
+                                "Port-channel305",
+                                "Ethernet1/25",
+                                "Ethernet1/26",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "1033": {
+                            "vlan_id": "1033",
+                            "name": "FW_Ecom",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel302",
+                                "Port-channel303",
+                                "Ethernet1/19",
+                                "Ethernet1/20",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "1013": {
+                            "vlan_id": "1013",
+                            "name": "FW-Sdwan",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Port-channel306",
+                                "Port-channel307",
+                                "Ethernet1/10",
+                                "Ethernet1/11",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "888": {
+                            "vlan_id": "888",
+                            "name": "TRANSITO_OSPF",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "1": {
+                            "vlan_id": "1",
+                            "name": "default",
+                            "state": "active",
+                            "interfaces": [
+                                "Port-channel1",
+                                "Ethernet1/47",
+                                "Ethernet1/48"
+                            ],
+                            "mode": "ce",
+                            "shutdown": false
+                        },
+                        "configuration": {
+                            "2008": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "2005": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "1034": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "1033": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "1013": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "888": {
+                                "ip_igmp_snooping": "enabled"
+                            },
+                            "1": {
+                                "ip_igmp_snooping": "enabled"
+                            }
+                        },
+                        "vn_segment_vlan_based_enabled": false
+                    }
+                }
+            }
+        }
+    }
+}
