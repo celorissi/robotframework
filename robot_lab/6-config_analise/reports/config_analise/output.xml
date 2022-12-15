@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.1 (Python 3.10.6 on linux)" generated="20221214 21:11:19.953" rpa="false" schemaversion="3">
+<robot generator="Robot 6.0.1 (Python 3.10.6 on linux)" generated="20221215 19:39:47.115" rpa="false" schemaversion="3">
 <suite id="s1" name="Config Analise" source="/home/marcelo/laboratorio/robotframework/robot_lab/6-config_analise/config_analise.robot">
 <test id="s1-t1" name="Connect to devices" line="9">
 <kw name="use genie testbed &quot;${testbed}&quot;" library="genie.libs.robot.GenieRobot" sourcename="use genie testbed &quot;${testbed}&quot;">
 <doc>*DEPRECATED* Please use the "use testbed "${testbed}" keyword instead.</doc>
-<msg timestamp="20221214 21:11:20.705" level="WARN">Keyword 'genie.libs.robot.GenieRobot.use genie testbed "${testbed}"' is deprecated. Please use the "use testbed "${testbed}" keyword instead.</msg>
-<msg timestamp="20221214 21:11:20.709" level="WARN">Using the default YAML encoding key since no key was specified in configuration.
+<msg timestamp="20221215 19:39:47.897" level="WARN">Keyword 'genie.libs.robot.GenieRobot.use genie testbed "${testbed}"' is deprecated. Please use the "use testbed "${testbed}" keyword instead.</msg>
+<msg timestamp="20221215 19:39:47.902" level="WARN">Using the default YAML encoding key since no key was specified in configuration.
 THIS IS A SHARED KEY AND IS NOT SECURE, PLEASE RUN `pyats secret keygen` AND ADD TO YOUR pyats.conf FILE BEFORE ENCODING ANY VALUES.</msg>
-<msg timestamp="20221214 21:11:20.741" level="INFO">+------------------------------------------------------------------------------+
+<msg timestamp="20221215 19:39:47.973" level="INFO">+------------------------------------------------------------------------------+
 |                            Genie datafiles used:                             |
 +------------------------------------------------------------------------------+</msg>
-<msg timestamp="20221214 21:11:20.741" level="INFO">Trigger datafile          | </msg>
-<msg timestamp="20221214 21:11:20.741" level="INFO">Verification  datafile    | </msg>
-<msg timestamp="20221214 21:11:20.741" level="INFO">Pts datafile              | /home/marcelo/venv_lab/lib/python3.10/site-packages/genie/libs/sdk/genie_yamls/pts_datafile.yaml</msg>
-<msg timestamp="20221214 21:11:20.741" level="INFO">Subsection datafile       | /home/marcelo/venv_lab/lib/python3.10/site-packages/genie/libs/sdk/genie_yamls/subsection_datafile.yaml</msg>
-<msg timestamp="20221214 21:11:20.741" level="INFO">Config datafile           | None</msg>
-<msg timestamp="20221214 21:11:20.755" level="WARN">Could not load the trigger datafile correctly, did you specify 'uut' device alias?</msg>
-<status status="PASS" starttime="20221214 21:11:20.705" endtime="20221214 21:11:20.755"/>
+<msg timestamp="20221215 19:39:47.973" level="INFO">Trigger datafile          | </msg>
+<msg timestamp="20221215 19:39:47.973" level="INFO">Verification  datafile    | </msg>
+<msg timestamp="20221215 19:39:47.973" level="INFO">Pts datafile              | /home/marcelo/venv_lab/lib/python3.10/site-packages/genie/libs/sdk/genie_yamls/pts_datafile.yaml</msg>
+<msg timestamp="20221215 19:39:47.973" level="INFO">Subsection datafile       | /home/marcelo/venv_lab/lib/python3.10/site-packages/genie/libs/sdk/genie_yamls/subsection_datafile.yaml</msg>
+<msg timestamp="20221215 19:39:47.973" level="INFO">Config datafile           | None</msg>
+<msg timestamp="20221215 19:39:47.987" level="WARN">Could not load the trigger datafile correctly, did you specify 'uut' device alias?</msg>
+<status status="PASS" starttime="20221215 19:39:47.897" endtime="20221215 19:39:47.987"/>
 </kw>
 <kw name="connect to device &quot;NXOS&quot;" library="ats.robot.pyATSRobot" sourcename="connect to device &quot;${device:[^&quot;]+}&quot;">
 <doc>Connect to device connection as defined in testbed.yaml</doc>
-<msg timestamp="20221214 21:11:20.756" level="INFO">Connecting to device 'Device NXOS, type nxos'</msg>
-<msg timestamp="20221214 21:11:20.756" level="INFO">kwargs: {}</msg>
-<msg timestamp="20221214 21:11:23.587" level="INFO">2022-12-14 21:11:20,757: %UNICON-INFO: +++ NXOS logfile /tmp/NXOS-cli-20221214T211120757.log +++
+<msg timestamp="20221215 19:39:47.988" level="INFO">Connecting to device 'Device NXOS, type nxos'</msg>
+<msg timestamp="20221215 19:39:47.988" level="INFO">kwargs: {}</msg>
+<msg timestamp="20221215 19:39:53.466" level="INFO">2022-12-15 19:39:47,989: %UNICON-INFO: +++ NXOS logfile /tmp/NXOS-cli-20221215T193947989.log +++
 
-2022-12-14 21:11:20,757: %UNICON-INFO: +++ Unicon plugin nxos (unicon.plugins.nxos) +++
+2022-12-15 19:39:47,989: %UNICON-INFO: +++ Unicon plugin nxos (unicon.plugins.nxos) +++
 User Access Verification
 
 
-2022-12-14 21:11:21,502: %UNICON-INFO: +++ connection to spawn: ssh -l admin 192.168.15.212, id: 140258948972016 +++
+2022-12-15 19:39:50,249: %UNICON-INFO: +++ connection to spawn: ssh -l admin 192.168.15.212, id: 139825681482272 +++
 
-2022-12-14 21:11:21,502: %UNICON-INFO: connection to NXOS
+2022-12-15 19:39:50,249: %UNICON-INFO: connection to NXOS
 (admin@192.168.15.212) Password: 
 
 Cisco NX-OS Software
@@ -62,21 +62,21 @@ http://www.gnu.org/licenses/lgpl.html
 ***************************************************************************
 NXOS# 
 
-2022-12-14 21:11:22,319: %UNICON-INFO: +++ initializing handle +++
+2022-12-15 19:39:51,746: %UNICON-INFO: +++ initializing handle +++
 
-2022-12-14 21:11:22,384: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'term length 0' +++
+2022-12-15 19:39:51,810: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'term length 0' +++
 term length 0
 NXOS# 
 
-2022-12-14 21:11:22,546: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'term width 511' +++
+2022-12-15 19:39:51,962: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'term width 511' +++
 term width 511
 NXOS# 
 
-2022-12-14 21:11:22,710: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'terminal session-timeout 0' +++
+2022-12-15 19:39:52,196: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'terminal session-timeout 0' +++
 terminal session-timeout 0
 NXOS# 
 
-2022-12-14 21:11:22,789: %UNICON-INFO: +++ NXOS with via 'cli': configure +++
+2022-12-15 19:39:52,318: %UNICON-INFO: +++ NXOS with via 'cli': configure +++
 config term
 Enter configuration commands, one per line. End with CNTL/Z.
 NXOS(config)# no logging console
@@ -87,37 +87,37 @@ Enter configuration commands, one per line. End with CNTL/Z.
 NXOS(config-line)# terminal width 511
 NXOS(config-line)# end
 NXOS#</msg>
-<status status="PASS" starttime="20221214 21:11:20.755" endtime="20221214 21:11:23.587"/>
+<status status="PASS" starttime="20221215 19:39:47.988" endtime="20221215 19:39:53.466"/>
 </kw>
 <doc>Define the hosts to connect and test connection</doc>
 <tag>Laboratorio</tag>
-<status status="PASS" starttime="20221214 21:11:20.704" endtime="20221214 21:11:23.588"/>
+<status status="PASS" starttime="20221215 19:39:47.896" endtime="20221215 19:39:53.467"/>
 </test>
 <test id="s1-t2" name="Send show version" line="16">
 <kw name="execute &quot;show version&quot; on device &quot;NXOS&quot;">
 <var>${output}</var>
-<msg timestamp="20221214 21:11:23.591" level="FAIL">No keyword with name 'execute "show version" on device "NXOS"' found.</msg>
-<status status="FAIL" starttime="20221214 21:11:23.591" endtime="20221214 21:11:23.591"/>
+<msg timestamp="20221215 19:39:53.471" level="FAIL">No keyword with name 'execute "show version" on device "NXOS"' found.</msg>
+<status status="FAIL" starttime="20221215 19:39:53.471" endtime="20221215 19:39:53.471"/>
 </kw>
 <kw name="Should Contain" library="BuiltIn">
 <arg>${output}</arg>
 <arg>version 9.2(2)</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="NOT RUN" starttime="20221214 21:11:23.592" endtime="20221214 21:11:23.592"/>
+<status status="NOT RUN" starttime="20221215 19:39:53.471" endtime="20221215 19:39:53.472"/>
 </kw>
-<status status="FAIL" starttime="20221214 21:11:23.588" endtime="20221214 21:11:23.593">No keyword with name 'execute "show version" on device "NXOS"' found.</status>
+<status status="FAIL" starttime="20221215 19:39:53.468" endtime="20221215 19:39:53.472">No keyword with name 'execute "show version" on device "NXOS"' found.</status>
 </test>
 <test id="s1-t3" name="Profile Configuracoes" line="20">
 <kw name="Profile the system for &quot;config&quot; on devices &quot;NXOS&quot; as &quot;./reports/config&quot;" library="genie.libs.robot.GenieRobot" sourcename="Profile the system for &quot;${feature:[^&quot;]+}&quot; on devices &quot;${device:[^&quot;]+}&quot; as &quot;${name:[^&quot;]+}&quot;">
 <doc>Profile system as per the provided features on the devices</doc>
-<msg timestamp="20221214 21:11:23.595" level="INFO">Start learning device configuration</msg>
-<msg timestamp="20221214 21:11:24.127" level="INFO">Saved system profile as file: /home/marcelo/laboratorio/robotframework/robot_lab/6-config_analise/./reports/config_NXOS_config_pts.json</msg>
-<msg timestamp="20221214 21:11:24.127" level="INFO">2022-12-14 21:11:23,658: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'show running-config' +++
+<msg timestamp="20221215 19:39:53.474" level="INFO">Start learning device configuration</msg>
+<msg timestamp="20221215 19:39:53.999" level="INFO">Saved system profile as file: /home/marcelo/laboratorio/robotframework/robot_lab/6-config_analise/./reports/config_NXOS_config_pts.json</msg>
+<msg timestamp="20221215 19:39:54.000" level="INFO">2022-12-15 19:39:53,537: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'show running-config' +++
 show running-config
 
 !Command: show running-config
-!Running configuration last done at: Wed Dec 14 21:11:23 2022
-!Time: Wed Dec 14 21:11:24 2022
+!Running configuration last done at: Thu Dec 15 19:39:52 2022
+!Time: Thu Dec 15 19:39:53 2022
 
 version 9.2(2) Bios:version  
 hostname NXOS
@@ -155,10 +155,6 @@ interface Ethernet1/1
   no shutdown
 
 interface Ethernet1/2
-  description Hello
-  no switchport
-  ip address 192.168.15.214/24
-  ip router ospf 100 area 0.0.0.0
 
 interface Ethernet1/3
   description testeint
@@ -430,34 +426,34 @@ no logging console
 
 
 NXOS#</msg>
-<status status="PASS" starttime="20221214 21:11:23.595" endtime="20221214 21:11:24.127"/>
+<status status="PASS" starttime="20221215 19:39:53.474" endtime="20221215 19:39:54.000"/>
 </kw>
 <doc>Extraindo informacao de Configuracao</doc>
 <tag>Configuracoes</tag>
 <tag>Laboratorio</tag>
-<status status="PASS" starttime="20221214 21:11:23.594" endtime="20221214 21:11:24.127"/>
+<status status="PASS" starttime="20221215 19:39:53.473" endtime="20221215 19:39:54.000"/>
 </test>
 <test id="s1-t4" name="Profile VLAN" line="25">
 <kw name="Profile the system for &quot;vlan&quot; on devices &quot;NXOS&quot; as &quot;./reports/vlan&quot;" library="genie.libs.robot.GenieRobot" sourcename="Profile the system for &quot;${feature:[^&quot;]+}&quot; on devices &quot;${device:[^&quot;]+}&quot; as &quot;${name:[^&quot;]+}&quot;">
 <doc>Profile system as per the provided features on the devices</doc>
-<msg timestamp="20221214 21:11:24.129" level="INFO">Start learning feature vlan</msg>
-<msg timestamp="20221214 21:11:25.079" level="INFO">Could not learn &lt;class 'genie.libs.parser.nxos.show_vlan.ShowVlanIdVnSegment'&gt;
+<msg timestamp="20221215 19:39:54.002" level="INFO">Start learning feature vlan</msg>
+<msg timestamp="20221215 19:39:56.138" level="INFO">Could not learn &lt;class 'genie.libs.parser.nxos.show_vlan.ShowVlanIdVnSegment'&gt;
 Invalid command has been executed</msg>
-<msg timestamp="20221214 21:11:25.251" level="INFO">+====================================================================================================================================================+</msg>
-<msg timestamp="20221214 21:11:25.251" level="INFO">| Commands for learning feature 'Vlan'                                                                                                               |</msg>
-<msg timestamp="20221214 21:11:25.251" level="INFO">+====================================================================================================================================================+</msg>
-<msg timestamp="20221214 21:11:25.251" level="INFO">| - Parsed commands                                                                                                                                  |</msg>
-<msg timestamp="20221214 21:11:25.251" level="INFO">|----------------------------------------------------------------------------------------------------------------------------------------------------|</msg>
-<msg timestamp="20221214 21:11:25.251" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_feature.ShowFeature'&gt;                                                                                   |</msg>
-<msg timestamp="20221214 21:11:25.251" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_vlan.ShowVlan'&gt;                                                                                         |</msg>
-<msg timestamp="20221214 21:11:25.251" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_igmp.ShowIpIgmpSnooping'&gt;                                                                               |</msg>
-<msg timestamp="20221214 21:11:25.251" level="INFO">|====================================================================================================================================================|</msg>
-<msg timestamp="20221214 21:11:25.251" level="INFO">| - Commands not accepted on the device                                                                                                              |</msg>
-<msg timestamp="20221214 21:11:25.251" level="INFO">|----------------------------------------------------------------------------------------------------------------------------------------------------|</msg>
-<msg timestamp="20221214 21:11:25.252" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_vlan.ShowVlanIdVnSegment'&gt;                                                                              |</msg>
-<msg timestamp="20221214 21:11:25.252" level="INFO">|====================================================================================================================================================|</msg>
-<msg timestamp="20221214 21:11:25.258" level="INFO">Saved system profile as file: /home/marcelo/laboratorio/robotframework/robot_lab/6-config_analise/./reports/vlan_NXOS_vlan_pts.json</msg>
-<msg timestamp="20221214 21:11:25.259" level="INFO">2022-12-14 21:11:24,595: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'show feature' +++
+<msg timestamp="20221215 19:39:56.490" level="INFO">+====================================================================================================================================================+</msg>
+<msg timestamp="20221215 19:39:56.490" level="INFO">| Commands for learning feature 'Vlan'                                                                                                               |</msg>
+<msg timestamp="20221215 19:39:56.490" level="INFO">+====================================================================================================================================================+</msg>
+<msg timestamp="20221215 19:39:56.490" level="INFO">| - Parsed commands                                                                                                                                  |</msg>
+<msg timestamp="20221215 19:39:56.490" level="INFO">|----------------------------------------------------------------------------------------------------------------------------------------------------|</msg>
+<msg timestamp="20221215 19:39:56.490" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_feature.ShowFeature'&gt;                                                                                   |</msg>
+<msg timestamp="20221215 19:39:56.490" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_vlan.ShowVlan'&gt;                                                                                         |</msg>
+<msg timestamp="20221215 19:39:56.490" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_igmp.ShowIpIgmpSnooping'&gt;                                                                               |</msg>
+<msg timestamp="20221215 19:39:56.490" level="INFO">|====================================================================================================================================================|</msg>
+<msg timestamp="20221215 19:39:56.491" level="INFO">| - Commands not accepted on the device                                                                                                              |</msg>
+<msg timestamp="20221215 19:39:56.491" level="INFO">|----------------------------------------------------------------------------------------------------------------------------------------------------|</msg>
+<msg timestamp="20221215 19:39:56.491" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_vlan.ShowVlanIdVnSegment'&gt;                                                                              |</msg>
+<msg timestamp="20221215 19:39:56.491" level="INFO">|====================================================================================================================================================|</msg>
+<msg timestamp="20221215 19:39:56.497" level="INFO">Saved system profile as file: /home/marcelo/laboratorio/robotframework/robot_lab/6-config_analise/./reports/vlan_NXOS_vlan_pts.json</msg>
+<msg timestamp="20221215 19:39:56.497" level="INFO">2022-12-15 19:39:55,595: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'show feature' +++
 show feature
 Feature Name          Instance  State   
 --------------------  --------  --------
@@ -646,53 +642,53 @@ vrrpv3                 1          disabled
 vtp                    1          disabled
 NXOS# 
 
-2022-12-14 21:11:24,821: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'show vlan' +++
+2022-12-15 19:39:55,837: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'show vlan' +++
 show vlan
 
 VLAN Name                             Status    Ports
 ---- -------------------------------- --------- -------------------------------
-1    default                          active    Eth1/3, Eth1/4, Eth1/5, Eth1/6
-                                                Eth1/7, Eth1/8, Eth1/9, Eth1/10
-                                                Eth1/11, Eth1/12, Eth1/13
-                                                Eth1/14, Eth1/15, Eth1/16
-                                                Eth1/17, Eth1/18, Eth1/19
-                                                Eth1/20, Eth1/21, Eth1/22
-                                                Eth1/23, Eth1/24, Eth1/25
-                                                Eth1/26, Eth1/27, Eth1/28
-                                                Eth1/29, Eth1/30, Eth1/31
-                                                Eth1/32, Eth1/33, Eth1/34
-                                                Eth1/35, Eth1/36, Eth1/37
-                                                Eth1/38, Eth1/39, Eth1/40
-                                                Eth1/41, Eth1/42, Eth1/43
-                                                Eth1/44, Eth1/45, Eth1/46
-                                                Eth1/47, Eth1/48, Eth1/49
-                                                Eth1/50, Eth1/51, Eth1/52
-                                                Eth1/53, Eth1/54, Eth1/55
-                                                Eth1/56, Eth1/57, Eth1/58
-                                                Eth1/59, Eth1/60, Eth1/61
-                                                Eth1/62, Eth1/63, Eth1/64
-                                                Eth1/65, Eth1/66, Eth1/67
-                                                Eth1/68, Eth1/69, Eth1/70
-                                                Eth1/71, Eth1/72, Eth1/73
-                                                Eth1/74, Eth1/75, Eth1/76
-                                                Eth1/77, Eth1/78, Eth1/79
-                                                Eth1/80, Eth1/81, Eth1/82
-                                                Eth1/83, Eth1/84, Eth1/85
-                                                Eth1/86, Eth1/87, Eth1/88
-                                                Eth1/89, Eth1/90, Eth1/91
-                                                Eth1/92, Eth1/93, Eth1/94
-                                                Eth1/95, Eth1/96, Eth1/97
-                                                Eth1/98, Eth1/99, Eth1/100
-                                                Eth1/101, Eth1/102, Eth1/103
-                                                Eth1/104, Eth1/105, Eth1/106
-                                                Eth1/107, Eth1/108, Eth1/109
-                                                Eth1/110, Eth1/111, Eth1/112
-                                                Eth1/113, Eth1/114, Eth1/115
-                                                Eth1/116, Eth1/117, Eth1/118
-                                                Eth1/119, Eth1/120, Eth1/121
-                                                Eth1/122, Eth1/123, Eth1/124
-                                                Eth1/125, Eth1/126, Eth1/127
-                                                Eth1/128
+1    default                          active    Eth1/2, Eth1/3, Eth1/4, Eth1/5
+                                                Eth1/6, Eth1/7, Eth1/8, Eth1/9
+                                                Eth1/10, Eth1/11, Eth1/12
+                                                Eth1/13, Eth1/14, Eth1/15
+                                                Eth1/16, Eth1/17, Eth1/18
+                                                Eth1/19, Eth1/20, Eth1/21
+                                                Eth1/22, Eth1/23, Eth1/24
+                                                Eth1/25, Eth1/26, Eth1/27
+                                                Eth1/28, Eth1/29, Eth1/30
+                                                Eth1/31, Eth1/32, Eth1/33
+                                                Eth1/34, Eth1/35, Eth1/36
+                                                Eth1/37, Eth1/38, Eth1/39
+                                                Eth1/40, Eth1/41, Eth1/42
+                                                Eth1/43, Eth1/44, Eth1/45
+                                                Eth1/46, Eth1/47, Eth1/48
+                                                Eth1/49, Eth1/50, Eth1/51
+                                                Eth1/52, Eth1/53, Eth1/54
+                                                Eth1/55, Eth1/56, Eth1/57
+                                                Eth1/58, Eth1/59, Eth1/60
+                                                Eth1/61, Eth1/62, Eth1/63
+                                                Eth1/64, Eth1/65, Eth1/66
+                                                Eth1/67, Eth1/68, Eth1/69
+                                                Eth1/70, Eth1/71, Eth1/72
+                                                Eth1/73, Eth1/74, Eth1/75
+                                                Eth1/76, Eth1/77, Eth1/78
+                                                Eth1/79, Eth1/80, Eth1/81
+                                                Eth1/82, Eth1/83, Eth1/84
+                                                Eth1/85, Eth1/86, Eth1/87
+                                                Eth1/88, Eth1/89, Eth1/90
+                                                Eth1/91, Eth1/92, Eth1/93
+                                                Eth1/94, Eth1/95, Eth1/96
+                                                Eth1/97, Eth1/98, Eth1/99
+                                                Eth1/100, Eth1/101, Eth1/102
+                                                Eth1/103, Eth1/104, Eth1/105
+                                                Eth1/106, Eth1/107, Eth1/108
+                                                Eth1/109, Eth1/110, Eth1/111
+                                                Eth1/112, Eth1/113, Eth1/114
+                                                Eth1/115, Eth1/116, Eth1/117
+                                                Eth1/118, Eth1/119, Eth1/120
+                                                Eth1/121, Eth1/122, Eth1/123
+                                                Eth1/124, Eth1/125, Eth1/126
+                                                Eth1/127, Eth1/128
 
 VLAN Type         Vlan-mode
 ---- -----        ----------
@@ -708,13 +704,13 @@ Primary  Secondary  Type             Ports
 
 NXOS# 
 
-2022-12-14 21:11:24,995: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'show vlan id 1-3967 vn-segment' +++
+2022-12-15 19:39:56,036: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'show vlan id 1-3967 vn-segment' +++
 show vlan id 1-3967 vn-segment
                           ^
 % Invalid command at '^' marker.
 NXOS# 
 
-2022-12-14 21:11:25,143: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'show ip igmp snooping' +++
+2022-12-15 19:39:56,202: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'show ip igmp snooping' +++
 show ip igmp snooping
 Global IGMP Snooping Information:
   IGMP Snooping enabled
@@ -739,60 +735,59 @@ IGMP Snooping information for vlan 1
   Number of groups: 0
   VLAN vPC function disabled
   Active ports:
-    Eth1/3      Eth1/4  Eth1/5  Eth1/6
-    Eth1/7      
+    Eth1/2      Eth1/3  Eth1/4  Eth1/5
+    Eth1/6      Eth1/7  
   Report Flooding: Disabled
   Interfaces for Report Flooding: n/a 
   Use Group Address for Proxy Leaves: no
 
 NXOS#</msg>
-<status status="PASS" starttime="20221214 21:11:24.129" endtime="20221214 21:11:25.259"/>
+<status status="PASS" starttime="20221215 19:39:54.002" endtime="20221215 19:39:56.498"/>
 </kw>
 <doc>Extraindo informacao de VLAN</doc>
 <tag>Laboratorio</tag>
 <tag>vlan</tag>
-<status status="PASS" starttime="20221214 21:11:24.128" endtime="20221214 21:11:25.259"/>
+<status status="PASS" starttime="20221215 19:39:54.001" endtime="20221215 19:39:56.498"/>
 </test>
 <test id="s1-t5" name="Profile INTERFACE" line="30">
 <kw name="Profile the system for &quot;interface&quot; on devices &quot;NXOS&quot; as &quot;./reports/interface&quot;" library="genie.libs.robot.GenieRobot" sourcename="Profile the system for &quot;${feature:[^&quot;]+}&quot; on devices &quot;${device:[^&quot;]+}&quot; as &quot;${name:[^&quot;]+}&quot;">
 <doc>Profile system as per the provided features on the devices</doc>
-<msg timestamp="20221214 21:11:25.261" level="INFO">Start learning feature interface</msg>
-<msg timestamp="20221214 21:11:30.613" level="INFO">Could not learn &lt;class 'genie.libs.parser.nxos.show_interface.ShowIpv6InterfaceVrfAll'&gt;
+<msg timestamp="20221215 19:39:56.499" level="INFO">Start learning feature interface</msg>
+<msg timestamp="20221215 19:40:01.855" level="INFO">Could not learn &lt;class 'genie.libs.parser.nxos.show_interface.ShowIpv6InterfaceVrfAll'&gt;
 Parser Output is empty</msg>
-<msg timestamp="20221214 21:11:30.775" level="INFO">Could not learn &lt;class 'genie.libs.parser.nxos.show_routing.ShowRoutingIpv6VrfAll'&gt;
+<msg timestamp="20221215 19:40:02.077" level="INFO">Could not learn &lt;class 'genie.libs.parser.nxos.show_routing.ShowRoutingIpv6VrfAll'&gt;
 Parser Output is empty</msg>
-<msg timestamp="20221214 21:11:30.776" level="INFO">+====================================================================================================================================================+</msg>
-<msg timestamp="20221214 21:11:30.776" level="INFO">| Commands for learning feature 'Interface'                                                                                                          |</msg>
-<msg timestamp="20221214 21:11:30.776" level="INFO">+====================================================================================================================================================+</msg>
-<msg timestamp="20221214 21:11:30.776" level="INFO">| - Parsed commands                                                                                                                                  |</msg>
-<msg timestamp="20221214 21:11:30.776" level="INFO">|----------------------------------------------------------------------------------------------------------------------------------------------------|</msg>
-<msg timestamp="20221214 21:11:30.776" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_interface.ShowVrfAllInterface'&gt;, arguments: {'interface':'','vrf':''}                                   |</msg>
-<msg timestamp="20221214 21:11:30.776" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_interface.ShowInterface'&gt;, arguments: {'interface':''}                                                  |</msg>
-<msg timestamp="20221214 21:11:30.777" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_interface.ShowInterfaceSwitchport'&gt;, arguments: {'interface':''}                                        |</msg>
-<msg timestamp="20221214 21:11:30.777" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_interface.ShowIpInterfaceVrfAll'&gt;, arguments: {'interface':'','vrf':''}                                 |</msg>
-<msg timestamp="20221214 21:11:30.777" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_routing.ShowRoutingVrfAll'&gt;, arguments: {'vrf':''}                                                      |</msg>
-<msg timestamp="20221214 21:11:30.777" level="INFO">|====================================================================================================================================================|</msg>
-<msg timestamp="20221214 21:11:30.777" level="INFO">| - Commands with empty output                                                                                                                       |</msg>
-<msg timestamp="20221214 21:11:30.777" level="INFO">|----------------------------------------------------------------------------------------------------------------------------------------------------|</msg>
-<msg timestamp="20221214 21:11:30.777" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_interface.ShowIpv6InterfaceVrfAll'&gt;, arguments: {'interface':'','vrf':''}                               |</msg>
-<msg timestamp="20221214 21:11:30.777" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_routing.ShowRoutingIpv6VrfAll'&gt;, arguments: {'vrf':''}                                                  |</msg>
-<msg timestamp="20221214 21:11:30.777" level="INFO">|====================================================================================================================================================|</msg>
-<msg timestamp="20221214 21:11:31.667" level="INFO">Saved system profile as file: /home/marcelo/laboratorio/robotframework/robot_lab/6-config_analise/./reports/interface_NXOS_interface_pts.json</msg>
-<msg timestamp="20221214 21:11:31.670" level="INFO">2022-12-14 21:11:25,326: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'show vrf all interface' +++
+<msg timestamp="20221215 19:40:02.078" level="INFO">+====================================================================================================================================================+</msg>
+<msg timestamp="20221215 19:40:02.078" level="INFO">| Commands for learning feature 'Interface'                                                                                                          |</msg>
+<msg timestamp="20221215 19:40:02.078" level="INFO">+====================================================================================================================================================+</msg>
+<msg timestamp="20221215 19:40:02.078" level="INFO">| - Parsed commands                                                                                                                                  |</msg>
+<msg timestamp="20221215 19:40:02.078" level="INFO">|----------------------------------------------------------------------------------------------------------------------------------------------------|</msg>
+<msg timestamp="20221215 19:40:02.078" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_interface.ShowVrfAllInterface'&gt;, arguments: {'interface':'','vrf':''}                                   |</msg>
+<msg timestamp="20221215 19:40:02.078" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_interface.ShowInterface'&gt;, arguments: {'interface':''}                                                  |</msg>
+<msg timestamp="20221215 19:40:02.078" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_interface.ShowInterfaceSwitchport'&gt;, arguments: {'interface':''}                                        |</msg>
+<msg timestamp="20221215 19:40:02.078" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_interface.ShowIpInterfaceVrfAll'&gt;, arguments: {'interface':'','vrf':''}                                 |</msg>
+<msg timestamp="20221215 19:40:02.078" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_routing.ShowRoutingVrfAll'&gt;, arguments: {'vrf':''}                                                      |</msg>
+<msg timestamp="20221215 19:40:02.078" level="INFO">|====================================================================================================================================================|</msg>
+<msg timestamp="20221215 19:40:02.078" level="INFO">| - Commands with empty output                                                                                                                       |</msg>
+<msg timestamp="20221215 19:40:02.078" level="INFO">|----------------------------------------------------------------------------------------------------------------------------------------------------|</msg>
+<msg timestamp="20221215 19:40:02.078" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_interface.ShowIpv6InterfaceVrfAll'&gt;, arguments: {'interface':'','vrf':''}                               |</msg>
+<msg timestamp="20221215 19:40:02.078" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_routing.ShowRoutingIpv6VrfAll'&gt;, arguments: {'vrf':''}                                                  |</msg>
+<msg timestamp="20221215 19:40:02.079" level="INFO">|====================================================================================================================================================|</msg>
+<msg timestamp="20221215 19:40:02.912" level="INFO">Saved system profile as file: /home/marcelo/laboratorio/robotframework/robot_lab/6-config_analise/./reports/interface_NXOS_interface_pts.json</msg>
+<msg timestamp="20221215 19:40:02.915" level="INFO">2022-12-15 19:39:56,564: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'show vrf all interface' +++
 show vrf all interface
 Interface                 VRF-Name                        VRF-ID  Site-of-Origin
 loopback1                 default                              1  --
 Null0                     default                              1  --
 Ethernet1/1               default                              1  --
-Ethernet1/2               default                              1  --
 mgmt0                     management                           2  --
 NXOS# 
 
-2022-12-14 21:11:25,485: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'show interface' +++
+2022-12-15 19:39:56,735: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'show interface' +++
 show interface
 mgmt0 is down (Link not connected)
 admin state is up,
-  Hardware: Ethernet, address: 5095.e400.1600 (bia 5095.e400.1600)
+  Hardware: Ethernet, address: 5061.4800.1600 (bia 5061.4800.1600)
   MTU 1500 bytes, BW 0 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -811,7 +806,7 @@ admin state is up,
 
 Ethernet1/1 is up
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1607 (bia 5095.e400.1608)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1607 (bia 5061.4800.1608)
   Internet Address is 192.168.15.212/24
   MTU 1500 bytes, BW 1000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
@@ -824,7 +819,7 @@ admin state is up, Dedicated Interface
   Switchport monitor is off 
   EtherType is 0x8100 
   EEE (efficient-ethernet) : n/a
-  Last link flapped 01:42:44
+  Last link flapped 00:06:59
   Last clearing of "show interface" counters never
   1 interface resets
   Load-Interval #1: 30 seconds
@@ -852,15 +847,14 @@ admin state is up, Dedicated Interface
     0 lost carrier  0 no carrier  0 babble  0 output discard
     0 Tx pause
 
-Ethernet1/2 is down (Administratively down)
-admin state is down, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1607 (bia 5095.e400.1609)
-  Description: Hello
-  Internet Address is 192.168.15.214/24
-  MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
+Ethernet1/2 is up
+admin state is up, Dedicated Interface
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1609 (bia 5061.4800.1609)
+  MTU 1500 bytes, BW 1000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
-  auto-duplex, auto-speed
+  Port mode is access
+  full-duplex, auto-speed
   Beacon is turned off
   Auto-Negotiation is turned on  FEC mode is Auto
   Input flow-control is off, output flow-control is off
@@ -868,9 +862,9 @@ admin state is down, Dedicated Interface
   Switchport monitor is off 
   EtherType is 0x8100 
   EEE (efficient-ethernet) : n/a
-  Last link flapped never
+  Last link flapped 00:06:57
   Last clearing of "show interface" counters never
-  0 interface resets
+  1 interface resets
   Load-Interval #1: 30 seconds
     30 seconds input rate 0 bits/sec, 0 packets/sec
     30 seconds output rate 0 bits/sec, 0 packets/sec
@@ -898,7 +892,7 @@ admin state is down, Dedicated Interface
 
 Ethernet1/3 is up
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.160a (bia 5095.e400.160a)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.160a (bia 5061.4800.160a)
   Description: testeint
   MTU 1500 bytes, BW 1000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
@@ -912,7 +906,7 @@ admin state is up, Dedicated Interface
   Switchport monitor is off 
   EtherType is 0x8100 
   EEE (efficient-ethernet) : n/a
-  Last link flapped 01:42:42
+  Last link flapped 00:06:57
   Last clearing of "show interface" counters never
   1 interface resets
   Load-Interval #1: 30 seconds
@@ -942,7 +936,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/4 is up
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.160b (bia 5095.e400.160b)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.160b (bia 5061.4800.160b)
   MTU 1500 bytes, BW 1000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -955,7 +949,7 @@ admin state is up, Dedicated Interface
   Switchport monitor is off 
   EtherType is 0x8100 
   EEE (efficient-ethernet) : n/a
-  Last link flapped 01:42:42
+  Last link flapped 00:06:57
   Last clearing of "show interface" counters never
   1 interface resets
   Load-Interval #1: 30 seconds
@@ -985,7 +979,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/5 is up
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.160c (bia 5095.e400.160c)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.160c (bia 5061.4800.160c)
   MTU 1500 bytes, BW 1000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -998,7 +992,7 @@ admin state is up, Dedicated Interface
   Switchport monitor is off 
   EtherType is 0x8100 
   EEE (efficient-ethernet) : n/a
-  Last link flapped 01:42:42
+  Last link flapped 00:06:57
   Last clearing of "show interface" counters never
   1 interface resets
   Load-Interval #1: 30 seconds
@@ -1028,7 +1022,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/6 is up
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.160d (bia 5095.e400.160d)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.160d (bia 5061.4800.160d)
   MTU 1500 bytes, BW 1000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -1041,7 +1035,7 @@ admin state is up, Dedicated Interface
   Switchport monitor is off 
   EtherType is 0x8100 
   EEE (efficient-ethernet) : n/a
-  Last link flapped 01:42:42
+  Last link flapped 00:06:57
   Last clearing of "show interface" counters never
   1 interface resets
   Load-Interval #1: 30 seconds
@@ -1071,7 +1065,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/7 is up
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.160e (bia 5095.e400.160e)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.160e (bia 5061.4800.160e)
   MTU 1500 bytes, BW 1000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -1084,7 +1078,7 @@ admin state is up, Dedicated Interface
   Switchport monitor is off 
   EtherType is 0x8100 
   EEE (efficient-ethernet) : n/a
-  Last link flapped 01:42:42
+  Last link flapped 00:06:57
   Last clearing of "show interface" counters never
   1 interface resets
   Load-Interval #1: 30 seconds
@@ -1114,7 +1108,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/8 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.160f (bia 5095.e400.160f)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.160f (bia 5061.4800.160f)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -1157,7 +1151,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/9 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1610 (bia 5095.e400.1610)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1610 (bia 5061.4800.1610)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -1200,7 +1194,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/10 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1611 (bia 5095.e400.1611)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1611 (bia 5061.4800.1611)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -1243,7 +1237,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/11 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1612 (bia 5095.e400.1612)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1612 (bia 5061.4800.1612)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -1286,7 +1280,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/12 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1613 (bia 5095.e400.1613)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1613 (bia 5061.4800.1613)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -1329,7 +1323,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/13 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1614 (bia 5095.e400.1614)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1614 (bia 5061.4800.1614)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -1372,7 +1366,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/14 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1615 (bia 5095.e400.1615)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1615 (bia 5061.4800.1615)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -1415,7 +1409,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/15 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1616 (bia 5095.e400.1616)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1616 (bia 5061.4800.1616)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -1458,7 +1452,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/16 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1617 (bia 5095.e400.1617)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1617 (bia 5061.4800.1617)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -1501,7 +1495,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/17 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1618 (bia 5095.e400.1618)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1618 (bia 5061.4800.1618)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -1544,7 +1538,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/18 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1619 (bia 5095.e400.1619)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1619 (bia 5061.4800.1619)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -1587,7 +1581,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/19 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.161a (bia 5095.e400.161a)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.161a (bia 5061.4800.161a)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -1630,7 +1624,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/20 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.161b (bia 5095.e400.161b)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.161b (bia 5061.4800.161b)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -1673,7 +1667,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/21 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.161c (bia 5095.e400.161c)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.161c (bia 5061.4800.161c)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -1716,7 +1710,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/22 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.161d (bia 5095.e400.161d)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.161d (bia 5061.4800.161d)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -1759,7 +1753,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/23 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.161e (bia 5095.e400.161e)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.161e (bia 5061.4800.161e)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -1802,7 +1796,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/24 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.161f (bia 5095.e400.161f)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.161f (bia 5061.4800.161f)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -1845,7 +1839,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/25 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1620 (bia 5095.e400.1620)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1620 (bia 5061.4800.1620)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -1888,7 +1882,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/26 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1621 (bia 5095.e400.1621)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1621 (bia 5061.4800.1621)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -1931,7 +1925,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/27 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1622 (bia 5095.e400.1622)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1622 (bia 5061.4800.1622)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -1974,7 +1968,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/28 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1623 (bia 5095.e400.1623)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1623 (bia 5061.4800.1623)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -2017,7 +2011,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/29 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1624 (bia 5095.e400.1624)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1624 (bia 5061.4800.1624)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -2060,7 +2054,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/30 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1625 (bia 5095.e400.1625)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1625 (bia 5061.4800.1625)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -2103,7 +2097,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/31 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1626 (bia 5095.e400.1626)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1626 (bia 5061.4800.1626)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -2146,7 +2140,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/32 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1627 (bia 5095.e400.1627)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1627 (bia 5061.4800.1627)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -2189,7 +2183,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/33 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1628 (bia 5095.e400.1628)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1628 (bia 5061.4800.1628)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -2232,7 +2226,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/34 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1629 (bia 5095.e400.1629)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1629 (bia 5061.4800.1629)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -2275,7 +2269,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/35 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.162a (bia 5095.e400.162a)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.162a (bia 5061.4800.162a)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -2318,7 +2312,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/36 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.162b (bia 5095.e400.162b)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.162b (bia 5061.4800.162b)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -2361,7 +2355,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/37 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.162c (bia 5095.e400.162c)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.162c (bia 5061.4800.162c)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -2404,7 +2398,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/38 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.162d (bia 5095.e400.162d)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.162d (bia 5061.4800.162d)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -2447,7 +2441,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/39 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.162e (bia 5095.e400.162e)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.162e (bia 5061.4800.162e)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -2490,7 +2484,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/40 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.162f (bia 5095.e400.162f)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.162f (bia 5061.4800.162f)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -2533,7 +2527,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/41 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1630 (bia 5095.e400.1630)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1630 (bia 5061.4800.1630)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -2576,7 +2570,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/42 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1631 (bia 5095.e400.1631)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1631 (bia 5061.4800.1631)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -2619,7 +2613,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/43 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1632 (bia 5095.e400.1632)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1632 (bia 5061.4800.1632)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -2662,7 +2656,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/44 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1633 (bia 5095.e400.1633)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1633 (bia 5061.4800.1633)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -2705,7 +2699,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/45 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1634 (bia 5095.e400.1634)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1634 (bia 5061.4800.1634)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -2748,7 +2742,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/46 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1635 (bia 5095.e400.1635)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1635 (bia 5061.4800.1635)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -2791,7 +2785,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/47 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1636 (bia 5095.e400.1636)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1636 (bia 5061.4800.1636)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -2834,7 +2828,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/48 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1637 (bia 5095.e400.1637)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1637 (bia 5061.4800.1637)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -2877,7 +2871,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/49 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1638 (bia 5095.e400.1638)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1638 (bia 5061.4800.1638)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -2920,7 +2914,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/50 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1639 (bia 5095.e400.1639)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1639 (bia 5061.4800.1639)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -2963,7 +2957,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/51 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.163a (bia 5095.e400.163a)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.163a (bia 5061.4800.163a)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -3006,7 +3000,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/52 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.163b (bia 5095.e400.163b)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.163b (bia 5061.4800.163b)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -3049,7 +3043,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/53 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.163c (bia 5095.e400.163c)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.163c (bia 5061.4800.163c)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -3092,7 +3086,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/54 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.163d (bia 5095.e400.163d)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.163d (bia 5061.4800.163d)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -3135,7 +3129,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/55 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.163e (bia 5095.e400.163e)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.163e (bia 5061.4800.163e)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -3178,7 +3172,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/56 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.163f (bia 5095.e400.163f)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.163f (bia 5061.4800.163f)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -3221,7 +3215,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/57 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1640 (bia 5095.e400.1640)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1640 (bia 5061.4800.1640)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -3264,7 +3258,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/58 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1641 (bia 5095.e400.1641)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1641 (bia 5061.4800.1641)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -3307,7 +3301,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/59 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1642 (bia 5095.e400.1642)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1642 (bia 5061.4800.1642)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -3350,7 +3344,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/60 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1643 (bia 5095.e400.1643)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1643 (bia 5061.4800.1643)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -3393,7 +3387,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/61 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1644 (bia 5095.e400.1644)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1644 (bia 5061.4800.1644)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -3436,7 +3430,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/62 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1645 (bia 5095.e400.1645)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1645 (bia 5061.4800.1645)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -3479,7 +3473,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/63 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1646 (bia 5095.e400.1646)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1646 (bia 5061.4800.1646)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -3522,7 +3516,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/64 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1647 (bia 5095.e400.1647)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1647 (bia 5061.4800.1647)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -3565,7 +3559,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/65 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1648 (bia 5095.e400.1648)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1648 (bia 5061.4800.1648)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -3608,7 +3602,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/66 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1649 (bia 5095.e400.1649)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1649 (bia 5061.4800.1649)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -3651,7 +3645,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/67 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.164a (bia 5095.e400.164a)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.164a (bia 5061.4800.164a)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -3694,7 +3688,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/68 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.164b (bia 5095.e400.164b)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.164b (bia 5061.4800.164b)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -3737,7 +3731,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/69 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.164c (bia 5095.e400.164c)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.164c (bia 5061.4800.164c)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -3780,7 +3774,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/70 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.164d (bia 5095.e400.164d)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.164d (bia 5061.4800.164d)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -3823,7 +3817,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/71 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.164e (bia 5095.e400.164e)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.164e (bia 5061.4800.164e)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -3866,7 +3860,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/72 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.164f (bia 5095.e400.164f)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.164f (bia 5061.4800.164f)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -3909,7 +3903,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/73 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1650 (bia 5095.e400.1650)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1650 (bia 5061.4800.1650)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -3952,7 +3946,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/74 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1651 (bia 5095.e400.1651)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1651 (bia 5061.4800.1651)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -3995,7 +3989,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/75 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1652 (bia 5095.e400.1652)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1652 (bia 5061.4800.1652)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -4038,7 +4032,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/76 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1653 (bia 5095.e400.1653)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1653 (bia 5061.4800.1653)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -4081,7 +4075,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/77 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1654 (bia 5095.e400.1654)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1654 (bia 5061.4800.1654)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -4124,7 +4118,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/78 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1655 (bia 5095.e400.1655)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1655 (bia 5061.4800.1655)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -4167,7 +4161,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/79 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1656 (bia 5095.e400.1656)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1656 (bia 5061.4800.1656)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -4210,7 +4204,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/80 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1657 (bia 5095.e400.1657)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1657 (bia 5061.4800.1657)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -4253,7 +4247,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/81 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1658 (bia 5095.e400.1658)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1658 (bia 5061.4800.1658)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -4296,7 +4290,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/82 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1659 (bia 5095.e400.1659)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1659 (bia 5061.4800.1659)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -4339,7 +4333,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/83 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.165a (bia 5095.e400.165a)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.165a (bia 5061.4800.165a)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -4382,7 +4376,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/84 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.165b (bia 5095.e400.165b)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.165b (bia 5061.4800.165b)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -4425,7 +4419,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/85 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.165c (bia 5095.e400.165c)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.165c (bia 5061.4800.165c)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -4468,7 +4462,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/86 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.165d (bia 5095.e400.165d)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.165d (bia 5061.4800.165d)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -4511,7 +4505,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/87 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.165e (bia 5095.e400.165e)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.165e (bia 5061.4800.165e)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -4554,7 +4548,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/88 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.165f (bia 5095.e400.165f)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.165f (bia 5061.4800.165f)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -4597,7 +4591,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/89 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1660 (bia 5095.e400.1660)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1660 (bia 5061.4800.1660)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -4640,7 +4634,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/90 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1661 (bia 5095.e400.1661)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1661 (bia 5061.4800.1661)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -4683,7 +4677,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/91 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1662 (bia 5095.e400.1662)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1662 (bia 5061.4800.1662)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -4726,7 +4720,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/92 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1663 (bia 5095.e400.1663)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1663 (bia 5061.4800.1663)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -4769,7 +4763,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/93 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1664 (bia 5095.e400.1664)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1664 (bia 5061.4800.1664)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -4812,7 +4806,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/94 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1665 (bia 5095.e400.1665)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1665 (bia 5061.4800.1665)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -4855,7 +4849,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/95 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1666 (bia 5095.e400.1666)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1666 (bia 5061.4800.1666)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -4898,7 +4892,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/96 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1667 (bia 5095.e400.1667)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1667 (bia 5061.4800.1667)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -4941,7 +4935,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/97 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1668 (bia 5095.e400.1668)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1668 (bia 5061.4800.1668)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -4984,7 +4978,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/98 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1669 (bia 5095.e400.1669)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1669 (bia 5061.4800.1669)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -5027,7 +5021,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/99 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.166a (bia 5095.e400.166a)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.166a (bia 5061.4800.166a)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -5070,7 +5064,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/100 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.166b (bia 5095.e400.166b)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.166b (bia 5061.4800.166b)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -5113,7 +5107,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/101 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.166c (bia 5095.e400.166c)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.166c (bia 5061.4800.166c)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -5156,7 +5150,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/102 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.166d (bia 5095.e400.166d)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.166d (bia 5061.4800.166d)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -5199,7 +5193,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/103 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.166e (bia 5095.e400.166e)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.166e (bia 5061.4800.166e)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -5242,7 +5236,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/104 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.166f (bia 5095.e400.166f)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.166f (bia 5061.4800.166f)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -5285,7 +5279,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/105 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1670 (bia 5095.e400.1670)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1670 (bia 5061.4800.1670)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -5328,7 +5322,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/106 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1671 (bia 5095.e400.1671)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1671 (bia 5061.4800.1671)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -5371,7 +5365,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/107 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1672 (bia 5095.e400.1672)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1672 (bia 5061.4800.1672)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -5414,7 +5408,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/108 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1673 (bia 5095.e400.1673)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1673 (bia 5061.4800.1673)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -5457,7 +5451,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/109 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1674 (bia 5095.e400.1674)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1674 (bia 5061.4800.1674)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -5500,7 +5494,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/110 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1675 (bia 5095.e400.1675)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1675 (bia 5061.4800.1675)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -5543,7 +5537,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/111 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1676 (bia 5095.e400.1676)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1676 (bia 5061.4800.1676)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -5586,7 +5580,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/112 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1677 (bia 5095.e400.1677)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1677 (bia 5061.4800.1677)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -5629,7 +5623,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/113 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1678 (bia 5095.e400.1678)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1678 (bia 5061.4800.1678)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -5672,7 +5666,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/114 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1679 (bia 5095.e400.1679)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1679 (bia 5061.4800.1679)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -5715,7 +5709,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/115 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.167a (bia 5095.e400.167a)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.167a (bia 5061.4800.167a)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -5758,7 +5752,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/116 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.167b (bia 5095.e400.167b)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.167b (bia 5061.4800.167b)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -5801,7 +5795,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/117 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.167c (bia 5095.e400.167c)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.167c (bia 5061.4800.167c)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -5844,7 +5838,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/118 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.167d (bia 5095.e400.167d)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.167d (bia 5061.4800.167d)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -5887,7 +5881,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/119 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.167e (bia 5095.e400.167e)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.167e (bia 5061.4800.167e)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -5930,7 +5924,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/120 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.167f (bia 5095.e400.167f)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.167f (bia 5061.4800.167f)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -5973,7 +5967,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/121 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1680 (bia 5095.e400.1680)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1680 (bia 5061.4800.1680)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -6016,7 +6010,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/122 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1681 (bia 5095.e400.1681)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1681 (bia 5061.4800.1681)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -6059,7 +6053,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/123 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1682 (bia 5095.e400.1682)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1682 (bia 5061.4800.1682)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -6102,7 +6096,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/124 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1683 (bia 5095.e400.1683)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1683 (bia 5061.4800.1683)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -6145,7 +6139,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/125 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1684 (bia 5095.e400.1684)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1684 (bia 5061.4800.1684)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -6188,7 +6182,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/126 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1685 (bia 5095.e400.1685)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1685 (bia 5061.4800.1685)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -6231,7 +6225,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/127 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1686 (bia 5095.e400.1686)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1686 (bia 5061.4800.1686)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -6274,7 +6268,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/128 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1687 (bia 5095.e400.1687)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1687 (bia 5061.4800.1687)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -6332,8 +6326,29 @@ admin state is up,
 
 NXOS# 
 
-2022-12-14 21:11:28,963: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'show interface switchport' +++
+2022-12-15 19:40:00,034: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'show interface switchport' +++
 show interface switchport
+Name: Ethernet1/2
+  Switchport: Enabled
+  Switchport Monitor: Not enabled 
+  Switchport Isolated : Not enabled 
+  Switchport Block Multicast: Not enabled 
+  Switchport Block Unicast: Not enabled 
+  Operational Mode: access
+  Access Mode VLAN: 1 (default)
+  Trunking Native Mode VLAN: 1 (default)
+  Trunking VLANs Allowed: 1-4094
+  Voice VLAN: none
+  Extended Trust State : not trusted [COS = 0]
+  Administrative private-vlan primary host-association: none
+  Administrative private-vlan secondary host-association: none
+  Administrative private-vlan primary mapping: none
+  Administrative private-vlan secondary mapping: none
+  Administrative private-vlan trunk native VLAN: none
+  Administrative private-vlan trunk encapsulation: dot1q
+  Administrative private-vlan trunk normal VLANs: none
+  Administrative private-vlan trunk private VLANs: none
+  Operational private-vlan: none
 Name: Ethernet1/3
   Switchport: Enabled
   Switchport Monitor: Not enabled 
@@ -8982,7 +8997,7 @@ Name: Ethernet1/128
   Operational private-vlan: none
 NXOS# 
 
-2022-12-14 21:11:30,141: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'show ip interface vrf all' +++
+2022-12-15 19:40:01,110: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'show ip interface vrf all' +++
 show ip interface vrf all
 
 IP Interface Status for VRF "default"
@@ -9034,41 +9049,12 @@ Ethernet1/1, Interface status: protocol-up/link-up/admin-up, iod: 6,
   IP load sharing: none 
   IP interface statistics last reset: never
   IP interface software stats: (sent/received/forwarded/originated/consumed)
-    Unicast packets    : 3871/2929/0/3871/5858
-    Unicast bytes      : 2393970/225860/0/2393970/451720
-    Multicast packets  : 718/11194/0/718/3627
-    Multicast bytes    : 61884/6955167/0/61884/85084
-    Broadcast packets  : 0/12635/0/0/4
-    Broadcast bytes    : 0/4627792/0/0/1088
-    Labeled packets    : 0/0/0/0/0
-    Labeled bytes      : 0/0/0/0/0
-  WCCP Redirect outbound: disabled
-  WCCP Redirect inbound: disabled
-  WCCP Redirect exclude: disabled
-Ethernet1/2, Interface status: protocol-down/link-down/admin-down, iod: 7,
-  IP address: 192.168.15.214, IP subnet: 192.168.15.0/24 route-preference: 0, tag: 0 
-  IP broadcast address: 255.255.255.255
-  IP multicast groups locally joined: none
-  IP MTU: 1500 bytes (using link MTU)
-  IP primary address route-preference: 0, tag: 0
-  IP proxy ARP : disabled
-  IP Local Proxy ARP : disabled
-  IP multicast routing: disabled
-  IP icmp redirects: enabled
-  IP directed-broadcast: disabled 
-  IP Forwarding: disabled 
-  IP icmp unreachables (except port): disabled
-  IP icmp port-unreachable: enabled
-  IP unicast reverse path forwarding: none
-  IP load sharing: none 
-  IP interface statistics last reset: never
-  IP interface software stats: (sent/received/forwarded/originated/consumed)
-    Unicast packets    : 0/0/0/0/0
-    Unicast bytes      : 0/0/0/0/0
-    Multicast packets  : 0/0/0/0/0
-    Multicast bytes    : 0/0/0/0/0
-    Broadcast packets  : 0/0/0/0/0
-    Broadcast bytes    : 0/0/0/0/0
+    Unicast packets    : 727/478/0/727/956
+    Unicast bytes      : 465605/32156/0/465605/64312
+    Multicast packets  : 53/754/0/53/240
+    Multicast bytes    : 4582/469824/0/4582/5876
+    Broadcast packets  : 0/876/0/0/0
+    Broadcast bytes    : 0/321771/0/0/0
     Labeled packets    : 0/0/0/0/0
     Labeled bytes      : 0/0/0/0/0
   WCCP Redirect outbound: disabled
@@ -9078,7 +9064,7 @@ Ethernet1/2, Interface status: protocol-down/link-down/admin-down, iod: 7,
 IP Interface Status for VRF "management"
 NXOS# 
 
-2022-12-14 21:11:30,346: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'show routing vrf all' +++
+2022-12-15 19:40:01,553: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'show routing vrf all' +++
 show routing vrf all
 IP Route Table for VRF "default"
 '*' denotes best ucast next-hop
@@ -9087,19 +9073,19 @@ IP Route Table for VRF "default"
 '%&lt;string&gt;' in via output denotes VRF &lt;string&gt;
 
 20.0.0.1/32, ubest/mbest: 1/0
-    *via 192.168.15.213, Eth1/1, [110/41], 01:42:37, ospf-100, intra
+    *via 192.168.15.213, Eth1/1, [110/41], 00:06:17, ospf-100, intra
 40.0.0.0/24, ubest/mbest: 1/0, attached
-    *via 40.0.0.1, Lo1, [0/0], 01:43:48, direct
+    *via 40.0.0.1, Lo1, [0/0], 00:07:57, direct
 40.0.0.1/32, ubest/mbest: 1/0, attached
-    *via 40.0.0.1, Lo1, [0/0], 01:43:48, local
+    *via 40.0.0.1, Lo1, [0/0], 00:07:57, local
 192.168.15.0/24, ubest/mbest: 1/0, attached
-    *via 192.168.15.212, Eth1/1, [0/0], 01:42:49, direct
+    *via 192.168.15.212, Eth1/1, [0/0], 00:07:03, direct
 192.168.15.212/32, ubest/mbest: 1/0, attached
-    *via 192.168.15.212, Eth1/1, [0/0], 01:42:49, local
+    *via 192.168.15.212, Eth1/1, [0/0], 00:07:03, local
 
 NXOS# 
 
-2022-12-14 21:11:30,503: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'show ipv6 interface vrf all' +++
+2022-12-15 19:40:01,735: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'show ipv6 interface vrf all' +++
 show ipv6 interface vrf all
 IPv6 Interface Status for VRF "default"
 
@@ -9107,7 +9093,7 @@ IPv6 Interface Status for VRF "management"
 
 NXOS# 
 
-2022-12-14 21:11:30,677: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'show routing ipv6 vrf all' +++
+2022-12-15 19:40:01,919: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'show routing ipv6 vrf all' +++
 show routing ipv6 vrf all
 IPv6 Routing Table for VRF "default"
 '*' denotes best ucast next-hop
@@ -9116,51 +9102,50 @@ IPv6 Routing Table for VRF "default"
 
 
 NXOS#</msg>
-<status status="PASS" starttime="20221214 21:11:25.261" endtime="20221214 21:11:31.672"/>
+<status status="PASS" starttime="20221215 19:39:56.499" endtime="20221215 19:40:02.917"/>
 </kw>
 <doc>Extraindo informacao de INTERFACE</doc>
 <tag>interface</tag>
 <tag>Laboratorio</tag>
-<status status="PASS" starttime="20221214 21:11:25.260" endtime="20221214 21:11:31.673"/>
+<status status="PASS" starttime="20221215 19:39:56.498" endtime="20221215 19:40:02.918"/>
 </test>
 <test id="s1-t6" name="Verify the counts of 'up' Interace for NXOS" line="35">
 <kw name="verify count &quot;7&quot; &quot;interface up&quot; on device &quot;NXOS&quot;" library="genie.libs.robot.GenieRobot" sourcename="verify count &quot;${number:[^&quot;]+}&quot; &quot;${structure:[^&quot;]+}&quot; on device &quot;${device:[^&quot;]+}&quot;">
 <doc>Verify that a specific number of &lt;...&gt; is &lt;...&gt; on a device.</doc>
-<msg timestamp="20221214 21:11:37.020" level="INFO">Could not learn &lt;class 'genie.libs.parser.nxos.show_interface.ShowIpv6InterfaceVrfAll'&gt;
+<msg timestamp="20221215 19:40:07.893" level="INFO">Could not learn &lt;class 'genie.libs.parser.nxos.show_interface.ShowIpv6InterfaceVrfAll'&gt;
 Parser Output is empty</msg>
-<msg timestamp="20221214 21:11:37.170" level="INFO">Could not learn &lt;class 'genie.libs.parser.nxos.show_routing.ShowRoutingIpv6VrfAll'&gt;
+<msg timestamp="20221215 19:40:08.069" level="INFO">Could not learn &lt;class 'genie.libs.parser.nxos.show_routing.ShowRoutingIpv6VrfAll'&gt;
 Parser Output is empty</msg>
-<msg timestamp="20221214 21:11:37.170" level="INFO">+====================================================================================================================================================+</msg>
-<msg timestamp="20221214 21:11:37.170" level="INFO">| Commands for learning feature 'Interface'                                                                                                          |</msg>
-<msg timestamp="20221214 21:11:37.170" level="INFO">+====================================================================================================================================================+</msg>
-<msg timestamp="20221214 21:11:37.170" level="INFO">| - Parsed commands                                                                                                                                  |</msg>
-<msg timestamp="20221214 21:11:37.170" level="INFO">|----------------------------------------------------------------------------------------------------------------------------------------------------|</msg>
-<msg timestamp="20221214 21:11:37.170" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_interface.ShowVrfAllInterface'&gt;, arguments: {'interface':'','vrf':''}                                   |</msg>
-<msg timestamp="20221214 21:11:37.170" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_interface.ShowInterface'&gt;, arguments: {'interface':''}                                                  |</msg>
-<msg timestamp="20221214 21:11:37.171" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_interface.ShowInterfaceSwitchport'&gt;, arguments: {'interface':''}                                        |</msg>
-<msg timestamp="20221214 21:11:37.171" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_interface.ShowIpInterfaceVrfAll'&gt;, arguments: {'interface':'','vrf':''}                                 |</msg>
-<msg timestamp="20221214 21:11:37.171" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_routing.ShowRoutingVrfAll'&gt;, arguments: {'vrf':''}                                                      |</msg>
-<msg timestamp="20221214 21:11:37.171" level="INFO">|====================================================================================================================================================|</msg>
-<msg timestamp="20221214 21:11:37.171" level="INFO">| - Commands with empty output                                                                                                                       |</msg>
-<msg timestamp="20221214 21:11:37.171" level="INFO">|----------------------------------------------------------------------------------------------------------------------------------------------------|</msg>
-<msg timestamp="20221214 21:11:37.171" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_interface.ShowIpv6InterfaceVrfAll'&gt;, arguments: {'interface':'','vrf':''}                               |</msg>
-<msg timestamp="20221214 21:11:37.171" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_routing.ShowRoutingIpv6VrfAll'&gt;, arguments: {'vrf':''}                                                  |</msg>
-<msg timestamp="20221214 21:11:37.171" level="INFO">|====================================================================================================================================================|</msg>
-<msg timestamp="20221214 21:11:37.880" level="INFO">2022-12-14 21:11:31,738: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'show vrf all interface' +++
+<msg timestamp="20221215 19:40:08.069" level="INFO">+====================================================================================================================================================+</msg>
+<msg timestamp="20221215 19:40:08.069" level="INFO">| Commands for learning feature 'Interface'                                                                                                          |</msg>
+<msg timestamp="20221215 19:40:08.070" level="INFO">+====================================================================================================================================================+</msg>
+<msg timestamp="20221215 19:40:08.070" level="INFO">| - Parsed commands                                                                                                                                  |</msg>
+<msg timestamp="20221215 19:40:08.070" level="INFO">|----------------------------------------------------------------------------------------------------------------------------------------------------|</msg>
+<msg timestamp="20221215 19:40:08.070" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_interface.ShowVrfAllInterface'&gt;, arguments: {'interface':'','vrf':''}                                   |</msg>
+<msg timestamp="20221215 19:40:08.070" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_interface.ShowInterface'&gt;, arguments: {'interface':''}                                                  |</msg>
+<msg timestamp="20221215 19:40:08.070" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_interface.ShowInterfaceSwitchport'&gt;, arguments: {'interface':''}                                        |</msg>
+<msg timestamp="20221215 19:40:08.070" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_interface.ShowIpInterfaceVrfAll'&gt;, arguments: {'interface':'','vrf':''}                                 |</msg>
+<msg timestamp="20221215 19:40:08.070" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_routing.ShowRoutingVrfAll'&gt;, arguments: {'vrf':''}                                                      |</msg>
+<msg timestamp="20221215 19:40:08.070" level="INFO">|====================================================================================================================================================|</msg>
+<msg timestamp="20221215 19:40:08.070" level="INFO">| - Commands with empty output                                                                                                                       |</msg>
+<msg timestamp="20221215 19:40:08.070" level="INFO">|----------------------------------------------------------------------------------------------------------------------------------------------------|</msg>
+<msg timestamp="20221215 19:40:08.070" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_interface.ShowIpv6InterfaceVrfAll'&gt;, arguments: {'interface':'','vrf':''}                               |</msg>
+<msg timestamp="20221215 19:40:08.070" level="INFO">|   cmd: &lt;class 'genie.libs.parser.nxos.show_routing.ShowRoutingIpv6VrfAll'&gt;, arguments: {'vrf':''}                                                  |</msg>
+<msg timestamp="20221215 19:40:08.070" level="INFO">|====================================================================================================================================================|</msg>
+<msg timestamp="20221215 19:40:08.712" level="INFO">2022-12-15 19:40:02,987: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'show vrf all interface' +++
 show vrf all interface
 Interface                 VRF-Name                        VRF-ID  Site-of-Origin
 loopback1                 default                              1  --
 Null0                     default                              1  --
 Ethernet1/1               default                              1  --
-Ethernet1/2               default                              1  --
 mgmt0                     management                           2  --
 NXOS# 
 
-2022-12-14 21:11:31,897: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'show interface' +++
+2022-12-15 19:40:03,185: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'show interface' +++
 show interface
 mgmt0 is down (Link not connected)
 admin state is up,
-  Hardware: Ethernet, address: 5095.e400.1600 (bia 5095.e400.1600)
+  Hardware: Ethernet, address: 5061.4800.1600 (bia 5061.4800.1600)
   MTU 1500 bytes, BW 0 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -9179,7 +9164,7 @@ admin state is up,
 
 Ethernet1/1 is up
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1607 (bia 5095.e400.1608)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1607 (bia 5061.4800.1608)
   Internet Address is 192.168.15.212/24
   MTU 1500 bytes, BW 1000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
@@ -9192,7 +9177,7 @@ admin state is up, Dedicated Interface
   Switchport monitor is off 
   EtherType is 0x8100 
   EEE (efficient-ethernet) : n/a
-  Last link flapped 01:42:50
+  Last link flapped 00:07:05
   Last clearing of "show interface" counters never
   1 interface resets
   Load-Interval #1: 30 seconds
@@ -9220,15 +9205,14 @@ admin state is up, Dedicated Interface
     0 lost carrier  0 no carrier  0 babble  0 output discard
     0 Tx pause
 
-Ethernet1/2 is down (Administratively down)
-admin state is down, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1607 (bia 5095.e400.1609)
-  Description: Hello
-  Internet Address is 192.168.15.214/24
-  MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
+Ethernet1/2 is up
+admin state is up, Dedicated Interface
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1609 (bia 5061.4800.1609)
+  MTU 1500 bytes, BW 1000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
-  auto-duplex, auto-speed
+  Port mode is access
+  full-duplex, auto-speed
   Beacon is turned off
   Auto-Negotiation is turned on  FEC mode is Auto
   Input flow-control is off, output flow-control is off
@@ -9236,9 +9220,9 @@ admin state is down, Dedicated Interface
   Switchport monitor is off 
   EtherType is 0x8100 
   EEE (efficient-ethernet) : n/a
-  Last link flapped never
+  Last link flapped 00:07:03
   Last clearing of "show interface" counters never
-  0 interface resets
+  1 interface resets
   Load-Interval #1: 30 seconds
     30 seconds input rate 0 bits/sec, 0 packets/sec
     30 seconds output rate 0 bits/sec, 0 packets/sec
@@ -9266,7 +9250,7 @@ admin state is down, Dedicated Interface
 
 Ethernet1/3 is up
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.160a (bia 5095.e400.160a)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.160a (bia 5061.4800.160a)
   Description: testeint
   MTU 1500 bytes, BW 1000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
@@ -9280,7 +9264,7 @@ admin state is up, Dedicated Interface
   Switchport monitor is off 
   EtherType is 0x8100 
   EEE (efficient-ethernet) : n/a
-  Last link flapped 01:42:48
+  Last link flapped 00:07:03
   Last clearing of "show interface" counters never
   1 interface resets
   Load-Interval #1: 30 seconds
@@ -9310,7 +9294,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/4 is up
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.160b (bia 5095.e400.160b)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.160b (bia 5061.4800.160b)
   MTU 1500 bytes, BW 1000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -9323,7 +9307,7 @@ admin state is up, Dedicated Interface
   Switchport monitor is off 
   EtherType is 0x8100 
   EEE (efficient-ethernet) : n/a
-  Last link flapped 01:42:48
+  Last link flapped 00:07:03
   Last clearing of "show interface" counters never
   1 interface resets
   Load-Interval #1: 30 seconds
@@ -9353,7 +9337,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/5 is up
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.160c (bia 5095.e400.160c)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.160c (bia 5061.4800.160c)
   MTU 1500 bytes, BW 1000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -9366,7 +9350,7 @@ admin state is up, Dedicated Interface
   Switchport monitor is off 
   EtherType is 0x8100 
   EEE (efficient-ethernet) : n/a
-  Last link flapped 01:42:48
+  Last link flapped 00:07:03
   Last clearing of "show interface" counters never
   1 interface resets
   Load-Interval #1: 30 seconds
@@ -9396,7 +9380,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/6 is up
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.160d (bia 5095.e400.160d)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.160d (bia 5061.4800.160d)
   MTU 1500 bytes, BW 1000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -9409,7 +9393,7 @@ admin state is up, Dedicated Interface
   Switchport monitor is off 
   EtherType is 0x8100 
   EEE (efficient-ethernet) : n/a
-  Last link flapped 01:42:48
+  Last link flapped 00:07:03
   Last clearing of "show interface" counters never
   1 interface resets
   Load-Interval #1: 30 seconds
@@ -9439,7 +9423,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/7 is up
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.160e (bia 5095.e400.160e)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.160e (bia 5061.4800.160e)
   MTU 1500 bytes, BW 1000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -9452,7 +9436,7 @@ admin state is up, Dedicated Interface
   Switchport monitor is off 
   EtherType is 0x8100 
   EEE (efficient-ethernet) : n/a
-  Last link flapped 01:42:48
+  Last link flapped 00:07:03
   Last clearing of "show interface" counters never
   1 interface resets
   Load-Interval #1: 30 seconds
@@ -9482,7 +9466,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/8 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.160f (bia 5095.e400.160f)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.160f (bia 5061.4800.160f)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -9525,7 +9509,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/9 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1610 (bia 5095.e400.1610)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1610 (bia 5061.4800.1610)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -9568,7 +9552,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/10 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1611 (bia 5095.e400.1611)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1611 (bia 5061.4800.1611)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -9611,7 +9595,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/11 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1612 (bia 5095.e400.1612)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1612 (bia 5061.4800.1612)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -9654,7 +9638,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/12 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1613 (bia 5095.e400.1613)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1613 (bia 5061.4800.1613)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -9697,7 +9681,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/13 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1614 (bia 5095.e400.1614)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1614 (bia 5061.4800.1614)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -9740,7 +9724,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/14 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1615 (bia 5095.e400.1615)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1615 (bia 5061.4800.1615)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -9783,7 +9767,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/15 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1616 (bia 5095.e400.1616)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1616 (bia 5061.4800.1616)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -9826,7 +9810,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/16 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1617 (bia 5095.e400.1617)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1617 (bia 5061.4800.1617)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -9869,7 +9853,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/17 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1618 (bia 5095.e400.1618)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1618 (bia 5061.4800.1618)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -9912,7 +9896,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/18 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1619 (bia 5095.e400.1619)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1619 (bia 5061.4800.1619)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -9955,7 +9939,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/19 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.161a (bia 5095.e400.161a)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.161a (bia 5061.4800.161a)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -9998,7 +9982,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/20 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.161b (bia 5095.e400.161b)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.161b (bia 5061.4800.161b)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -10041,7 +10025,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/21 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.161c (bia 5095.e400.161c)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.161c (bia 5061.4800.161c)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -10084,7 +10068,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/22 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.161d (bia 5095.e400.161d)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.161d (bia 5061.4800.161d)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -10127,7 +10111,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/23 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.161e (bia 5095.e400.161e)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.161e (bia 5061.4800.161e)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -10170,7 +10154,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/24 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.161f (bia 5095.e400.161f)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.161f (bia 5061.4800.161f)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -10213,7 +10197,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/25 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1620 (bia 5095.e400.1620)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1620 (bia 5061.4800.1620)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -10256,7 +10240,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/26 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1621 (bia 5095.e400.1621)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1621 (bia 5061.4800.1621)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -10299,7 +10283,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/27 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1622 (bia 5095.e400.1622)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1622 (bia 5061.4800.1622)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -10342,7 +10326,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/28 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1623 (bia 5095.e400.1623)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1623 (bia 5061.4800.1623)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -10385,7 +10369,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/29 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1624 (bia 5095.e400.1624)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1624 (bia 5061.4800.1624)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -10428,7 +10412,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/30 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1625 (bia 5095.e400.1625)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1625 (bia 5061.4800.1625)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -10471,7 +10455,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/31 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1626 (bia 5095.e400.1626)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1626 (bia 5061.4800.1626)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -10514,7 +10498,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/32 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1627 (bia 5095.e400.1627)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1627 (bia 5061.4800.1627)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -10557,7 +10541,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/33 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1628 (bia 5095.e400.1628)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1628 (bia 5061.4800.1628)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -10600,7 +10584,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/34 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1629 (bia 5095.e400.1629)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1629 (bia 5061.4800.1629)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -10643,7 +10627,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/35 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.162a (bia 5095.e400.162a)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.162a (bia 5061.4800.162a)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -10686,7 +10670,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/36 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.162b (bia 5095.e400.162b)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.162b (bia 5061.4800.162b)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -10729,7 +10713,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/37 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.162c (bia 5095.e400.162c)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.162c (bia 5061.4800.162c)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -10772,7 +10756,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/38 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.162d (bia 5095.e400.162d)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.162d (bia 5061.4800.162d)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -10815,7 +10799,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/39 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.162e (bia 5095.e400.162e)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.162e (bia 5061.4800.162e)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -10858,7 +10842,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/40 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.162f (bia 5095.e400.162f)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.162f (bia 5061.4800.162f)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -10901,7 +10885,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/41 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1630 (bia 5095.e400.1630)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1630 (bia 5061.4800.1630)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -10944,7 +10928,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/42 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1631 (bia 5095.e400.1631)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1631 (bia 5061.4800.1631)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -10987,7 +10971,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/43 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1632 (bia 5095.e400.1632)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1632 (bia 5061.4800.1632)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -11030,7 +11014,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/44 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1633 (bia 5095.e400.1633)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1633 (bia 5061.4800.1633)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -11073,7 +11057,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/45 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1634 (bia 5095.e400.1634)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1634 (bia 5061.4800.1634)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -11116,7 +11100,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/46 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1635 (bia 5095.e400.1635)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1635 (bia 5061.4800.1635)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -11159,7 +11143,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/47 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1636 (bia 5095.e400.1636)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1636 (bia 5061.4800.1636)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -11202,7 +11186,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/48 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1637 (bia 5095.e400.1637)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1637 (bia 5061.4800.1637)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -11245,7 +11229,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/49 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1638 (bia 5095.e400.1638)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1638 (bia 5061.4800.1638)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -11288,7 +11272,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/50 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1639 (bia 5095.e400.1639)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1639 (bia 5061.4800.1639)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -11331,7 +11315,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/51 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.163a (bia 5095.e400.163a)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.163a (bia 5061.4800.163a)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -11374,7 +11358,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/52 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.163b (bia 5095.e400.163b)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.163b (bia 5061.4800.163b)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -11417,7 +11401,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/53 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.163c (bia 5095.e400.163c)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.163c (bia 5061.4800.163c)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -11460,7 +11444,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/54 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.163d (bia 5095.e400.163d)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.163d (bia 5061.4800.163d)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -11503,7 +11487,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/55 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.163e (bia 5095.e400.163e)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.163e (bia 5061.4800.163e)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -11546,7 +11530,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/56 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.163f (bia 5095.e400.163f)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.163f (bia 5061.4800.163f)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -11589,7 +11573,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/57 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1640 (bia 5095.e400.1640)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1640 (bia 5061.4800.1640)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -11632,7 +11616,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/58 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1641 (bia 5095.e400.1641)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1641 (bia 5061.4800.1641)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -11675,7 +11659,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/59 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1642 (bia 5095.e400.1642)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1642 (bia 5061.4800.1642)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -11718,7 +11702,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/60 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1643 (bia 5095.e400.1643)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1643 (bia 5061.4800.1643)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -11761,7 +11745,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/61 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1644 (bia 5095.e400.1644)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1644 (bia 5061.4800.1644)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -11804,7 +11788,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/62 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1645 (bia 5095.e400.1645)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1645 (bia 5061.4800.1645)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -11847,7 +11831,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/63 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1646 (bia 5095.e400.1646)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1646 (bia 5061.4800.1646)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -11890,7 +11874,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/64 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1647 (bia 5095.e400.1647)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1647 (bia 5061.4800.1647)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -11933,7 +11917,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/65 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1648 (bia 5095.e400.1648)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1648 (bia 5061.4800.1648)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -11976,7 +11960,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/66 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1649 (bia 5095.e400.1649)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1649 (bia 5061.4800.1649)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -12019,7 +12003,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/67 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.164a (bia 5095.e400.164a)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.164a (bia 5061.4800.164a)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -12062,7 +12046,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/68 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.164b (bia 5095.e400.164b)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.164b (bia 5061.4800.164b)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -12105,7 +12089,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/69 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.164c (bia 5095.e400.164c)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.164c (bia 5061.4800.164c)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -12148,7 +12132,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/70 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.164d (bia 5095.e400.164d)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.164d (bia 5061.4800.164d)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -12191,7 +12175,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/71 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.164e (bia 5095.e400.164e)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.164e (bia 5061.4800.164e)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -12234,7 +12218,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/72 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.164f (bia 5095.e400.164f)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.164f (bia 5061.4800.164f)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -12277,7 +12261,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/73 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1650 (bia 5095.e400.1650)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1650 (bia 5061.4800.1650)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -12320,7 +12304,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/74 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1651 (bia 5095.e400.1651)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1651 (bia 5061.4800.1651)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -12363,7 +12347,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/75 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1652 (bia 5095.e400.1652)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1652 (bia 5061.4800.1652)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -12406,7 +12390,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/76 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1653 (bia 5095.e400.1653)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1653 (bia 5061.4800.1653)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -12449,7 +12433,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/77 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1654 (bia 5095.e400.1654)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1654 (bia 5061.4800.1654)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -12492,7 +12476,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/78 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1655 (bia 5095.e400.1655)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1655 (bia 5061.4800.1655)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -12535,7 +12519,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/79 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1656 (bia 5095.e400.1656)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1656 (bia 5061.4800.1656)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -12578,7 +12562,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/80 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1657 (bia 5095.e400.1657)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1657 (bia 5061.4800.1657)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -12621,7 +12605,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/81 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1658 (bia 5095.e400.1658)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1658 (bia 5061.4800.1658)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -12664,7 +12648,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/82 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1659 (bia 5095.e400.1659)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1659 (bia 5061.4800.1659)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -12707,7 +12691,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/83 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.165a (bia 5095.e400.165a)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.165a (bia 5061.4800.165a)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -12750,7 +12734,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/84 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.165b (bia 5095.e400.165b)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.165b (bia 5061.4800.165b)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -12793,7 +12777,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/85 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.165c (bia 5095.e400.165c)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.165c (bia 5061.4800.165c)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -12836,7 +12820,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/86 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.165d (bia 5095.e400.165d)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.165d (bia 5061.4800.165d)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -12879,7 +12863,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/87 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.165e (bia 5095.e400.165e)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.165e (bia 5061.4800.165e)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -12922,7 +12906,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/88 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.165f (bia 5095.e400.165f)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.165f (bia 5061.4800.165f)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -12965,7 +12949,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/89 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1660 (bia 5095.e400.1660)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1660 (bia 5061.4800.1660)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -13008,7 +12992,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/90 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1661 (bia 5095.e400.1661)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1661 (bia 5061.4800.1661)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -13051,7 +13035,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/91 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1662 (bia 5095.e400.1662)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1662 (bia 5061.4800.1662)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -13094,7 +13078,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/92 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1663 (bia 5095.e400.1663)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1663 (bia 5061.4800.1663)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -13137,7 +13121,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/93 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1664 (bia 5095.e400.1664)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1664 (bia 5061.4800.1664)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -13180,7 +13164,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/94 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1665 (bia 5095.e400.1665)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1665 (bia 5061.4800.1665)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -13223,7 +13207,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/95 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1666 (bia 5095.e400.1666)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1666 (bia 5061.4800.1666)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -13266,7 +13250,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/96 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1667 (bia 5095.e400.1667)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1667 (bia 5061.4800.1667)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -13309,7 +13293,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/97 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1668 (bia 5095.e400.1668)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1668 (bia 5061.4800.1668)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -13352,7 +13336,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/98 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1669 (bia 5095.e400.1669)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1669 (bia 5061.4800.1669)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -13395,7 +13379,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/99 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.166a (bia 5095.e400.166a)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.166a (bia 5061.4800.166a)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -13438,7 +13422,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/100 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.166b (bia 5095.e400.166b)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.166b (bia 5061.4800.166b)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -13481,7 +13465,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/101 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.166c (bia 5095.e400.166c)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.166c (bia 5061.4800.166c)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -13524,7 +13508,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/102 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.166d (bia 5095.e400.166d)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.166d (bia 5061.4800.166d)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -13567,7 +13551,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/103 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.166e (bia 5095.e400.166e)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.166e (bia 5061.4800.166e)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -13610,7 +13594,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/104 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.166f (bia 5095.e400.166f)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.166f (bia 5061.4800.166f)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -13653,7 +13637,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/105 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1670 (bia 5095.e400.1670)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1670 (bia 5061.4800.1670)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -13696,7 +13680,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/106 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1671 (bia 5095.e400.1671)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1671 (bia 5061.4800.1671)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -13739,7 +13723,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/107 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1672 (bia 5095.e400.1672)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1672 (bia 5061.4800.1672)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -13782,7 +13766,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/108 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1673 (bia 5095.e400.1673)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1673 (bia 5061.4800.1673)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -13825,7 +13809,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/109 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1674 (bia 5095.e400.1674)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1674 (bia 5061.4800.1674)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -13868,7 +13852,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/110 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1675 (bia 5095.e400.1675)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1675 (bia 5061.4800.1675)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -13911,7 +13895,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/111 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1676 (bia 5095.e400.1676)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1676 (bia 5061.4800.1676)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -13954,7 +13938,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/112 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1677 (bia 5095.e400.1677)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1677 (bia 5061.4800.1677)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -13997,7 +13981,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/113 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1678 (bia 5095.e400.1678)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1678 (bia 5061.4800.1678)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -14040,7 +14024,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/114 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1679 (bia 5095.e400.1679)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1679 (bia 5061.4800.1679)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -14083,7 +14067,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/115 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.167a (bia 5095.e400.167a)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.167a (bia 5061.4800.167a)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -14126,7 +14110,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/116 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.167b (bia 5095.e400.167b)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.167b (bia 5061.4800.167b)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -14169,7 +14153,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/117 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.167c (bia 5095.e400.167c)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.167c (bia 5061.4800.167c)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -14212,7 +14196,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/118 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.167d (bia 5095.e400.167d)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.167d (bia 5061.4800.167d)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -14255,7 +14239,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/119 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.167e (bia 5095.e400.167e)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.167e (bia 5061.4800.167e)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -14298,7 +14282,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/120 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.167f (bia 5095.e400.167f)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.167f (bia 5061.4800.167f)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -14341,7 +14325,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/121 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1680 (bia 5095.e400.1680)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1680 (bia 5061.4800.1680)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -14384,7 +14368,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/122 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1681 (bia 5095.e400.1681)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1681 (bia 5061.4800.1681)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -14427,7 +14411,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/123 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1682 (bia 5095.e400.1682)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1682 (bia 5061.4800.1682)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -14470,7 +14454,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/124 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1683 (bia 5095.e400.1683)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1683 (bia 5061.4800.1683)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -14513,7 +14497,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/125 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1684 (bia 5095.e400.1684)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1684 (bia 5061.4800.1684)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -14556,7 +14540,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/126 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1685 (bia 5095.e400.1685)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1685 (bia 5061.4800.1685)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -14599,7 +14583,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/127 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1686 (bia 5095.e400.1686)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1686 (bia 5061.4800.1686)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -14642,7 +14626,7 @@ admin state is up, Dedicated Interface
 
 Ethernet1/128 is down (Link not connected)
 admin state is up, Dedicated Interface
-  Hardware: 100/1000/10000 Ethernet, address: 5095.e400.1687 (bia 5095.e400.1687)
+  Hardware: 100/1000/10000 Ethernet, address: 5061.4800.1687 (bia 5061.4800.1687)
   MTU 1500 bytes, BW 10000000 Kbit, DLY 10 usec
   reliability 255/255, txload 1/255, rxload 1/255
   Encapsulation ARPA, medium is broadcast
@@ -14700,8 +14684,29 @@ admin state is up,
 
 NXOS# 
 
-2022-12-14 21:11:35,126: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'show interface switchport' +++
+2022-12-15 19:40:06,101: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'show interface switchport' +++
 show interface switchport
+Name: Ethernet1/2
+  Switchport: Enabled
+  Switchport Monitor: Not enabled 
+  Switchport Isolated : Not enabled 
+  Switchport Block Multicast: Not enabled 
+  Switchport Block Unicast: Not enabled 
+  Operational Mode: access
+  Access Mode VLAN: 1 (default)
+  Trunking Native Mode VLAN: 1 (default)
+  Trunking VLANs Allowed: 1-4094
+  Voice VLAN: none
+  Extended Trust State : not trusted [COS = 0]
+  Administrative private-vlan primary host-association: none
+  Administrative private-vlan secondary host-association: none
+  Administrative private-vlan primary mapping: none
+  Administrative private-vlan secondary mapping: none
+  Administrative private-vlan trunk native VLAN: none
+  Administrative private-vlan trunk encapsulation: dot1q
+  Administrative private-vlan trunk normal VLANs: none
+  Administrative private-vlan trunk private VLANs: none
+  Operational private-vlan: none
 Name: Ethernet1/3
   Switchport: Enabled
   Switchport Monitor: Not enabled 
@@ -17350,7 +17355,7 @@ Name: Ethernet1/128
   Operational private-vlan: none
 NXOS# 
 
-2022-12-14 21:11:36,584: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'show ip interface vrf all' +++
+2022-12-15 19:40:07,456: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'show ip interface vrf all' +++
 show ip interface vrf all
 
 IP Interface Status for VRF "default"
@@ -17402,41 +17407,12 @@ Ethernet1/1, Interface status: protocol-up/link-up/admin-up, iod: 6,
   IP load sharing: none 
   IP interface statistics last reset: never
   IP interface software stats: (sent/received/forwarded/originated/consumed)
-    Unicast packets    : 4390/3223/0/4390/6446
-    Unicast bytes      : 2801452/242156/0/2801452/484312
-    Multicast packets  : 719/11205/0/719/3633
-    Multicast bytes    : 61970/6962115/0/61970/85220
-    Broadcast packets  : 0/12635/0/0/4
-    Broadcast bytes    : 0/4627792/0/0/1088
-    Labeled packets    : 0/0/0/0/0
-    Labeled bytes      : 0/0/0/0/0
-  WCCP Redirect outbound: disabled
-  WCCP Redirect inbound: disabled
-  WCCP Redirect exclude: disabled
-Ethernet1/2, Interface status: protocol-down/link-down/admin-down, iod: 7,
-  IP address: 192.168.15.214, IP subnet: 192.168.15.0/24 route-preference: 0, tag: 0 
-  IP broadcast address: 255.255.255.255
-  IP multicast groups locally joined: none
-  IP MTU: 1500 bytes (using link MTU)
-  IP primary address route-preference: 0, tag: 0
-  IP proxy ARP : disabled
-  IP Local Proxy ARP : disabled
-  IP multicast routing: disabled
-  IP icmp redirects: enabled
-  IP directed-broadcast: disabled 
-  IP Forwarding: disabled 
-  IP icmp unreachables (except port): disabled
-  IP icmp port-unreachable: enabled
-  IP unicast reverse path forwarding: none
-  IP load sharing: none 
-  IP interface statistics last reset: never
-  IP interface software stats: (sent/received/forwarded/originated/consumed)
-    Unicast packets    : 0/0/0/0/0
-    Unicast bytes      : 0/0/0/0/0
-    Multicast packets  : 0/0/0/0/0
-    Multicast bytes    : 0/0/0/0/0
-    Broadcast packets  : 0/0/0/0/0
-    Broadcast bytes    : 0/0/0/0/0
+    Unicast packets    : 1144/716/0/1144/1432
+    Unicast bytes      : 858203/45540/0/858203/91080
+    Multicast packets  : 53/763/0/53/242
+    Multicast bytes    : 4582/476680/0/4582/5956
+    Broadcast packets  : 0/899/0/0/0
+    Broadcast bytes    : 0/330256/0/0/0
     Labeled packets    : 0/0/0/0/0
     Labeled bytes      : 0/0/0/0/0
   WCCP Redirect outbound: disabled
@@ -17446,7 +17422,7 @@ Ethernet1/2, Interface status: protocol-down/link-down/admin-down, iod: 7,
 IP Interface Status for VRF "management"
 NXOS# 
 
-2022-12-14 21:11:36,758: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'show routing vrf all' +++
+2022-12-15 19:40:07,631: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'show routing vrf all' +++
 show routing vrf all
 IP Route Table for VRF "default"
 '*' denotes best ucast next-hop
@@ -17455,19 +17431,19 @@ IP Route Table for VRF "default"
 '%&lt;string&gt;' in via output denotes VRF &lt;string&gt;
 
 20.0.0.1/32, ubest/mbest: 1/0
-    *via 192.168.15.213, Eth1/1, [110/41], 01:42:43, ospf-100, intra
+    *via 192.168.15.213, Eth1/1, [110/41], 00:06:24, ospf-100, intra
 40.0.0.0/24, ubest/mbest: 1/0, attached
-    *via 40.0.0.1, Lo1, [0/0], 01:43:54, direct
+    *via 40.0.0.1, Lo1, [0/0], 00:08:04, direct
 40.0.0.1/32, ubest/mbest: 1/0, attached
-    *via 40.0.0.1, Lo1, [0/0], 01:43:54, local
+    *via 40.0.0.1, Lo1, [0/0], 00:08:04, local
 192.168.15.0/24, ubest/mbest: 1/0, attached
-    *via 192.168.15.212, Eth1/1, [0/0], 01:42:55, direct
+    *via 192.168.15.212, Eth1/1, [0/0], 00:07:10, direct
 192.168.15.212/32, ubest/mbest: 1/0, attached
-    *via 192.168.15.212, Eth1/1, [0/0], 01:42:55, local
+    *via 192.168.15.212, Eth1/1, [0/0], 00:07:10, local
 
 NXOS# 
 
-2022-12-14 21:11:36,920: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'show ipv6 interface vrf all' +++
+2022-12-15 19:40:07,801: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'show ipv6 interface vrf all' +++
 show ipv6 interface vrf all
 IPv6 Interface Status for VRF "default"
 
@@ -17475,7 +17451,7 @@ IPv6 Interface Status for VRF "management"
 
 NXOS# 
 
-2022-12-14 21:11:37,083: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'show routing ipv6 vrf all' +++
+2022-12-15 19:40:07,957: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'show routing ipv6 vrf all' +++
 show routing ipv6 vrf all
 IPv6 Routing Table for VRF "default"
 '*' denotes best ucast next-hop
@@ -17484,15 +17460,16 @@ IPv6 Routing Table for VRF "default"
 
 
 NXOS#</msg>
-<status status="PASS" starttime="20221214 21:11:31.673" endtime="20221214 21:11:37.883"/>
+<msg timestamp="20221215 19:40:08.718" level="FAIL">Expected '7', but found '8'</msg>
+<status status="FAIL" starttime="20221215 19:40:02.920" endtime="20221215 19:40:08.722"/>
 </kw>
-<status status="PASS" starttime="20221214 21:11:31.673" endtime="20221214 21:11:37.883"/>
+<status status="FAIL" starttime="20221215 19:40:02.919" endtime="20221215 19:40:08.722">Expected '7', but found '8'</status>
 </test>
-<status status="FAIL" starttime="20221214 21:11:19.954" endtime="20221214 21:11:37.884"/>
+<status status="FAIL" starttime="20221215 19:39:47.116" endtime="20221215 19:40:08.723"/>
 </suite>
 <statistics>
 <total>
-<stat pass="5" fail="1" skip="0">All Tests</stat>
+<stat pass="4" fail="2" skip="0">All Tests</stat>
 </total>
 <tag>
 <stat pass="1" fail="0" skip="0">Configuracoes</stat>
@@ -17501,13 +17478,13 @@ IPv6 Routing Table for VRF "default"
 <stat pass="1" fail="0" skip="0">vlan</stat>
 </tag>
 <suite>
-<stat pass="5" fail="1" skip="0" id="s1" name="Config Analise">Config Analise</stat>
+<stat pass="4" fail="2" skip="0" id="s1" name="Config Analise">Config Analise</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20221214 21:11:20.705" level="WARN">Keyword 'genie.libs.robot.GenieRobot.use genie testbed "${testbed}"' is deprecated. Please use the "use testbed "${testbed}" keyword instead.</msg>
-<msg timestamp="20221214 21:11:20.709" level="WARN">Using the default YAML encoding key since no key was specified in configuration.
+<msg timestamp="20221215 19:39:47.897" level="WARN">Keyword 'genie.libs.robot.GenieRobot.use genie testbed "${testbed}"' is deprecated. Please use the "use testbed "${testbed}" keyword instead.</msg>
+<msg timestamp="20221215 19:39:47.902" level="WARN">Using the default YAML encoding key since no key was specified in configuration.
 THIS IS A SHARED KEY AND IS NOT SECURE, PLEASE RUN `pyats secret keygen` AND ADD TO YOUR pyats.conf FILE BEFORE ENCODING ANY VALUES.</msg>
-<msg timestamp="20221214 21:11:20.755" level="WARN">Could not load the trigger datafile correctly, did you specify 'uut' device alias?</msg>
+<msg timestamp="20221215 19:39:47.987" level="WARN">Could not load the trigger datafile correctly, did you specify 'uut' device alias?</msg>
 </errors>
 </robot>

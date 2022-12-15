@@ -149,6 +149,7 @@
                             "name": "default",
                             "state": "active",
                             "interfaces": [
+                                "Ethernet1/2",
                                 "Ethernet1/3",
                                 "Ethernet1/4",
                                 "Ethernet1/5",
