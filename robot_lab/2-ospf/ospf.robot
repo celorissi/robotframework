@@ -10,11 +10,11 @@ ${testbed}    /home/marcelo/laboratorio/robotframework/robot_lab/inventory/testb
 
 *** Test Cases ***
 
-IPv4 OSPF Neighborship
+IPv4 OSPF Neighborship CORRETO
     ${cmd}=    execute "show ip ospf neighbor" on device "NXOS"
     should contain  ${cmd}  192.168.15.213
 
-IPv4 OSPF Neighborship
+IPv4 OSPF Neighborship INCORRETO
     ${cmd}=    execute "show ip ospf neighbor" on device "NXOS"
     should contain  ${cmd}  1.1.1.1
    

@@ -15,7 +15,7 @@ Configure:
                 - configure:
                     device: NXOS
                     command: |
-                      interface Ethernet1/3
+                      interface Ethernet1/4
                       no switchport
                       ip address 192.168.15.216 255.255.255.0
                       ip router ospf 100 area 0.0.0.0
@@ -28,6 +28,6 @@ Configure:
                   device: NXOS
                   command: show interface
                   include:
-                    - contains('Ethernet1/3').contains('192.168.15.215/24')
-                    - contains('Ethernet1/3').contains_key_value('admin_state', 'up')
+                    - contains('Ethernet1/4').contains('192.168.15.216/24')
+                    - contains('Ethernet1/4').contains_key_value('admin_state', 'up')
 

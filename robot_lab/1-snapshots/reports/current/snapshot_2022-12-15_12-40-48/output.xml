@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.1 (Python 3.10.6 on linux)" generated="20221215 12:36:41.424" rpa="false" schemaversion="3">
-<suite id="s1" name="Stable Snapshot" source="/home/marcelo/laboratorio/robotframework/robot_lab/1-snapshots/stable_snapshot.robot">
+<robot generator="Robot 6.0.1 (Python 3.10.6 on linux)" generated="20221215 12:40:48.470" rpa="false" schemaversion="3">
+<suite id="s1" name="Current Snapshot" source="/home/marcelo/laboratorio/robotframework/robot_lab/1-snapshots/current_snapshot.robot">
 <test id="s1-t1" name="Connect to devices" line="12">
 <kw name="use genie testbed &quot;${testbed}&quot;" library="genie.libs.robot.GenieRobot" sourcename="use genie testbed &quot;${testbed}&quot;">
 <doc>*DEPRECATED* Please use the "use testbed "${testbed}" keyword instead.</doc>
-<msg timestamp="20221215 12:36:42.299" level="WARN">Keyword 'genie.libs.robot.GenieRobot.use genie testbed "${testbed}"' is deprecated. Please use the "use testbed "${testbed}" keyword instead.</msg>
-<msg timestamp="20221215 12:36:42.303" level="WARN">Using the default YAML encoding key since no key was specified in configuration.
+<msg timestamp="20221215 12:40:49.499" level="WARN">Keyword 'genie.libs.robot.GenieRobot.use genie testbed "${testbed}"' is deprecated. Please use the "use testbed "${testbed}" keyword instead.</msg>
+<msg timestamp="20221215 12:40:49.501" level="WARN">Using the default YAML encoding key since no key was specified in configuration.
 THIS IS A SHARED KEY AND IS NOT SECURE, PLEASE RUN `pyats secret keygen` AND ADD TO YOUR pyats.conf FILE BEFORE ENCODING ANY VALUES.</msg>
-<msg timestamp="20221215 12:36:42.332" level="INFO">+------------------------------------------------------------------------------+
+<msg timestamp="20221215 12:40:49.529" level="INFO">+------------------------------------------------------------------------------+
 |                            Genie datafiles used:                             |
 +------------------------------------------------------------------------------+</msg>
-<msg timestamp="20221215 12:36:42.332" level="INFO">Trigger datafile          | </msg>
-<msg timestamp="20221215 12:36:42.332" level="INFO">Verification  datafile    | </msg>
-<msg timestamp="20221215 12:36:42.332" level="INFO">Pts datafile              | /home/marcelo/venv_lab/lib/python3.10/site-packages/genie/libs/sdk/genie_yamls/pts_datafile.yaml</msg>
-<msg timestamp="20221215 12:36:42.332" level="INFO">Subsection datafile       | /home/marcelo/venv_lab/lib/python3.10/site-packages/genie/libs/sdk/genie_yamls/subsection_datafile.yaml</msg>
-<msg timestamp="20221215 12:36:42.332" level="INFO">Config datafile           | None</msg>
-<msg timestamp="20221215 12:36:42.356" level="WARN">Could not load the trigger datafile correctly, did you specify 'uut' device alias?</msg>
-<status status="PASS" starttime="20221215 12:36:42.299" endtime="20221215 12:36:42.356"/>
+<msg timestamp="20221215 12:40:49.529" level="INFO">Trigger datafile          | </msg>
+<msg timestamp="20221215 12:40:49.529" level="INFO">Verification  datafile    | </msg>
+<msg timestamp="20221215 12:40:49.529" level="INFO">Pts datafile              | /home/marcelo/venv_lab/lib/python3.10/site-packages/genie/libs/sdk/genie_yamls/pts_datafile.yaml</msg>
+<msg timestamp="20221215 12:40:49.529" level="INFO">Subsection datafile       | /home/marcelo/venv_lab/lib/python3.10/site-packages/genie/libs/sdk/genie_yamls/subsection_datafile.yaml</msg>
+<msg timestamp="20221215 12:40:49.529" level="INFO">Config datafile           | None</msg>
+<msg timestamp="20221215 12:40:49.543" level="WARN">Could not load the trigger datafile correctly, did you specify 'uut' device alias?</msg>
+<status status="PASS" starttime="20221215 12:40:49.498" endtime="20221215 12:40:49.543"/>
 </kw>
 <kw name="connect to device &quot;NXOS&quot;" library="ats.robot.pyATSRobot" sourcename="connect to device &quot;${device:[^&quot;]+}&quot;">
 <doc>Connect to device connection as defined in testbed.yaml</doc>
-<msg timestamp="20221215 12:36:42.358" level="INFO">Connecting to device 'Device NXOS, type nxos'</msg>
-<msg timestamp="20221215 12:36:42.358" level="INFO">kwargs: {}</msg>
-<msg timestamp="20221215 12:36:44.500" level="INFO">2022-12-15 12:36:42,360: %UNICON-INFO: +++ NXOS logfile /tmp/NXOS-cli-20221215T123642359.log +++
+<msg timestamp="20221215 12:40:49.544" level="INFO">Connecting to device 'Device NXOS, type nxos'</msg>
+<msg timestamp="20221215 12:40:49.544" level="INFO">kwargs: {}</msg>
+<msg timestamp="20221215 12:40:52.362" level="INFO">2022-12-15 12:40:49,545: %UNICON-INFO: +++ NXOS logfile /tmp/NXOS-cli-20221215T124049545.log +++
 
-2022-12-15 12:36:42,360: %UNICON-INFO: +++ Unicon plugin nxos (unicon.plugins.nxos) +++
+2022-12-15 12:40:49,545: %UNICON-INFO: +++ Unicon plugin nxos (unicon.plugins.nxos) +++
 User Access Verification
 
 
-2022-12-15 12:36:42,845: %UNICON-INFO: +++ connection to spawn: ssh -l admin 192.168.15.212, id: 140258194046880 +++
+2022-12-15 12:40:50,396: %UNICON-INFO: +++ connection to spawn: ssh -l admin 192.168.15.212, id: 139684226678544 +++
 
-2022-12-15 12:36:42,846: %UNICON-INFO: connection to NXOS
+2022-12-15 12:40:50,397: %UNICON-INFO: connection to NXOS
 (admin@192.168.15.212) Password: 
 
 Cisco NX-OS Software
@@ -62,21 +62,21 @@ http://www.gnu.org/licenses/lgpl.html
 ***************************************************************************
 NXOS# 
 
-2022-12-15 12:36:43,396: %UNICON-INFO: +++ initializing handle +++
+2022-12-15 12:40:51,073: %UNICON-INFO: +++ initializing handle +++
 
-2022-12-15 12:36:43,460: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'term length 0' +++
+2022-12-15 12:40:51,138: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'term length 0' +++
 term length 0
 NXOS# 
 
-2022-12-15 12:36:43,621: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'term width 511' +++
+2022-12-15 12:40:51,298: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'term width 511' +++
 term width 511
 NXOS# 
 
-2022-12-15 12:36:43,761: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'terminal session-timeout 0' +++
+2022-12-15 12:40:51,441: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'terminal session-timeout 0' +++
 terminal session-timeout 0
 NXOS# 
 
-2022-12-15 12:36:43,840: %UNICON-INFO: +++ NXOS with via 'cli': configure +++
+2022-12-15 12:40:51,524: %UNICON-INFO: +++ NXOS with via 'cli': configure +++
 config term
 Enter configuration commands, one per line. End with CNTL/Z.
 NXOS(config)# no logging console
@@ -87,23 +87,23 @@ Enter configuration commands, one per line. End with CNTL/Z.
 NXOS(config-line)# terminal width 511
 NXOS(config-line)# end
 NXOS#</msg>
-<status status="PASS" starttime="20221215 12:36:42.357" endtime="20221215 12:36:44.500"/>
+<status status="PASS" starttime="20221215 12:40:49.543" endtime="20221215 12:40:52.362"/>
 </kw>
 <doc>Define the hosts to connect and test connection</doc>
 <tag>Laboratorio</tag>
-<status status="PASS" starttime="20221215 12:36:42.298" endtime="20221215 12:36:44.501"/>
+<status status="PASS" starttime="20221215 12:40:49.498" endtime="20221215 12:40:52.363"/>
 </test>
-<test id="s1-t2" name="Profile Snapshot" line="21">
-<kw name="Profile the system for &quot;config&quot; on devices &quot;NXOS&quot; as &quot;./reports/stable/stable_config&quot;" library="genie.libs.robot.GenieRobot" sourcename="Profile the system for &quot;${feature:[^&quot;]+}&quot; on devices &quot;${device:[^&quot;]+}&quot; as &quot;${name:[^&quot;]+}&quot;">
+<test id="s1-t2" name="Profile snapshot" line="21">
+<kw name="Profile the system for &quot;config&quot; on devices &quot;NXOS&quot; as &quot;${outputdir}/current_config&quot;" library="genie.libs.robot.GenieRobot" sourcename="Profile the system for &quot;${feature:[^&quot;]+}&quot; on devices &quot;${device:[^&quot;]+}&quot; as &quot;${name:[^&quot;]+}&quot;">
 <doc>Profile system as per the provided features on the devices</doc>
-<msg timestamp="20221215 12:36:44.504" level="INFO">Start learning device configuration</msg>
-<msg timestamp="20221215 12:36:45.002" level="INFO">Saved system profile as file: /home/marcelo/laboratorio/robotframework/robot_lab/1-snapshots/./reports/stable/stable_config_NXOS_config_pts.json</msg>
-<msg timestamp="20221215 12:36:45.002" level="INFO">2022-12-15 12:36:44,567: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'show running-config' +++
+<msg timestamp="20221215 12:40:52.364" level="INFO">Start learning device configuration</msg>
+<msg timestamp="20221215 12:40:53.275" level="INFO">Saved system profile as file: /home/marcelo/laboratorio/robotframework/robot_lab/1-snapshots/reports/current/snapshot_2022-12-15_12-40-48/current_config_NXOS_config_pts.json</msg>
+<msg timestamp="20221215 12:40:53.276" level="INFO">2022-12-15 12:40:52,427: %UNICON-INFO: +++ NXOS with via 'cli': executing command 'show running-config' +++
 show running-config
 
 !Command: show running-config
-!Running configuration last done at: Thu Dec 15 12:36:44 2022
-!Time: Thu Dec 15 12:36:44 2022
+!Running configuration last done at: Thu Dec 15 12:40:52 2022
+!Time: Thu Dec 15 12:40:52 2022
 
 version 9.2(2) Bios:version  
 hostname NXOS
@@ -141,10 +141,6 @@ interface Ethernet1/1
   no shutdown
 
 interface Ethernet1/2
-  description Hello
-  no switchport
-  ip address 192.168.15.214/24
-  ip router ospf 100 area 0.0.0.0
 
 interface Ethernet1/3
   description testeint
@@ -416,31 +412,60 @@ no logging console
 
 
 NXOS#</msg>
-<status status="PASS" starttime="20221215 12:36:44.504" endtime="20221215 12:36:45.002"/>
+<status status="PASS" starttime="20221215 12:40:52.364" endtime="20221215 12:40:53.276"/>
 </kw>
-<doc>Extraindo informacao de Configuracao</doc>
+<doc>Get a snapshot of platform information e current snapshot</doc>
 <tag>Laboratorio</tag>
-<tag>Snapshot</tag>
-<status status="PASS" starttime="20221215 12:36:44.502" endtime="20221215 12:36:45.003"/>
+<tag>snapshot</tag>
+<status status="PASS" starttime="20221215 12:40:52.363" endtime="20221215 12:40:53.276"/>
 </test>
-<status status="PASS" starttime="20221215 12:36:41.425" endtime="20221215 12:36:45.004"/>
+<test id="s1-t3" name="Compare snapshot" line="27">
+<kw name="Compare profile &quot;./reports/stable/stable_config&quot; with &quot;${outputdir}/current_config&quot; on devices &quot;NXOS&quot;" library="genie.libs.robot.GenieRobot" sourcename="Compare profile &quot;${pts:[^&quot;]+}&quot; with &quot;${pts_compare:[^&quot;]+}&quot; on devices &quot;${devices:[^&quot;]+}&quot;">
+<doc>Compare system profiles taken as snapshots during the run</doc>
+<msg timestamp="20221215 12:40:53.283" level="FAIL">
+**********
+Comparison between ./reports/stable/stable_config and /home/marcelo/laboratorio/robotframework/robot_lab/1-snapshots/reports/current/snapshot_2022-12-15_12-40-48/current_config is different for feature 'config' for device:
+
+'NXOS'
+ interface Ethernet1/2
+- description Hello
+- ip address 192.168.15.214/24
+- ip router ospf 100 area 0.0.0.0
+- no switchport</msg>
+<status status="FAIL" starttime="20221215 12:40:53.279" endtime="20221215 12:40:53.284"/>
+</kw>
+<doc>Compare the current platform information and snapshot with stable</doc>
+<tag>Laboratorio</tag>
+<tag>snapshot</tag>
+<status status="FAIL" starttime="20221215 12:40:53.278" endtime="20221215 12:40:53.285">
+**********
+Comparison between ./reports/stable/stable_config and /home/marcelo/laboratorio/robotframework/robot_lab/1-snapshots/reports/current/snapshot_2022-12-15_12-40-48/current_config is different for feature 'config' for device:
+
+'NXOS'
+ interface Ethernet1/2
+- description Hello
+- ip address 192.168.15.214/24
+- ip router ospf 100 area 0.0.0.0
+- no switchport</status>
+</test>
+<status status="FAIL" starttime="20221215 12:40:48.470" endtime="20221215 12:40:53.288"/>
 </suite>
 <statistics>
 <total>
-<stat pass="2" fail="0" skip="0">All Tests</stat>
+<stat pass="2" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="2" fail="0" skip="0">Laboratorio</stat>
-<stat pass="1" fail="0" skip="0">Snapshot</stat>
+<stat pass="2" fail="1" skip="0">Laboratorio</stat>
+<stat pass="1" fail="1" skip="0">snapshot</stat>
 </tag>
 <suite>
-<stat pass="2" fail="0" skip="0" id="s1" name="Stable Snapshot">Stable Snapshot</stat>
+<stat pass="2" fail="1" skip="0" id="s1" name="Current Snapshot">Current Snapshot</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20221215 12:36:42.299" level="WARN">Keyword 'genie.libs.robot.GenieRobot.use genie testbed "${testbed}"' is deprecated. Please use the "use testbed "${testbed}" keyword instead.</msg>
-<msg timestamp="20221215 12:36:42.303" level="WARN">Using the default YAML encoding key since no key was specified in configuration.
+<msg timestamp="20221215 12:40:49.499" level="WARN">Keyword 'genie.libs.robot.GenieRobot.use genie testbed "${testbed}"' is deprecated. Please use the "use testbed "${testbed}" keyword instead.</msg>
+<msg timestamp="20221215 12:40:49.501" level="WARN">Using the default YAML encoding key since no key was specified in configuration.
 THIS IS A SHARED KEY AND IS NOT SECURE, PLEASE RUN `pyats secret keygen` AND ADD TO YOUR pyats.conf FILE BEFORE ENCODING ANY VALUES.</msg>
-<msg timestamp="20221215 12:36:42.356" level="WARN">Could not load the trigger datafile correctly, did you specify 'uut' device alias?</msg>
+<msg timestamp="20221215 12:40:49.543" level="WARN">Could not load the trigger datafile correctly, did you specify 'uut' device alias?</msg>
 </errors>
 </robot>

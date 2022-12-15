@@ -12,4 +12,5 @@ devices:
         password: '%ENC{wr3DosOUw6fDnMOOw5LCqMOPw5TDmMObwpfCkMKdwpg=}'
     os: nxos
     type: nxos
+
  

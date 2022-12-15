@@ -15,11 +15,11 @@ Send show version
     Should Contain  ${output}    version 9.2(1)
 
 Change interface description
-    configure "interface e1/3\ndescription testeint" on device "NXOS"
+    configure "interface e1/4\ndescription INT4" on device "NXOS"
 
 Verify interface description
-    ${output}=    execute "show running interface e1/3" on device "NXOS"
-    Should Contain  ${output}    testeint
+    ${output}=    execute "show running interface e1/4" on device "NXOS"
+    Should Contain  ${output}    INT4
 
 Change configuration from yaml file
     configure "${config_interface}" on device "NXOS"

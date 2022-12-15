@@ -36,4 +36,4 @@ Verify the counts of 'up' Interace for NXOS
 
 # Verify Interfaces conectadas ERRADO
 Verify the counts of 'up' Interace for NXOS
-    verify count "9" "interface up" on device "NXOS"
+    verify count "8" "interface up" on device "NXOS"
